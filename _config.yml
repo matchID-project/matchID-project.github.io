@@ -1,10 +1,12 @@
 name: matchID
 title: matchID project
 email: martingross89@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  matchID allows ultra-high matching on people's identites.
-  Companies / administrations / developers use it to remove duplicates or
-  to match identities of people between different databases.
+description: |
+  Ultra-high matching on people's identites with the help of Machine Learning.
+  <br/><br/>
+  Companies / administrations / developers use it to remove duplicates
+  <br/>
+  or to match identities of people between different databases.
 baseurl: ""
 url: "https://matchID-project.github.io"
 

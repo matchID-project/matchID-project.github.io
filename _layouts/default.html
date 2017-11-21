@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
-        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description}}{% endif %}">
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
@@ -24,7 +24,29 @@
     <body>
         {% include navbar.html %}
 
-        {{ content }}
+        <section class="hero is-primary is-medium is-bold">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h1 class="title">
+                {{ page.title }}
+              </h1>
+              <h2 class="subtitle">
+                {{ page.description }}
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        <div class="container">
+          <div class="content margin-content">
+            <div class="columns is-centered">
+              <div class="column {{ page.width }}">
+                {{ content }}
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         {% include footer.html %}
 
