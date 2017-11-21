@@ -1,25 +1,122 @@
 <footer class="footer">
-    <div class="container">
-        <div class="content has-text-centered">
-            <p>
-                <strong><a target="_blank" href="https://github.com/{{ site.project.general.repo }}">{{ site.project.general.name }}</a></strong> 
-                by <a target="_blank" href="http://github.com/{{ site.authors.martin.github }}">{{ site.authors.martin.name }}</a> 
-                and <a target="_blank" href="http://github.com/{{ site.authors.fabien.github }}">{{ site.authors.fabien.name }}</a>.
-            </p>
-            <p>
-              The source code is licensed under LGPL 3.0
-            </p>
-            <p>
-              <a href="about">About the project</a>
-            </p>
-            <p>
-                <a class="icon" href="https://github.com/{{ site.project.general.repo }}">
-                    <i class="fa fa-github"></i>
-                </a>
-                <a class="icon" href="https://twitter.com/tainmar">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </p>
-        </div>
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>
+          The authors :
+        </strong>
+      </p>
     </div>
+    <div class="columns">
+
+      <div class="column is-6">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="/assets/images/fabien.jpeg" alt="{{ site.authors.fabien.name }} image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">{{ site.authors.fabien.name }}</p>
+                <p class="subtitle is-6">
+                  <a href="{{site.authors.fabien.github | prepend: site.github_url}}" >
+                    <span class="icon">
+                      <i class="fa fa-github" aria-hidden="true"></i>
+                    </span> {{site.authors.fabien.github}}
+                  </a>
+                  {% if site.authors.fabien.twitter %}
+                  |
+                    <a href="{{site.authors.fabien.github | prepend: 'https://twitter.com/'}}" >
+                      <span class="icon">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      </span> {{site.authors.fabien.twitter}}
+                    </a>
+                  {% endif %}
+                  |
+                  <span class="icon">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </span> {{site.authors.fabien.email}}
+                </p>
+              </div>
+            </div>
+
+            <div class="content">
+              <p>
+                Fabien is working as Chief Datascientist for the French Interior Ministry.
+                <br/> Prior to it, he was working on advanced research programs at the French Defence Ministry.
+              </p>
+              <p>
+                He graduated from <em>Ecole Polytechnique</em>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="/assets/images/martin.jpeg" alt="{{ site.authors.martin.name }} image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">{{ site.authors.martin.name }}</p>
+                <p class="subtitle is-6">
+                  <a href="{{site.authors.martin.github | prepend: site.github_url}}" >
+                    <span class="icon">
+                      <i class="fa fa-github" aria-hidden="true"></i>
+                    </span> {{site.authors.martin.github}}
+                  </a>
+                  {% if site.authors.martin.twitter %}
+                  |
+                    <a href="{{site.authors.martin.github | prepend: 'https://twitter.com/'}}" >
+                      <span class="icon">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      </span> {{site.authors.martin.twitter}}
+                    </a>
+                  {% endif %}
+                  |
+                  <span class="icon">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </span> {{site.authors.martin.email}}
+                </p>
+              </div>
+            </div>
+
+            <div class="content">
+              <p>
+                Martin is cofounder at <a href="https://commoprices.com">CommoPrices.com</a>, the world biggest portal of commodity prices.
+                He developed matchID with Fabien during a 10 month integration at the French Interior Ministry in 2017.
+              </p>
+              <p>
+                He graduated from <em>Centrale Supelec</em>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="content has-text-centered">
+      <p>
+        The source code is licensed under LGPL 3.0
+      </p>
+      <p>
+        <a href="about">About the project</a>
+      </p>
+      <p>
+        <a class="icon" href="https://github.com/{{ site.project.general.repo }}">
+          <i class="fa fa-github"></i>
+        </a>
+        <a class="icon" href="https://twitter.com/tainmar">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </p>
+    </div>
+  </div>
 </footer>
