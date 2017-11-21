@@ -1,0 +1,57 @@
+name: matchID
+title: matchID project
+email: martingross89@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  matchID allows ultra-high matching on people's identites.
+  Companies / administrations / developers use it to remove duplicates or
+  to match identities of people between different databases.
+baseurl: ""
+url: "https://matchID-project.github.io"
+
+authors:
+  fabien:
+    name: Fabien ANTOINE
+    github: rhanka
+    email: fabien.antoine@interieur.gouv.fr
+  martin:
+    name: Martin GROSS
+    github: SuperKiwi
+    email: martingross89@gmail.com
+    twitter: tainmar
+
+project:
+  general:
+    name: matchID
+    repo: matchID-project
+  backend:
+    name: Backend
+    repo: matchID-project/backend
+    download: "https://github.com/matchID-project/backend/archive/master.zip"
+  frontend:
+    name: Frontend
+    repo: matchID-project/frontend
+    download: "https://github.com/matchID-project/frontend/archive/master.zip"
+  examples:
+    name: Examples
+    repo: matchID-project/examples
+    download: "https://github.com/matchID-project/examples/archive/master.zip"
+
+github: [metadata]
+
+# Build settings
+markdown: kramdown
+plugins:
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
