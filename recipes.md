@@ -16,7 +16,9 @@ A recipe can call :
 - internals (map, join, eval, replace, keep, delete...) : included in the core code, can be extended
 - the internal "eval" function gives access to create/modify columns based on a row function (e.g col1+col2) into recipes
 
-## Quick access to recipes and functions
+
+# Quick access to recipes and functions
+----
 
 <div class="columns">
 <div class="column is-4" markdown="1">
@@ -35,7 +37,7 @@ A recipe can call :
  - [join](#join)
  - [unfold](#unfold)
  - [unnest](#unnest)
- - [build_model](#build_model)
+ - [build_model](#build_model-no-chunks)
  - [apply_model](#apply_model)
 </div>
 <div class="column is-4" markdown="1">
@@ -52,7 +54,8 @@ A recipe can call :
 </div>
 </div>
 
-## Internals recipes
+# Internals recipes
+----
 
 ### map
 This recipe create new columns to the dataframe, simply based on other.
@@ -264,7 +267,7 @@ This recipe split a selection-by-regex columns of JSONs in to multiple columns, 
 ```
 
 
-### build_model` (no chunks
+### build_model (no chunks)
 This methods applies only on a full model an should have the flag `chunked: False` in the input dataset, e.g :
 ```
   train_rnipp_agrippa_rescoring_model:
@@ -309,7 +312,9 @@ Models can only be applied to same data as in training, i.e. same columns in the
 
 
 
-## eval functions
+# Eval functions
+----
+
 ### `geopoint("POINT(lon, lat")`
 Maps a string `POINT(lon, lat)` to a numerical tuple `(lat,lon)`
 

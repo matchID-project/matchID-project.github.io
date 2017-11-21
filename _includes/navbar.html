@@ -13,22 +13,22 @@
 
     <div id="navMenubd-main" class="navbar-menu">
       <div class="navbar-start">
-        <a href="philosophy" class="navbar-item">
+        <a href="philosophy" class="navbar-item {% if page.url == '/philosophy' %}has-text-primary{% endif %}">
           <span class="icon">
             <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
           </span> The philosophy
         </a>
-        <a href="api" class="navbar-item">
+        <a href="api" class="navbar-item {% if page.url == '/api' %}has-text-primary{% endif %}">
           <span class="icon">
             <i class="fa fa-book" aria-hidden="true"></i>
           </span> API
         </a>
-        <a href="tutorial" class="navbar-item">
+        <a href="tutorial" class="navbar-item {% if page.url == '/tutorial' %}has-text-primary{% endif %}">
           <span class="icon">
             <i class="fa fa-road" aria-hidden="true"></i>
           </span> Tutorial
         </a>
-        <a href="recipes" class="navbar-item">
+        <a href="recipes" class="navbar-item {% if page.url == '/recipes' %}has-text-primary{% endif %}">
           <span class="icon">
             <i class="fa fa-flask" aria-hidden="true"></i>
           </span> Recipes
