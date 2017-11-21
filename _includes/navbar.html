@@ -1,0 +1,112 @@
+<nav class="navbar is-fixed-top is-transparent">
+  <div class="container">
+    <div class="navbar-brand">
+      <a href="{{ "/" | prepend: site.baseurl }}" class="navbar-item">
+          <img src="/assets/images/logo.png" alt="matchID Logo">
+      </a>
+      <div class="navbar-burger burger" data-target="navMenubd-main">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navMenubd-main" class="navbar-menu">
+      <div class="navbar-start">
+        <a href="philosophy" class="navbar-item">
+          <span class="icon">
+            <i class="fa fa-building-o" aria-hidden="true"></i>
+          </span> The philosophy
+        </a>
+        <a href="api" class="navbar-item">
+          <span class="icon">
+            <i class="fa fa-book" aria-hidden="true"></i>
+          </span> API
+        </a>
+        <a href="tutorial" class="navbar-item">
+          <span class="icon">
+            <i class="fa fa-road" aria-hidden="true"></i>
+          </span> Tutorial
+        </a>
+        <a href="recipes" class="navbar-item">
+          <span class="icon">
+            <i class="fa fa-flask" aria-hidden="true"></i>
+          </span> Recipes
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="button is-info"
+            data-social-network="Twitter"
+            data-social-action="tweet"
+            data-social-target="https://twitter.com/tainmar"
+            target="_blank"
+            href="https://twitter.com/intent/tweet?text=matchID for matching dirty data based on people's identities&hashtags=matchid&url={{prepend: site.baseurl | prepend: site.url}}&via={{site.authors.martin.twitter}}">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+            <span>Tweet</span>
+          </a>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable is-boxed">
+          <a class="navbar-link" target="_blank" href="{{ site.project.general.repo | prepend: site.github_url }}">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span> Repositories
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="{{ site.project.backend.repo | prepend: site.github_url }}">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>{{ site.project.backend.name }}</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="{{ site.project.frontend.repo | prepend: site.github_url }}">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>{{ site.project.frontend.name }}</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="{{ site.project.examples.repo | prepend: site.github_url }}">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>{{ site.project.examples.name }}</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable is-boxed">
+          <a class="navbar-link">
+            <span class="icon">
+              <i class="fa fa-download"></i>
+            </span> Download
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="{{ site.project.backend.download }}">
+              <span class="icon">
+                <i class="fa fa-download"></i>
+              </span>
+              <span>{{ site.project.backend.name }}</span>
+            </a>
+            <a class="navbar-item" href="{{ site.project.frontend.download }}">
+              <span class="icon">
+                <i class="fa fa-download"></i>
+              </span>
+              <span>{{ site.project.frontend.name }}</span>
+            </a>
+            <a class="navbar-item" href="{{ site.project.examples.download }}">
+              <span class="icon">
+                <i class="fa fa-download"></i>
+              </span>
+              <span>{{ site.project.examples.name }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

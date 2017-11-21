@@ -35,16 +35,17 @@ project:
     name: Examples
     repo: matchID-project/examples
     download: "https://github.com/matchID-project/examples/archive/master.zip"
-
-github: [metadata]
+github_url: "https://github.com/"
 
 # Build settings
+github: [metadata]
+theme: minima
 markdown: kramdown
 plugins:
 
-sass:
-  style: compressed
-  sass_dir: _sass
+# sass:
+#   style: compressed
+#   sass_dir: _sass
 
 
 exclude:
