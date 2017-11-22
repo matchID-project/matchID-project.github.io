@@ -11,9 +11,10 @@ width: is-8
 
 Initially developed with the help of *DSS* (*Data Science Studio*) from the company *Dataiku*, we decided to make a specific homemade DSS for our needs.
 
-Two main advantages :
+Three main advantages :
   * Free and open source
-  * Super easy setup for identities matching (compared to DSS)
+  * Easy setup for identities matching (compared to DSS : powerful for most general usecases though)
+  * Simple scalability
 
 # Data flow
 ----
