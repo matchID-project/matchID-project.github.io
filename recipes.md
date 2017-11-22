@@ -23,20 +23,24 @@ A recipe can call :
 <div class="columns">
 <div class="column is-3" markdown="1">
  - [map](#map)
- - [eval](#eval)
  - [keep](#keep)
+ - [rename](#rename)
  - [delete](#delete)
+ - [eval](#eval)
  - [replace](#replace)
  - [normalize](#normalize)
  - [pause](#pause)
  - [to_integer](#to_integer)
-</div>
-<div class="column is-3" markdown="1">
  - [to_float](#to_float)
+ - [list_to_tuple](#list_to_tuple)
+ - [tuple_to_list](#tuple_to_list)
+ - [ngram](#ngram)
  - [parsedate](#parsedate)
  - [join](#join)
  - [unfold](#unfold)
  - [unnest](#unnest)
+ - [nest](#nest)
+ - [groupby](#groupby)
  - [build_model](#build_model-no-chunks)
  - [apply_model](#apply_model)
 </div>
@@ -70,22 +74,6 @@ This recipe create new columns to the dataframe, simply based on other.
 ```
 
 ### keep
-This is the swiss-knife recipe which evaluate a treatment row by row.
-A new column value will be a value computed with a python expression.
-The values of the dataframe are accessible within the `row` array.
-A particular `column` value is available in `row['column'] as in `column``.
-
-Here's an example
-```
-      - eval:
-        - matchid_name_first: matchid_name_first_src if (type(matchid_name_first_src)==list) else [matchid_name_first_src]
-        - matchid_name_last: matchid_name_last_src if (type(matchid_name_last_src)==list) else [matchid_name_last_src]
-```
-
-[Here](#eval-functions) are some of the implemented functions.
-
-
-### keep
 This recipe keep only columns either matching a regex, with an optional `where` condition :
 ```
       - keep:
@@ -114,6 +102,30 @@ or in an explicit list :
             - datasetAlpha_DATE_NAISSANCE
 ```
 
+### rename
+Renames columns of datafram :
+```
+      - rename:
+          source_column1: target_column1
+          source_column2: target_column2
+
+```
+
+### eval
+This is the swiss-knife recipe which evaluate a treatment row by row.
+A new column value will be a value computed with a python expression.
+The values of the dataframe are accessible within the `row` array.
+A particular `column` value is available in `row['column'] as in `column``.
+
+Here's an example
+```
+      - eval:
+        - matchid_name_first: matchid_name_first_src if (type(matchid_name_first_src)==list) else [matchid_name_first_src]
+        - matchid_name_last: matchid_name_last_src if (type(matchid_name_last_src)==list) else [matchid_name_last_src]
+```
+
+[Here](#eval-functions) are some of the implemented functions.
+
 ### replace
 This methods applies regex on a selection of fields (matching itself a regex), in python style:
 ```
@@ -133,7 +145,6 @@ This methods transform a text to lowercase, removes accent and special chars on 
           select: matchid_location_city.*
 ```
 
-
 ### pause
 This recipe is an helper for debuggin a recipe. It ends prematurely the recipe, not excecuting following steps.
 Complement helpers are a selection of fields (like keep) and of top rows (head) to limit the size of the treatment.
@@ -143,20 +154,38 @@ Complement helpers are a selection of fields (like keep) and of top rows (head) 
           head: 50
 ```
 
+### shuffle
+Fully shuffles the data (each column independtly) using np.random.permutation. Used for anonymization.
+
 ### to_integer
-This recipe converts a selection-by-regex of columns from string to integers, "" being transformed as NaN.
+This recipe converts a selection-by-regex of columns from string to integers, fill not available value with NaN or specified value.
 ```
      - to_integer:
-          select: ^.*(population|surface).*$        
+          select: ^.*(population|surface).*
+          fillna: 0
 ```
 
 ### to_float
-This recipe converts a selection-by-regex of columns from string to floats, "" being transformed as NaN.
+This recipe converts a selection-by-regex of columns from string to floats, fill not available value with NaN or specified value.
 ```
      - to_float:
-          select: ^.*(frequency|).*$        
+          select: ^.*(frequency|).*
+          fillna: 0
 ```
 
+### list_to_tuple
+Converts a list to tuple, which can be used for example for indexing in a dataframe (e.g. groupby, etc.)
+
+### tuple_to_list
+Converts a tuple to a list.
+
+### ngram
+Computes n-grams of selected columns
+```
+     - ngram:
+          select: .*name.*
+          n: [2, 3, 4] # computes 2-grams, 3-grams and 4-grams
+```
 
 ### parsedate
 This recipe converts a selection-by-regex of columns from string to a date/time type :
@@ -253,22 +282,42 @@ The elasticsearch join can moreover accept some configurations :
 This recipe split a selection-by-regex columns of arrays in to multiple rows, copying the content of the other columns :
 ```
      - unfold:
-          select: ^hits$        
+          select: ^hits        
 ```
 
 
 ### unnest
 This recipe split a selection-by-regex columns of JSONs in to multiple columns, one by key value of the JSON and delete previous columns
 ```
-     - unfold:
-          select: ^hits$
+     - unnest:
+          select: ^hits
           prefix: hit_ #prefix with 'hit_' the keys for name the columns, default prefix is empty
 
 ```
 
+### nest
+Gathers into a json in the target column the selected columns and value
+```
+     - nest:
+          select: .*location.*
+          target: location
+```
+
+### groupby (no chunks)
+This computes a groupby and redispatch value across the group :
+```
+     - groupby:
+          select: matchid_id
+          transform:
+            - score: max
+            - score: min
+          rank:
+            - score
+```
+This method should be used without chunks unless you're sure each member of groups fit in same chunk.
 
 ### build_model (no chunks)
-This methods applies only on a full model an should have the flag `chunked: False` in the input dataset, e.g :
+This methods applies only on a full dataset an should have the flag `chunked: False` in the input dataset, e.g :
 ```
   train_rnipp_agrippa_rescoring_model:
     input:
@@ -324,7 +373,6 @@ Calculates vincenty (from geopy.distance) distance between to wgs84 (lat,lon) tu
 ### `replace_dict(object,dic)`
 Replaces all values by key from dictionnary `dic` like `{"key1": "value1", "key2": "value2"}` into `object` which can be a string, a array or a dictionnary (replace into values which strictly match).
 
-
 ### `replace_regex(object,dic)`
 Replaces all values by regex from dictionnary `dic` like `{"regex1": "value1", "regex2": "value2"}` into `object` which can be a string, a array or a dictionnary.
 
@@ -342,7 +390,16 @@ flattens the list, ie `[[a,b],[c]]` returns `[a,b,c]`
 Computes the sha1 hash key of `str(object)`
 
 ### `levenshtein(str a, str b)`
-Computes levenshtein distance between string a and string b.
+Computes levenshtein distance between string a and string b. Current version is just a wrapping
 
-### `levenshtein_norm(str a, str b)`
-Computes normalize levenshtein distance between string a and string b.
+### `levenshtein_norm(obj a, obj b)`
+Computes normalize levenshtein distance between string a and string b, or minimum of levenshtein_norm between list of strings a and list of strings b.
+
+### `jw(obj a, obj b)`
+Compute minimum jaro-winkler distance between strings of list a and strings of list b
+
+### `ngrams(object a, n=[2,3])`
+Computes n-grams of string a (with n in a int list here [2,3]) or n-grams of strings in list a
+
+
+
