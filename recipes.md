@@ -21,7 +21,7 @@ A recipe can call :
 ----
 
 <div class="columns">
-<div class="column is-4" markdown="1">
+<div class="column is-3" markdown="1">
  - [map](#map)
  - [eval](#eval)
  - [keep](#keep)
@@ -31,7 +31,7 @@ A recipe can call :
  - [pause](#pause)
  - [to_integer](#to_integer)
 </div>
-<div class="column is-4" markdown="1">
+<div class="column is-3" markdown="1">
  - [to_float](#to_float)
  - [parsedate](#parsedate)
  - [join](#join)
@@ -40,7 +40,7 @@ A recipe can call :
  - [build_model](#build_model-no-chunks)
  - [apply_model](#apply_model)
 </div>
-<div class="column is-4" markdown="1">
+<div class="column is-6" markdown="1">
  - [`geopoint("POINT(lon, lat")`](#geopointpointlon-lat)
  - [`distance((lat a,lon a), (lat b, lon b))`](#distancelat-alon-a-lat-b-lon-b)
  - [`replace_dict(object,dic)`](#replace_dictobjectdic)

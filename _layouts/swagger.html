@@ -1,0 +1,112 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<hr>
+
+{% assign swagger = site.data.swagger %}
+
+{% for route in swagger.paths %}
+  <div class="swagger-paths">
+    <h3 class="title is-3">{{ route[0] }}</h3>
+    {% for method in route[1] %}
+      <div class="swagger-method swagger-method-{{ method[0] }}">
+        <div class="swagger-method-title">
+          <a class="swagger-method-link">
+            <span class="swagger-method-name">{{ method[0] | upcase }}</span>
+            {{ method[1].summary }}
+          </a>
+        </div>
+        <div class="swagger-method-details">
+          {% if method[1].parameters %}
+            <div class="swagger-parameters">
+              <h4>Parameters</h4>
+              <table class="table swagger-parameters-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Located in</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                  <tr>
+                </thead>
+                <tbody>
+                  {% for parameter in method[1].parameters %}
+                    <tr>
+                      <td>
+                        {% if parameter.required %}
+                          <span class="swagger-parameter-required">
+                          {% endif %}
+                          {{ parameter.name }}
+                          {% if parameter.required %}
+                          </span>
+                        {% endif %}
+                      </td>
+                      <td>{{ parameter.in }}</td>
+                      <td>{{ parameter.description }}</td>
+                      <td>
+                        {% if parameter.type %}
+                          {{ parameter.type | capitalize }}
+                          {% if parameter.items %}
+                            of
+                            {{ parameter.items.type | capitalize }}
+                          {% endif %}
+                        {% else %}
+                          String
+                        {% endif %}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% endif %}
+          {% if method[1].responses %}
+            <div class="swagger-response">
+              <h4>Responses</h4>
+              {% for response in method[1].responses %}
+                <h5>
+                  <span class="swagger-response-code">{{ response[0] }}</span>
+                  {{ response[1].description }}
+                </h5>
+                {% for content_type in swagger.produces %}
+                  {% if response[1].examples[content_type] %}
+                    {% assign example = response[1].examples[content_type] %}
+                    {% if content_type contains 'json' %}
+                      {% highlight json %}{{ example }}{% endhighlight %}
+                      {% elsif content_type contains 'xml' %}
+                      {% highlight xml %}{{ example }}{% endhighlight %}
+                    {% else %}
+                      {% highlight http %}{{ example }}{% endhighlight %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+<script type="text/javascript">
+
+  function init() {
+    $('.swagger-method-title').each(function (index) {
+      $(this).on('click', function () {
+        $(this).next('.swagger-method-details').toggleClass('open');
+      });
+    });
+  }
+
+  // DOM already loaded?
+  if (document.readyState !== "loading") {
+    init();
+  } else {
+    // Wait for it
+    document.addEventListener("DOMContentLoaded", init);
+  }
+</script>

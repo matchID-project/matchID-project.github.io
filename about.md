@@ -13,7 +13,7 @@ At the end of 2016, the French President launched a new program largely inspired
 
 This program was called [Entrepreneur d'Intérêt Général](https://entrepreneur-interet-general.etalab.gouv.fr/) and the first session took place from January 2017 to October 2017.
 
-Martin was picked for one of the challenge inside French Ministry of Interior.
+Martin was picked for one of the challenge inside French Ministry of Interior, under the supervision of Daniel ANSELLEM and Fabien ANTOINE.
 That is there that Fabien and Martin met and decided to launch matchID as an open-source project.
 
 # The challenge
