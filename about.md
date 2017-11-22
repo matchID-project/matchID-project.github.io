@@ -29,15 +29,15 @@ But to reach higher levels of matching (**recall** and **precision**), we needed
 
 Our first attempts to get high results were successful thanks to *Data Science Studio* from the company *Dataiku*.
 
-But, as we were talking about our solution to match people's identities inside the French administration, many people asked if they could use it on their own datasets.
+Which is cool. And totally fine for us.
 
-Which is cool. And totally fine for us. But the software we use is expensive and not every adminsitration can afford it.
+But, as we were talking about our solution to match people's identities inside the French administration, many people asked if they could use it on their own datasets. For many administrations, licenced software are strictly controled.
 
-> So we decided to rewrite our project totally and to create an universal solution for matching people's identities. You get it now, it's **matchID**.
+>  So we decided to rewrite our project totally and to create an universal solution for matching people's identities. You get it now, it's **matchID**.
 
 # Why open sourcing ?
 ----
 
 A project cannot easily live inside an administration without being open-sourced.
 
-So we open-sourced it. No risk of divulging secret defense stuff and so, you will not have all of our [recipes](/recipes).
+So we open-sourced it. No risk of divulging secret defense stuff and so, you will not have all of our [recipes](/recipes) - only the best algorithms.
