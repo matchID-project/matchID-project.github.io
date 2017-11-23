@@ -21,7 +21,7 @@ A recipe can call :
 ----
 
 <div class="columns">
-<div class="column is-3" markdown="1">
+<div class="column is-6" markdown="1">
  - [map](#map)
  - [keep](#keep)
  - [rename](#rename)
@@ -400,6 +400,3 @@ Compute minimum jaro-winkler distance between strings of list a and strings of l
 
 ### `ngrams(object a, n=[2,3])`
 Computes n-grams of string a (with n in a int list here [2,3]) or n-grams of strings in list a
-
-
-

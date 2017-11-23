@@ -29,8 +29,6 @@ But to reach higher levels of matching (**recall** and **precision**), we needed
 
 Our first attempts to get high results were successful thanks to *Data Science Studio* from the company *Dataiku*.
 
-Which is cool. And totally fine for us.
-
 But, as we were talking about our solution to match people's identities inside the French administration, many people asked if they could use it on their own datasets. For many administrations, licenced software are strictly controled.
 
 >  So we decided to rewrite our project totally and to create an universal solution for matching people's identities. You get it now, it's **matchID**.
