@@ -18,7 +18,9 @@ Three main advantages :
 
 # Data flow
 ----
-![Flow logic inside matchID](/assets/images/workflow.png)
+<figure class="image">
+ <img src="/assets/images/workflow.png">
+</figure>
 
 # Technologies used
 ----
