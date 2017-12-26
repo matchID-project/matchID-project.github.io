@@ -18,7 +18,7 @@ Three main advantages :
 
 # Data flow
 ----
-<figure class="image">
+<figure class="image is-8">
  <img src="/assets/images/workflow.png">
 </figure>
 
