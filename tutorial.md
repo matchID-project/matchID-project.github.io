@@ -154,17 +154,15 @@ ALLAIRE*ANATOLE CAMILLE/                                                        
 JEAUNEAU*RAYMONDE JULIETTE ARLETTE/                                             21945100482043COMBEROUGER                                                 201105208204312208   
 ```
 
-Well, it's quite boring do decrypt it so here is the solution, just copy-paste it on the dataset yaml code :
+Well, it's quite boring do decrypt it so here is the solution, just copy-paste it on the dataset yaml code (each important line is commented) :
 ```
 datasets:
   deaths_txt_gz:
-    connector: upload
-    table: deaths.txt.gz
-    connector: upload
-    table: deaths.txt.gz
-    encoding: latin1
-    type: fwf
-    widths: 
+    connector: upload             # the filesystem connector name, where drag'n dropped files are put
+    table: deaths.txt.gz          # filename - could be a regex if multiple files
+    encoding: latin1              # the encoding of the file, often utf8 for recent files
+    type: fwf                     # type of the file : could be csv (tabular text), fwf (fixed with) or hdf5 (binary format)
+    widths:                       # widths of the successive columns, as it is a fwf 
       - 80
       - 1
       - 8
@@ -174,7 +172,7 @@ datasets:
       - 8
       - 5
       - 10
-    names: 
+    names:                       # names of the successive columns, that you can customize
       - DCD_NOM_PRENOMS
       - DCD_SEXE
       - DCD_DATE_NAISSANCE
@@ -186,11 +184,17 @@ datasets:
       - DCD_NUM_DECES
 ```
 
+
+
 Now you save that with `Ctrl+S` or the `Save` button.
 
 **Warning : mind any change you make to your code. Any change is definitive, and you may loose your code if you change the two first lines of the yaml code.**
+
  *if you're lost you can go to the `tutorial` folder to `rm -f tutorial/projects/deaths/datasets/deaths_txt_gz.yml` and try it again. You can even `rm -rf tutorial/projects/deaths` and give a new birth to your project*
- 
+
+Here you are:
+<img src="assets/images/frontend-dataset-deaths-ok.png" alt="matchID dataset correct view">
+
  
  
 
