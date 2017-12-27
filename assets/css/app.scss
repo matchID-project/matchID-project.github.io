@@ -138,6 +138,10 @@ $swagger-spacing-unit: 30px;
     border-bottom: 1px solid $grey-lighter;
 }
 
+a.navbar-brand {
+    line-height: 0;
+}
+
 .alpha-png-background {
     background-color: $white-ter;
 }
