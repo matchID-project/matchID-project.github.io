@@ -74,40 +74,20 @@ This recipes, against a some-millions `death` reference dataset, should gives ab
 
 A laptop with >8Go configuration is recommended to have a first look on matchID. Good performance with need higher computation resources (the higher the better : 16-cores + 128Go will be 15x faster than a laptop, we tested up-scaling to 40-cores for 40x faster).
 
-First clone the project
+matchID uses make and Docker to accelerate installation of dependencies. You'll first have to install Docker and docker-compose.
+
+Then clone the project : 
 ```
 git clone https://github.com/matchID-project/backend
 ```
 
-You have to clone matchID-frontend project to enable annotation for machine learning capabilities:
+and start the tutorial mode, which download, compiles necessary stuff, and launch the backend, frontend and elasticsearch :
 ```
-git clone https://github.com/matchID-project/frontend
+make tuto
 ```
-
-And create and empty directory for the configuration :
-
-```
-mkdir -p tutorial/data tutorial/models
-```
+Any problems ? See the [troubleshooting](https://github.com/matchID-project/backend#frequent-running-problems) section.
 
 Note that machine learning is not mandatory (you can have a real serious matching only based on rules) but recommended for reducting development time.
-
-Simply run it with Docker :
-```
-cd -backend
-export FRONTEND=../frontend    # path to GitHub clone of matchID-frontend
-export PROJECTS=../tutorial/projects       # path to projects
-export UPLOAD=../tutorial/data/       # path to upload
-export MODELS=../tutorial/models       # path to upload
-
-docker-compose -f docker-compose-dev.yml up --build
-```
-
-Which launches four containers :
-- nginx (for static web files to test the backend)
-- matchid-frontend (vuejs frontend)
-- matchid-backend (python backend)
-- elasticsearch (the database)
 
 So you can go to your matchID server : [http://localhost](http://localhost)
 
