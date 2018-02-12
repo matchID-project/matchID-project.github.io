@@ -1,5 +1,1 @@
-_site
-.sass-cache
-.jekyll-metadata
-.DS_Store
-_sass/.sass-lint.yml
+Gemfile.lock
