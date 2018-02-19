@@ -80,8 +80,13 @@ Then clone the project :
 ```
 git clone https://github.com/matchID-project/backend
 ```
+If your host is not has not Docker on it, your should install it first (only tested with Ubuntu 16.04) :
+```
+make install-prerequisites
+```
+If you're running on other system (like MacOS) you should go to the official [Docker install page](https://docs.docker.com/install/), and don't forger to install [docker-compose](https://docs.docker.com/compose/install/) too. 
 
-and start the tutorial mode, which download, compiles necessary stuff, and launch the backend, frontend and elasticsearch :
+Now you should start the tutorial mode, which download, compiles necessary stuff, and launch the backend, frontend and elasticsearch :
 ```
 make tuto
 ```
