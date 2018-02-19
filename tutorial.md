@@ -90,11 +90,19 @@ Now you should start the tutorial mode, which download, compiles necessary stuff
 ```
 make tuto
 ```
+
+This may take some times, as this handles many actions :
+- installing a 3-node elasticsearch (need less, just edit Make file and set `ES_NODE` to 1)
+- installing kibana (optional, but can be useful)
+- building the python backend, with all pandas and scikit dependencies
+- compiling the Vue.js frontend with node into static html/css/js files
+- presenting the all stuff with nginx
+
 Any problems ? See the [troubleshooting](https://github.com/matchID-project/backend#frequent-running-problems) section.
 
 Note that machine learning is not mandatory (you can have a real serious matching only based on rules) but recommended for reducting development time.
 
-So you can go to your matchID server : [http://localhost](http://localhost)
+So you can go to your matchID server : [http://localhost/matchID/](http://localhost/matchID/)
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
 
