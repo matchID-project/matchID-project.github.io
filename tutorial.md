@@ -26,8 +26,6 @@ We'll follow four steps :
 
 <img src="assets/images/workflow.png" alt="matching workflow">
 
-
-
 ### the philosophy of iterative cooking
 
 So, the final goal is the match but we have first to deal with the way, which mainly is data preparation. So we'll learn here how to cook your data with recipes.
@@ -177,8 +175,6 @@ datasets:
       - DCD_NUM_DECES
 ```
 
-
-
 Now you save that with `Ctrl+S` or the `Save` button.
 
 **Warning : mind any change you make to your code. Any change is definitive, and you may loose your code if you change the two first lines of the yaml code.**
@@ -197,7 +193,6 @@ A default recipe is created with no valid dataset, just replace it with the uplo
 ```
 recipes:
   dataprep_deaths:
-  
     input: deaths_txt_gz
     output: replace_output
     steps:
@@ -210,9 +205,79 @@ Save it (button or `Ctrl+S`), tt should display the first imported dataset, but 
 
 So you have now an interactive way to deal with your data. Every new step of the recipe will add a new transformation on you data. You can have the exhaustive list of [recipes here](recipes.md).
 
+## Normalizing the identity records (preparing deaths dataset)
 
+We'll stay here in editing our first recipe, `dataprep_deaths`.
 
+Our goal is to make our data matchable with another dataset, and requires normalization. We'll do that in four steps:
+- normalize **column names** (makes easier display and reuse of recieps), by mapping them
+- normalize first and last **names** format
+- normalize **birth location** (helping precise matching)
+- parse **birth date**
 
+When crossing large French names datasets, we showed that only about 33% of matches are perfect matches with no difference on any bit, 66% are fitting with few tolerance (removing special chars, keeping the first first name), and you reach more than 90 of matching (recall) with more accurate normalization (such as identifying the real city).
+
+### columns names
+So we add the following steps (removing the `new_col` one) :
+```
+      - eval:
+        #tag dataset and records with uniq id
+          - matchid_id: sha1(row)
+          - matchid_src: str("deaths")
+      - map: # create columns with normalized names
+             # the names are quite strict, to enable easy filtering and reuse of recipes
+             # you are free to change the whole process, which a bit of method and patience
+          #date
+          matchid_date_birth_src: DCD_DATE_NAISSANCE
+          matchid_date_death_src: DCD_DATE_DECES
+          #name
+          matchid_name_src: DCD_NOM_PRENOMS
+          matchid_name_last_src: DCD_NOM_PRENOMS
+          matchid_name_first_src: DCD_NOM_PRENOMS
+          #location
+          matchid_location_city_src: DCD_COMMUNE_NAISSANCE
+          matchid_location_citycode_src: DCD_CODE_INSEE_NAISSANCE
+          matchid_location_country_src: DCD_PAYS_NAISSANCE
+          matchid_location_citycode: DCD_CODE_INSEE_NAISSANCE
+          matchid_location_countrycode_src: DCD_CODE_INSEE_NAISSANCE
+          #sex
+          matchid_sex_src: DCD_SEXE
+          matchid_sex: DCD_SEXE
+      - keep: # remove old columns
+          select: matchid_.*
+```
+
+<img src="assets/images/frontend-recipe-deaths-columns.png" alt="matchID projects view">
+
+### preparing the names
+
+Just filter the names setting `matchid_name` in the column filter. This filter uses regex so you can use complex filtering for easy navigation in your data:
+<img src="assets/images/frontend-recipe-deaths-names-filter.png" alt="matchID projects view">
+
+Now you see the names won't matching with this format which is quite special.
+We propose those normalizations. Just paste and save it step by step.
+```
+      #name
+      - replace: # parses the last name with a regex
+          select: matchid_name_last_src$
+          regex:
+            - ^(.*)\*.*/$: '\1'     
+      - replace: # parses the first name with another regex
+          select: matchid_name_first_src$
+          regex:
+            - ^.*\*(.*)/$: '\1'
+      - eval: # builds an array from the names
+          - matchid_name_first_src: matchid_name_first_src.split(" ")
+      - french_name_normalize: # applies standard normalization, removings accents, special chars, bringing to lower case
+      - french_name_frequency: # uses names frequencies to join compound names
+```
+
+<img src="assets/images/frontend-recipe-deaths-names.png" alt="matchID projects view">
+
+If you just want to see the process at one step without deleting the following ones, you just have to use the 'pause' recipe :
+<img src="assets/images/frontend-recipe-deaths-names-filter.png" alt="matchID projects view">
+
+In this case we just put the `pause` step befor the name normalization section. We remove it then to have the whole process.
 
 
 
