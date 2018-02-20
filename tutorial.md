@@ -453,7 +453,7 @@ You now have two goals new goals
 - evaluate the precision of your matches
 - build a knowledge database to teach the machine
 
-## evaluation and performance mesurement
+### evaluation and performance mesurement
 
 If you're a *data scientist* you will skip this section, as of course a scientific method is your job.
 
@@ -487,7 +487,33 @@ Identity matching annotation is not a that easy thing and depends on your contex
 
 In the first times you'll have many situation which will seem you undecidable. For this reason we added a additive annotation (possible indecision), which may help you to come back to decide later. The more you annotate data the more you'll have your own modelisation of the data. The more you have people to annotate the smoother will be the annotation dataset. But everyone is not designed to be a teacher: every annotator has to be stable and patient, and should want to learn by himself what the data is for real (and should be greedy of annotating !).
 
-### teach with your annotation : the recipe
+### machine learning : the recipes
+there are, quite basically, two steps :
+- building a model
+- apply the model
+
+In this case, the machine will be trained to recognize a false hit against a true hit with your annotated data. The only thing the machine will be able to learn are numerical data which are a bit more than 20 features :
+- for the names :
+  - levenshtein distances btw first names, last names, and cross over (last x first)
+  - raw token distance
+  - for now, there is no phonetic distance, which could bring some
+  - frequencies of names
+- for the locations :
+  - distance between locations when geolocalized
+  - lat/lon when geolocalized
+  - booleans : same country, same department code, same history city code, same citycode
+  - levenshtein distance of locations
+  - population and surface of the city
+- date levenshtein distance
+- score boolean distance
+- aggregated scores
+- for the context : 
+  - number of elasticsearch hits (bucket)
+  - rank in within the bucket
+  - max elasticsearch score of the bucket
+  
+So here is the recipe :
+
 
 
 
