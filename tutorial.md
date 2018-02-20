@@ -274,11 +274,40 @@ We propose those normalizations. Just paste and save it step by step.
 
 <img src="assets/images/frontend-recipe-names.png" alt="matchID projects view">
 
+Note that both `french_name_normalize` and `french_name_frequency` recipes are available in the `conf` project.
+
 If you just want to see the process at one step without deleting the following ones, you just have to use the 'pause' recipe :
 <img src="assets/images/frontend-recipe-pause.png" alt="matchID projects view">
 
 In this case we just put the `pause` step before the name normalization section. We remove it then to have the whole process.
 
+### location normalization
+We now apply the column filtering on `matchid_location` to work on city names normalization. The goal is to make each location reliable, so we use external INSEE dataset (COG) to achieve this. This mean : this treatment is focused on the french population.
+```
+      #location
+      - country_code_cog: # expand countries against INSEE code
+      - french_citycode:  # adds city code history and normalize name (works on 99,9% as based on INSEE code)
+      - algeria_city:     # experimental, which is the second-order country of birth for France residents (~ 5 to 8%)
+                          # works only on 60% of the cases as the referential is less reliable than the INSEE one 
+```
+All the recipes are coded in the `conf` project so you can open them to have more details. 
+
+The french history codes are very important, as among the history city names changed a lot, and especially birth location of old people. So the name may have change depending of the reference file. This treatment bring about 15% to 30% bonus in matching, and have to be performed on both datasets to be matched.
+
+<img src="assets/images/frontend-recipe-location.png" alt="matchID projects view">
+
+### birth date parsing
+This is now the easier part, it just constists in parsing dates, so with columns filtering to `matchid_date`, and just adding :
+```
+    # dates
+      - ymd_date: # parses dates in year month day format (19580123)
+```
+`ymd_date` is, again, available in the `conf` project.
+
+So this is the final preview :
+<img src="assets/images/frontend-recipe-dates.png" alt="matchID projects view">
+
+### configure output dataset and run !
 
 
 
