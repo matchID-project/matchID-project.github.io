@@ -564,7 +564,7 @@ recipes:
     steps:
       - apply_model:
           name: clients_deaths_ml
-          numerical: .*(hit_score_(?!ml|rank|max|min).*|population|surface|matchid_hit_distance)$
+          numerical: .*(hit_score_(?!ml).*|population|surface|matchid_hit_distance)$
           target: matchid_hit_score_ml
       - eval:
           - confiance: >
