@@ -20,8 +20,8 @@ This tutorial will deal with tree use-cases :
 This is our first usecase : we have to remove dead people, as registered in dataset "deaths", from a client file, "clients".
 We'll follow four steps, in the first usecase (finding common identities between two datasets)
 
-- [Step 1: prepare deaths dataset](#step-1-dataprep-normalizing-the-identity-records-deaths-dataset)
-- Step 2: prepare clients dataset, match it against dataset 1 & score the matches
+- [Step 1: prepare deaths dataset](#step-1---dataprep--normalizing-the-identity-records-deaths-dataset)
+- [Step 2: prepare clients dataset, match it against dataset 1 & score the matches](#step-2---dataprep-of-clients-and-matching)
 - Step 3: validate matches and train rescoring with machine learning
 - Step 4: rescore with the machine learning kernel
 
@@ -421,5 +421,19 @@ recipes:
 then you should have your first sampling results (screenshot obtain using a regex filter: `diff(?!_id)|confiance|number`):
 
 <img src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
+
+Before running there recipe, don't forger to create the `client_x_deaths` dataset in elasticsearch :
+```
+datasets:
+  clients_x_deaths:
+    connector: elasticsearch
+    table: clients_x_deaths
+    validation: true        # <=== this is mandatory to go to step 3
+```
+Now run the recipe. It should take about 2h to run it for 1M x 1M with a 16vCPUx32Go and 3 ES nodes.
+
+## Step 3: validate matches and train rescoring with machine learning
+You don't have to wait the full run to examinate your matching results : go to the `client_x_deaths` dataset.
+The `vadliation: true` option activates this button : <img src="assets/images/frontend-validation-button.png" alt="matchID projects view">
 
 
