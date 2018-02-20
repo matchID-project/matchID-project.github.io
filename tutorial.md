@@ -377,16 +377,20 @@ You should quickly have this final view of dataprep :
 We won't have to run this one.
 
 ### matching !
-Here comes the tricky part : the fuzzy match with elastic search.
+Here comes the tricky part : the fuzzy match with elastic search. 
+What kind of matching do you need ? This first steps uses indexation to maximize recall while narrowing the huge cardinality of matching millions records to millions records, leading to a reasonable bucket to score, hoping begin less than 10th the size of the smaller dataset. Three kind of indexation can be done :
+- ngram (any SQL or search can do this)
+- phonetic (any SQL or search can do this)
+- string distance tolerating indexing, levenshtein (only search like SolR or Elasticsearch).
+The two first will lead to huge buckets and search will be a bit more precies.
 
-You have to match every client against the already-indexed-in-step-1 deaths. 
+SO, now you have to match every client against the already-indexed-in-step-1 deaths. 
 
 *to be modified : begin with a simple elasticsearch request instead the hard one*
 
 First create a generic `deaths_matching` in the death project from [`deaths_matching.yml`](https://github.com/matchID-project/examples/blob/master/projects/deaths/recipes/deaths_matching.yml). This one performs a self match from `deaths` to `deaths`, this isn't the aim here.
 
-This recipe essentially contains a complex elasticsearch query, translated from json to yaml and templated. It basically:
-
+This recipe essentially contains a complex elasticsearch query, translated from json to yaml and templated. Here's the explanation of the query.
 - the client name must match fuzzily (levenshtein max 2) on of the names (first and last) of the death, and stricly on the birth date
 - or the client name must match strictly on of the names and fuzilly (levenshtein max 1) on the birth date
 - more over, if possible :
@@ -394,7 +398,9 @@ This recipe essentially contains a complex elasticsearch query, translated from 
   - the first name should be in the deaths names
   - the city should match
   - the country should match
-  
+
+Many specificities of your dataset should lead you to customize the search query : should you have poor data with no birth date, or would you have wife names, the query has to match your need.
+
 All those conditions make a large recall without bringing too much candidates.
 
 Now we create a combo recipe, `clients_deaths_matching` in the `clients` project, calling the last two ones, plus a special one, `diff` :
