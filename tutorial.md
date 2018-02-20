@@ -445,3 +445,7 @@ Click on it to access to the validation mode, which enables the possibility to a
 
 <img src="assets/images/frontend-validation.png" alt="matchID projects view">
 
+The cheat codes page (keyboard icon) will help to understand how to annotate :
+
+<img src="assets/images/frontend-validation-cheatcodes.png" alt="matchID projects view">
+
