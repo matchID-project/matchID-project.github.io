@@ -275,9 +275,9 @@ We propose those normalizations. Just paste and save it step by step.
 <img src="assets/images/frontend-recipe-names.png" alt="matchID projects view">
 
 If you just want to see the process at one step without deleting the following ones, you just have to use the 'pause' recipe :
-<img src="assets/images/frontend-recipe-names-filter.png" alt="matchID projects view">
+<img src="assets/images/frontend-recipe-pause.png" alt="matchID projects view">
 
-In this case we just put the `pause` step befor the name normalization section. We remove it then to have the whole process.
+In this case we just put the `pause` step before the name normalization section. We remove it then to have the whole process.
 
 
 
