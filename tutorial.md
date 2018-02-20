@@ -23,7 +23,7 @@ We'll follow four steps, in the first usecase (finding common identities between
 - [Step 1: prepare deaths dataset](#step-1---dataprep--normalizing-the-identity-records-deaths-dataset)
 - [Step 2: prepare clients dataset, match it against dataset 1 & score the matches](#step-2---dataprep-of-clients-and-matching)
 - [Step 3: validate matches and train rescoring with machine learning](#step-3-validate-matches-and-train-rescoring-with-machine-learning)
-- Step 4: rescore with the machine learning kernel
+- Step 4: rescore with the machine learning model
 
 <img src="assets/images/workflow.png" alt="matching workflow">
 
@@ -487,11 +487,7 @@ Identity matching annotation is not a that easy thing and depends on your contex
 
 In the first times you'll have many situation which will seem you undecidable. For this reason we added a additive annotation (possible indecision), which may help you to come back to decide later. The more you annotate data the more you'll have your own modelisation of the data. The more you have people to annotate the smoother will be the annotation dataset. But everyone is not designed to be a teacher: every annotator has to be stable and patient, and should want to learn by himself what the data is for real (and should be greedy of annotating !).
 
-### machine learning : the recipes
-there are, quite basically, two steps :
-- building a model
-- apply the model
-
+### machine learning : the training recipe
 In this case, the machine will be trained to recognize a false hit against a true hit with your annotated data. The only thing the machine will be able to learn are numerical data which are a bit more than 20 features :
 - for the names :
   - levenshtein distances btw first names, last names, and cross over (last x first)
@@ -512,7 +508,7 @@ In this case, the machine will be trained to recognize a false hit against a tru
   - rank in within the bucket
   - max elasticsearch score of the bucket
   
-So here is the recipe :
+So here is the recipe, `train_rescoring_model`:
 ```
 recipes:
   train_rescoring_model:
@@ -554,4 +550,30 @@ When you save the recipe, you can see the performance of your machine learning m
 
 In this *not serious* annotation of only 92 matches, the second model does have a perfect score. Every time you save, the algorithm trains again, and you can see how stable it is. If you have no stability at all, you should annotate more data.
 
-If stable enough, then run the recipe, this will save the model which will be reusable
+If stable enough, then run the recipe, this will save the model which will be reusable.
+
+## Step 4: rescore with the machine learning model
+We can now apply the previously built model to apply a better scoring on the matches :
+```
+recipes:
+  rescoring:
+    input: clients_x_deaths
+    output: 
+      dataset: clients_x_deaths
+      mode: update              # <=== don't forget this field, otherwise your matching data and annotations could be lost !
+    steps:
+      - apply_model:
+          name: clients_deaths_ml
+          numerical: .*(hit_score_(?!ml|rank|max|min).*|population|surface|matchid_hit_distance)$
+          target: matchid_hit_score_ml
+      - eval:
+          - confiance: >
+              try:
+                cell = round(0.7*float(matchid_hit_score_ml)+30*float(matchid_hit_score))
+              except:
+                try:
+                  cell = matchid_hit_score_ml
+                except:
+                  cell = matchid_hit_score
+          - scoring_version: str("{}-randomforest-{}").format(re.sub("-.*","",scoring_version),str(datetime.datetime.now()))
+```
