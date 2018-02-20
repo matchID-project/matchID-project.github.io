@@ -7,10 +7,10 @@ width: is-10
 ---
 
 # Tutorial
-This tutorial will deal with tree use-cases :
+This tutorial will deal with three use-cases :
 - find common identities between two big datasets
 - find doubles within a dataset
-- build a search api against a dataset ("top of elasticsearch" API)
+- build a search api for a dataset (*top of elasticsearch* API)
 
 # First Use case : find common identities between two big datasets
 
@@ -516,9 +516,10 @@ So here is the recipe :
 ```
 recipes:
   train_rescoring_model:
+    test_chunk_size: 10000      # <==== should not be necessary (warning: use to workaround a bug while writing the doc)
     input:
       dataset: clients_x_deaths
-      chunked: False            # <==== this is for telling to get the whole data
+      chunked: False            # <==== this is for telling to get the whole data (warning: bug while writing the doc)
       select:                   # <==== this is a filtering query to load only annotated data from the dataset
         query:
           constant_score: 
@@ -546,5 +547,9 @@ recipes:
           target: validation_decision      #       the target is your annotation
                                            #       the indecision is not taken into account there
 ```
+
+When you save the recipe, you can see the performance of your machine learning model in the log :
+
+<img src="assets/images/frontend-train-auc.png" alt="matchID projects view">
 
 
