@@ -22,7 +22,7 @@ We'll follow four steps, in the first usecase (finding common identities between
 
 - [Step 1: prepare deaths dataset](#step-1---dataprep--normalizing-the-identity-records-deaths-dataset)
 - [Step 2: prepare clients dataset, match it against dataset 1 & score the matches](#step-2---dataprep-of-clients-and-matching)
-- Step 3: validate matches and train rescoring with machine learning
+- [Step 3: validate matches and train rescoring with machine learning](#step-3-validate-matches-and-train-rescoring-with-machine-learning)
 - Step 4: rescore with the machine learning kernel
 
 <img src="assets/images/workflow.png" alt="matching workflow">
@@ -333,6 +333,7 @@ Note that you can configure many options of an elasticsearch dataset :
 
 ### run the recipe !
 So once evrything is configure you can run the recipe with the green button : 
+
 <img src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
 
 This run is needed to index the deaths with elasticearch, which will enable a match of up to 98% (recall).
@@ -372,6 +373,7 @@ Note that the preparation differs only a few from the `deaths.txt.gz` file :
 - cities mappings relies on a internal fuzzy match, as cities are not coded but only described literally. On french cities the mapping occures to be around 98% on a not-to-dirty dataset
 
 You should quickly have this final view of dataprep :
+
 <img src="assets/images/frontend-recipe-clients.png" alt="matchID projects view">
 
 We won't have to run this one.
@@ -434,6 +436,12 @@ Now run the recipe. It should take about 2h to run it for 1M x 1M with a 16vCPUx
 
 ## Step 3: validate matches and train rescoring with machine learning
 You don't have to wait the full run to examinate your matching results : go to the `client_x_deaths` dataset.
-The `vadliation: true` option activates this button : <img src="assets/images/frontend-validation-button.png" alt="matchID projects view">
 
+The `vadliation: true` option activates this button : 
+
+<img src="assets/images/frontend-validation-button.png" alt="matchID projects view">
+
+Click on it to access to the validation mode, which enables the possibility to annotate your results :
+
+<img src="assets/images/frontend-validation.png" alt="matchID projects view">
 
