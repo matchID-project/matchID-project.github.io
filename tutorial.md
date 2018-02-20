@@ -12,17 +12,18 @@ This tutorial will deal with tree use-cases :
 - find doubles within a dataset
 - build a search api against a dataset ("top of elasticsearch" API)
 
+# First Use case : find common identities between two big datasets
 
 ## Cooking recipes with matchID 
 
 ### Global method used for matching
-This is our usecase : we have to remove dead people, as registered in dataset "deaths", from a client file, "clients".
-We'll follow four steps :
+This is our first usecase : we have to remove dead people, as registered in dataset "deaths", from a client file, "clients".
+We'll follow four steps, in the first usecase (finding common identities between two datasets)
 
-- 1: prepare deaths dataset
-- 2: prepare clients dataset, match it against dataset 1 & score the matches
-- 3: validate matches and train rescoring with machine learning
-- 4: rescore with the machine learning kernel
+- Step 1: prepare deaths dataset
+- Step 2: prepare clients dataset, match it against dataset 1 & score the matches
+- Step 3: validate matches and train rescoring with machine learning
+- Step 4: rescore with the machine learning kernel
 
 <img src="assets/images/workflow.png" alt="matching workflow">
 
@@ -184,7 +185,7 @@ Now you save that with `Ctrl+S` or the `Save` button.
 Here you are:
 <img src="assets/images/frontend-dataset-deaths-ok.png" alt="matchID dataset correct view">
 
-### first recipe : prepare the data
+### first recipe
 
 Create a new recipe :
 <img src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
@@ -214,7 +215,7 @@ Save it (button or `Ctrl+S`), tt should display the first imported dataset, but 
 
 So you have now an interactive way to deal with your data. Every new step of the recipe will add a new transformation on you data. You can have the exhaustive list of [recipes here](recipes.md).
 
-## Normalizing the identity records (preparing deaths dataset)
+## Step 1 - dataprep : normalizing the identity records (deaths dataset)
 
 We'll stay here in editing our first recipe, `dataprep_deaths`.
 
@@ -339,6 +340,32 @@ You can follow the job either directly in the bottom in the 'Real logs':
 
 Or choose to see the "jobs" in the menu:
 <img src="assets/images/frontend-jobs.png" alt="matchID projects view">
+
+This should take about 30 minutes on a reasonable big computer (35 min using 10 threads = 10vCPU).
+
+The job log last line should summarize the time and bugs for the recipe :
+```
+2018-02-20 05:31:45.788016 - 0:35:00.826869 - end : run - Recipe dataprep_deaths finished with errors on 46 chunks (i.e. max 92000 errors out of 1355745) - 1355745 lines written
+```
+If you take a look a the detailed logs, you'll the that the bugs are only mix encoding problems, due to a bad formatted file. There is not 92000 errors, but only 46 encoding errors included in 46 chunks of 2000 rows. For now, the automation doesn't scrutate as deep as you'd like, you'll have to take a look by yourselve in the logs.
+
+
+## Step 2 - dataprep of clients and matching
+
+### dataprep
+You should be able to follow the former steps on the new file, `clients`
+First create the project: `clients`.
+
+Then imports two datasets : [`clients.csv.gz`](https://github.com/matchID-project/examples/raw/master/data/clients.csv.gz) and [`clients_pays.csv`](https://raw.githubusercontent.com/matchID-project/examples/master/data/clients_pays.csv) (this second one is a custom country mapping corresponding to client.csv.gz).
+The data declaration helps can be found in [`clients_csv.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/datasets/clients_csv.yml)  and [`client_pays.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/datasets/clients_pays.yml).
+
+You'll need a custom recipe for preparation of country codes : [`country_code_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/country_code_clients.yml).
+
+Then you'll be able to prepare the clients data : [`dataprep_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/dataprep_clients.yml).
+
+Note that the preparation differs only a few from the first file :
+- names parsing are more simple
+- cities mappings relies on a internal fuzzy match, as cities are not coded but only described literally. On french cities the mapping occures to be around 98% on a not-to-dirty dataset
 
 
 
