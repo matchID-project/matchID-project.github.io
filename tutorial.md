@@ -188,8 +188,29 @@ Now you save that with `Ctrl+S` or the `Save` button.
 Here you are:
 <img src="assets/images/frontend-dataset-deaths-ok.png" alt="matchID dataset correct view">
 
- 
- 
+### first recipe : prepare the data
+
+Create a new recipe :
+<img src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
+
+A default recipe is created with no valid dataset, just replace it with the uploaded dataset, `deaths_txt_gz`:
+```
+recipes:
+  dataprep_deaths:
+  
+    input: deaths_txt_gz
+    output: replace_output
+    steps:
+      - eval:
+          - new_col: sha1(row)
+```
+Save it (button or `Ctrl+S`), tt should display the first imported dataset, but with an additionnal column, `new_col` which is basically a hash of the row:
+
+<img src="assets/images/frontend-recipe-deaths-1.png" alt="matchID projects view">
+
+So you have now an interactive way to deal with your data. Every new step of the recipe will add a new transformation on you data. You can have the exhaustive list of [recipes here](recipes.md).
+
+
 
 
 
