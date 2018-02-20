@@ -22,6 +22,7 @@ A recipe can call :
 
 <div class="columns">
 <div class="column is-6" markdown="1">
+Summary:
  - [map](#map)
  - [keep](#keep)
  - [rename](#rename)
@@ -43,6 +44,7 @@ A recipe can call :
  - [groupby](#groupby)
  - [build_model](#build_model-no-chunks)
  - [apply_model](#apply_model)
+ 
 </div>
 <div class="column is-6" markdown="1">
  - [`geopoint("POINT(lon, lat")`](#geopointpointlon-lat)
