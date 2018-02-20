@@ -513,7 +513,38 @@ In this case, the machine will be trained to recognize a false hit against a tru
   - max elasticsearch score of the bucket
   
 So here is the recipe :
+```
+recipes:
+  train_rescoring_model:
+    input:
+      dataset: clients_x_deaths
+      chunked: False            # <==== this is for telling to get the whole data
+      select:                   # <==== this is a filtering query to load only annotated data from the dataset
+        query:
+          constant_score: 
+            filter:
+              exists:
+                field:
+                  validation_done
 
-
+    steps:
+      - build_model:
+          model:
+            name: clients_deaths_ml        # <==== model name
+            method: RandomForestRegressor  # <==== we tested all algorithms with our R&D lab with Dataiku/DSS
+            parameters:                    #       and didn't test other scikit learn model, as RandomForest
+              n_estimators: 20             #       performed always well in this kind of usecase
+              max_depth: 4                 #       you can play with some parameters, but keep in mind that
+              min_samples_leaf: 5          #       the better optimization will be to provide more data, so
+            tries: 3                       #       annotate !
+            test_size: 0.33                #       2/3 for training, 1/3 for testing, then we choose the best
+                                           #       regressor
+          numerical: .*(hit_score_(?!ml).*|population|surface|matchid_hit_distance)$
+                                           #       numerical factors as described above in the text 
+          #categorical: .*(matchid_location_countrycode)$
+                                           #       categories have not been tested yet
+          target: validation_decision      #       the target is your annotation
+                                           #       the indecision is not taken into account there
+```
 
 
