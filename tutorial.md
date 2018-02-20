@@ -434,6 +434,7 @@ datasets:
 ```
 Now run the recipe. It should take about 2h to run it for 1M x 1M with a 16vCPUx32Go and 3 ES nodes.
 
+
 ## Step 3: validate matches and train rescoring with machine learning
 You don't have to wait the full run to examinate your matching results : go to the `client_x_deaths` dataset.
 
@@ -565,6 +566,8 @@ recipes:
       - apply_model:
           name: clients_deaths_ml
           numerical: .*(hit_score_(?!ml).*|population|surface|matchid_hit_distance)$
+                                # the numerical factor must be exactly the same as in the training, otherwise the model
+                                # won't apply
           target: matchid_hit_score_ml
       - eval:
           - confiance: >
@@ -577,3 +580,13 @@ recipes:
                   cell = matchid_hit_score
           - scoring_version: str("{}-randomforest-{}").format(re.sub("-.*","",scoring_version),str(datetime.datetime.now()))
 ```
+
+As machine learning can derivate, we keep in the recipe 30% of the initial scoring to avoid complete change on full positive or full negative matches. 
+
+You can immediately run this recipe which will just update the `confiance` column and versionning. This is a quick step, and should be over in about 15 minutes.
+
+Then you can go check again the validation of `clients_x_deaths` to check the impact on the discrimation :
+
+<img src="assets/images/frontend-validation-postscoring.png" alt="matchID projects view">
+
+You can annotate again concentrating on new middle range scores, training again, and so on ... 
