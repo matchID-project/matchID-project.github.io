@@ -469,7 +469,7 @@ For now, you will have to take care about the amount of data you annotate (don't
 
 You have to follow this representativity a graph button to display some statistics : 
 
-<img src="assets/images/frontend-validation-cheatcodes.png" alt="matchID projects view">
+<img src="assets/images/frontend-validation-stats.png" alt="matchID projects view">
 
 In this example, we annotated a bit too much easy messy data with low score, and too few middle range scores, which are often the hardest to annotate.
 
