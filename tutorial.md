@@ -252,7 +252,7 @@ So we add the following steps (removing the `new_col` one) :
 ### preparing the names
 
 Just filter the names setting `matchid_name` in the column filter. This filter uses regex so you can use complex filtering for easy navigation in your data:
-<img src="assets/images/frontend-recipe-deaths-names-filter.png" alt="matchID projects view">
+<img src="assets/images/frontend-recipe-names-filter.png" alt="matchID projects view">
 
 Now you see the names won't matching with this format which is quite special.
 We propose those normalizations. Just paste and save it step by step.
@@ -272,10 +272,10 @@ We propose those normalizations. Just paste and save it step by step.
       - french_name_frequency: # uses names frequencies to join compound names
 ```
 
-<img src="assets/images/frontend-recipe-deaths-names.png" alt="matchID projects view">
+<img src="assets/images/frontend-recipe-names.png" alt="matchID projects view">
 
 If you just want to see the process at one step without deleting the following ones, you just have to use the 'pause' recipe :
-<img src="assets/images/frontend-recipe-deaths-names-filter.png" alt="matchID projects view">
+<img src="assets/images/frontend-recipe-names-filter.png" alt="matchID projects view">
 
 In this case we just put the `pause` step befor the name normalization section. We remove it then to have the whole process.
 
