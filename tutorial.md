@@ -459,11 +459,13 @@ If you're a *data scientist* you will skip this section, as of course a scientif
 
 If have no idea about evaluation : **evaluation is a very important thing**. 
 
-Performance of a matching should not be mesure in a mono-dimensional score. Two factors have to be considered : precision and recall - or false alarm rate / true positive rate - which lead to [ROC curves](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). Only this second method can be evaluated when you have no idea where your missed targets are (which is often the case if you have to use matchID).
+We had a huge *chance* while building the first algorithms of matchID : we had a target dataset of about 27k people which were aleady annotated as dead in the file we had to clean. This target had no major statistical bias and we could mesure a maximum recall of 97.5% with the elasticsearch levenshtein 2 method, whereas a pure SQL method lead as to a *not so bad* 92%. But a maximum 97.5% of recall only means an point of equality to 95% (recall = precision) and to a 90% recall = 99,8% precision. All those mesures were taken on the use case of matching dead people as declared by INSEE in the french driving licence file. As we apply matchID, with various adaptations, on many use cases, we can say that performance is not an absolute thing, widely depends on the quality of your files and on your business case. So : an evaluation has to be driven on a reasonable (meaning huge enough) amount of data to be serious. 
+
+Performance of a matching should not be mesure in a mono-dimensional score. Two factors have to be considered : precision and recall - or false alarm rate / true positive rate - which lead to [ROC curves](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). Only this second method can be evaluated when you have no idea where your missed targets are (which is often the case if you have to use matchID). 
 
 Another method for evaluation is the [cost-loss method](https://en.wikipedia.org/wiki/Cost-loss_model), which helps your choose the right threshold for your *business*.
 
-Those methods are not automtized for now in matchID and has to be planned in a further evolution of the frontend.
+Those methods are not helped for now in matchID and has to be planned in a further evolution of the frontend.
 
 For now, you will have to take care about the amount of data you annotate (don't talk about a 99.99 precision if you didn't annotate at least 20.000 data without an error). You will have to take care about the representativity of your annotations too. matchID helps you in that way as the validation selects random data to annotate when you click on the reload button.
 
@@ -475,18 +477,17 @@ In this example, we annotated a bit too much easy messy data with low score, and
 
 With the data published in the matchid project, which are basically anonymized crossable dataset, we miss some representativity on the middle range scores, revealing artificiality of our sampling. You'll see too much cases of undecidable things.
 
-
 ### tips for annotation
 Evaluation is one goal: having better scores is another one.
 
 So this is now we imply **machine learning**. One thing to remeber : if you're a bad teacher, your machine will be a *dunce* !
-And : **you first have to be a great teacher and annotate much data to be rewarded by machine learning**.
+And: **you first have to be a great teacher and annotate much data to be rewarded by machine learning**.
 
 Identity matching annotation is not a that easy thing and depends on your context and aims. Your decision will be influence by your goal, but to be a good teacher you should focus on what kind of influence each one of your annotation will lead as a generalization. For example : taking a decision without all the context (e.g. with missing data) will be better if your practice *backoff*, i.e. your rely on the most probable decision given the data you see. If you think your annotation could bring a bias, it is better not to take a decision.
 
 In the first times you'll have many situation which will seem you undecidable. For this reason we added a additive annotation (possible indecision), which may help you to come back to decide later. The more you annotate data the more you'll have your own modelisation of the data. The more you have people to annotate the smoother will be the annotation dataset. But everyone is not designed to be a teacher: every annotator has to be stable and patient, and should want to learn by himself what the data is for real (and should be greedy of annotating !).
 
-
+### teach with your annotation : the recipe
 
 
 
