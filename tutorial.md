@@ -376,5 +376,44 @@ You should quickly have this final view of dataprep :
 
 We won't have to run this one.
 
-### matchings
+### matching !
 Here comes the tricky part : the fuzzy match with elastic search.
+
+You have to match every client against the already-indexed-in-step-1 deaths. 
+
+*to be modified : begin with a simple elasticsearch request instead the hard one*
+
+First create a generic `deaths_matching` in the death project from [`deaths_matching.yml`](https://github.com/matchID-project/examples/blob/master/projects/deaths/recipes/deaths_matching.yml). This one performs a self match from `deaths` to `deaths`, this isn't the aim here.
+
+This recipe essentially contains a complex elasticsearch query, translated from json to yaml and templated. It basically:
+
+- the client name must match fuzzily (levenshtein max 2) on of the names (first and last) of the death, and stricly on the birth date
+- or the client name must match strictly on of the names and fuzilly (levenshtein max 1) on the birth date
+- more over, if possible :
+  - the last name should be the last name
+  - the first name should be in the deaths names
+  - the city should match
+  - the country should match
+  
+All those conditions make a large recall without bringing too much candidates.
+
+Now we create a combo recipe, `clients_deaths_matching` in the `clients` project, calling the last two ones, plus a special one, `diff` :
+```
+recipes:
+  clients_deaths_matching:
+    apply: true
+    threads: 1
+    test_chunk_size: 50
+    input: clients_csv_gz
+    output: clients_x_deaths
+    steps:
+      - dataprep_clients:
+      - deaths_matching:
+      - diff:
+```      
+
+then you should have your first sampling results (screenshot obtain using a regex filter: `diff(?!_id)|confiance|number`):
+
+<img src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
+
+
