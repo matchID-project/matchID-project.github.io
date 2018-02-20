@@ -552,4 +552,6 @@ When you save the recipe, you can see the performance of your machine learning m
 
 <img src="assets/images/frontend-train-auc.png" alt="matchID projects view">
 
+In this *not serious* annotation of only 92 matches, the second model does have a perfect score. Every time you save, the algorithm trains again, and you can see how stable it is. If you have no stability at all, you should annotate more data.
 
+If stable enough, then run the recipe, this will save the model which will be reusable
