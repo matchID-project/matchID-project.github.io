@@ -189,13 +189,22 @@ Here you are:
 Create a new recipe :
 <img src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
 
-A default recipe is created with no valid dataset, just replace it with the uploaded dataset, `deaths_txt_gz`:
+A default recipe is created with no valid dataset, just replace it with the uploaded dataset, `deaths_txt_gz` - as this can be done now, we already figure out we have a `death` dataset we'll configure after finishing the recipe.
 ```
 recipes:
   dataprep_deaths:
-    input: deaths_txt_gz
-    output: replace_output
-    steps:
+    input: deaths_txt_gz      # <==== necessary to change to continue
+                              # there are advanced usage of dataset, such as filtered dataset
+                              # which can be useful especially if you want more representative data
+                              # for example:
+                              # input:
+                              #   dataset: deaths_txt_gz
+                              #   filter: filtering_recipe # where filtering_recipe could be for example a random filtering
+    output: deaths            # to be configured after the recipe
+    test_chunk_size: 100      # optional : by default, the data display is only a chunk of 30 rows; 
+                              # the more you get, the longer you'll wait, but more data will me more representative for building the recipe
+    threads: 3                # optional, default: 2 - numbers of threads to proceed when running the recipe (not applied while testing)                          
+    steps:                    # this is the beginning of the recipe
       - eval:
           - new_col: sha1(row)
 ```
@@ -307,9 +316,29 @@ This is now the easier part, it just constists in parsing dates, so with columns
 So this is the final preview :
 <img src="assets/images/frontend-recipe-dates.png" alt="matchID projects view">
 
-### configure output dataset and run !
+### configure the output elasticsearch dataset
 
+Don't forget to save your recipe. We'll then create the `deaths` dataset as formerly pointed as the output dataset of the recipe. Just create it from the menu and paste this content :
+```
+datasets:
+  deaths:
+    connector: elasticsearch # this is the predeclared connector to the dockerized elasticsearch
+    table: deaths            # name of the index
+```
 
+Note that you can configure many options of an elasticsearch dataset :
+- `body`: **raw elasticsearch configuration** contains alls options such as mappings, the number of replicas and shards, tokenizers as in elasticsearch doc. You just have to convert you json mappings into yaml.
+- `chunks`, `thread_count`, `timeout̀`, `max_tries`, `safe` for elasticsearch optimization
+
+### run the recipe !
+So once evrything is configure you can run the recipe with the green button : 
+<img src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
+
+You can follow the job either directly in the bottom in the 'Real logs':
+<img src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
+
+Or choose to see the "jobs" in the menu:
+<img src="assets/images/frontend-jobs.png" alt="matchID projects view">
 
 
 
