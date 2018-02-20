@@ -335,6 +335,8 @@ Note that you can configure many options of an elasticsearch dataset :
 So once evrything is configure you can run the recipe with the green button : 
 <img src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
 
+This run is needed to index the deaths with elasticearch, which will enable a match of up to 98% (recall).
+
 You can follow the job either directly in the bottom in the 'Real logs':
 <img src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
 
@@ -363,9 +365,16 @@ You'll need a custom recipe for preparation of country codes : [`country_code_cl
 
 Then you'll be able to prepare the clients data : [`dataprep_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/dataprep_clients.yml).
 
-Note that the preparation differs only a few from the first file :
-- names parsing are more simple
+Mind that the datasets in the matchID example project doesn't exactly the same names : so you'll have to change them, which should lead you to dead with the debug interface.
+
+Note that the preparation differs only a few from the `deaths.txt.gz` file :
+- names parsing is more simple
 - cities mappings relies on a internal fuzzy match, as cities are not coded but only described literally. On french cities the mapping occures to be around 98% on a not-to-dirty dataset
 
+You should quickly have this final view of dataprep :
+<img src="assets/images/frontend-recipe-clients.png" alt="matchID projects view">
 
+We won't have to run this one.
 
+### matchings
+Here comes the tricky part : the fuzzy match with elastic search.
