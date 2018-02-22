@@ -9,17 +9,17 @@ width: is-10
 # Tutorial
 This tutorial will deal with three use-cases :
 
-- Usecase 1: find common identities between two big datasets
-- find doubles within a dataset
-- build a search api for a dataset (*top of elasticsearch* API)
+- Use case 1: finding common identities between two big datasets
+- finding doubles within a dataset
+- building a search api for a dataset (*top of elasticsearch* API)
 
-# Usecase 1 : find common identities between two big datasets
+# Use case 1 : finding common identities between two big datasets
 
 ## Cooking recipes with matchID 
 
 ### Global method used for matching
-This is our first usecase : we have to remove dead people, as registered in dataset `deaths`, from a client file `clients`.
-We'll follow four steps for Usecase 1.
+This is our first use case : we have to remove dead people, as registered in dataset `deaths`, from a client file `clients`.
+We'll follow four steps for use case 1.
 
 - [Step 1: prepare deaths dataset as dataset 1](#step-1---dataprep--normalizing-the-identity-records-deaths-dataset)
 - [Step 2: prepare clients dataset, match it against dataset 1 & score the matches](#step-2---dataprep-of-clients-and-matching)
@@ -32,13 +32,13 @@ We'll follow four steps for Usecase 1.
 
 So, the final goal is the match but we have first to deal with the way, which mainly is data preparation. So we'll learn here how to cook your data with recipes.
 
-We propose a 4-step iteration method :
+We propose a 4 or 5-step iteration method :
 
 1. upload raw data and configuration files
-- edit yaml configuration files
-- test recipes
-- run recipes
-- (upload & apply recipe on the fly, if the goal is to develop a search api)
+2. edit yaml configuration files
+3. test recipes
+4. run recipes
+5. (upload & apply recipe on the fly, if the goal is to develop a search api)
 
 Iterating through these steps will allow you to create recipes and datasets for two purposes:
 
@@ -47,7 +47,7 @@ Iterating through these steps will allow you to create recipes and datasets for 
 
 Three further steps will enable machine learning capabilities:
 
-- validate the matches (through the [matchID-validation]() UI cf. below)
+- validate the matches (through the [matchID-validation]() UI, see below)
 - train machine learning models (using yaml edition and recipe testing again)
 - apply for rescoring (idem)
 
@@ -68,7 +68,7 @@ recipes:
 
 This leads to a new API endpoint: `http://localhost/matchID/api/v0/recipes/clients_deaths_matching/apply`. This is where you'll be able to post your new monthly csv raw data. Then you'll get the json of ml-rescored candidates for removal.
 
-Truth is this simple overview relies on more than 50 treatments or steps. To be able to use it, you'll have to adapt it to your own usecase.
+Truth is this simple overview relies on more than 50 treatments or steps. To be able to use it, you'll have to adapt it to your own use case.
 
 ### performances
 
@@ -117,7 +117,7 @@ Note that machine learning is not mandatory (you can have a real serious matchin
 
 Now, you can go to your `matchID` server : 
 
-[http://localhost/matchID/](http://localhost/matchID/)
+- [http://localhost/matchID/](http://localhost/matchID/)
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
 
@@ -125,7 +125,7 @@ Now, you can go to your `matchID` server :
 
 ### project
 
-We'll first have to create a project. This will basically be a folder, containing datasets and recipes (data transformation). A good segmentation is to build a project for each goal : usecase 1 matches dead people within a client file, so we basically chose to have two projects: deaths, and clients. Just clic on `new project` and name the first one `deaths`:
+We'll first have to create a project. This will basically be a folder, containing datasets and recipes (data transformation). A good segmentation is to build a project for each goal : use case 1 matches dead people within a client file, so we basically chose to have two projects: deaths, and clients. Just clic on `new project` and name the first one `deaths`:
 
 <img src="assets/images/frontend-new-project.png" alt="matchID new project">
 
@@ -245,9 +245,9 @@ We'll stay here in editing our first recipe, `dataprep_deaths`.
 Our goal is to make our data matchable to another dataset, and this requires normalization. We'll do that in four steps:
 
 1. normalize **column names** (makes easier display and reuse of recipes), by mapping them
-- normalize first and last **names** format
-- normalize **birth location** (helping precise matching)
-- parse **birth date**
+2. normalize first and last **names** format
+3. normalize **birth location** (helping precise matching)
+4. parse **birth date**
 
 When joining large French names datasets, we showed that only about 33% of matches are perfect matches with no difference on any bit, 66% are fitting with a little tolerance (removing special characters, keeping the first first name), and you reach more than 90% of matching (recall) with a more accurate normalization (such as identifying the real birth city).
 
@@ -281,7 +281,7 @@ So we add the following steps (removing the `new_col` one) :
           select: matchid_.*
 ```
 
-<img src="assets/images/frontend-recipe-deaths-columns.png" alt="matchID projects view">
+<img src="assets/images/frontend-recipe-death-columns.png" alt="matchID projects view">
 
 ### preparing the names
 
@@ -406,7 +406,7 @@ Then you'll be able to prepare the clients data :
 
 - [`dataprep_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/dataprep_clients.yml)
 
-Mind that the datasets in the matchID example project don't exactly have the same names : so you'll have to change them, which should lead you to deal with the debug interface.
+Mind that the datasets in the `matchID` example project don't exactly have the same names : so you'll have to change them, which should lead you to deal with the debug interface.
 
 Note that the preparation differs only a few from the `deaths.txt.gz` file :
 - names parsing is simpler
@@ -507,15 +507,15 @@ If you're a *data scientist* you will skip this section, as of course a scientif
 
 If have no idea about evaluation : **evaluation is a very important thing**. 
 
-We had a huge *chance* while building the first algorithms of matchID : we had a target dataset of about 27k people which were already annotated as dead in the file we had to clean. This target had no major statistical bias and we could mesure a maximum recall of 97.5% with the elasticsearch levenshtein 2 method, whereas a pure SQL method lead as to a *not so bad* 92%. But a maximum 97.5% of recall only means a point of equality to 95% (recall = precision) and to a 90% recall = 99,8% precision. All those mesures were taken on the usecase of matching dead people as declared by INSEE in the French driving licence file. As we apply matchID, with various adaptations, on many use cases, we can say that performance is not an absolute thing, widely depends on the quality of your files and on your business case. So : an evaluation has to be driven on a reasonable (huge enough) amount of data to be serious. 
+We had a huge *chance* while building the first algorithms of `matchID` : we had a target dataset of about 27k people which were already annotated as dead in the file we had to clean. This target had no major statistical bias and we could mesure a maximum recall of 97.5% with the elasticsearch levenshtein 2 method, whereas a pure SQL method lead as to a *not so bad* 92%. But a maximum 97.5% of recall only means a point of equality to 95% (recall = precision) and to a 90% recall = 99,8% precision. All those mesures were taken on the use case of matching dead people as declared by INSEE in the French driving licence file. As we apply matchID, with various adaptations, on many use cases, we can say that performance is not an absolute thing, widely depends on the quality of your files and on your business case. So : an evaluation has to be driven on a reasonable (huge enough) amount of data to be serious. 
 
 Performance of a matching should not be measured in a mono-dimensional score. Two factors have to be considered : precision and recall - or false alarm rate / true positive rate - which lead to [ROC curves](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). Only this second method can be evaluated when you have no idea where your missed targets are (which is often the case if you have to use matchID). 
 
 Another method for evaluation is the [cost-loss method](https://en.wikipedia.org/wiki/Cost-loss_model), which helps you choose the right threshold for your *business*.
 
-Those methods are not helped for now in matchID and has to be planned in a further evolution of the frontend.
+Those methods are not helped for now in `matchID` and has to be planned in a further evolution of the frontend.
 
-For now, you will have to take care about the amount of data you annotate (don't talk about a 99.99 precision if you didn't annotate at least 20.000 data without an error). You will have to take care about the representativity of your annotations too. matchID helps you in that way as the validation selects random data to annotate when you click on the reload button.
+For now, you will have to take care about the amount of data you annotate (don't talk about a 99.99 precision if you didn't annotate at least 20.000 data without an error). You will have to take care about the representativity of your annotations too. `matchID` helps you in that way as the validation selects random data to annotate when you click on the reload button.
 
 You have to follow this representativity a graph button to display some statistics : 
 
@@ -523,7 +523,7 @@ You have to follow this representativity a graph button to display some statisti
 
 In this example, we annotated a bit too much easy messy data with low scores, and too few middle range scores, which are often the hardest to annotate.
 
-With the data published in the matchid project, which are basically anonymized crossable dataset, we miss some representativity on the middle range scores, revealing the artificiality of our sampling. You'll see too many cases of undecidable things.
+With the data published in the `matchID` project, which are basically anonymized crossable dataset, we miss some representativity on the middle range scores, revealing the artificiality of our sampling. You'll see too many cases of undecidable things.
 
 ### tips for annotation
 Evaluation is one goal: having better scores is another one.
@@ -580,7 +580,7 @@ recipes:
             name: clients_deaths_ml        # <==== model name
             method: RandomForestRegressor  # <==== we tested all algorithms with our R&D lab with Dataiku/DSS
             parameters:                    #       and didn't test other scikit learn model, as RandomForest
-              n_estimators: 20             #       performed always well in this kind of usecase
+              n_estimators: 20             #       performed always well in this kind of use case
               max_depth: 4                 #       you can play with some parameters, but keep in mind that
               min_samples_leaf: 5          #       the better optimization will be to provide more data, so
             tries: 3                       #       annotate !
@@ -639,4 +639,4 @@ Then you can go check again the validation of `clients_x_deaths` to check the im
 
 <img src="assets/images/frontend-validation-postscoring.png" alt="matchID projects view">
 
-You can annotate again concentrating on new middle range scores, training again, and so on ... 
+You can annotate again concentrating on new middle range scores, training again, and so on... 
