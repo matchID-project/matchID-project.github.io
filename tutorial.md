@@ -484,7 +484,7 @@ Run the recipe. It should take about 2 hours to run it for 1M x 1M with a 16vCPU
 
 You don't have to wait the full run to examinate your matching results : go to the `client_x_deaths` dataset.
 
-The `vadliation: true` option activates this button : 
+The `validation: true` option activates this button : 
 
 <img src="assets/images/frontend-validation-button.png" alt="matchID projects view">
 
@@ -492,11 +492,12 @@ Click on it to access to the validation mode, which enables the possibility to a
 
 <img src="assets/images/frontend-validation.png" alt="matchID projects view">
 
-The cheat codes page (keyboard icon) will help to understand how to annotate :
+The cheat codes page (keyboard icon) will help you understand how to annotate :
 
 <img src="assets/images/frontend-validation-cheatcodes.png" alt="matchID projects view">
 
-You now have two goals new goals
+You now have two new goals
+
 - evaluate the precision of your matches
 - build a knowledge database to teach the machine
 
@@ -506,11 +507,11 @@ If you're a *data scientist* you will skip this section, as of course a scientif
 
 If have no idea about evaluation : **evaluation is a very important thing**. 
 
-We had a huge *chance* while building the first algorithms of matchID : we had a target dataset of about 27k people which were aleady annotated as dead in the file we had to clean. This target had no major statistical bias and we could mesure a maximum recall of 97.5% with the elasticsearch levenshtein 2 method, whereas a pure SQL method lead as to a *not so bad* 92%. But a maximum 97.5% of recall only means an point of equality to 95% (recall = precision) and to a 90% recall = 99,8% precision. All those mesures were taken on the use case of matching dead people as declared by INSEE in the french driving licence file. As we apply matchID, with various adaptations, on many use cases, we can say that performance is not an absolute thing, widely depends on the quality of your files and on your business case. So : an evaluation has to be driven on a reasonable (meaning huge enough) amount of data to be serious. 
+We had a huge *chance* while building the first algorithms of matchID : we had a target dataset of about 27k people which were already annotated as dead in the file we had to clean. This target had no major statistical bias and we could mesure a maximum recall of 97.5% with the elasticsearch levenshtein 2 method, whereas a pure SQL method lead as to a *not so bad* 92%. But a maximum 97.5% of recall only means a point of equality to 95% (recall = precision) and to a 90% recall = 99,8% precision. All those mesures were taken on the usecase of matching dead people as declared by INSEE in the French driving licence file. As we apply matchID, with various adaptations, on many use cases, we can say that performance is not an absolute thing, widely depends on the quality of your files and on your business case. So : an evaluation has to be driven on a reasonable (huge enough) amount of data to be serious. 
 
-Performance of a matching should not be mesure in a mono-dimensional score. Two factors have to be considered : precision and recall - or false alarm rate / true positive rate - which lead to [ROC curves](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). Only this second method can be evaluated when you have no idea where your missed targets are (which is often the case if you have to use matchID). 
+Performance of a matching should not be measured in a mono-dimensional score. Two factors have to be considered : precision and recall - or false alarm rate / true positive rate - which lead to [ROC curves](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). Only this second method can be evaluated when you have no idea where your missed targets are (which is often the case if you have to use matchID). 
 
-Another method for evaluation is the [cost-loss method](https://en.wikipedia.org/wiki/Cost-loss_model), which helps your choose the right threshold for your *business*.
+Another method for evaluation is the [cost-loss method](https://en.wikipedia.org/wiki/Cost-loss_model), which helps you choose the right threshold for your *business*.
 
 Those methods are not helped for now in matchID and has to be planned in a further evolution of the frontend.
 
@@ -520,22 +521,23 @@ You have to follow this representativity a graph button to display some statisti
 
 <img src="assets/images/frontend-validation-stats.png" alt="matchID projects view">
 
-In this example, we annotated a bit too much easy messy data with low score, and too few middle range scores, which are often the hardest to annotate.
+In this example, we annotated a bit too much easy messy data with low scores, and too few middle range scores, which are often the hardest to annotate.
 
-With the data published in the matchid project, which are basically anonymized crossable dataset, we miss some representativity on the middle range scores, revealing artificiality of our sampling. You'll see too much cases of undecidable things.
+With the data published in the matchid project, which are basically anonymized crossable dataset, we miss some representativity on the middle range scores, revealing the artificiality of our sampling. You'll see too many cases of undecidable things.
 
 ### tips for annotation
 Evaluation is one goal: having better scores is another one.
 
-So this is now we imply **machine learning**. One thing to remeber : if you're a bad teacher, your machine will be a *dunce* !
+So this is now we imply **machine learning**. One thing to remember : if you're a bad teacher, your machine will be a *dunce* !
 And: **you first have to be a great teacher and annotate much data to be rewarded by machine learning**.
 
-Identity matching annotation is not a that easy thing and depends on your context and aims. Your decision will be influence by your goal, but to be a good teacher you should focus on what kind of influence each one of your annotation will lead as a generalization. For example : taking a decision without all the context (e.g. with missing data) will be better if your practice *backoff*, i.e. your rely on the most probable decision given the data you see. If you think your annotation could bring a bias, it is better not to take a decision.
+Identity matching annotation is not an easy thing and depends on your context and aims. Your decision will be influenced by your goal, but to be a good teacher you should focus on what kind of influence each one of your annotation will lead as a generalization. For example : taking a decision without all the context (e.g. with missing data) will be better if you practice *backoff*, i.e. your rely on the most probable decision given the data you see. If you think your annotation could bring a bias, it is better not to take a decision.
 
 In the first times you'll have many situation which will seem you undecidable. For this reason we added a additive annotation (possible indecision), which may help you to come back to decide later. The more you annotate data the more you'll have your own modelisation of the data. The more you have people to annotate the smoother will be the annotation dataset. But everyone is not designed to be a teacher: every annotator has to be stable and patient, and should want to learn by himself what the data is for real (and should be greedy of annotating !).
 
 ### machine learning : the training recipe
 In this case, the machine will be trained to recognize a false hit against a true hit with your annotated data. The only thing the machine will be able to learn are numerical data which are a bit more than 20 features :
+
 - for the names :
   - levenshtein distances btw first names, last names, and cross over (last x first)
   - raw token distance
@@ -556,6 +558,7 @@ In this case, the machine will be trained to recognize a false hit against a tru
   - max elasticsearch score of the bucket
   
 So here is the recipe, `train_rescoring_model`:
+
 ```
 recipes:
   train_rescoring_model:
