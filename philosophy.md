@@ -12,7 +12,6 @@ width: is-8
 Initially developed with the help of *DSS* (*Data Science Studio*) from the company *Dataiku*, we decided to make a specific homemade DSS for our needs.
 
 Three main advantages :
-
   * Free and open source
   * Easy setup for identities matching (compared to DSS : powerful for most general usecases though)
   * Simple scalability
@@ -20,10 +19,10 @@ Three main advantages :
 # Data flow
 ----
 <figure class="image is-8">
- <img src="assets/images/workflow.png">
+ <img src="/assets/images/workflow.png">
 </figure>
 
-# Technical stack
+# Technologies used
 ----
 
   * Python
