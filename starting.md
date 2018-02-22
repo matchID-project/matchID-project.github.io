@@ -1,5 +1,12 @@
+---
+layout: default
+permalink: tutorial
+description: "run it with docker"
+title: Starting matchID
+width: is-10
+---
 
-## starting a developpement matchID server
+# Starting a developpement matchID server
 
 A laptop with >8Go configuration is recommended to have a first look at `matchID`. Good performance needs higher computation resources (the higher the better : 16-cores + 128Go will be 15x faster than a laptop, we tested up-scaling to 40-cores getting to 40x faster).
 
