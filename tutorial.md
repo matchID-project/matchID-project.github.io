@@ -604,6 +604,7 @@ If stable enough, then run the recipe, this will save the model which will be re
 
 ## Step 4: rescore with the machine learning model
 We can now apply the previously built model to apply a better scoring on the matches :
+
 ```
 recipes:
   rescoring:
@@ -630,9 +631,9 @@ recipes:
           - scoring_version: str("{}-randomforest-{}").format(re.sub("-.*","",scoring_version),str(datetime.datetime.now()))
 ```
 
-As machine learning can derivate, we keep in the recipe 30% of the initial scoring to avoid complete change on full positive or full negative matches. 
+As machine learning can drift, we keep in the recipe 30% of the initial scoring to avoid complete change on full positive or full negative matches. 
 
-You can immediately run this recipe which will just update the `confiance` column and versionning. This is a quick step, and should be over in about 15 minutes.
+You can immediately run this recipe which will just update the `confiance` column and versioning. This is a quick step, and should be over in about 15 minutes.
 
 Then you can go check again the validation of `clients_x_deaths` to check the impact on the discrimation :
 
