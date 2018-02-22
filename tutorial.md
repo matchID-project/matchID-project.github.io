@@ -643,6 +643,6 @@ You can annotate again concentrating on new middle range scores, training again,
 
 To have an overview of the process you can click into the <img src="assets/images/frontend-graph-link.png" alt="matchID graph link">:
 
-<img src="assets/images/frontend-project-graph" alt="matchID projects view">
+<img src="assets/images/frontend-project-graph.png" alt="matchID projects view">
 
 
