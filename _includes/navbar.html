@@ -45,7 +45,24 @@
           </span> Recipes
         </a>
       </div>
+        <div class="navbar-item has-dropdown is-hoverable is-boxed">
+          <a class="navbar-link">
+            <span class="icon">
+              <i class="fa fa-cog"></i>
+            </span> Running
+          </a>
 
+          <div class="navbar-dropdown">
+            <a class="navbar-item {% if page.url == '/starting' %}has-text-primary{% endif %}" href="tutorial">
+              <span class="icon">
+                <i class="fa fa-cog"></i>
+              </span>
+              <span> Starting matchID </span>
+            </a>
+          </div>
+</div>
+      
+      
       <div class="navbar-end">
         <div class="navbar-item">
           <a class="button is-info"
