@@ -1,17 +1,17 @@
 ---
 layout: default
 permalink: tutorial
-description: Understanding when to use it
+description: stating matchID, first recipes, use case 1 : common identities between two big datasets
 title: Step-by-step tutorial
 width: is-10
 ---
 
 # Tutorial
-This tutorial will deal with three use-cases :
+This is the first chapter of the tutorial, which will deal with three use-cases :
 
 - Use case 1: finding common identities between two big datasets
-- finding doubles within a dataset
-- building a search api for a dataset (*top of elasticsearch* API)
+- Use case 2: finding doubles within a dataset
+- Use case 3: building a search api for a dataset (*top of elasticsearch* API)
 
 # Use case 1 : finding common identities between two big datasets
 
