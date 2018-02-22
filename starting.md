@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: tutorial
+permalink: starting
 description: "run it with docker"
 title: Starting matchID
 width: is-10
