@@ -8,19 +8,20 @@ width: is-10
 
 # Tutorial
 This tutorial will deal with three use-cases :
-- find common identities between two big datasets
+
+- Usecase 1: find common identities between two big datasets
 - find doubles within a dataset
 - build a search api for a dataset (*top of elasticsearch* API)
 
-# First Use case : find common identities between two big datasets
+# Usecase 1 : find common identities between two big datasets
 
 ## Cooking recipes with matchID 
 
 ### Global method used for matching
-This is our first usecase : we have to remove dead people, as registered in dataset "deaths", from a client file, "clients".
-We'll follow four steps, in the first usecase (finding common identities between two datasets)
+This is our first usecase : we have to remove dead people, as registered in dataset `deaths`, from a client file `clients`.
+We'll follow four steps for Usecase 1.
 
-- [Step 1: prepare deaths dataset](#step-1---dataprep--normalizing-the-identity-records-deaths-dataset)
+- [Step 1: prepare deaths dataset as dataset 1](#step-1---dataprep--normalizing-the-identity-records-deaths-dataset)
 - [Step 2: prepare clients dataset, match it against dataset 1 & score the matches](#step-2---dataprep-of-clients-and-matching)
 - [Step 3: validate matches and train rescoring with machine learning](#step-3-validate-matches-and-train-rescoring-with-machine-learning)
 - Step 4: rescore with the machine learning model
@@ -31,25 +32,27 @@ We'll follow four steps, in the first usecase (finding common identities between
 
 So, the final goal is the match but we have first to deal with the way, which mainly is data preparation. So we'll learn here how to cook your data with recipes.
 
-We propose a 4-step iterated method :
-- upload raw data and configuration files
+We propose a 4-step iteration method :
+
+1. upload raw data and configuration files
 - edit yaml configuration files
 - test recipes
 - run recipes
+- (upload & apply recipe on the fly, if the goal is to develop a search api)
 
-Depending on your usecsae, if the goal is to develop a search api, you can have a fifth step:
-- upload & apply recipe live
+Iterating through these steps will allow you to create recipes and datasets for two purposes:
 
-Iterating through theses steps will allow you to create recipes and datasets for two purposes:
 - prepare your datasets (upload, map names/dates/locations)
 - search matches and score them 
 
-3 further steps will enable machine learning capability:
-- validate the matches (through the [matchID-validation]() UI cf below)
+Three further steps will enable machine learning capabilities:
+
+- validate the matches (through the [matchID-validation]() UI cf. below)
 - train machine learning models (using yaml edition and recipe testing again)
 - apply for rescoring (idem)
 
 In the final round, matching a dataset of people, `clients`, against another already index-one, `death`  will look like this recipe :
+
 ```
 recipes:
   clients_deaths_matching:
@@ -63,51 +66,65 @@ recipes:
       - rescoring_clients_x_deaths:
 ```
 
-This lead to have a new API endpoint, http://localhost/matchID/api/v0/recipes/clients_deaths_matching/apply where you'll just have to post every new month of your csv raw data, to get the json of ml-rescored potential candidates to remove.
+This leads to a new API endpoint: `http://localhost/matchID/api/v0/recipes/clients_deaths_matching/apply`. This is where you'll be able to post your new monthly csv raw data. Then you'll get the json of ml-rescored candidates for removal.
 
-This quite simple overview, relies in fact relying on more than 50 steps of treatments, so you'll have to work a bit more to adapt it to your case.
-This recipes, against a some-millions `death` reference dataset, should gives about 10 matches/seconds on a up-to-date laptop, and around, 150 matches/second on a good 1U server.
+Truth is this simple overview relies on more than 50 treatments or steps. To be able to use it, you'll have to adapt it to your own usecase.
+
+### performances
+
+These recipes applied to a "some-millions" `death` reference dataset, should gives about:
+
+- ~10 matches/second on an up-to-date laptop 
+- ~150 matches/second on a good 1U server
 
 
 ## starting a developpement matchID server
 
-A laptop with >8Go configuration is recommended to have a first look on matchID. Good performance with need higher computation resources (the higher the better : 16-cores + 128Go will be 15x faster than a laptop, we tested up-scaling to 40-cores for 40x faster).
+A laptop with >8Go configuration is recommended to have a first look at `matchID`. Good performance needs higher computation resources (the higher the better : 16-cores + 128Go will be 15x faster than a laptop, we tested up-scaling to 40-cores getting to 40x faster).
 
-matchID uses make and Docker to accelerate installation of dependencies. You'll first have to install Docker and docker-compose.
+`matchID` uses `make` and `Docker` to accelerate the installation of dependencies. You'll first have to install Docker and `docker-compose`.
 
 Then clone the project : 
 ```
 git clone https://github.com/matchID-project/backend
 ```
+
 If your host is not has not Docker on it, your should install it first (only tested with Ubuntu 16.04) :
+
 ```
 make install-prerequisites
 ```
+
 If you're running on other system (like MacOS) you should go to the official [Docker install page](https://docs.docker.com/install/), and don't forger to install [docker-compose](https://docs.docker.com/compose/install/) too. 
 
-Now you should start the tutorial mode, which download, compiles necessary stuff, and launch the backend, frontend and elasticsearch :
+Now you can start the tutorial mode, which downloads, compiles necessary stuff, and launches the backend, frontend as well as elasticsearch :
+
 ```
 make tuto
 ```
 
-This may take some times, as this handles many actions :
-- installing a 3-node elasticsearch (need less, just edit Make file and set `ES_NODE` to 1)
-- installing kibana (optional, but can be useful)
-- building the python backend, with all pandas and scikit dependencies
-- compiling the Vue.js frontend with node into static html/css/js files
-- presenting the all stuff with nginx
+This may take some time, as this handles many actions :
 
-Any problems ? See the [troubleshooting](https://github.com/matchID-project/backend#frequent-running-problems) section.
+- installing a 3-node elasticsearch cluster (if you need less, just edit `Makefile` and set `ES_NODE` to 1)
+- installing `kibana` (optional, but can be useful)
+- building the `python` backend, with all `pandas` and `scikit-learn` dependencies
+- compiling the `Vue.js` frontend with `node` into static `html/css/js` files
+- presenting all the stuff with `nginx`
 
-Note that machine learning is not mandatory (you can have a real serious matching only based on rules) but recommended for reducting development time.
+Any problems ? Check the [troubleshooting](https://github.com/matchID-project/backend#frequent-running-problems) section.
 
-So you can go to your matchID server : [http://localhost/matchID/](http://localhost/matchID/)
+Note that machine learning is not mandatory (you can have a real serious matching only based on rules) but recommended for reducing development time.
+
+Now, you can go to your `matchID` server : 
+
+[http://localhost/matchID/](http://localhost/matchID/)
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
 
 ## first project, first dataset, first recipe
 
 ### project
+I
 We'll first have to create a project. This will basically be a folder, containing datasets and recipes (data transformation). A good segmentation is to build a project for each goal : our use case is to match deaths within a client file, so we basically chose to have two projects: deaths, and clients. Just clic on `new project` and name the first one `deaths`:
 
 <img src="assets/images/frontend-new-project.png" alt="matchID new project">
