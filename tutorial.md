@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: tutorial
-description: stating matchID, first recipes, use case 1 : common identities between two big datasets
+description: "stating matchID, first recipes, use case 1 : common identities between two big datasets"
 title: Step-by-step tutorial
 width: is-10
 ---
