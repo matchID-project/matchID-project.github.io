@@ -24,7 +24,7 @@ We'll follow four steps for use case 1.
 - [Step 1: prepare deaths dataset as dataset 1](#step-1---dataprep--normalizing-the-identity-records-deaths-dataset)
 - [Step 2: prepare clients dataset, match it against dataset 1 & score the matches](#step-2---dataprep-of-clients-and-matching)
 - [Step 3: validate matches and train rescoring with machine learning](#step-3-validate-matches-and-train-rescoring-with-machine-learning)
-- [Step 4: rescore with the machine learning model](#step-4-rescore-with-the-machine-learning-model)
+- Step 4: rescore with the machine learning model
 
 <img src="assets/images/workflow.png" alt="matching workflow">
 
@@ -100,7 +100,7 @@ If you're running on other system (like MacOS) you should go to the official [Do
 Now you can start the tutorial mode, which downloads, compiles necessary stuff, and launches the backend, frontend as well as elasticsearch :
 
 ```
-make start
+make tuto
 ```
 
 This may take some time, as this handles many actions :
