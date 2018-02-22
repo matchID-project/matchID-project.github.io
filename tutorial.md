@@ -100,7 +100,7 @@ If you're running on other system (like MacOS) you should go to the official [Do
 Now you can start the tutorial mode, which downloads, compiles necessary stuff, and launches the backend, frontend as well as elasticsearch :
 
 ```
-make tuto
+make start
 ```
 
 This may take some time, as this handles many actions :
