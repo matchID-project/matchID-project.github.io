@@ -377,27 +377,40 @@ The job log last line should summarize the time and bugs for the recipe :
 ```
 2018-02-20 05:31:45.788016 - 0:35:00.826869 - end : run - Recipe dataprep_deaths finished with errors on 46 chunks (i.e. max 92000 errors out of 1355745) - 1355745 lines written
 ```
+
 If you take a look a the detailed logs, you'll the that the bugs are only mix encoding problems, due to a badly formatted file. There aren't 92000 errors, but only 46 encoding errors included in 46 chunks of 2000 rows. For now, the automation doesn't scrutate as deep as you'd like, you'll have to take a look by yourselves in the logs.
 
 
 ## Step 2 - dataprep of clients and matching
 
 ### dataprep
-You should be able to follow the former steps on the new file, `clients`
+You should be able to follow the former steps on the new file, `clients`.
+
 First create the project: `clients`.
 
-Then imports two datasets : [`clients.csv.gz`](https://github.com/matchID-project/examples/raw/master/data/clients.csv.gz) and [`clients_pays.csv`](https://raw.githubusercontent.com/matchID-project/examples/master/data/clients_pays.csv) (this second one is a custom country mapping corresponding to client.csv.gz).
-The data declaration helps can be found in [`clients_csv.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/datasets/clients_csv.yml)  and [`client_pays.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/datasets/clients_pays.yml).
+Then import two datasets : 
 
-You'll need a custom recipe for preparation of country codes : [`country_code_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/country_code_clients.yml).
+- [`clients.csv.gz`](https://github.com/matchID-project/examples/raw/master/data/clients.csv.gz)
+- [`clients_pays.csv`](https://raw.githubusercontent.com/matchID-project/examples/master/data/clients_pays.csv) (custom country mapping corresponding to client.csv.gz).
 
-Then you'll be able to prepare the clients data : [`dataprep_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/dataprep_clients.yml).
+The data declaration helps can be found in: 
 
-Mind that the datasets in the matchID example project doesn't exactly the same names : so you'll have to change them, which should lead you to dead with the debug interface.
+- [`clients_csv.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/datasets/clients_csv.yml)
+- [`client_pays.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/datasets/clients_pays.yml)
+
+You'll need a custom recipe for preparation of country codes : 
+
+- [`country_code_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/country_code_clients.yml)
+
+Then you'll be able to prepare the clients data : 
+
+- [`dataprep_clients.yml`](https://github.com/matchID-project/examples/blob/master/projects/clients/recipes/dataprep_clients.yml)
+
+Mind that the datasets in the matchID example project don't exactly have the same names : so you'll have to change them, which should lead you to deal with the debug interface.
 
 Note that the preparation differs only a few from the `deaths.txt.gz` file :
-- names parsing is more simple
-- cities mappings relies on a internal fuzzy match, as cities are not coded but only described literally. On french cities the mapping occures to be around 98% on a not-to-dirty dataset
+- names parsing is simpler
+- cities mappings rely on a internal fuzzy match, as cities are not coded but only described literally. On French cities the mapping occurs to be ~98% on a not-too-dirty dataset
 
 You should quickly have this final view of dataprep :
 
@@ -406,21 +419,24 @@ You should quickly have this final view of dataprep :
 We won't have to run this one.
 
 ### matching !
-Here comes the tricky part : the fuzzy match with elastic search. 
-What kind of matching do you need ? This first steps uses indexation to maximize recall while narrowing the huge cardinality of matching millions records to millions records, leading to a reasonable bucket to score, hoping begin less than 10th the size of the smaller dataset. Three kind of indexation can be done :
+Here comes the tricky part : the fuzzy match with elasticsearch. 
+What kind of matching do you need ? This first step uses indexation to maximize recall while narrowing the huge cardinality of matching millions of records to millions of records, leading to a reasonable bucket to score, hoping begin less than 10th the size of the smaller dataset. Three kind of indexation can be done :
+
 - ngram (any SQL or search can do this)
 - phonetic (any SQL or search can do this)
-- string distance tolerating indexing, levenshtein (only search like SolR or Elasticsearch).
-The two first will lead to huge buckets and search will be a bit more precies.
+- string distance tolerating indexing, levenshtein (only search like SolR or Elasticsearch)
+ 
+The first two lead to huge buckets and search will be a bit more precise.
 
-SO, now you have to match every client against the already-indexed-in-step-1 deaths. 
+So, now you have to match every client against the already-indexed-in-step-1 deaths. 
 
-*to be modified : begin with a simple elasticsearch request instead the hard one*
+*to be modified : begin with a simple elasticsearch request instead of the hard one*
 
 First create a generic `deaths_matching` in the death project from [`deaths_matching.yml`](https://github.com/matchID-project/examples/blob/master/projects/deaths/recipes/deaths_matching.yml). This one performs a self match from `deaths` to `deaths`, this isn't the aim here.
 
 This recipe essentially contains a complex elasticsearch query, translated from json to yaml and templated. Here's the explanation of the query.
-- the client name must match fuzzily (levenshtein max 2) on of the names (first and last) of the death, and stricly on the birth date
+
+- the client name must match fuzzily (levenshtein max 2) on of the names (first and last) of the dead person, and stricly on the birth date
 - or the client name must match strictly on of the names and fuzilly (levenshtein max 1) on the birth date
 - more over, if possible :
   - the last name should be the last name
@@ -428,7 +444,7 @@ This recipe essentially contains a complex elasticsearch query, translated from 
   - the city should match
   - the country should match
 
-Many specificities of your dataset should lead you to customize the search query : should you have poor data with no birth date, or would you have wife names, the query has to match your need.
+Many specificities of your dataset would lead you to customize the search query : should you have poor data with no birth date, or would you have wife names, the query has to match your custom need.
 
 All those conditions make a large recall without bringing too much candidates.
 
@@ -451,7 +467,8 @@ then you should have your first sampling results (screenshot obtain using a rege
 
 <img src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
 
-Before running there recipe, don't forger to create the `client_x_deaths` dataset in elasticsearch :
+Before running these recipes, don't forger to create the `client_x_deaths` dataset in elasticsearch :
+
 ```
 datasets:
   clients_x_deaths:
@@ -459,10 +476,12 @@ datasets:
     table: clients_x_deaths
     validation: true        # <=== this is mandatory to go to step 3
 ```
-Now run the recipe. It should take about 2h to run it for 1M x 1M with a 16vCPUx32Go and 3 ES nodes.
+
+Run the recipe. It should take about 2 hours to run it for 1M x 1M with a 16vCPUx32Go and 3 elasticsearch nodes.
 
 
 ## Step 3: validate matches and train rescoring with machine learning
+
 You don't have to wait the full run to examinate your matching results : go to the `client_x_deaths` dataset.
 
 The `vadliation: true` option activates this button : 
