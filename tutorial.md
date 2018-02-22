@@ -640,3 +640,9 @@ Then you can go check again the validation of `clients_x_deaths` to check the im
 <img src="assets/images/frontend-validation-postscoring.png" alt="matchID projects view">
 
 You can annotate again concentrating on new middle range scores, training again, and so on... 
+
+To have an overview of the process you can click into the <img src="assets/images/frontend-graph-link.png" alt="matchID graph link">:
+
+<img src="assets/images/frontend-project-graph" alt="matchID projects view">
+
+
