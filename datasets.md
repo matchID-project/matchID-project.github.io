@@ -52,7 +52,20 @@ connectors:
 ```
 
 
-# Dataset
+# Datasets
+Datasets are a file, a set of files, a table or an index within a connector.
+
+## filesystem datasets
+
++----------+----------------------------------+-------------------------------------------------------------+
+|  type    |  description                     |                       options                               |
++----------+----------------------------------+-------------------------------------------------------------+
+|   csv    |  comma separated tabular files   | read_csv options :                                          |
+|          |                                  | - header                                                    |
++----------+----------------------------------+-------------------------------------------------------------+
+
+
+
 
 
 
