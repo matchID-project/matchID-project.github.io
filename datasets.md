@@ -59,9 +59,7 @@ Datasets are a file, a set of files, a table or an index within a connector.
 
 |  type    |  description                     |                       options                               |
 |:--------:|:---------------------------------|:------------------------------------------------------------|
-|   csv    |  comma separated tabular files   | read_csv options :                                          |
-|          |                                  | - header                                                    |
-|:--------:|:---------------------------------|:------------------------------------------------------------|
+|   csv    |  comma separated tabular files   | read_csv options : - header                                 |
 
 
 
