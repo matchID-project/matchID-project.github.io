@@ -6,7 +6,7 @@ title: Datasets
 width: is-10
 ---
 
-# Connector
+# Connectors
 Connectors are a declaration to a filesystem or database.
 
 Supported connectors are:
