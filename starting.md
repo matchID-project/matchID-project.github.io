@@ -25,20 +25,20 @@ make install-prerequisites
 
 If you're running on other system (like MacOS) you should go to the official [Docker install page](https://docs.docker.com/install/), and don't forget to install [docker-compose](https://docs.docker.com/compose/install/) too. 
 
-If you're behind a reverse proxy, you may have to declare them in your `ENV`:
+Note:
+If you're behind a reverse proxy, you may have to declare them in your `ENV`:  
 ```
 export http_proxy=http://10.23.15.33:3128
 export http_proxy=https://10.23.15.33:3128
 ```
 Don't forget then to configure your host technologies too (apt | apk | yum, and Docker). 
 
+
 Now you can start the tutorial mode, which downloads, compiles necessary stuff, and launches the backend, frontend as well as elasticsearch :
 
 ```
 make start
 ```
-
-
 
 This may take some time, as this handles many actions :
 
@@ -57,3 +57,4 @@ Now, you can go to your `matchID` server :
 - [http://localhost/matchID/](http://localhost/matchID/)
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
+
