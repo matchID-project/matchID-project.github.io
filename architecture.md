@@ -1,8 +1,8 @@
 ---
 layout: default
-permalink: troubleshooting
-description: "understanding and debugging"
-title:  troubleshooting
+permalink: architecture
+description: "understanding and troubleshooting"
+title:  architecture
 width: is-10
 ---
 
