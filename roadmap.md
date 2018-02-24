@@ -12,7 +12,7 @@ width: is-10
 <div class="tile">
 <div class="tile is-child notification is-light"  markdown="1">
   
-# Consolidation
+# **Consolidation**
 
 ## Method
 - recipes.py refactoring (split datasets, ...)
@@ -41,7 +41,7 @@ width: is-10
 <div class="tile">
 <div class="tile is-child notification is-success"  markdown="1">
   
-# Evolutions
+# **Evolutions**
 ## Documentation
 - tutorial for doubles detection
 - tutorial for data API-fication
@@ -64,13 +64,13 @@ width: is-10
 <div class="tile">
 <div class="tile is-child notification is-info"  markdown="1">
   
-# Interoperability
+# **Interoperability**
 
-## files
+## Files
 - json
 - xml
 
-## databases
+## Databases
 - Vertica
 - MySQL
 - MongoDB
@@ -79,7 +79,7 @@ width: is-10
 - Spark
 - HDFS
 
-## languages
+## Languages
 - SQL
 - R
 - pySpark
