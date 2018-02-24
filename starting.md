@@ -26,12 +26,13 @@ make install-prerequisites
 If you're running on other system (like MacOS) you should go to the official [Docker install page](https://docs.docker.com/install/), and don't forget to install [docker-compose](https://docs.docker.com/compose/install/) too. 
 
 Note:
+When working in a private network you'll have to pass proxies. We tried to pass 
 If you're behind a reverse proxy, you may have to declare them in your `ENV`:  
 ```
 export http_proxy=http://10.23.15.33:3128
 export http_proxy=https://10.23.15.33:3128
 ```
-Don't forget then to configure your host technologies too (apt | apk | yum, and Docker). 
+Don't forget then to configure your host technologies too (`apt | apk | yum & docker`). 
 
 
 Now you can start the tutorial mode, which downloads, compiles necessary stuff, and launches the backend, frontend as well as elasticsearch :
@@ -40,17 +41,9 @@ Now you can start the tutorial mode, which downloads, compiles necessary stuff, 
 make start
 ```
 
-This may take some time, as this handles many actions :
+This may take some time, as this handles many actions. See the [architecture](troubleshooting#architecture) to discover more about the components.
 
-- installing a 3-node elasticsearch cluster (if you need less, just edit `Makefile` and set `ES_NODE` to 1)
-- installing `kibana` (optional, but can be useful)
-- building the `python` backend, with all `pandas` and `scikit-learn` dependencies
-- compiling the `Vue.js` frontend with `node` into static `html/css/js` files
-- presenting all the stuff with `nginx`
-
-Any problems ? Check the [troubleshooting](https://github.com/matchID-project/backend#frequent-running-problems) section.
-
-Note that machine learning is not mandatory (you can have a real serious matching only based on rules) but recommended for reducing development time.
+Any problems ? Check the [troubleshooting](troubleshooting) section.
 
 Now, you can go to your `matchID` server : 
 
