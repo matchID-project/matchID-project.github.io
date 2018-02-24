@@ -6,7 +6,6 @@ title: Roadmap
 width: is-10
 ---
 
-<section class="section">
   <div class="tile is-ancestor">
     <div class="tile is-vertical is-6 is-light">
 
@@ -74,4 +73,3 @@ width: is-10
     </div>
   </div>
 
-</section>
