@@ -54,6 +54,15 @@ connectors:
 
 # Datasets
 Datasets are a file, a set of files, a table or an index within a connector.
+```
+datasets:
+  my_dataset:
+    connector: upload         # <===== upload, referential_datal, elasticsearch, postgres or any custom connector
+    table: my_dataset
+    chunk:                    # <===== override connector's default chunk
+```
+
+
 
 ## filesystem datasets
 
