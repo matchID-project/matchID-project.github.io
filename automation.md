@@ -1,8 +1,8 @@
 ---
 layout: default
-permalink: architecture
+permalink: automation
 description: "understanding and troubleshooting"
-title:  architecture
+title:  automation
 width: is-10
 ---
 
