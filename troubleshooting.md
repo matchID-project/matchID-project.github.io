@@ -17,5 +17,5 @@ The `make start` may take some time, as this handles many actions :
 
 Here is the architecture overview :
 
-<img class="is-6" src="assets/images/matchid_architecture.png" alt="matchID architecture">
+<img class="column is-6" src="assets/images/matchid_architecture.png" alt="matchID architecture">
 
