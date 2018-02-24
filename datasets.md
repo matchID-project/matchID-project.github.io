@@ -15,7 +15,7 @@ Supported connectors are:
 - PostGreSQL
 
 SQLAlchemy is used for PostGreSQL and should could be any SQL connexion, but only PostGreSQL has at thebeen tested yet. 
-Next SQL databases to be tested: Vertica, MySQL.
+See the [connectors roadmap](/roadmap#connectors) for support of other databases in the future.
 
 Default connectors are included in the initial configuration (and can me modified or removed):
 - `upload`: filesystem `upload/`, which is moreover connected to the upload api
@@ -66,19 +66,46 @@ datasets:
 
 ## filesystem datasets
 
-|type   |  library     | option     |  default   |  other        |  objective                          |
-|:-----:|:------------:|:-----------|:-----------|:--------------|:------------------------------------|
-| csv   |  read_csv    | sep        | ;          | any regex     | specify columns separator           |
-|       |              | header     | infer      |false          | use included head                   |
-|       |              | encoding   | utf8       | latin1 ...    | specify the encoding if not ascii   |
-|       |              | names      |            |[col, names]   | replace header (column) names       |
-|       |              | compression| infer      | None, gzip ...| specify if compressed               |
-|       |              | skiprows   | 0          | any number    | skip n rows before processing       |
-| fwf   |              |  - header  |            |               |                                     |
-|msgpack|              |  - header  |            |               |                                     |
+### NO EXCEL NOR OPENDOCUMENT HERE ! 
+Note that we'll probably never make the effort of dealing with excel (xls, xlsx) and opendocument (odt) formats, are too rich to be processed efficiently and stability. Even if formatting is cute, it is meaning-less in an automation world, where formatting has to be carried by metadatas, which have to be a data by themselves.
+
+If you want to be serious about re-producing data transformation you have to forget about editing manually data without making it auditable, and self-certification is a wrong security pattern in a globally connected world.
+
+So you'll have to make the half way to export your excel in csv, and know what's your business process to version your data. 
+
+### CSV
+Comma-separated files have been the classical I/O in opendata for many years. Even if it's quite a mess for data types, it is a go-between, between strongly structurated format like XML for IT specialists and the office excel-style.
+
+If you're familiar with using many sources you now CSV is not standard and that most guesser can't guess all : spearator, encoding, escaping, etc. We didn't have time to build a top-of Pandas for guessing, and prefered to enable you to set manual options to handle all the cases.
+>For robust and stable processing, we desactivated every guessing of types, so that every cell is string or unicode in input: type will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
+
+| option     |  default   |  other        |  objective                          |
+|:-----------|:-----------|:--------------|:------------------------------------|
+| sep        | ;          | any regex     | specify columns separator           |
+| header     | infer      |false          | use included head                   |
+| encoding   | utf8       | latin1 ...    | specify the encoding if not ascii   |
+| names      |            |[col, names]   | replace header (column) names       |
+| compression| infer      | None, gzip ...| specify if compressed               |
+| skiprows   | 0          | any number    | skip n rows before processing       |
+
+### Fwf
+This is the old brother of the CSV, the fixed-width tabular is a variant, but in some cases this will be more stable to parse your tabular files as fixed width. Often Oracle or PostGreSQL exports are to be parsed like that.
+> Like in csv, for robust and stable processing, we desactivated every guessing of types, so that every cell is string or unicode in input: type will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
 
 
+| option     |  default   |  other        |  objective                          |
+|:-----------|:-----------|:--------------|:------------------------------------|
+| encoding   | utf8       | latin1 ...    | specify the encoding if not ascii   |
+| names      |            |[col, names]   | replace header (column) names       |
+| width      | [1000]     |[2, 5, 1, ...] | columns width for the fixed format  |
+| compression| infer      | None, gzip ...| specify if compressed               |
+| skiprows   | 0          | any number    | skip n rows before processing       |
 
+### msgpack
+Well you may not be familiar with that format. This is a simple and quite robust format for backing up data when the data is typed. We could have choose HDFS (strong, but boring for integration, and being old), json/bson (quite slow), or pickle (too much instability with versions), or parquet (seducing, but the pandas library doesn't deal well with chunks).
+
+### other formats
+Please consult the [roadmap](/roadmap#files) to check future support for json, xml or any other type.
 
 
 
