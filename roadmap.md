@@ -6,6 +6,7 @@ title: Roadmap
 width: is-10
 ---
 
+<div class="tile is-ancestor">
 <div class="tile is-vertical is-4"  markdown="1">
   
 # Consolidation
@@ -67,4 +68,4 @@ width: is-10
 - R
 - pySpark
   </div>
-  
+  </div>
