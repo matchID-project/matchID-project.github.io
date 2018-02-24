@@ -6,9 +6,7 @@ title: Roadmap
 width: is-10
 ---
 
-  <div class="tile is-ancestor" markdown="1">
-    <div class="tile is-vertical is-6" >
-      <span>
+<div class="tile is-vertical is-4"  markdown="1">
   
 # Consolidation
 
@@ -30,9 +28,8 @@ width: is-10
 - nginx path of dataviz (Kibana/Superset)
 - nginx modularity (remove Kibana)
 - adds superset support
-   </span>
-  </div>
-  <div class="tile is-vertical is-6 is-success" >
+</div>
+<div class="tile is-vertical is-4 is-success"  markdown="1">
 
 # Evolutions
 ## Documentation
@@ -47,10 +44,8 @@ width: is-10
 
 ## Backend
 - join with SQL
-    </div>
   </div>
-  <div class="tile is-ancestor" markdown="1">
-    <div class="tile is-vertical is-12 is-info">
+  <div class="tile is-vertical is-4 is-info"  markdown="1">
 
 # Interoperability
 
@@ -71,6 +66,5 @@ width: is-10
 - SQL
 - R
 - pySpark
-    </div>
   </div>
-
+  
