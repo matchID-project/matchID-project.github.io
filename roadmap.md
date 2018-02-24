@@ -34,6 +34,7 @@ width: is-10
 
 </div>
 </div>
+
 <div class="tile is-vertical is-4">
 <div class="tile is-child notification is-success"  markdown="1">
 
@@ -79,4 +80,5 @@ width: is-10
 
 </div>
 </div>
+
 </div>
