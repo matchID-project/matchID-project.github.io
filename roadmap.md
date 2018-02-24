@@ -7,8 +7,9 @@ width: is-10
 ---
 
   <div class="tile is-ancestor" markdown="1">
-    <div class="tile is-vertical is-6 is-light" >
-
+    <div class="tile is-vertical is-6" >
+      <span>
+  
 # Consolidation
 
 ## Method
@@ -29,7 +30,7 @@ width: is-10
 - nginx path of dataviz (Kibana/Superset)
 - nginx modularity (remove Kibana)
 - adds superset support
-
+   </span>
   </div>
   <div class="tile is-vertical is-6 is-success" >
 
