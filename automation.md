@@ -2,7 +2,7 @@
 layout: default
 permalink: automation
 description: "understanding and troubleshooting"
-title:  automation
+title:  Automation
 width: is-10
 ---
 
@@ -92,7 +92,22 @@ Note that the API point of elasticsearch is accessible from any client (unless y
 ### my cluster is red
 If you have large indices and multiples nodes, the coherence of cluster may take some time when you just started the cluster.
 You can then check the indices health.
-You should `make elasticsearch restart` if you
+If your cluster is read you for some time (more than one minute) you should `make elasticsearch restart`.
+If it is still red, check the `docker logs -f` of each node.
+Many problems can occure :
+- rights on the volume are not correct
+- the volume space is over 85% full
+- every indices are red because too much operations were driven in an inconsistant state of the cluster. This is the drama situation where you'll have to clear all your indices with a `curl -XDELETE http://localhost/matchID/elasticsearch/*` and **lose all indexed data**
+
+### my cluster is yellow
+It may be that one or many indices are red or at least one yellow.
+With time like previously elasticsearch often repairs. 
+With a persistent yellow state of an indice and the right amount of documents, you will be able to still access to your data you may backup. You should do that with a recipe doing nothing from the dataset of your index to a `msgpack` dataset. Then try to restore it on another index, then delete the index.
+You may have to delete every red and yellow indices.
+
+
+
+
 
 
 
