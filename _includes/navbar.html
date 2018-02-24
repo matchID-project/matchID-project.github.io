@@ -26,14 +26,14 @@
         <div class="navbar-item has-dropdown is-hoverable is-boxed">
           <a class="navbar-link">
             <span class="icon">
-              <i class="fa fa-road"></i>
+              <i class="fa fa-graduation-cap "></i>
             </span> Tutorial
           </a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item {% if page.url == '/tutorial' %}has-text-primary{% endif %}" href="tutorial">
               <span class="icon">
-                <i class="fa fa-road"></i>
+                <i class="fa fa-graduation-cap"></i>
               </span>
               <span> Identity matching </span>
             </a>
@@ -49,25 +49,38 @@
             <i class="fa fa-flask" aria-hidden="true"></i>
           </span> Recipes
         </a>
-
-        
         
         <div class="navbar-item has-dropdown is-hoverable is-boxed">
           <a class="navbar-link">
             <span class="icon">
-              <i class="fa fa-cog"></i>
+              <i class="fa fa-docker"></i>
             </span> Devops
           </a>
           <div class="navbar-dropdown">
             <a class="navbar-item {% if page.url == '/starting' %}has-text-primary{% endif %}" href="starting">
               <span class="icon">
-                <i class="fa fa-cog"></i>
+                <i class="fa fa-docker"></i>
               </span>
               <span> Starting matchID </span>
             </a>
           </div>
+          <div class="navbar-dropdown">
+            <a class="navbar-item {% if page.url == '/starting' %}has-text-primary{% endif %}" href="starting">
+              <span class="icon">
+                <i class="fa fa-docker"></i>
+              </span>
+              <span> Troubleshooting </span>
+            </a>
+          </div>          
         </div>
-      
+
+        <a href="roadmap" class="navbar-item {% if page.url == '/roadmap' %}has-text-primary{% endif %}">
+          <span class="icon">
+            <i class="fa fa-road" aria-hidden="true"></i>
+          </span> Roadmap
+        </a>
+        
+        
       
       <div class="navbar-end">
         <div class="navbar-item">
