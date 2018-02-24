@@ -39,7 +39,7 @@ width: is-10
 
 <div class="tile is-parent is-vertical is-4">
 <div class="tile">
-<div class="tile is-child notification is-light"  markdown="1">
+<div class="tile is-child notification is-success"  markdown="1">
   
 # Evolutions
 ## Documentation
@@ -61,7 +61,7 @@ width: is-10
 
 <div class="tile is-parent is-vertical is-4">
 <div class="tile">
-<div class="tile is-child notification is-light"  markdown="1">
+<div class="tile is-child notification is-info"  markdown="1">
   
 # Interoperability
 
