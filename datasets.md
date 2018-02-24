@@ -120,3 +120,5 @@ Please consult the [roadmap](/roadmap#files) to check future support for json, x
 | safe       | True       | False         | doesn't use `_id` field to index, which can lead to doubles when retrying |
 | chunk_search|*connector value* | *any number*  | number of row for search queries when using fuzzy join |
 
+The big challenge with elasticsearch datasets with scaling is the possibility of tunning.
+
