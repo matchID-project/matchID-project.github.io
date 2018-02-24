@@ -7,8 +7,9 @@ width: is-10
 ---
 
 <div class="tile is-ancestor">
+
 <div class="tile is-vertical is-4">
-<div class="tile is-vertical notification is-light"  markdown="1">
+<div class="tile is-child notification is-light"  markdown="1">
   
 # Consolidation
 
@@ -34,7 +35,7 @@ width: is-10
 </div>
 </div>
 <div class="tile is-vertical is-4">
-<div class="tile is-vertical notification is-success"  markdown="1">
+<div class="tile is-child notification is-success"  markdown="1">
 
 # Evolutions
 ## Documentation
@@ -54,7 +55,7 @@ width: is-10
 </div>
 
 <div class="is-vertical is-4">
-<div class="tile is-vertical notification is-info"  markdown="1">
+<div class="tile is-child notification is-info"  markdown="1">
 
 # Interoperability
 
