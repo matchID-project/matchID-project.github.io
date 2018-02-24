@@ -29,6 +29,7 @@ width: is-10
 - nginx path of dataviz (Kibana/Superset)
 - nginx modularity (remove Kibana)
 - adds superset support
+
 </div>
 <div class="tile is-vertical is-4 is-success"  markdown="1">
 
@@ -45,8 +46,9 @@ width: is-10
 
 ## Backend
 - join with SQL
-  </div>
-  <div class="tile is-vertical is-4 is-info"  markdown="1">
+
+</div>
+<div class="tile is-vertical is-4 is-info"  markdown="1">
 
 # Interoperability
 
@@ -67,5 +69,6 @@ width: is-10
 - SQL
 - R
 - pySpark
-  </div>
-  </div>
+
+</div>
+</div>
