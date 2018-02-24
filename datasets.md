@@ -81,17 +81,16 @@ If you're familiar with using many sources you now CSV is not standard and that 
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
-| sep        | ;          | any regex     | specify columns separator           |
+| sep        | ;          | *any regex*     | specify columns separator           |
 | header     | infer      |false          | use included head                   |
 | encoding   | utf8       | latin1 ...    | specify the encoding if not ascii   |
 | names      |            |[col, names]   | replace header (column) names       |
 | compression| infer      | None, gzip ...| specify if compressed               |
-| skiprows   | 0          | any number    | skip n rows before processing       |
+| skiprows   | 0          | *any number*    | skip n rows before processing       |
 
 ### Fwf
 This is the old brother of the CSV, the fixed-width tabular is a variant, but in some cases this will be more stable to parse your tabular files as fixed width. Often Oracle or PostGreSQL exports are to be parsed like that.
 > Like in csv, for robust and stable processing, we desactivated every guessing of types, so that every cell is string or unicode in input: type will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
-
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
@@ -99,7 +98,7 @@ This is the old brother of the CSV, the fixed-width tabular is a variant, but in
 | names      |            |[col, names]   | replace header (column) names       |
 | width      | [1000]     |[2, 5, 1, ...] | columns width for the fixed format  |
 | compression| infer      | None, gzip ...| specify if compressed               |
-| skiprows   | 0          | any number    | skip n rows before processing       |
+| skiprows   | 0          | *any number*    | skip n rows before processing       |
 
 ### msgpack
 Well you may not be familiar with that format. This is a simple and quite robust format for backing up data when the data is typed. We could have choose HDFS (strong, but boring for integration, and being old), json/bson (quite slow), or pickle (too much instability with versions), or parquet (seducing, but the pandas library doesn't deal well with chunks).
@@ -107,5 +106,17 @@ Well you may not be familiar with that format. This is a simple and quite robust
 ### other formats
 Please consult the [roadmap](/roadmap#files) to check future support for json, xml or any other type.
 
+## elasticsearch datasets
 
+| option     |  default   |  other        |  objective                          |
+|:-----------|:-----------|:--------------|:------------------------------------|
+| random_view| True       | False         | display random sample by default    |
+| select     | {"query": {"match_all": ""} } | any es query | query for filtering index |
+| doc_type   |*table name*| any string    | change document type name           |
+| body       | {}         |*cf infra*     | settings and mappings               |
+| max_tries  | 3          | *any integer*   | number of retries (with exponential backoff)             |
+| thread_count|*connector value*| *any integer*  | number of threads for inserting       |
+| timeout    | 10         | *time in seconds* | timeout for bulk indexing & reading |
+| safe       | True       | False         | doesn't use `_id` field to index, which can lead to doubles when retrying |
+| chunk_search|*connector value* | *any number*  | number of row for search queries when using fuzzy join |
 
