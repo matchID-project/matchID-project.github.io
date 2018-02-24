@@ -57,9 +57,16 @@ Datasets are a file, a set of files, a table or an index within a connector.
 
 ## filesystem datasets
 
-|  type    |  description                     |                       options                               |
-|:--------:|:---------------------------------|:------------------------------------------------------------|
-|   csv    |  comma separated tabular files   | read_csv options : - header                                 |
+|type   |  library     | option     |  default   |  other        |  objective                          |
+|:-----:|:------------:|:-----------|:-----------|:--------------|:------------------------------------|
+| csv   |  read_csv    | sep        | ;          | any regex     | specify columns separator           |
+|       |              | header     | infer      |false          | use included head                   |
+|       |              | encoding   | utf8       | latin1 ...    | specify the encoding if not ascii   |
+|       |              | names      |            |[col, names]   | replace header (column) names       |
+|       |              | compression| infer      | None, gzip ...| specify if compressed               |
+|       |              | skiprows   | 0          | any number    | skip n rows before processing       |
+| fwf   |              |  - header  |            |               |                                     |
+|msgpack|              |  - header  |            |               |                                     |
 
 
 
