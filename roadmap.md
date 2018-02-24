@@ -7,7 +7,7 @@ width: is-10
 ---
 
 <div class="tile is-ancestor">
-<div class="tile is-vertical is-4"  markdown="1">
+<div class="tile is-vertical is-4 is-light"  markdown="1">
   
 # Consolidation
 
