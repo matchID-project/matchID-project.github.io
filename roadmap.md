@@ -6,6 +6,10 @@ title: Roadmap
 width: is-10
 ---
 
+<section class="section">
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-6 is-light">
+
 # Consolidation
 
 ## Method
@@ -27,6 +31,9 @@ width: is-10
 - nginx modularity (remove Kibana)
 - adds superset support
 
+  </div>
+  <div class="tile is-vertical is-6 is-success">
+
 # Evolutions
 ## Documentation
 - tutorial for doubles detection
@@ -40,6 +47,10 @@ width: is-10
 
 ## Backend
 - join with SQL
+    </div>
+  </div>
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-12 is-info">
 
 # Interoperability
 
@@ -60,5 +71,7 @@ width: is-10
 - SQL
 - R
 - pySpark
+    </div>
+  </div>
 
-## library
+</section>
