@@ -54,6 +54,7 @@ width: is-10
 
 ## Backend
 - join with SQL
+- triggering recipes
 
 </div>
 </div>
@@ -82,6 +83,10 @@ width: is-10
 - SQL
 - R
 - pySpark
+
+## other softs 
+- Dataiku/DSS
+- Luigi
 
 </div>
 </div>
