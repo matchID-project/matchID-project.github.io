@@ -7,7 +7,7 @@ width: is-10
 ---
 
 <div class="tile is-ancestor">
-<div class="tile is-vertical is-4 is-light"  markdown="1">
+<div class="tile is-vertical is-4 notification is-light"  markdown="1">
   
 # Consolidation
 
@@ -31,7 +31,7 @@ width: is-10
 - adds superset support
 
 </div>
-<div class="tile is-vertical is-4 is-success"  markdown="1">
+<div class="tile is-vertical is-4 notification is-success"  markdown="1">
 
 # Evolutions
 ## Documentation
@@ -48,7 +48,7 @@ width: is-10
 - join with SQL
 
 </div>
-<div class="tile is-vertical is-4 is-info"  markdown="1">
+<div class="tile is-vertical is-4 notification is-info"  markdown="1">
 
 # Interoperability
 
