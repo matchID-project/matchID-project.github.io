@@ -607,7 +607,7 @@ Then you can go check again the validation of `clients_x_deaths` to check the im
 
 You can annotate again concentrating on new middle range scores, training again, and so on... 
 
-To have an overview on the global process you can click on <i class="far fa-connectdevelop"></i> to open the graph project:
+To have an overview on the global process you can click on <i class="fab fa-connectdevelop"></i> to open the graph project:
 
 <img src="assets/images/frontend-project-graph.png" alt="matchID projects view">
 
