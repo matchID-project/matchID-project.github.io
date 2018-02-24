@@ -15,20 +15,20 @@
       <div class="navbar-start">
         <a href="philosophy" class="navbar-item {% if page.url == '/philosophy' %}has-text-primary{% endif %}">
           <span class="icon">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+            <i class="fas fa-lightbulb-o" aria-hidden="true"></i>
           </span> The philosophy
         </a>
         <div class="navbar-item has-dropdown is-hoverable is-boxed">
           <a class="navbar-link">
             <span class="icon">
-              <i class="fa fa-graduation-cap "></i>
+              <i class="fas fa-graduation-cap "></i>
             </span> Tutorial
           </a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item {% if page.url == '/tutorial' %}has-text-primary{% endif %}" href="tutorial">
               <span class="icon">
-                <i class="fa fa-graduation-cap"></i>
+                <i class="fas fa-graduation-cap"></i>
               </span>
               <span> Identity matching </span>
             </a>
@@ -36,37 +36,37 @@
         </div>
         <a href="datasets" class="navbar-item {% if page.url == '/datasets' %}has-text-primary{% endif %}">
           <span class="icon">
-            <i class="fa fa-table" aria-hidden="true"></i>
+            <i class="fas fa-table" aria-hidden="true"></i>
           </span> Datasets
         </a>
         <a href="recipes" class="navbar-item {% if page.url == '/recipes' %}has-text-primary{% endif %}">
           <span class="icon">
-            <i class="fa fa-flask" aria-hidden="true"></i>
+            <i class="fas fa-flask" aria-hidden="true"></i>
           </span> Recipes
         </a>
         
         <div class="navbar-item has-dropdown is-hoverable is-boxed">
           <a class="navbar-link">
             <span class="icon">
-              <i class="fa fa-cloud"></i>
+              <i class="fab fa-docker"></i>
             </span> Devops
           </a>
           <div class="navbar-dropdown">
             <a class="navbar-item {% if page.url == '/starting' %}has-text-primary{% endif %}" href="starting">
               <span class="icon">
-                <i class="fa fa-play"></i>
+                <i class="fas fa-play"></i>
               </span>
               <span> Starting </span>
             </a>
             <a class="navbar-item {% if page.url == '/automation' %}has-text-primary{% endif %}" href="automation">
               <span class="icon">
-                <i class="fa fa-cog"></i>
+                <i class="fas fa-cog"></i>
               </span>
               <span> Automation </span>
             </a>
             <a href="api" class="navbar-item {% if page.url == '/api' %}has-text-primary{% endif %}">
               <span class="icon">
-                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fas fa-book" aria-hidden="true"></i>
               </span> API
             </a>            
           </div>          
@@ -74,7 +74,7 @@
      
         <a href="roadmap" class="navbar-item {% if page.url == '/roadmap' %}has-text-primary{% endif %}">
           <span class="icon">
-            <i class="fa fa-road" aria-hidden="true"></i>
+            <i class="fas fa-road" aria-hidden="true"></i>
           </span> Roadmap
         </a>
         
@@ -85,7 +85,7 @@
           <a class="button is-info"
             href="https://gitter.im/matchID-dev/Lobby">
             <span class="icon">
-              <i class="fa fa-gitter"></i>
+              <i class="fab fa-gitter"></i>
             </span>
             <span>Gitter</span>
           </a>
@@ -93,26 +93,26 @@
         <div class="navbar-item has-dropdown is-hoverable is-boxed">
           <a class="navbar-link" target="_blank" href="{{ site.project.general.repo | prepend: site.github_url }}">
             <span class="icon">
-              <i class="fa fa-github"></i>
+              <i class="fab fa-github"></i>
             </span> GitHub
           </a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item" target="_blank" href="{{ site.project.backend.repo | prepend: site.github_url }}">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fab fa-github"></i>
               </span>
               <span>{{ site.project.backend.name }}</span>
             </a>
             <a class="navbar-item" target="_blank" href="{{ site.project.frontend.repo | prepend: site.github_url }}">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fab fa-github"></i>
               </span>
               <span>{{ site.project.frontend.name }}</span>
             </a>
             <a class="navbar-item" target="_blank" href="{{ site.project.examples.repo | prepend: site.github_url }}">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fab fa-github"></i>
               </span>
               <span>{{ site.project.examples.name }}</span>
             </a>
