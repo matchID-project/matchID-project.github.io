@@ -16,6 +16,5 @@ The `make start` may take some time, as this handles many actions :
 - presenting all the stuff with `nginx`
 
 Here is the architecture overview :
-
-<img class="columns is-centered column is-half is-narrow" src="assets/images/matchid_architecture.png" alt="matchID architecture">
-
+<div class="columns is-centered">
+<img class="column is-half is-narrow" src="assets/images/matchid_architecture.png" alt="matchID architecture">                                                                                                                             </div>
