@@ -47,10 +47,16 @@ width: is-10
 - tutorial for data API-fication
 
 ## Examples
-- sample for 
+- sample for doubles detection
+
 ## Frontend
 - cliques validation for doubles detection
-- cost matrix
+- cost matrix charts
+- data loading helpers (e.g csv type pseudo-guessing)
+- data type display
+- transformation helpers (e.g. parsing dates, etc.)
+- editing data (and converting edits into recipes)
+
 
 ## Backend
 - join with SQL
