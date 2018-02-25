@@ -76,7 +76,7 @@ Some useful commands :
 
 ## developpement mode
 You can switch to developpement mode without stopping the whole sevices : `make frontend-stop frontend-dev`
-Your
+Please consult [contributing to developement](/dev).
 
 ## Advanced elasticsearch troubleshooting
 
