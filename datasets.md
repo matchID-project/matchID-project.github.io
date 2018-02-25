@@ -6,7 +6,7 @@ title: Datasets
 width: is-10
 ---
 
-# Connectors
+# **Connectors**
 Connectors are a declaration to a filesystem or database.
 
 Supported connectors are:
@@ -52,7 +52,7 @@ connectors:
 ```
 
 
-# Datasets
+# **Datasets**
 Datasets are a file, a set of files, a table or an index within a connector.
 ```
 datasets:
@@ -106,6 +106,10 @@ Well you may not be familiar with that format. This is a simple and quite robust
 ### other formats
 Please consult the [roadmap](/roadmap#files) to check future support for json, xml or any other type.
 
+## (PostGre)SQL
+
+There is for now no specific option when using a (PostGre)SQL dataset.
+
 ## elasticsearch datasets
 
 | option     |  default   |  other        |  objective                          |
@@ -120,6 +124,7 @@ Please consult the [roadmap](/roadmap#files) to check future support for json, x
 | safe       | True       | False         | doesn't use `_id` field to index, which can lead to doubles when retrying |
 | chunk_search|*connector value* | *any number*  | number of row for search queries when using fuzzy join |
 
+### index settings, mapping
 The big challenge with elasticsearch datasets with scaling is the possibility of tunning. The `body` value is the equivalent of the `body` value when creating the index with curl, except it is written in `yaml` instead of `json`, which makes it easier to read.
 
 Here is an example of configuration :
@@ -153,7 +158,142 @@ datasets:
 ```
 
 For large clusters, you have to choose between low and large `number_of_replicas` for more robust indices.
+The body setting c anbe use too for specific indexing and parsing, like `ngrams` and phonetics.
 
-## PostGreSQL
+### Validations options
+Elasticsearch can be use to validate matches (as seen in [tutorial](/tutorial#step-3-validate-matches-and-train-rescoring-with-machine-learning).
 
-There is for now no specific option when using a PostGreSQL dataset.
+The validation option is activated adding the `validation: true` option :
+```
+datasets:
+  clients_x_deaths:
+    connector: elasticsearch
+    table: clients_x_deaths
+    validation: true
+```
+
+Validation mode is configure with the `conf/matchID_validation.conf` file for defaults behaviour. They can be overrided for each validation dataset like this :
+```
+    ....
+    validation: 
+      actions:
+        display: true
+        action:
+          label: Results
+          indecision_display: true   # if you don't want to use indecision
+        done:
+          label: Status
+      elasticsearch:           
+        size: 200                    # number of search
+      columns:                       # colum specific action
+        - field: matchid_id
+          label: Id
+          display: false                 # some fields can be used for selection but not being displayed
+          searchable: true
+        - field:                         # array gathers two fields in one column
+            - matchid_name_last_src
+            - hit_matchid_name_last_src
+          label: last name               #
+          display: true
+          searchable: true
+          callBack: formatDiff           # this callback highlights the differents between the two first elements of an array
+        - field:
+            - matchid_name_first_src
+            - hit_matchid_name_first_src
+          label: first name
+          display: true
+          searchable: true
+          callBack: formatDiff
+        - field:
+            - matchid_sex
+            - hit_matchid_sex
+          label: sex
+          display: true
+          searchable: true
+          callBack: formatSex
+          appliedClass:
+            head: head-centered
+            body: has-text-centered
+        - field:
+            - matchid_date_birth_str
+            - hit_matchid_date_birth_str
+          label: birth date
+          display: true
+          searchable: true
+          callBack: formatDate
+          appliedClass:
+            head: head-centered
+            body: has-text-centered
+        - field:
+            - matchid_location_city
+            - hit_matchid_location_city
+          label: birth city
+          display: true
+          searchable: true
+          callBack: coloredDiff
+        - field: matchid_hit_distance
+          label: Distance
+          display: true
+          searchable: false
+          callBack: formatDistance
+          appliedClass:
+            head: head-centered
+            body: has-text-centered
+        - field: matchid_clique_size    # example of an added field       
+          label: Group size             
+          display: true
+          searchable: false
+          callBack: formatNumber
+          appliedClass:
+            head: head-centered
+            body: has-text-centered
+        - field: matchid_clique_id
+          label: Group id
+          display: true
+          searchable: true
+          callBack: formatNumber
+          appliedClass:
+            head: head-centered
+            body: has-text-centered
+        - field: confiance
+          label: Score
+          display: true
+          searchable: false
+          type: score
+          callBack: formatNumber
+          appliedClass:
+            head: head-centered
+            body: has-text-centered min-column-width-100
+        - field: matchid_hit_score
+          label: Pre_Score
+          display: true
+          searchable: false
+          type: score
+          callBack: formatNumber
+          appliedClass:
+            head: head-centered
+            body: has-text-centered min-column-width-100
+      view:
+        display: true
+        column_name: view
+        fields:
+          operation: excluded
+          names:
+            - none
+      scores:
+        column: confiance
+        range:                # if you have a specific range for scoring
+          - 0
+          - 100
+        colors:                # color depending coloring customization
+          success: 80
+          info: 60
+          warning: 30
+          danger: 0
+        statisticsInterval: 5
+        preComputed:           #  if you want to change the "pre-decision" thresholds
+          decision: 55
+          indecision:
+            - 40
+            - 65
+```
