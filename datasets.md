@@ -132,6 +132,8 @@ datasets:
       settings:
         index.refresh_interval: 30s     # <==== disable the "instant" indexing, which speed up indexing
         index.number_of_replicas: 0     # <==== disable replicas, which speeds up indexing
+        index.number_of_shards: 9       # <==== should be a multiple of your nodes number, and increased if large datasets
+                                        #       a shard should have less that 1M docs
       mappings:
         agrippa:
           _all:                         # <==== disable "_all" fileds indexing, for speeding up
@@ -149,3 +151,6 @@ datasets:
             matchid_location_country:
               type: keyword
 ```
+
+For large clusters, you have to choose between low and large `number_of_replicas` for more robust indices.
+
