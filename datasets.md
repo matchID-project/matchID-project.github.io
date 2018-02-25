@@ -154,3 +154,6 @@ datasets:
 
 For large clusters, you have to choose between low and large `number_of_replicas` for more robust indices.
 
+## PostGreSQL
+
+There is for now no specific option when using a PostGreSQL dataset.
