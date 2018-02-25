@@ -13,7 +13,7 @@ Then :
 ```
 make dev
 ```
-The interest of using `docker` for developping or debugging is that you are near to production architecture.
+The interest of using `docker` for developping or debugging is that you are near to production architecture. You should consult the [automation](/automation#architecture) corner to understand the components of matchID.
 
 ## frontend
 the frontend code should be in `../frontend/src`, it's in Vue.js.
