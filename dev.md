@@ -8,7 +8,7 @@ width: is-10
 
 # Developping matchID
 
-You should first `make top` matchID and have a clean docker environnement.
+You should first `make stop` matchID and have a clean docker environnement, if you first ran matchID with `make start`.
 Then :
 ```
 make dev
