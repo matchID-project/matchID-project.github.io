@@ -61,6 +61,11 @@
             </span> Tech resources
           </a>
           <div class="navbar-dropdown">
+            <a href="dev" class="navbar-item {% if page.url == '/dev' %}has-text-primary{% endif %}">
+              <span class="icon">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </span> Developer mode
+            </a>            
             <a class="navbar-item {% if page.url == '/automation' %}has-text-primary{% endif %}" href="automation">
               <span class="icon">
                 <i class="fab fa-docker"></i>
@@ -76,7 +81,7 @@
               <span class="icon">
                 <i class="fas fa-road" aria-hidden="true"></i>
               </span> Roadmap
-            </a>
+            </a>    
           </div>          
         </div>
       </div>
