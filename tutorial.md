@@ -6,16 +6,16 @@ title: Step-by-step tutorial
 width: is-10
 ---
 
-# Tutorial
+# **Tutorial**
 This is the first chapter of the tutorial, which will deal with three use-cases :
 
 - Use case 1: finding common identities between two big datasets
 - Use case 2: finding doubles within a dataset
 - Use case 3: building a search api for a dataset (*top of elasticsearch* API)
 
-# Use case 1 : finding common identities between two big datasets
+# **Use case 1** : finding common identities between two big datasets
 
-## Cooking recipes with matchID 
+## **Cooking recipes with matchID** 
 
 ### Global method used for matching
 This is our first use case : we have to remove dead people, as registered in dataset `deaths`, from a client file `clients`.
@@ -204,7 +204,7 @@ Save it (`Save` button or `Ctrl+S`), it should display the first imported datase
 
 So now you have an interactive way to deal with your data. Every new step of the recipe will add a new transformation on your data. You can have the exhaustive list of [recipes here](recipes.md).
 
-## Step 1 - dataprep : normalizing the identity records (deaths dataset)
+## **Step 1 - dataprep** : normalizing the identity records (deaths dataset)
 
 We'll stay here in editing our first recipe, `dataprep_deaths`.
 
@@ -347,7 +347,7 @@ The job log last line should summarize the time and bugs for the recipe :
 If you take a look a the detailed logs, you'll the that the bugs are only mix encoding problems, due to a badly formatted file. There aren't 92000 errors, but only 46 encoding errors included in 46 chunks of 2000 rows. For now, the automation doesn't scrutate as deep as you'd like, you'll have to take a look by yourselves in the logs.
 
 
-## Step 2 - dataprep of clients and matching
+## **Step 2** - dataprep of clients and **matching**
 
 ### dataprep
 You should be able to follow the former steps on the new file, `clients`.
@@ -446,7 +446,7 @@ datasets:
 Run the recipe. It should take about 2 hours to run it for 1M x 1M with a 16vCPUx32Go and 3 elasticsearch nodes.
 
 
-## Step 3: validate matches and train rescoring with machine learning
+## **Step 3**: **validate** matches and train rescoring with machine learning
 
 You don't have to wait the full run to examinate your matching results : go to the `client_x_deaths` dataset.
 
@@ -568,7 +568,7 @@ In this *not serious* annotation of only 92 matches, the second model does have 
 
 If stable enough, then run the recipe, this will save the model which will be reusable.
 
-## Step 4: rescore with the machine learning model
+## **Step 4**: rescore with the **machine learning** model
 We can now apply the previously built model to apply a better scoring on the matches :
 
 ```
