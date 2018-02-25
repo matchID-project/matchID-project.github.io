@@ -120,5 +120,32 @@ Please consult the [roadmap](/roadmap#files) to check future support for json, x
 | safe       | True       | False         | doesn't use `_id` field to index, which can lead to doubles when retrying |
 | chunk_search|*connector value* | *any number*  | number of row for search queries when using fuzzy join |
 
-The big challenge with elasticsearch datasets with scaling is the possibility of tunning.
+The big challenge with elasticsearch datasets with scaling is the possibility of tunning. The `body` value is the equivalent of the `body` value when creating the index with curl, except it is written in `yaml` instead of `json`, which makes it easier to read.
 
+Here is an example of configuration :
+```
+datasets:
+  my_dataset:
+    connector: elasticsearch
+    table: my_dataset
+    body: 
+      settings:
+        index.refresh_interval: 30s     # <==== disable the "instant" indexing, which speed up indexing
+        index.number_of_replicas: 0     # <==== disable replicas, which speeds up indexing
+      mappings:
+        agrippa:
+          _all:                         # <==== disable "_all" fileds indexing, for speeding up
+            enabled: False
+          dynamic: False
+          properties:                   # <==== specify here the fields only needed for fuzzy join 
+            matchid_id:
+              type: keyword
+            matchid_name_match:
+              type: text
+            matchid_date_birth_str:
+              type: keyword
+            matchid_location_city:
+              type: keyword
+            matchid_location_country:
+              type: keyword
+```
