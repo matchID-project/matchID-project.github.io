@@ -20,14 +20,14 @@ width: is-10
 - build library
 - unitary testing
 
-## monitoring api
+## Monitoring api
 - restart
 - jobs supervision
 
-## code
+## Code
 - migrate to python 3
 
-## automation / integration
+## Automation / integration
 - CI testing
 - nginx path of dataviz (Kibana/Superset)
 - nginx modularity (remove Kibana)
@@ -90,7 +90,7 @@ width: is-10
 - R
 - pySpark
 
-## other softs 
+## Other softs 
 - Dataiku/DSS
 - Luigi
 
