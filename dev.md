@@ -6,7 +6,7 @@ title:  developping matchID
 width: is-10
 ---
 
-# Developping matchID
+# Developing `matchID`
 
 You should first `make stop` matchID and have a clean docker environnement, if you first ran matchID with `make start`.
 Then :
