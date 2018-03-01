@@ -22,7 +22,10 @@ The `make start` may take some time, because handles many actions :
 
 Here is the architecture overview :
 <div class="columns is-centered">
-<img class="column is-half is-narrow" src="assets/images/matchid_architecture.png" alt="matchID architecture">                                                                                                                             </div>
+<figure class="image alpha-png-background">
+<img class="column is-half is-narrow" src="assets/images/matchid_architecture.png" alt="matchID architecture">  
+</figure>
+</div>
 
 ## troubleshooting
 All commands here are to be executed from the machine where `docker` runs `matchID` (local or remote).
