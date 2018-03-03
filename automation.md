@@ -67,11 +67,8 @@ Elasticsearch is useful for powerfull fuzzy matching with levenshtein distance (
 - check if you elasticsearch nodes containers are up : `docker ps | egrep 'matchid-(elasticsearch|esnode)'`, you should have a line for every container
 - get the logs of a node : `docker logs -f matchid-elasticsearch`, you may replace `elasticsearch` with `esnode2`, `esnode3`, depending of the number of nodes you have
 
-See [avanced elasticsearch troubleshooting](#avanced-elasticearch-troubleshooting).
+See [avanced elasticsearch troubleshooting](#advanced-elasticsearch-troubleshooting) for configuring your cluster and more about elasticsearch and docker.
 
-To change the number of nodes: edit `Makefile` and change the number of nodes in `ES_NODES` (default to 3, tested up to 20).
-
-To change the amount of memory of each node : change both `ES_MEM` (java memory) and `ES_MEMM` (docker memory, which should be twice the first).
 
 ## postgres
 
@@ -102,6 +99,20 @@ You can switch to developpement mode without stopping the whole sevices : `make 
 Please consult [contributing to developement](/dev).
 
 ## Advanced elasticsearch troubleshooting
+### docker and elasticsearch
+
+When your run make start or make elasticsearch, the configuration of elasticsearch is created in docker-components/docker-compose-elasticsearch-huge.yml with one master and ES_NODES-1 nodes.
+
+To change the configuration :
+
+- to change the number of nodes: edit Makefile and change the number of nodes in `ES_NODES` (default to 3, tested up to 20).
+- to change the amount of memory of each node : change `ES_MEM` (java memory).
+
+We've encountered stability problems with elasticsearch, docker and memory limitation (`mem_limit`). Elasticsearch recommends twice the memory of the `jvm` for the virtual machine memory. But setting hard memory limit with `mem_limit` seems to be a wrong with the docker virtualisation. So we supressed this limiation, which may lead to performance problem when strong sollicitation. This problem will be followed in the matchID project, as elasticsearch is an essential component.
+
+### bulk indexing & matching : optmization
+
+*to be completed*
 
 ### heath check from your server
 
