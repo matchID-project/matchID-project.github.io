@@ -179,15 +179,15 @@ recipes:
             query:
               bool:
                 must:
-                  - term:
+                  - match:
                       DCD_NOM: Nom
                   - match:
                       DCD_DATE_NAISSANCE: Date
 ```
 
-So you'll see this first result:
+So you'll see this first matching results:
 
-<img src="assets/images/frontend-dataset-matching-test.png" alt="matchID matching">
+<img src="assets/images/frontend-dataset-matching-test.png" alt="matchID first match">
 
 Some observations :
 - only clients with a death match appear : you have to add an option `keep_unmatched: true` to add in `join` to make clients with no match appear
@@ -199,244 +199,160 @@ Here is a more complete search :
 ```
 recipes:
   clients_deaths_matching_test:
+    test_chunk_size: 30
     input: clients_csv_test
     output: clients_x_deaths
     steps:
       - join: 
           type: elasticsearch
           dataset: deaths
-          keep_unmatched: true
+          keep_unmatched: True                      # keeps rows with no match
           query:
             size: 1
             query:
               bool:
                 must:
                   - match:
-                      DCD_NOM:
+                      DCD_NOM: 
                         query: Nom
-                        fuzziness: auto
+                        fuzziness: auto             # tolerate fuzzy (up to 2 errors in name)      
                   - match:
                       DCD_DATE_NAISSANCE: Date
+                  - match:
+                      DCD_PRENOMS:                  # one token at least should match, with up to 2 errors 
+                        query: Prenom
+                        fuzziness: auto 
                 should:
-                  - match:
-                      DCD_PRENOM: Prenom
-                  - match:
-                      DCD_COMMUNE_NAISSANCE: Lieu
+                  - match:                          # if place of birth match it is better but not mandatory
+                      DCD_COMMUNE_NAISSANCE: Lieu
 ```
 
+<img src="assets/images/frontend-dataset-matching-test-2.png" alt="matchID better match">
 
+Now we see there is some noise we should be able to filter easily
 
-******************
+### scoring
 
-This recipe essentially contains a complex elasticsearch query, translated from json to yaml and templated. Here's the explanation of the query.
+As we are in a recipe, we can add additionnal steps, we'll use to score distance of names, place and dates of birth. 
+Just add theses lines to the current recipe, which will remove wrong matches
 
-- the client name must match fuzzily (levenshtein max 2) on of the names (first and last) of the dead person, and stricly on the birth date
-- or the client name must match strictly on of the names and fuzilly (levenshtein max 1) on the birth date
-- more over, if possible :
-  - the last name should be the last name
-  - the first name should be in the deaths names
-  - the city should match
-  - the country should match
-
-Many specificities of your dataset would lead you to customize the search query : should you have poor data with no birth date, or would you have wife names, the query has to match your custom need.
-
-All those conditions make a large recall without bringing too much candidates.
-
-Now we create a combo recipe, `clients_deaths_matching` in the `clients` project, calling the last two ones, plus a special one, `diff` :
 ```
-recipes:
-  clients_deaths_matching:
-    apply: true
-    threads: 1
-    test_chunk_size: 50
-    input: clients_csv_gz
-    output: clients_x_deaths
-    steps:
-      - dataprep_clients:
-      - deaths_matching:
-      - diff:
-```      
+      - eval:
+      	# scores
+          - score_date: levenshtein_norm(hit_DCD_DATE_NAISSANCE, Date)
+          - score_nom: levenshtein_norm(hit_DCD_NOM, Nom)
+          - score_prenom: jw(hit_DCD_PRENOMS, Prenom)
+          - score_lieu: jw(hit_DCD_COMMUNE_NAISSANCE, Lieu)
+          - confiance: round(100 * score_lieu * score_nom * score_prenom * score_date)
+```
 
-then you should have your first sampling results (screenshot obtain using a regex filter: `diff(?!_id)|confiance|number`):
+This will add a `confiance` column you'll be able to filter.
 
-<img src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
+Depending on whether you want to have a new clients file with deaths match or a new clients_x_deaths only with the intersection, you should configure your recipe to blank the lines or to remove bad matches :
 
-Before running these recipes, don't forger to create the `client_x_deaths` dataset in elasticsearch :
+To blank bad matches :
+```
+      - eval:
+	# blank low score lines
+          - hit_DCD_COMMUNE_NAISSANCE: hit_DCD_COMMUNE_NAISSANCE if (confiance > 30) else ""
+          - hit_DCD_DATE_NAISSANCE: hit_DCD_DATE_NAISSANCE if (confiance > 30) else ""
+          - hit_DCD_NOM: hit_DCD_NOM if (confiance > 30) else ""
+          - hit_DCD_PRENOMS: hit_DCD_PRENOMS if (confiance > 30) else ""
+          - hit_matchid_id: hit_matchid_id if (confiance > 30) else ""
+```
+
+Or to filter bad matches :
+```
+      - keep:
+          where: confiance > 20
+```
+
+Don't forget to declare `clients_x_deaths` (in csv or elasticsearch depending where you want to have your results), then run the recipe.
+
+It should take about 3 minutes on a laptop to proceed the 16k rows.
+
+### View results in the validation app
+
+To display the results in the validation app you have to declare the dataset in a special way to format the display :
 
 ```
 datasets:
   clients_x_deaths:
     connector: elasticsearch
     table: clients_x_deaths
-    validation: true        # <=== this is mandatory to go to step 3
+    validation: 
+      columns:
+        - field: matchid_id
+          label: Id
+          display: false
+          searchable: true
+        - field:
+            - Nom
+            - hit_DCD_NOM
+          label: nom
+          display: true
+          searchable: true
+          callBack: formatDiff
+        - field:
+            - Prenom
+            - hit_DCD_PRENOMS
+          label: prenom
+          display: true
+          searchable: true
+          callBack: formatDiff
+        - field:
+            - Date
+            - hit_DCD_DATE_NAISSANCE
+          label: date
+          display: true
+          searchable: true
+          callBack: formatDate
+          appliedClass:
+            head: head-centered
+            body: has-text-centered
+        - field:
+            - Lieu
+            - hit_DCD_COMMUNE_NAISSANCE
+          label: Lieu
+          display: true
+          searchable: true
+          callBack: coloredDiff
+        - field: confiance
+          label: Score
+          display: true
+          searchable: false
+          type: score
+          callBack: formatNumber
+          appliedClass:
+            head: head-centered
+            body: has-text-centered min-column-width-100
+      view:
+        display: true
+        column_name: view
+        fields:
+          operation: excluded
+          names:
+            - none
+      scores:
+        column: confiance
+        range:
+          - 0
+          - 100
+        colors:
+          success: 80
+          info: 60
+          warning: 30
+          danger: 0
+        statisticsInterval: 5
+        preComputed:
+          decision: 55
+          indecision:
+            - 40
+            - 65
 ```
 
-Run the recipe. It should take about 2 hours to run it for 1M x 1M with a 16vCPUx32Go and 3 elasticsearch nodes.
+This configuration can be avoided if you had previously mapped your column names as in the [advanced tutorial](/advanced_tutorial)
+Just save the configuration then you should have a blue `Validation` button you can click to have this final display:
 
-
-## **Step 3**: **validate** matches and train rescoring with machine learning
-
-You don't have to wait the full run to examinate your matching results : go to the `client_x_deaths` dataset.
-
-The `validation: true` option activates this button : 
-
-<img src="assets/images/frontend-validation-button.png" alt="matchID projects view">
-
-Click on it to access to the validation mode, which enables the possibility to annotate your results :
-
-<img src="assets/images/frontend-validation.png" alt="matchID projects view">
-
-The cheat codes page (keyboard icon) will help you understand how to annotate :
-
-<img src="assets/images/frontend-validation-cheatcodes.png" alt="matchID projects view">
-
-You now have two new goals
-
-- evaluate the precision of your matches
-- build a knowledge database to teach the machine
-
-### evaluation and performance mesurement
-
-If you're a *data scientist* you will skip this section, as of course a scientific method is your job.
-
-If have no idea about evaluation : **evaluation is a very important thing**. 
-
-We had a huge *chance* while building the first algorithms of `matchID` : we had a target dataset of about 27k people which were already annotated as dead in the file we had to clean. This target had no major statistical bias and we could mesure a maximum recall of 97.5% with the elasticsearch levenshtein 2 method, whereas a pure SQL method lead as to a *not so bad* 92%. But a maximum 97.5% of recall only means a point of equality to 95% (recall = precision) and to a 90% recall = 99,8% precision. All those mesures were taken on the use case of matching dead people as declared by INSEE in the French driving licence file. As we apply matchID, with various adaptations, on many use cases, we can say that performance is not an absolute thing, widely depends on the quality of your files and on your business case. So : an evaluation has to be driven on a reasonable (huge enough) amount of data to be serious. 
-
-Performance of a matching should not be measured in a mono-dimensional score. Two factors have to be considered : precision and recall - or false alarm rate / true positive rate - which lead to [ROC curves](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). Only this second method can be evaluated when you have no idea where your missed targets are (which is often the case if you have to use matchID). 
-
-Another method for evaluation is the [cost-loss method](https://en.wikipedia.org/wiki/Cost-loss_model), which helps you choose the right threshold for your *business*.
-
-Those methods are not helped for now in `matchID` and has to be planned in a further evolution of the frontend.
-
-For now, you will have to take care about the amount of data you annotate (don't talk about a 99.99 precision if you didn't annotate at least 20.000 data without an error). You will have to take care about the representativity of your annotations too. `matchID` helps you in that way as the validation selects random data to annotate when you click on the reload button.
-
-You have to follow this representativity a graph button to display some statistics : 
-
-<img src="assets/images/frontend-validation-stats.png" alt="matchID projects view">
-
-In this example, we annotated a bit too much easy messy data with low scores, and too few middle range scores, which are often the hardest to annotate.
-
-With the data published in the `matchID` project, which are basically anonymized crossable dataset, we miss some representativity on the middle range scores, revealing the artificiality of our sampling. You'll see too many cases of undecidable things.
-
-### tips for annotation
-Evaluation is one goal: having better scores is another one.
-
-So this is now we imply **machine learning**. One thing to remember : if you're a bad teacher, your machine will be a *dunce* !
-And: **you first have to be a great teacher and annotate much data to be rewarded by machine learning**.
-
-Identity matching annotation is not an easy thing and depends on your context and aims. Your decision will be influenced by your goal, but to be a good teacher you should focus on what kind of influence each one of your annotation will lead as a generalization. For example : taking a decision without all the context (e.g. with missing data) will be better if you practice *backoff*, i.e. your rely on the most probable decision given the data you see. If you think your annotation could bring a bias, it is better not to take a decision.
-
-In the first times you'll have many situation which will seem you undecidable. For this reason we added a additive annotation (possible indecision), which may help you to come back to decide later. The more you annotate data the more you'll have your own modelisation of the data. The more you have people to annotate the smoother will be the annotation dataset. But everyone is not designed to be a teacher: every annotator has to be stable and patient, and should want to learn by himself what the data is for real (and should be greedy of annotating !).
-
-### machine learning : the training recipe
-In this case, the machine will be trained to recognize a false hit against a true hit with your annotated data. The only thing the machine will be able to learn are numerical data which are a bit more than 20 features :
-
-- for the names :
-  - levenshtein distances btw first names, last names, and cross over (last x first)
-  - raw token distance
-  - for now, there is no phonetic distance, which could bring some
-  - frequencies of names
-- for the locations :
-  - distance between locations when geolocalized
-  - lat/lon when geolocalized
-  - booleans : same country, same department code, same history city code, same citycode
-  - levenshtein distance of locations
-  - population and surface of the city
-- date levenshtein distance
-- score boolean distance
-- aggregated scores
-- for the context : 
-  - number of elasticsearch hits (bucket)
-  - rank in within the bucket
-  - max elasticsearch score of the bucket
-  
-So here is the recipe, `train_rescoring_model`:
-
-```
-recipes:
-  train_rescoring_model:
-    test_chunk_size: 10000      # <==== should not be necessary (warning: use to workaround a bug while writing the doc)
-    input:
-      dataset: clients_x_deaths
-      chunked: False            # <==== this is for telling to get the whole data (warning: bug while writing the doc)
-      select:                   # <==== this is a filtering query to load only annotated data from the dataset
-        query:
-          constant_score: 
-            filter:
-              exists:
-                field:
-                  validation_done
-
-    steps:
-      - build_model:
-          model:
-            name: clients_deaths_ml        # <==== model name
-            method: RandomForestRegressor  # <==== we tested all algorithms with our R&D lab with Dataiku/DSS
-            parameters:                    #       and didn't test other scikit learn model, as RandomForest
-              n_estimators: 20             #       performed always well in this kind of use case
-              max_depth: 4                 #       you can play with some parameters, but keep in mind that
-              min_samples_leaf: 5          #       the better optimization will be to provide more data, so
-            tries: 3                       #       annotate !
-            test_size: 0.33                #       2/3 for training, 1/3 for testing, then we choose the best
-                                           #       regressor
-          numerical: .*(hit_score_(?!ml).*|population|surface|matchid_hit_distance)$
-                                           #       numerical factors as described above in the text 
-          #categorical: .*(matchid_location_countrycode)$
-                                           #       categories have not been tested yet
-          target: validation_decision      #       the target is your annotation
-                                           #       the indecision is not taken into account there
-```
-
-When you save the recipe, you can see the performance of your machine learning model in the log :
-
-<img src="assets/images/frontend-train-auc.png" alt="matchID projects view">
-
-In this *not serious* annotation of only 92 matches, the second model does have a perfect score. Every time you save, the algorithm trains again, and you can see how stable it is. If you have no stability at all, you should annotate more data.
-
-If stable enough, then run the recipe, this will save the model which will be reusable.
-
-## **Step 4**: rescore with the **machine learning** model
-We can now apply the previously built model to apply a better scoring on the matches :
-
-```
-recipes:
-  rescoring:
-    input: clients_x_deaths
-    output: 
-      dataset: clients_x_deaths
-      mode: update              # <=== don't forget this field, otherwise your matching data and annotations could be lost !
-    steps:
-      - apply_model:
-          name: clients_deaths_ml
-          numerical: .*(hit_score_(?!ml).*|population|surface|matchid_hit_distance)$
-                                # the numerical factor must be exactly the same as in the training, otherwise the model
-                                # won't apply
-          target: matchid_hit_score_ml
-      - eval:
-          - confiance: >
-              try:
-                cell = round(0.7*float(matchid_hit_score_ml)+30*float(matchid_hit_score))
-              except:
-                try:
-                  cell = matchid_hit_score_ml
-                except:
-                  cell = matchid_hit_score
-          - scoring_version: str("{}-randomforest-{}").format(re.sub("-.*","",scoring_version),str(datetime.datetime.now()))
-```
-
-As machine learning can drift, we keep in the recipe 30% of the initial scoring to avoid complete change on full positive or full negative matches. 
-
-You can immediately run this recipe which will just update the `confiance` column and versioning. This is a quick step, and should be over in about 15 minutes.
-
-Then you can go check again the validation of `clients_x_deaths` to check the impact on the discrimation :
-
-<img src="assets/images/frontend-validation-postscoring.png" alt="matchID projects view">
-
-You can annotate again concentrating on new middle range scores, training again, and so on... 
-
-To have an overview on the global process you can click on <i class="fab fa-connectdevelop"></i> to open the graph project:
-
-<img src="assets/images/frontend-project-graph.png" alt="matchID projects view">
 
 
