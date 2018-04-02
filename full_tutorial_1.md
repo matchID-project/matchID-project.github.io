@@ -6,14 +6,9 @@ title: Step-by-step tutorial
 width: is-10
 ---
 
-# **Tutorial**
-This is the first chapter of the tutorial, which will deal with three use-cases :
+# **Use case 1** : finding common identities between two big datasets (realistic case)
 
-- Use case 1: finding common identities between two big datasets
-- Use case 2: finding doubles within a dataset
-- Use case 3: building a search api for a dataset (*top of elasticsearch* API)
-
-# **Use case 1** : finding common identities between two big datasets
+This is the first *realistic* use case, where we deal with more realistic data (encoding problems, more than 1M people datasets, ...), were we'll follow a more robust method for accurate matching.
 
 ## **Cooking recipes with matchID** 
 
