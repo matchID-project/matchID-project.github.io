@@ -1,8 +1,8 @@
 ---
 layout: default
-permalink: tutorial
-description: "stating matchID, first recipes, use case 1 : common identities between two big datasets"
-title: Step-by-step tutorial
+permalink: advanced_tutorial
+description: "use case 1 : common identities between two big datasets (realistic use case)"
+title: Avanced step-by-step tutorial
 width: is-10
 ---
 
