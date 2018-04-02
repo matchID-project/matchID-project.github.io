@@ -140,11 +140,11 @@ This run is needed to index the deaths with elasticearch, which will enable a ma
 You can follow the job either directly in the bottom in the "Real logs":
 <img src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
 
-This should take about 30 seconds on your laptop to index the 35327 rows. 
+This should take about 45 seconds on your laptop to index the 71k rows. 
 
 The job log last line should summarize the time and bugs for the recipe :
 ```
-2018-04-02 19:01:21.113551 - 0:00:34.571975 - end : run - Recipe dataprep_deaths_test successfully fininshed with no error, 35327 lines processed, 35327 lines written
+ 2018-04-02 21:17:39.715749 - 0:00:42.308387 - end : run - Recipe dataprep_deaths_test successfully fininshed with no error, 71404 lines processed, 71404 lines written
 ```
 
 ## **Step 2** - match clients against deaths
@@ -165,6 +165,66 @@ We choose here to use elasticsearch as is it quite versatile (can perform ngram,
 So, now you have to match every client against the already-indexed-in-step-1 deaths. 
 
 First create a recipe named `clients_deaths_matching_test`:
+```
+recipes:
+  clients_deaths_matching_test:
+    input: clients_csv_test
+    output: clients_x_deaths
+    steps:
+      - join: 
+          type: elasticsearch
+          dataset: deaths
+          query:
+            size: 1
+            query:
+              bool:
+                must:
+                  - term:
+                      DCD_NOM: Nom
+                  - match:
+                      DCD_DATE_NAISSANCE: Date
+```
+
+So you'll see this first result:
+
+<img src="assets/images/frontend-dataset-matching-test.png" alt="matchID matching">
+
+Some observations :
+- only clients with a death match appear : you have to add an option `keep_unmatched: true` to add in `join` to make clients with no match appear
+- matching is quite quite unefficient for many reasons: 
+  - date is tokenized as the caracter '/' is used, so partial matching with dates are ok. We could have prepared dates for less tolerance
+  - only the first name is used
+
+Here is a more complete search :
+```
+recipes:
+  clients_deaths_matching_test:
+    input: clients_csv_test
+    output: clients_x_deaths
+    steps:
+      - join: 
+          type: elasticsearch
+          dataset: deaths
+          keep_unmatched: true
+          query:
+            size: 1
+            query:
+              bool:
+                must:
+                  - match:
+                      DCD_NOM:
+                        query: Nom
+                        fuzziness: auto
+                  - match:
+                      DCD_DATE_NAISSANCE: Date
+                should:
+                  - match:
+                      DCD_PRENOM: Prenom
+                  - match:
+                      DCD_COMMUNE_NAISSANCE: Lieu
+```
+
+
 
 ******************
 
