@@ -13,11 +13,16 @@
 
     <div id="navMenubd-main" class="navbar-menu">
       <div class="navbar-start">
+        <a class="navbar-item" href="about">
+            <span class="icon">
+              <i class="far fa-lightbulb"></i>
+            </span> About matchID
+        </a>
         <div class="navbar-item has-dropdown is-hoverable is-boxed">
           <a class="navbar-link">
             <span class="icon">
-              <i class="fas fa-book"></i>
-            </span> Tech resources
+              <i class="fas fa-chart-line"></i>
+            </span> DataScientist / Dev resources
           </a>
           <div class="navbar-dropdown">
             <a class="navbar-item {% if page.url == '/starting' %}has-text-primary{% endif %}" href="starting">
@@ -26,6 +31,30 @@
               </span>
               <span> Install matchID </span>
             </a>
+            <a href="datasets" class="navbar-item {% if page.url == '/datasets' %}has-text-primary{% endif %}">
+              <span class="icon">
+                <i class="fas fa-table" aria-hidden="true"></i>
+              </span> Allowed Datasets
+            </a>
+            <a href="https://github.com/matchID-project/examples/tree/master/data" class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-table" aria-hidden="true"></i>
+              </span> Datasets Examples
+            </a>
+            <a href="recipes" class="navbar-item {% if page.url == '/recipes' %}has-text-primary{% endif %}">
+              <span class="icon">
+                <i class="fas fa-flask" aria-hidden="true"></i>
+              </span> Recipes: pre-built functions
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable is-boxed">
+          <a class="navbar-link">
+            <span class="icon">
+              <i class="fas fa-archive"></i>
+            </span> DevOps resources
+          </a>
+          <div class="navbar-dropdown">
             <a class="navbar-item {% if page.url == '/automation' %}has-text-primary{% endif %}" href="automation">
               <span class="icon">
                 <i class="fab fa-docker"></i>
@@ -36,16 +65,6 @@
               <span class="icon">
                 <i class="fab fa-usb" aria-hidden="true"></i>
               </span> API endpoints
-            </a>
-            <a href="datasets" class="navbar-item {% if page.url == '/datasets' %}has-text-primary{% endif %}">
-              <span class="icon">
-                <i class="fas fa-table" aria-hidden="true"></i>
-              </span> Allowed Datasets
-            </a>
-            <a href="recipes" class="navbar-item {% if page.url == '/recipes' %}has-text-primary{% endif %}">
-              <span class="icon">
-                <i class="fas fa-flask" aria-hidden="true"></i>
-              </span> Recipes: pre-built functions
             </a>
             <a href="dev" class="navbar-item {% if page.url == '/dev' %}has-text-primary{% endif %}">
               <span class="icon">
