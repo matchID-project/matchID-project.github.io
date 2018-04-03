@@ -354,5 +354,13 @@ datasets:
 This configuration can be avoided if you had previously mapped your column names as in the [advanced tutorial](/advanced_tutorial)
 Just save the configuration then you should have a blue `Validation` button you can click to have this final display:
 
+<img src="assets/images/frontend-validation-test.png" alt="matchID validation">
+
+This first quick-n-dirty try gives quite good results withs scores above 40 :
+
+<img src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">.
+
+For advanced results, you should get a strong environnement (8vCPU at least, we recommend 16vCPU and the higher the better), and go to the [advanced tutorial](/advanced_tutorial) with more than 1M datasets.
+
 
 
