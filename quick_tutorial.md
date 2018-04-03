@@ -157,7 +157,7 @@ from `sep: "\\s+|,|;"` to `sep: ";"`
 ### Configure the output dataset on elasticsearch
 
 Create the dataset `clients_x_deaths` from the menu
-   
+
 ```
 datasets:
   clients_x_deaths:
@@ -274,11 +274,11 @@ Or to filter bad matches :
           where: confiance > 20
 ```
 
-It should take about 3 minutes on a laptop to proceed the 16k rows.
+It should take about 3 minutes on a laptop to proceed the 16k rows. Go to `clients_x_deaths` to see the results !
 
 ### View results in the validation app
 
-To display the results in the validation app you have to declare the dataset in a special way to format the display :
+We now have the results. To make it more visual, we can display the results in the **validation app**. Simply declare the dataset in a special way to format the results:  
 
 ```
 datasets:
@@ -356,13 +356,16 @@ datasets:
             - 65
 ```
 
-This configuration can be avoided if you had previously mapped your column names as in the [advanced tutorial](/advanced_tutorial)
-Just save the configuration then you should have a blue `Validation` button you can click to have this final display:
+Don't forget to click on **save the configuration** and to **refresh the page**   
+Then you should have a blue `Validation` button you can click to have this final display:
 
 <img src="assets/images/frontend-validation-test.png" alt="matchID validation">
 
 This first quick-n-dirty try gives quite good results withs scores above 40 :
 
 <img src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">.
+
+_Note: This configuration can be avoided if you had previously mapped your column names as in the [advanced tutorial](/advanced_tutorial)_
+
 
 For advanced results, you should get a strong environnement (8vCPU at least, we recommend 16vCPU and the higher the better), and go to the [advanced tutorial](/advanced_tutorial) with more than 1M datasets.
