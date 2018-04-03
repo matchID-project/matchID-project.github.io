@@ -33,6 +33,29 @@ But, as we were talking about our solution to match people's identities inside t
 
 >  So we decided to rewrite our project totally and to create an universal solution for matching people's identities. You get it now, it's **matchID**.
 
+# Advantages of matchID
+----
+
+  * Free and open source
+  * Easy setup for identities matching (compared to DSS : powerful for most general usecases though)
+  * Simple scalability
+
+# Data flow
+----
+<figure class="image is-8">
+ <img src="assets/images/workflow.png">
+</figure>
+
+# Technical stack
+----
+
+  * Python
+  * Elasticsearch
+  * Docker
+  * VueJs
+
+
+
 # Why open sourcing ?
 ----
 
