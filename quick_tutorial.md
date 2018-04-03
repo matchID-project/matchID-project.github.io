@@ -6,22 +6,20 @@ title: Tutorial - Simple
 width: is-10
 ---
 
-## Intro
+# **Intro**
 
 This tutorial deals with an easy use case of matching identities of two datasets, called `deaths` (a list of dead people) and `clients` (a list of our clients, inlcuding some dead people) which are both reasonably big.
 An [advanced tutorial](/advanced_tutorial) is available for dealing with a more complex case (over 1 million records),
 where *maching learning* is necessary to find a big number of match.
 
-#### Method
+#### General Method
+- Data preparation
+- Step 1: index deaths dataset
+- Step 2: match clients againts deaths
 
-- [Step 1: index deaths dataset](#step-1-index-deaths-dataset)
-- [Step 2: match clients againts deaths](#step-2-match-clients)
+#### Data preparation: the philosophy of iterative cooking
 
-### the philosophy of iterative cooking
-
-So, the final goal is the match but we have first to deal with the way, which mainly is data preparation. So we'll learn here how to cook your data with recipes.
-
-We propose a 4 or 5-step iteration method :
+We have first to do data preparation. So we'll learn here how to _cook your data with recipes_, with a 4 or 5-step iteration method :
 
 1. upload raw data and configuration files
 2. edit yaml configuration files
@@ -34,17 +32,17 @@ Iterating through these steps will allow you to create recipes and datasets for 
 - prepare your datasets (upload, map names/dates/locations)
 - search matches and score them
 
-Not covered here (see [advanced tutorial](/advanced_tutorial) ) :
+#### Difference between Simple and [advanced tutorial](/advanced_tutorial)
 
+In the advanced tutorial, we will go through more steps, among those:  
 - validate the matches (through the [matchID-validation]() UI, see below)
 - train machine learning models (using yaml edition and recipe testing again)
 - apply for rescoring (idem)
 - presenting an API for searching and rescoring new clients
 
+But for now, we don't need to.
 
-## **Cooking recipes with matchID**
-
-## start your matchID server
+# **Start your matchID server**
 
 We suppose your matchID server is already started, as explained in [starting matchID](/starting).
 
@@ -54,9 +52,9 @@ Now, you can go to your `matchID` server :
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
 
-## first project, first dataset, first recipe
+# **Data preparation**
 
-### project
+### **Data preparation** : Create your first project
 
 We'll first have to create a project. This will basically be a folder, containing datasets and recipes (data transformation).
 Here we'll simply name it `deaths`.
@@ -66,26 +64,26 @@ Here we'll simply name it `deaths`.
 Which leads to:
 <img src="assets/images/frontend-project-view-empty.png" alt="matchID projects view">
 
-*Note :
+Note :  
 - The segmentation of the projects are very easy to do server-side, as it only contains two sub-folders, datasets and recipes. We didn't implement methods for splitting or reorganising project at this step of the development, as the ratio of benefit/cost of folder management is very low.
-- There is no project versioning : you have to do your own versioning - at this step we do it by gitting them server side, so be careful in any change you make - git may be supported in a theorical future*.
+- There is no project versioning : you have to do your own versioning - at this step we do it by gitting them server side, so be careful in any change you make - git may be supported in a theorical future.
 
-### dataset
+### **Data preparation** : Import your first Dataset
 
-Click again on `import dataset` and just drag-n-drop (thx to [Dropzone](http://www.dropzonejs.com/)) the [`death_test.csv`](https://github.com/matchID-project/examples/raw/master/data/deaths_test.csv) downloaded from the [examples matchID repo](https://github.com/matchID-project/examples).
+Click on `import dataset` and just drag-n-drop (thx to [Dropzone](http://www.dropzonejs.com/)) the [`death_test.csv`](https://github.com/matchID-project/examples/raw/master/data/deaths_test.csv) downloaded from the [examples matchID repo](https://github.com/matchID-project/examples).
 
 <img src="assets/images/frontend-import-dataset2.png" alt="matchID import dataset test">
 
 Now you have your first dataset:
 <img src="assets/images/frontend-dataset-deaths-simple-import.png" alt="matchID dataset first view">
 
-Please care about the screen composition :
-	- on the left pane: yaml coding part (thx to [codemirror](https://codemirror.net/)) with the dataset declaration.
+Please care about the screen composition :  
+	- on the left pane: yaml coding part (thx to [codemirror](https://codemirror.net/)) with the dataset declaration.  
 	- on the right pane: the dataset view, as declared in the yaml on the left.
 
 About the data: it is a clean synthetic data of French civil statuses. This file is a simple csv with no formatting or encoding problem. In the [advanced tutorial](/advanced_tutorial) you'll learn to deal with fixed with formats and encoding problems.
 
-### first recipe
+### **Data preparation** : Create your first recipe
 
 Create a new recipe :
 <img src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
@@ -110,9 +108,9 @@ So now you have an interactive way to deal with your data.
 Every new step of the recipe will add a new transformation on your data.
 You can have the exhaustive list of [recipes here](recipes.md), and see advanced recipes in [advanced tutorial](/advanced_tutorial).
 
-## **Step 1** - index deaths dataset
+# **Step 1** - index deaths dataset
 
-### configure the output dataset on elasticsearch
+### Configure the output dataset on elasticsearch
 
 We have to create the `deaths` dataset as formerly pointed as the output dataset of the recipe.
 Just create it from the menu and paste this content :
@@ -126,7 +124,7 @@ datasets:
 And don't forget to save it (`Save` button or `Ctrl+S`).
 Note that you can configure many options for an elasticsearch dataset, still illustrated in the [advanced tutorial](/advanced_tutorial).
 
-### run the recipe !
+### Run the recipe !
 So once everything is configured, you can go to the recipe `dataprep_death_test` and run it with the green button :
 
 <img src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
@@ -143,18 +141,32 @@ The job log last line should summarize the time and bugs for the recipe :
  2018-04-02 21:17:39.715749 - 0:00:42.308387 - end : run - Recipe dataprep_deaths_test successfully fininshed with no error, 71404 lines processed, 71404 lines written
 ```
 
-## **Step 2** - match clients against deaths
+# **Step 2** - match clients against deaths
 
-### upload dataset
+### Upload the second dataset
 You should be able to follow the former steps on the new file, `clients`.
 
 Then import the dataset [`clients_test.csv`](https://github.com/matchID-project/examples/raw/master/data/clients_test.csv).
 
 <img src="assets/images/frontend-dataset-clients-test.png" alt="matchID projects view">
 
-This data is quite easy and doesn't need dataprep for quick-n-dirty results.
+This data is quite easy: the only data preparation we need to do is to change the separator in the recipe  
+from `sep: "\\s+|,|;"` to `sep: ";"`
 
-### matching !
+
+### Configure the output dataset on elasticsearch
+
+Create the dataset `clients_x_deaths` from the menu
+
+```
+datasets:
+  clients_x_deaths:
+    connector: elasticsearch
+    table: clients_x_deaths
+```
+
+
+### Matching !
 Here comes the first important part : the fuzzy match with elasticsearch.
 We choose here to use elasticsearch as is it quite versatile (can perform ngram, phonetic and string-distance tolerant) for fuzzy matching.
 
@@ -195,7 +207,6 @@ Here is a more complete search :
 ```
 recipes:
   clients_deaths_matching_test:
-    test_chunk_size: 30
     input: clients_csv_test
     output: clients_x_deaths
     steps:
@@ -227,14 +238,14 @@ recipes:
 
 Now we see there is some noise we should be able to filter easily
 
-### scoring
+### Scoring
 
 As we are in a recipe, we can add additionnal steps, we'll use to score distance of names, place and dates of birth.
 Just add theses lines to the current recipe, which will remove wrong matches
 
 ```
       - eval:
-      	# scores
+          # scores
           - score_date: levenshtein_norm(hit_DCD_DATE_NAISSANCE, Date)
           - score_nom: levenshtein_norm(hit_DCD_NOM, Nom)
           - score_prenom: jw(hit_DCD_PRENOMS, Prenom)
@@ -249,7 +260,7 @@ Depending on whether you want to have a new clients file with deaths match or a 
 To blank bad matches :
 ```
       - eval:
-	# blank low score lines
+          # blank low score lines
           - hit_DCD_COMMUNE_NAISSANCE: hit_DCD_COMMUNE_NAISSANCE if (confiance > 30) else ""
           - hit_DCD_DATE_NAISSANCE: hit_DCD_DATE_NAISSANCE if (confiance > 30) else ""
           - hit_DCD_NOM: hit_DCD_NOM if (confiance > 30) else ""
@@ -263,13 +274,11 @@ Or to filter bad matches :
           where: confiance > 20
 ```
 
-Don't forget to declare `clients_x_deaths` (in csv or elasticsearch depending where you want to have your results), then run the recipe.
-
-It should take about 3 minutes on a laptop to proceed the 16k rows.
+It should take about 3 minutes on a laptop to proceed the 16k rows. Go to `clients_x_deaths` to see the results !
 
 ### View results in the validation app
 
-To display the results in the validation app you have to declare the dataset in a special way to format the display :
+We now have the results. To make it more visual, we can display the results in the **validation app**. Simply declare the dataset in a special way to format the results:  
 
 ```
 datasets:
@@ -347,13 +356,16 @@ datasets:
             - 65
 ```
 
-This configuration can be avoided if you had previously mapped your column names as in the [advanced tutorial](/advanced_tutorial)
-Just save the configuration then you should have a blue `Validation` button you can click to have this final display:
+Don't forget to click on **save the configuration** and to **refresh the page**   
+Then you should have a blue `Validation` button you can click to have this final display:
 
 <img src="assets/images/frontend-validation-test.png" alt="matchID validation">
 
 This first quick-n-dirty try gives quite good results withs scores above 40 :
 
 <img src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">.
+
+_Note: This configuration can be avoided if you had previously mapped your column names as in the [advanced tutorial](/advanced_tutorial)_
+
 
 For advanced results, you should get a strong environnement (8vCPU at least, we recommend 16vCPU and the higher the better), and go to the [advanced tutorial](/advanced_tutorial) with more than 1M datasets.
