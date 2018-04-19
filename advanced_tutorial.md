@@ -10,6 +10,8 @@ width: is-10
 
 This is the first *realistic* use case, where we deal with more realistic data (encoding problems, more than 1M people datasets, ...), were we'll follow a more robust method for accurate matching.
 
+WARNING: the global computing time of this tutorial is about 2h on a up-to-date laptop and 6h on our small tutorial server. You should consider to do first the [simple tutorial](/quick_tutorial) which only takes about 10 minutes.
+
 ## **Cooking recipes with matchID** 
 
 ### Global method used for matching
@@ -78,7 +80,9 @@ We suppose your matchID server is already started, as explained in [starting mat
 
 Now, you can go to your `matchID` server : 
 
-- [http://localhost/matchID/](http://localhost/matchID/)
+- [http://localhost:8081/matchID/](http://localhost/matchID/)
+
+WARNING: your should'nt try the tutorial on [the tutorial matchID site](https://tuto.matchID.tech) as it is a very slow computer (3x slower than your laptops vCPUs).
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
 
