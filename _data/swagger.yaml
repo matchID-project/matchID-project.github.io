@@ -3,7 +3,46 @@ info:
   version: '0.1'
   description: API for data matching developpement
   title: matchID API
+tags:
+- name: default
+  description: Default namespace
+basePath: "/matchID/api/v0"
+produces:
+- application/json
+consumes:
+- application/json
+responses:
+  MaskError:
+    description: When any error occurs on mask
+  ParseError:
+    description: When a mask can't be parsed  
 paths:
+  "/authorize/{provider}":
+    parameters:
+    - required: true
+      type: string
+      name: provider
+      in: path
+    get:
+      tags:
+      - default
+      responses:
+        '200':
+          description: Success
+      operationId: get_o_auth_authorize_api
+  "/callback/{provider}":
+    parameters:
+    - required: true
+      type: string
+      name: provider
+      in: path
+    get:
+      tags:
+      - default
+      responses:
+        '200':
+          description: Success
+      operationId: get_o_auth_callback_api
   "/conf/":
     get:
       operationId: get_conf
@@ -56,11 +95,11 @@ paths:
       tags:
       - default
       summary: delete a project
-      parameters:
-      - required: true
-        type: string
-        name: project
-        in: path
+    parameters:
+    - required: true
+      type: string
+      name: project
+      in: path
     get:
       operationId: get_directory_conf
       responses:
@@ -92,15 +131,15 @@ paths:
       tags:
       - default
       summary: delete a text/yaml configuration file from project
-      parameters:
-      - required: true
-        type: string
-        name: project
-        in: path
-      - required: true
-        type: string
-        name: file
-        in: path
+    parameters:
+    - required: true
+      type: string
+      name: project
+      in: path
+    - required: true
+      type: string
+      name: file
+      in: path
     get:
       operationId: get_file_conf
       responses:
@@ -109,6 +148,15 @@ paths:
       tags:
       - default
       summary: get a text/yaml configuration file from project
+  "/connectors/":
+    get:
+      operationId: get_list_connectors
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+      summary: get json of all configured connectors
   "/datasets/":
     get:
       operationId: get_list_datasets
@@ -136,12 +184,13 @@ paths:
           description: Success
       tags:
       - default
-      summary: delete the content of a dataset (currently only on elasticsearch)
-      parameters:
-      - required: true
-        type: string
-        name: dataset
-        in: path
+      summary: delete the content of a dataset (currently only working on elasticsearch
+        datasets)
+    parameters:
+    - required: true
+      type: string
+      name: dataset
+      in: path
     get:
       operationId: get_dataset_api
       responses:
@@ -160,22 +209,30 @@ paths:
       - default
       summary: 'action = validation : configure the frontend to point to this dataset'
     post:
-      operationId: post_push_to_validation
       responses:
         '200':
           description: Success
-      tags:
-      - default
-      summary: "(KO) search into the dataset"
       parameters:
       - required: true
-        type: string
-        name: dataset
-        in: path
-      - required: true
-        type: string
-        name: action
-        in: path
+        type: file
+        description: 'data file : csv, ...'
+        name: file
+        in: formData
+      tags:
+      - default
+      summary: direct search into the dataset
+      consumes:
+      - multipart/form-data
+      operationId: post_push_to_validation
+    parameters:
+    - required: true
+      type: string
+      name: dataset
+      in: path
+    - required: true
+      type: string
+      name: action
+      in: path
     get:
       operationId: get_push_to_validation
       responses:
@@ -183,7 +240,50 @@ paths:
           description: Success
       tags:
       - default
-      summary: "(KO) does nothing yet"
+      summary: alternative way to get text/yaml source code including the dataset
+  "/datasets/{dataset}/{doc_type}/{id}/{action}":
+    post:
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - required: true
+        type: file
+        description: 'data file : csv, ...'
+        name: file
+        in: formData
+      tags:
+      - default
+      summary: elasticsearch update api proxy
+      consumes:
+      - multipart/form-data
+      operationId: post_push_to_validation
+    parameters:
+    - required: true
+      type: string
+      name: dataset
+      in: path
+    - required: true
+      type: string
+      name: doc_type
+      in: path
+    - required: true
+      type: string
+      name: id
+      in: path
+    - required: true
+      type: string
+      name: action
+      in: path
+  "/groups/":
+    get:
+      operationId: get_list_groups
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+      summary: get json of all configured users
   "/jobs/":
     get:
       operationId: get_jobs_list
@@ -193,6 +293,29 @@ paths:
       tags:
       - default
       summary: retrieve jobs list
+  "/login/":
+    post:
+      tags:
+      - default
+      responses:
+        '200':
+          description: Success
+      operationId: post_login
+    get:
+      tags:
+      - default
+      responses:
+        '200':
+          description: Success
+      operationId: get_login
+  "/logout/":
+    post:
+      tags:
+      - default
+      responses:
+        '200':
+          description: Success
+      operationId: post_logout
   "/recipes/":
     get:
       operationId: get_list_recipes
@@ -203,6 +326,11 @@ paths:
       - default
       summary: get json of all configured recipes
   "/recipes/{recipe}/":
+    parameters:
+    - required: true
+      type: string
+      name: recipe
+      in: path
     get:
       operationId: get_recipe_api
       responses:
@@ -211,11 +339,6 @@ paths:
       tags:
       - default
       summary: get json of a configured recipe
-      parameters:
-      - required: true
-        type: string
-        name: recipe
-        in: path
   "/recipes/{recipe}/{action}":
     put:
       operationId: put_recipe_run
@@ -249,15 +372,15 @@ paths:
       consumes:
       - multipart/form-data
       operationId: post_recipe_run
-      parameters:
-      - required: true
-        type: string
-        name: recipe
-        in: path
-      - required: true
-        type: string
-        name: action
-        in: path
+    parameters:
+    - required: true
+      type: string
+      name: recipe
+      in: path
+    - required: true
+      type: string
+      name: action
+      in: path
     get:
       operationId: get_recipe_run
       summary: retrieve information on a recipe
@@ -268,8 +391,18 @@ paths:
       - default
       description: |-
         ** action ** possible values are :
+        - ** yaml ** : get text/yaml code including the recipe
         - ** status ** : get status (running or not) of a recipe
         - ** log ** : get log of a running recipe
+  "/roles/":
+    get:
+      operationId: get_list_roles
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+      summary: get json of all configured users
   "/upload/":
     post:
       responses:
@@ -309,11 +442,11 @@ paths:
       tags:
       - default
       summary: deleted uploaded file
-      parameters:
-      - required: true
-        type: string
-        name: file
-        in: path
+    parameters:
+    - required: true
+      type: string
+      name: file
+      in: path
     get:
       operationId: get_action_file
       responses:
@@ -322,16 +455,12 @@ paths:
       tags:
       - default
       summary: get back uploaded file
-responses:
-  MaskError:
-    description: When any error occurs on mask
-  ParseError:
-    description: When a mask can't be parsed
-tags:
-- name: default
-  description: Default namespace
-basePath: "/matchID/api/v0"
-produces:
-- application/json
-consumes:
-- application/json
+  "/users/":
+    get:
+      operationId: get_list_users
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+      summary: get json of all configured users
