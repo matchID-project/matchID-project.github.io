@@ -1,21 +1,7 @@
-swagger: '2.0'
 info:
   version: '0.1'
   description: API for data matching developpement
   title: matchID API
-tags:
-- name: default
-  description: Default namespace
-basePath: "/matchID/api/v0"
-produces:
-- application/json
-consumes:
-- application/json
-responses:
-  MaskError:
-    description: When any error occurs on mask
-  ParseError:
-    description: When a mask can't be parsed  
 paths:
   "/authorize/{provider}":
     parameters:
@@ -24,12 +10,13 @@ paths:
       name: provider
       in: path
     get:
-      tags:
-      - default
+      operationId: get_o_auth_authorize_api
       responses:
         '200':
           description: Success
-      operationId: get_o_auth_authorize_api
+      tags:
+      - default
+      summary: authorize api for OAuth protocol
   "/callback/{provider}":
     parameters:
     - required: true
@@ -37,12 +24,13 @@ paths:
       name: provider
       in: path
     get:
-      tags:
-      - default
+      operationId: get_o_auth_callback_api
       responses:
         '200':
           description: Success
-      operationId: get_o_auth_callback_api
+      tags:
+      - default
+      summary: callback api for OAuth protocol
   "/conf/":
     get:
       operationId: get_conf
@@ -283,7 +271,7 @@ paths:
           description: Success
       tags:
       - default
-      summary: get json of all configured users
+      summary: get all groups
   "/jobs/":
     get:
       operationId: get_jobs_list
@@ -295,27 +283,30 @@ paths:
       summary: retrieve jobs list
   "/login/":
     post:
-      tags:
-      - default
-      responses:
-        '200':
-          description: Success
       operationId: post_login
-    get:
-      tags:
-      - default
       responses:
         '200':
           description: Success
+      tags:
+      - default
+      summary: login api with user and hash
+    get:
       operationId: get_login
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+      summary: return current user if logged
   "/logout/":
     post:
-      tags:
-      - default
+      operationId: post_logout
       responses:
         '200':
           description: Success
-      operationId: post_logout
+      tags:
+      - default
+      summary: logout current user
   "/recipes/":
     get:
       operationId: get_list_recipes
@@ -402,7 +393,7 @@ paths:
           description: Success
       tags:
       - default
-      summary: get json of all configured users
+      summary: get all roles
   "/upload/":
     post:
       responses:
@@ -463,4 +454,18 @@ paths:
           description: Success
       tags:
       - default
-      summary: get json of all configured users
+      summary: get list of all configured users
+responses:
+  MaskError:
+    description: When any error occurs on mask
+  ParseError:
+    description: When a mask can't be parsed
+tags:
+- name: default
+  description: Default namespace
+basePath: "/matchID/api/v0"
+produces:
+- application/json
+swagger: '2.0'
+consumes:
+- application/json
