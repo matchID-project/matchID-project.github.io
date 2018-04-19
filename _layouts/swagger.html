@@ -14,7 +14,7 @@ layout: default
 {% assign swagger = site.data.swagger %}
 
 {% for route in swagger.paths %}
-  <div class="swagger-paths">
+  <div class="swagger-paths is-small">
     <h3 class="title is-3">{{ route[0] }}</h3>
     {% for method in route[1] %}
       <div class="swagger-method swagger-method-{{ method[0] }}">
