@@ -48,7 +48,7 @@ Any problems ? Check the [troubleshooting](automation#troubleshooting) section.
 
 Now, you can go to your `matchID` server : 
 
-- [http://localhost:8081/matchID/](http://localhost/matchID/)
+- [http://localhost:8081/matchID/](http://localhost:8081/matchID/)
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
 
