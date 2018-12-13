@@ -8,6 +8,8 @@ width: is-10
 
 # Starting a development matchID server
 
+[![install video on yu](https://img.youtube.com/vi/Sus23GbLT5I/0.jpg)](https://www.youtube.com/watch?v=Sus23GbLT5I)
+
 A laptop with >8Go configuration is recommended to have a first look at `matchID`. Good performance needs higher computational resources (the higher the better : 16-cores + 128Go will be 15x faster than a laptop, we tested up-scaling to 40-cores getting to 40x faster).
 
 `matchID` uses `make` and `Docker` to accelerate the installation of dependencies. You'll first have to install `Docker` and `docker-compose`.
