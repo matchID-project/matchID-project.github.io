@@ -12,10 +12,11 @@ A laptop with >8Go configuration is recommended to have a first look at `matchID
 
 `matchID` uses `make` and `Docker` to accelerate the installation of dependencies. You'll first have to install `Docker` and `docker-compose`.
 
-Clone the project : 
+Clone the project and go into it: 
 
 ```
 git clone https://github.com/matchID-project/backend
+cd backend
 ```
 
 If your host does not have Docker on it yet, your should install it first (only tested with Ubuntu 16.04) :
@@ -47,7 +48,7 @@ Any problems ? Check the [troubleshooting](troubleshooting) section.
 
 Now, you can go to your `matchID` server : 
 
-- [http://localhost/matchID/](http://localhost/matchID/)
+- [http://localhost:8081/matchID/](http://localhost/matchID/)
 
 <img src="assets/images/frontend-start.png" alt="matchID projects view">
 
