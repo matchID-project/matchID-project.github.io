@@ -42,9 +42,9 @@ Now you can start the tutorial mode which downloads, compiles necessary stuff, a
 make start
 ```
 
-This may take some time as this handles multiple actions. See the [architecture](troubleshooting#architecture) to discover more about the components.
+This may take some time as this handles multiple actions. See the [architecture](automation) to discover more about the components.
 
-Any problems ? Check the [troubleshooting](troubleshooting) section.
+Any problems ? Check the [troubleshooting](automation#troubleshooting) section.
 
 Now, you can go to your `matchID` server : 
 
