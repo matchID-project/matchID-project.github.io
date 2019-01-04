@@ -178,7 +178,7 @@ First create a recipe named `clients_deaths_matching_test`:
 ```
 recipes:
   clients_deaths_matching_test:
-    input: clients_csv_test
+    input: clients_test_csv
     output: clients_x_deaths
     steps:
       - join:
@@ -209,7 +209,7 @@ Here is a more complete search :
 ```
 recipes:
   clients_deaths_matching_test:
-    input: clients_csv_test
+    input: clients_test_csv
     output: clients_x_deaths
     steps:
       - join:
