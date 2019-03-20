@@ -29,6 +29,7 @@ Summary:
  - [rename](#rename)
  - [delete](#delete)
  - [eval](#eval)
+ - [exec](#exec)
  - [replace](#replace)
  - [normalize](#normalize)
  - [pause](#pause)
@@ -137,6 +138,34 @@ Here's an example:
 ```
 
 [Here](#eval-functions) are some of the implemented functions.
+
+*WARNING*: the eval function uses `pd.Dataframe.apply` row-by-row which is easy but sub-optimal for large datasets. You should consider to optimize your `eval` draft with an `exec` as soon as possible. Using vectorized function can lead to 100x accelerations. 
+
+### exec
+
+Every dataengineer or datascientist wants to optimize the algorithm knowing what it does.
+
+This method execute pure python code, given that the data in input is the `df` dataframe processed by the recipes above. You should use this method everytime you process large volumes, because the `apply` method
+
+The values of the dataframe are accessible within the `row` array.
+A particular `column` value is available in `row['column']` as in `column`.
+
+Here's an example:
+
+```
+      - exec:
+        - df['matchid_name_match'] = df['matchid_name_last']+ np.where(df['matchid_name_first']!=""," " + df['matchid_name_first'], "")
+        - df['matchid_name_last'] = df['matchid_name_last'].split(" ")
+```
+
+You can even have a multiline code:
+```
+      - exec: >
+          df['matchid_location_depcode'] = np.where(
+            (df['matchid_location_depcode'] == "") & (df['lieu_nais'].str.contains("99")),
+            "99",
+            df['matchid_location_depcode'])
+```
 
 ### replace
 
