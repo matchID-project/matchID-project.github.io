@@ -524,12 +524,13 @@ recipes:
 ```
 
 Note that:
+  - please mind the indentation, respecting the [YAML standard](https://yaml.org/spec/1.2/spec.html)
   - `test_chunk_size` (default 30) will apply as a 'LIMIT' on the input dataset (clients) and to the output result while you test the recipe. This is usefull to force to have a response in a decent time, but on the other way you may have
   an empty result due to this. This is a classical SQL developpement problem and we'll be happy if you suggest other way to do this properly
-  - If you want only to execute SQL efficiently and store it in the same database you have to leave the 'steps' empty
-  - You can still use recipes after the request within the steps, the result of the request will be executed in the Python processor
-  - The output dataset can be in a onther connector, so the SQL will be executed in the database of the input connector, then simply casted in the other connector
-  - Types are preserved if you cast in another dataset, with classical problem using SQL types, then Pandas, then the output connector (for example Elasticsearch). There is no universal translator for that, it will be your pain.
-  - If you want a fast copy you can specify the `mode: expert` in the input datasource, only for Postgres. This is usually a bit faster as it uses the `copy_expert` method. the other hand, all types will be casted into string. 
+  - if you want only to execute SQL efficiently and store it in the same database you have to leave the 'steps' empty
+  - you can still use recipes after the request within the steps, the result of the request will be executed in the Python processor
+  - the output dataset can be in a onther connector, so the SQL will be executed in the database of the input connector, then simply casted in the other connector
+  - types are preserved if you cast in another dataset, with classical problem using SQL types, then Pandas, then the output connector (for example Elasticsearch). There is no universal translator for that, it will be your pain.
+  - if you want a fast copy you can specify the `mode: expert` in the input datasource, only for Postgres. This is usually a bit faster as it uses the `copy_expert` method. the other hand, all types will be casted into string. 
 
 
