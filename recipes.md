@@ -58,6 +58,8 @@ Summary:
  - [`levenshtein(str a, str b)`](#levenshteinstr-a-str-b)
  - [`levenshtein_norm(str a, str b)`](#levenshtein_normstr-a-str-b)
 
+ - [SQL recipes](#sqlrecipes)
+
 
 # Internals recipes
 ----
@@ -474,3 +476,60 @@ Compute minimum jaro-winkler distance between strings of list a and strings of l
 
 ### `ngrams(object a, n=[2,3])`
 Computes n-grams of string a (with n in a int list here [2,3]) or n-grams of strings in list a.
+
+
+# SQL Recipes
+
+SQL often performs better dans Python as soon as you don't need long code implementations.
+We recommand to use it when performin join operations or simple tranformations.
+
+matchID now includes a Postgres database, but could be used with other SQL alchemy compatible database. If it doesn't work please report an [issue on Github](https://github.com/matchID-project/backend/issues).
+
+Note that before to perform a SQL join operation you should have declared to datasets in the same database. Be careful about the tables names which may differ between the dataset and the tables. 
+
+Let's say that `clients` and `deaths` are our two datasets using the same connector (with the same name for the table). Suppose we also previously declared `clients_x_deaths` as a dataset using the same connector.
+
+Here's a simple example of SQL recipe :
+
+```
+recipes:
+  sql_matching:
+    test_chunk_size: 100
+    input: 
+      dataset: clients
+      chunk: 1000
+      select: >
+        select 
+          clients.*,
+          -- you must be careful about columns names potential collisions
+          deaths.matchid_id as hit_matchid_id,
+          deaths.matchid_name_last as hit_matchid_name_last,
+          deaths.matchid_name_first as hit_matchid_name_first,
+          deaths.matchid_location_city as hit_matchide_location_city,
+          deaths.matchid_location_depcode as hit_matchid_location_depcode,
+          deaths.matchid_date_birth as hit_matchid_date_birth,
+
+        from clients, deaths
+          where
+            (
+              levenshtein(clients.matchid_name_last, deaths.matchid_name_last)<3 
+              and levenshtein(clients.matchid_name_first, deaths.matchid_name_first)<3
+              and clients.matchid_location_depcode = deaths.matchid_location_depcode
+              and clients.matchid_birth_date = deaths.matchid_birth_date
+            )
+          
+    output: clients_x_deaths
+    steps:
+
+```
+
+Note that:
+  - `test_chunk_size` (default 30) will apply as a 'LIMIT' on the input dataset (clients) and to the output result while you test the recipe. This is usefull to force to have a response in a decent time, but on the other way you may have
+  an empty result due to this. This is a classical SQL developpement problem and we'll be happy if you suggest other way to do this properly
+  - If you want only to execute SQL efficiently and store it in the same database you have to leave the 'steps' empty
+  - You can still use recipes after the request within the steps, the result of the request will be executed in the Python processor
+  - The output dataset can be in a onther connector, so the SQL will be executed in the database of the input connector, then simply casted in the other connector
+  - Types are preserved if you cast in another dataset, with classical problem using SQL types, then Pandas, then the output connector (for example Elasticsearch). There is no universal translator for that, it will be your pain.
+  - If you want a fast copy you can specify the `mode: expert` in the input datasource, only for Postgres. This is usually a bit faster as it uses the `copy_expert` method. the other hand, all types will be casted into string. 
+
+
