@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   width="1279.5145"
+   height="723.77606"
+   viewBox="0 0 1279.5145 723.77606"
+   sodipodi:docname="POCs_MCAVD.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="/home/antoinefa/src/valdon2018/img/POCs_MCAVD.png"
+   inkscape:export-xdpi="149.98189"
+   inkscape:export-ydpi="149.98189">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1534"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#174791;fill-opacity:1;fill-rule:evenodd;stroke:#174791;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1532"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1170"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#174791;fill-opacity:1;fill-rule:evenodd;stroke:#174791;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2359"
+       x="-0.044948678"
+       width="1.0898974"
+       y="-0.1666391"
+       height="1.3332782">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.3041875"
+         id="feGaussianBlur2361" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2359-4"
+       x="-0.044948678"
+       width="1.0898974"
+       y="-0.1666391"
+       height="1.3332782">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.3041875"
+         id="feGaussianBlur2361-0" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2359-9"
+       x="-0.044948678"
+       width="1.0898974"
+       y="-0.1666391"
+       height="1.3332782">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.3041875"
+         id="feGaussianBlur2361-8" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2359-9-6"
+       x="-0.044948678"
+       width="1.0898974"
+       y="-0.1666391"
+       height="1.3332782">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.3041875"
+         id="feGaussianBlur2361-8-0" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2359-9-6-5"
+       x="-0.044948678"
+       width="1.0898974"
+       y="-0.1666391"
+       height="1.3332782">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.3041875"
+         id="feGaussianBlur2361-8-0-5" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.92324869"
+     inkscape:cx="308.32592"
+     inkscape:cy="396.3625"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot3759"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+       id="flowRegion3761"><rect
+         id="rect3763"
+         width="213.37697"
+         height="59.572247"
+         x="-36.826481"
+         y="668.53632" /></flowRegion><flowPara
+       id="flowPara3765" /></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot3848"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+       id="flowRegion3850"><rect
+         id="rect3852"
+         width="875.17047"
+         height="174.38422"
+         x="-184.1324"
+         y="81.478912" /></flowRegion><flowPara
+       id="flowPara3854" /></flowRoot>  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="1033.3077"
+     y="555.89062"
+     id="text4687"><tspan
+       sodipodi:role="line"
+       id="tspan4685"
+       x="1033.3077"
+       y="591.28125" /></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="1044.139"
+     y="393.42087"
+     id="text4752"><tspan
+       sodipodi:role="line"
+       id="tspan4750"
+       x="1044.139"
+       y="428.81149" /></text>
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#174791;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999988;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4-7-9"
+     width="229.71884"
+     height="693.89618"
+     x="1029.4326"
+     y="16.781132" />
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#174791;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4"
+     width="946.75208"
+     height="693.89618"
+     x="312.39929"
+     y="16.781132" />
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#174791;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0"
+     width="1248.4033"
+     height="693.89618"
+     x="10.747068"
+     y="15.156437" />
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#174791;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4-7"
+     width="585.25684"
+     height="693.89618"
+     x="673.62372"
+     y="15.156437" />
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.76640904;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2359-4);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4-1-3"
+     width="123.03031"
+     height="33.185787"
+     x="34.467968"
+     y="10.722485"
+     transform="matrix(1.7024667,0,0,1,-42.678778,29.035342)" />
+  <text
+     id="text854-4-4-3-9-1-4"
+     y="529.16351"
+     x="365.42999"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25.89191246px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="8.6757913"
+     inkscape:transform-center-y="21.069724"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25.89191246px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="529.16351"
+       x="365.42999"
+       sodipodi:role="line"
+       id="tspan1134-8">décédés</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25.89191246px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="561.52838"
+       x="365.42999"
+       sodipodi:role="line"
+       id="tspan1165">du permis</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25.89191246px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="593.89331"
+       x="365.42999"
+       sodipodi:role="line"
+       id="tspan3846">de conduire</tspan></text>
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999988;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2359);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4-1"
+     width="123.03031"
+     height="33.185787"
+     x="10.747068"
+     y="675.86682" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#174791;stroke-width:0.99999988px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+     d="M 0,710.87633 H 1277.5732"
+     id="path819"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#174791;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1534)"
+     d="M 14.096709,723.77608 V 1.941363"
+     id="path817"
+     inkscape:connector-curvature="0" />
+  <text
+     id="text854-4-7-5"
+     y="703.35254"
+     x="75.446045"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#174791;fill-opacity:1;stroke-width:0.99999994px"
+       y="703.35254"
+       x="75.446045"
+       sodipodi:role="line"
+       id="tspan993-3-6">2016</tspan></text>
+  <text
+     id="text854-4-7"
+     y="65.027527"
+     x="118.36903"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#174791;fill-opacity:1;stroke-width:0.99999994px"
+       y="65.027527"
+       x="118.36903"
+       sodipodi:role="line"
+       id="tspan993-3">maturité projet</tspan></text>
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999988;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2359-9);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4-1-1"
+     width="123.03031"
+     height="33.185787"
+     x="318.35651"
+     y="675.86682" />
+  <text
+     id="text854-4-7-5-0"
+     y="703.35254"
+     x="383.05548"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#174791;fill-opacity:1;stroke-width:0.99999994px"
+       y="703.35254"
+       x="383.05548"
+       sodipodi:role="line"
+       id="tspan993-3-6-7">2017</tspan></text>
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999988;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2359-9-6);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4-1-1-1"
+     width="123.03031"
+     height="33.185787"
+     x="677.62372"
+     y="675.86682" />
+  <text
+     id="text854-4-7-5-0-0"
+     y="703.35254"
+     x="742.32269"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#174791;fill-opacity:1;stroke-width:0.99999994px"
+       y="703.35254"
+       x="742.32269"
+       sodipodi:role="line"
+       id="tspan3821">2018</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5"
+     y="287.28403"
+     x="627.02405"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="287.28403"
+       x="627.02405"
+       sodipodi:role="line"
+       id="tspan1165-9">matchID</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7"
+     y="462.23804"
+     x="742.2973"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:19.51921463px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.4238514"
+     inkscape:transform-center-y="16.172143"
+     transform="scale(0.98217886,1.0181445)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:19.51921463px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="462.23804"
+       x="742.2973"
+       sodipodi:role="line"
+       id="tspan1165-9-1">qualité identité</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:19.51921463px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="486.63705"
+       x="742.2973"
+       sodipodi:role="line"
+       id="tspan3876">possesseurs</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:19.51921463px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="511.03607"
+       x="742.2973"
+       sodipodi:role="line"
+       id="tspan3878">d'armes</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-3"
+     y="462.35464"
+     x="518.46179"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.85554695px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="7.323296"
+     inkscape:transform-center-y="17.785117"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.85554695px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="462.35464"
+       x="518.46179"
+       sodipodi:role="line"
+       id="tspan3846-0">infractions</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.85554695px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="489.67407"
+       x="518.46179"
+       sodipodi:role="line"
+       id="tspan3921">post décès</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6"
+     y="542.98962"
+     x="792.66919"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.7376824"
+     inkscape:transform-center-y="18.527623"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="542.98962"
+       x="792.66919"
+       sodipodi:role="line"
+       id="tspan3878-4">qualité dates</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="569.73541"
+       x="792.66919"
+       sodipodi:role="line"
+       id="tspan3952">permis Pulsarbaac</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9"
+     y="198.50638"
+     x="881.66913"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="198.50638"
+       x="881.66913"
+       sodipodi:role="line"
+       id="tspan3985">ICER</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-3-9"
+     y="580.13513"
+     x="1085.5333"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:23.06218529px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="7.7275872"
+     inkscape:transform-center-y="18.767067"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:23.06218529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="580.13513"
+       x="1085.5333"
+       sodipodi:role="line"
+       id="tspan3921-2">doublettes</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:23.06218529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="608.96289"
+       x="1085.5333"
+       sodipodi:role="line"
+       id="tspan4012">infractions</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-3-8"
+     y="252.61411"
+     x="587.56238"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="252.61411"
+       x="587.56238"
+       sodipodi:role="line"
+       id="tspan3921-6">cartAV</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-0"
+     y="344.45432"
+     x="363.715"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.7376824"
+     inkscape:transform-center-y="18.527623"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="344.45432"
+       x="363.715"
+       sodipodi:role="line"
+       id="tspan3952-4">géodécisionnel</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="371.2001"
+       x="363.715"
+       sodipodi:role="line"
+       id="tspan4060">accidents &amp; verbalisation</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-0"
+     y="109.56683"
+     x="181.47395"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="109.56683"
+       x="181.47395"
+       sodipodi:role="line"
+       id="tspan1165-9-9">selfim</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="149.56683"
+       x="181.47395"
+       sodipodi:role="line"
+       id="tspan4080" /></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-0-4"
+     y="127.42503"
+     x="193.93674"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.7376824"
+     inkscape:transform-center-y="18.527623"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="127.42503"
+       x="193.93674"
+       sodipodi:role="line"
+       id="tspan4060-4">fraudes immatricualtion</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-6"
+     y="315.95328"
+     x="750.97217"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.7376824"
+     inkscape:transform-center-y="18.527623"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="315.95328"
+       x="750.97217"
+       sodipodi:role="line"
+       id="tspan3878-4-6">rapports visuels</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="342.69907"
+       x="750.97217"
+       sodipodi:role="line"
+       id="tspan3952-3">éducation routière</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-9"
+     y="230.55901"
+     x="996.95728"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="230.55901"
+       x="996.95728"
+       sodipodi:role="line"
+       id="tspan3985-9">CTF</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-6-5"
+     y="379.66592"
+     x="826.39465"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.7376824"
+     inkscape:transform-center-y="18.527623"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="379.66592"
+       x="826.39465"
+       sodipodi:role="line"
+       id="tspan3952-3-1">rapports visuel</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="406.41171"
+       x="826.39465"
+       sodipodi:role="line"
+       id="tspan4157">contrôle frontière</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-0-9"
+     y="494.88474"
+     x="608.85504"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.7376824"
+     inkscape:transform-center-y="18.527623"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="494.88474"
+       x="608.85504"
+       sodipodi:role="line"
+       id="tspan3952-4-9">fraude</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="521.63049"
+       x="608.85504"
+       sodipodi:role="line"
+       id="tspan4060-1">éducation routière</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-9-3"
+     y="557.33496"
+     x="1088.4928"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="557.33496"
+       x="1088.4928"
+       sodipodi:role="line"
+       id="tspan3985-9-4">IA FLASH</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 417.00243,349.01023 546.98479,256.94848"
+     id="path4218"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 607.0921,223.90851 1027.9027,29.778711"
+     id="path4218-5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 14.246614,362.96332 165.72243,151.88471"
+     id="path4218-8"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 714.8637,316.51628 868.67493,213.62321"
+     id="path4218-57"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 870.29321,271.02475 1150.2966,31.944977"
+     id="path4218-57-3"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-3"
+     y="298.46646"
+     x="838.67712"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="298.46646"
+       x="838.67712"
+       sodipodi:role="line"
+       id="tspan3985-8">Polex</tspan></text>
+  <rect
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:0.24313725;fill-rule:nonzero;stroke:none;stroke-width:0.99999988;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2359-9-6-5);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="rect877-0-3-0-4-1-1-1-3"
+     width="123.03031"
+     height="33.185787"
+     x="1035.3898"
+     y="675.86682" />
+  <text
+     id="text854-4-7-5-0-0-8"
+     y="703.35254"
+     x="1100.0887"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#174791;fill-opacity:1;stroke-width:0.99999994px"
+       y="703.35254"
+       x="1100.0887"
+       sodipodi:role="line"
+       id="tspan3821-6">2019</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 94.229189,618.16849 272.95248,404.79598"
+     id="path4218-0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 893.0389,174.08446 1027.9027,29.778711"
+     id="path4218-57-33"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 391.00731,500.10711 622.80405,295.39966"
+     id="path4218-6"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-1"
+     y="596.79565"
+     x="260.5556"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.71176529px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="5.2646462"
+     inkscape:transform-center-y="12.785585"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.71176529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="596.79565"
+       x="260.5556"
+       sodipodi:role="line"
+       id="tspan1134-8-8">décédés</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.71176529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="616.43536"
+       x="260.5556"
+       sodipodi:role="line"
+       id="tspan3846-05">titulaires</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.71176529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="636.07507"
+       x="260.5556"
+       sodipodi:role="line"
+       id="tspan4420">de véhicules</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 590.30355,505.52278 797.18827,299.7322"
+     id="path4218-6-1"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-3-0"
+     y="108.4837"
+     x="819.91913"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="108.4837"
+       x="819.91913"
+       sodipodi:role="line"
+       id="tspan3985-8-3">Histovec</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 669.09771,448.24363 811.54345,116.55609"
+     id="path4218-5-0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 822.36086,88.102312 1027.9027,29.778711"
+     id="path4218-5-0-0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 529.91527,604.75617 682.1092,517.85642"
+     id="path4218-5-0-4"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 770.9121,448.7852 1161.395,214.57952"
+     id="path4218-5-0-4-5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-9-4"
+     y="197.73521"
+     x="1181.6421"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="197.73521"
+       x="1181.6421"
+       sodipodi:role="line"
+       id="tspan3985-9-2">SI Arme</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-3-9-4"
+     y="596.88763"
+     x="927.08197"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:23.06218529px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="7.7275872"
+     inkscape:transform-center-y="18.767067"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:23.06218529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="596.88763"
+       x="927.08197"
+       sodipodi:role="line"
+       id="tspan3921-2-9">modèle</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:23.06218529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="625.71539"
+       x="927.08197"
+       sodipodi:role="line"
+       id="tspan4012-9">marque</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:23.06218529px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="654.54309"
+       x="927.08197"
+       sodipodi:role="line"
+       id="tspan4591">deep learning</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 1122.93,530.29086 1263.2094,178.56538"
+     id="path4218-57-3-9"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 966.41742,627.77273 1028.7113,581.4904"
+     id="path4218-57-3-9-4"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 827.23496,374.04911 975.09635,234.07588"
+     id="path4218-5-0-4-5-9"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-8"
+     y="488.01453"
+     x="891.75061"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="488.01453"
+       x="891.75061"
+       sodipodi:role="line"
+       id="tspan3985-1">Previsecours</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-3-9-4-6"
+     y="510.26984"
+     x="891.45459"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16.90749168px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="5.6652935"
+     inkscape:transform-center-y="13.758632"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16.90749168px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="510.26984"
+       x="891.45459"
+       sodipodi:role="line"
+       id="tspan4689">prédictif interventions</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16.90749168px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="531.40417"
+       x="891.45459"
+       sodipodi:role="line"
+       id="tspan4693">pompiers</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 672.3471,559.26464 820.20851,521.10582"
+     id="path4218-5-0-4-3"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 933.38185,462.32434 1223.1335,263.86202"
+     id="path4218-5-0-4-3-4"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-6-5-6"
+     y="519.57898"
+     x="906.66602"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="4.8804324"
+     inkscape:transform-center-y="13.420567"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="519.57898"
+       x="906.66602"
+       sodipodi:role="line"
+       id="tspan4157-5">statistiques</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="538.95239"
+       x="906.66602"
+       sodipodi:role="line"
+       id="tspan4748">criminalité</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-6-5-6-6"
+     y="587.85327"
+     x="820.64642"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="4.8804324"
+     inkscape:transform-center-y="13.420567"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="587.85327"
+       x="820.64642"
+       sodipodi:role="line"
+       id="tspan4748-7">DCPJ</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="607.22668"
+       x="820.64642"
+       sodipodi:role="line"
+       id="tspan4777">cyber criminalité</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-0-1"
+     y="360.52277"
+     x="1019.163"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="6.7376824"
+     inkscape:transform-center-y="18.527623"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="360.52277"
+       x="1019.163"
+       sodipodi:role="line"
+       id="tspan3952-4-2">géodécisionnel</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.39662933px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="387.26855"
+       x="1019.163"
+       sodipodi:role="line"
+       id="tspan4060-47">big data</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-9-4-7"
+     y="89.42202"
+     x="1172.1908"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="89.42202"
+       x="1172.1908"
+       sodipodi:role="line"
+       id="tspan3985-9-2-7">SI DCA</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="129.42203"
+       x="1172.1908"
+       sodipodi:role="line"
+       id="tspan4878">SI Accidents</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-9-2"
+     y="360.20496"
+     x="954.18445"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="10.722458"
+     inkscape:transform-center-y="26.040254"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="360.20496"
+       x="954.18445"
+       sodipodi:role="line"
+       id="tspan3985-9-3">POC VLA</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 961.00173,332.34852 1154.3546,142.55126"
+     id="path4218-5-0-4-3-4-7"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-6"
+     y="470.52954"
+     x="313.02509"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25.89191246px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="8.6757913"
+     inkscape:transform-center-y="21.069724"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25.89191246px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="470.52954"
+       x="313.02509"
+       sodipodi:role="line"
+       id="tspan3846-6">datalab</tspan></text>
+  <text
+     id="text854-4-4-3-9-1-4-6-4"
+     y="184.84666"
+     x="769.47748"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:29.5514679px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999988px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="9.9020645"
+     inkscape:transform-center-y="24.047707"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.5514679px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999988px"
+       y="184.84666"
+       x="769.47748"
+       sodipodi:role="line"
+       id="tspan3846-6-0">l'entrepôt</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 340.1001,454.61559 743.03167,192.50215"
+     id="path4218-3"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 814.51183,158.37904 1095.5037,35.194372"
+     id="path4218-3-5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 697.53359,255.31934 931.49661,204.4166"
+     id="path4218-6-8"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-6-50"
+     y="407.68628"
+     x="979.1048"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:17.47331238px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="5.5021655"
+     inkscape:transform-center-y="15.130381"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:17.47331238px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="407.68628"
+       x="979.1048"
+       sodipodi:role="line"
+       id="tspan3878-4-6-9">prédictif</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:17.47331238px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1px"
+       y="429.52792"
+       x="979.1048"
+       sodipodi:role="line"
+       id="tspan3952-3-9">éducation routière</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 719.19623,288.35485 696.45702,451.91221"
+     id="path4218-3-8"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 886.54009,438.36861 838.88885,406.96225"
+     id="path4218-3-8-2"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-6-6-5-6-6-4"
+     y="583.46759"
+     x="628.16669"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="4.8804324"
+     inkscape:transform-center-y="13.420567"
+     transform="scale(0.93976925,1.064091)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="583.46759"
+       x="628.16669"
+       sodipodi:role="line"
+       id="tspan4748-7-9">qualité</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:15.49870872px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="602.841"
+       x="628.16669"
+       sodipodi:role="line"
+       id="tspan4777-0">identités SIRH</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 419.16873,521.76976 50.91374,-50.90274"
+     id="path4218-6-12"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999981, 7.99999981;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 1018.1406,643.08051 1178.4507,451.37065"
+     id="path4218-6-0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-5-7-9-8-3"
+     y="281.87735"
+     x="427.66068"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:27.87378311px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="9.3398651"
+     inkscape:transform-center-y="22.682523"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.87378311px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="281.87735"
+       x="427.66068"
+       sodipodi:role="line"
+       id="tspan3985-1-1">vidéoprotection</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.99999994, 7.99999994;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 436.00257,257.00368 664.45931,177.82024"
+     id="path4218-3-80-5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text854-4-4-3-9-1-4-3-98"
+     y="302.5036"
+     x="414.30035"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16.42613602px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:transform-center-x="5.5040258"
+     inkscape:transform-center-y="13.366887"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16.42613602px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="302.5036"
+       x="414.30035"
+       sodipodi:role="line"
+       id="tspan3846-0-7">colis abandonnés</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16.42613602px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="323.03629"
+       x="414.30035"
+       sodipodi:role="line"
+       id="tspan3921-28">personne à terre</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16.42613602px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.99999994px"
+       y="343.56894"
+       x="414.30035"
+       sodipodi:role="line"
+       id="tspan1221">violences</tspan></text>
+</svg>
