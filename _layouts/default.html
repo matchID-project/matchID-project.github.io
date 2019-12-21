@@ -33,6 +33,9 @@
               <h2 class="subtitle">
                 {{ page.description }}
               </h2>
+              {% if page.video %}
+                <iframe class="responsive-iframe" width="420" height="315" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
+              {% endif %}
             </div>
           </div>
         </section>
