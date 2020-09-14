@@ -20,7 +20,7 @@
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
         <link rel="stylesheet" href="css/bulma.min.css" id="bulma">
-
+        <link rel="stylesheet" href="css/custom.css">
         <!-- Printing and PDF exports -->
         <script>
             var link = document.createElement( 'link' );
@@ -47,8 +47,7 @@
                     ### qualité et réconciliation d'identités
                     <img width="360" style="background-color:white;border : 0;" data-src="img/matchID-logo.svg" alt="datascience">
 
-                    Fabien Antoine<br>
-                    <small>février 2019</small>
+                    <small>septembre 2020</small>
                     </textarea>
                 </section>
 
@@ -126,25 +125,36 @@
                         <textarea data-template>
                             ### volumes
 
-                            <div class="columns is-size-3">
+                            <div class="columns is-size-5">
                                 <div class="column">
                                   <ul>
-                                    <li>INSEE: 67 M </li>
-                                    <li>personnes décédées : 23 M </li>
-                                    <li>carte d'identité : 80 M </li>
-                                    <li>passeport : ~ 15 M </li>
-                                    <li>permis de conduire: ~ 50 M </li>
-                                    <li>titulaire de véhicule : ~ 40 M </li>
+                                    <li> état civil/RNIPP: 67 M </li>
+                                    <li> répertoire électoral unique: 48M </li>
+                                    <li> personnes décédées : 25 M </li>
+                                    <li> carte d'identité : 80 M </li>
+                                    <li> passeport : ~ 15 M </li>
+                                    <li> France Connect : ~ 16 M </li>
+                                    <li> identités fiscales: ~ 70 M </li>
+                                    <li> apprentis : ~ 10M </li>
                                   </ul>
                                 </div>
                                 <div class="column">
                                   <ul>
-                                    <li> france connect : ~ 10 M </li>
-                                    <li> identités fiscales: ~ 80 M </li>
+                                    <li> permis de conduire: ~ 50 M </li>
+                                    <li> titulaire de véhicule : ~ 40 M </li>
                                     <li> possesseurs d'arme : ~ 1 M </li>
-                                    <li> apprentis : ~ 10M </li>
                                     <li> Visa : ~ 2M / an </li>
-                                    <li> FPR : ~ 20 k </li>
+                                    <li> Titre de séjour étranger : 4,8M </li>
+                                    <li> fichier des personnes recherchées : ~ 20 k </li>
+                                  </ul>
+                                </div>
+                                <div class="column">
+                                  <ul>
+                                    <li> casier judiciaire: 550k/an </li>
+                                    <li> fijaisv : 78k </li>
+                                    <li> personnes sous main de justice : 245k </li>
+                                    <li> fichier des détenus (écrou) : 80k </li>
+                                    <li> mineurs condamnés : 15k/an </li>
                                   </ul>
                                 </div>
                               </div>
@@ -183,7 +193,7 @@
                           - optimisation APIs <small>chaînes métiers: verbalisation</small>
                           - fiabilisation statistique <small>jeunes accidentés, apprentis</small>
                           - qualité d'un fichier <small>par croisement: décédés au permis, et doublons: armes</small>
-                          - criblage <small>frontières/FPR)</small>
+                          - criblage <small> recherche antécédants / personne recherchée </small>
                           - fraude <small>immatriculation, fiscale, blanchiment</small>
 
                       </textarea>
@@ -195,11 +205,11 @@
 
                           <div class="columns">
                               <div class="column is-one-third"><span class="button is-success is-rounded"> 30%-60% </span></div>
-                              <div class="column"><span class="button">appariements exacts <small>(au tiret près)</small></span></div>
+                              <div class="column"><span class="button">appariements exacts <small>(au tiret près, accents normalisés)</small></span></div>
                           </div>
                           <div class="columns">
                               <div class="column is-one-third"><span class="button is-info is-rounded"> 50%-80% </span></div>
-                              <div class="column"><span class="button">"tolérance faible" <small>(premier prénom, normalisation commune)</small></span></div>
+                              <div class="column"><span class="button">tolérance faible <small>(premier prénom, normalisation commune)</small></span></div>
                           </div>
                           <div class="columns">
                               <div class="column is-one-third"><span class="button is-warning is-rounded"> 90%-98% </span></div>
@@ -425,22 +435,22 @@
                                     </div>
                                     <span class="card-header-icon is-size-5">
                                         <span class="icon" style="margin-right: 10px">
-                                        <i class="fas fa-spinner fa-spin"></i>&nbsp;
+                                        <i class="fas fa-check"></i>&nbsp;
                                       </span>
                                     </span>
                                   </div>
                                   <div class="card-content">
                                     <small>
                                         immatriculations<br/>
-                                        en production<br/>
-                                        évolutions, fraude<br/>
+                                        études fraude<br/>
+                                        suppressions ponctuelle et mensuelles<br/>
                                     </small>
                                   </div>
                               </div>
                               <br/>
                               <div class="card">
-                                  <div class="card-header is-size-3 has-background-primary has-text-white">
-                                    <div class="card-header-title is-centered has-background-primary has-text-white">
+                                  <div class="card-header is-size-3 has-background-success has-text-white">
+                                    <div class="card-header-title is-centered has-background-success has-text-white">
                                       AGRIPPA
                                     </div>
                                     <span class="card-header-icon is-size-5">
@@ -453,7 +463,7 @@
                                     <small>
                                       armes<br/>
                                       qualité, décédés, doublons<br/>
-                                      étude<br/>
+                                      1-shot ok, récurrent en cours<br/>
                                     </small>
                                   </div>
                               </div>
@@ -476,6 +486,7 @@
                                         pb qualité de donnée<br/>
                                         fiabilisation avec le SNPC<br/>
                                         30% correction<br/>
+                                        fiabilisation statistique<br>
                                       </small>
                                     </div>
                                 </div>
@@ -500,8 +511,8 @@
                             </div>
                             <br/>
                             <div class="card">
-                                <div class="card-header is-size-3 has-background-primary has-text-white">
-                                  <div class="card-header-title is-centered has-background-primary has-text-white">
+                                <div class="card-header is-size-3 has-background-success has-text-white">
+                                  <div class="card-header-title is-centered has-background-success has-text-white">
                                     Coopération fiscale
                                   </div>
                                   <span class="card-header-icon is-size-5">
@@ -513,8 +524,9 @@
                                 <div class="card-content">
                                   <small>
                                     DGFIP<br/>
-                                    étude<br/>
+                                    2 ans de fiabilisation<br/>
                                     90% d'appariement<br/>
+                                    indus hors background-matchID
                                   </small>
                                 </div>
                             </div>
@@ -528,7 +540,7 @@
                                       </div>
                                       <span class="card-header-icon is-size-5">
                                         <span class="icon" style="margin-right: 10px">
-                                          <i class="fas fa-spinner fa-spin"></i>
+                                          <i class="fas fa-check"></i>
                                         </span>
                                       </span>
                                     </div>
@@ -537,45 +549,28 @@
                                         Education nationale, DEPP<br/>
                                         fiabilisation statistique<br/>
                                         étude, annotation<br/>
+                                        indus hors background-matchID
                                       </small>
                                     </div>
                                 </div>
                                 <br/>
                                 <div class="card">
-                                    <div class="card-header is-size-3 has-background-primary has-text-white">
-                                      <div class="card-header-title is-centered has-background-primary has-text-white">
-                                        DGFIP
+                                    <div class="card-header is-size-3 has-background-success has-text-white">
+                                      <div class="card-header-title is-centered has-background-success has-text-white">
+                                        deces.matchid.io
                                       </div>
                                       <span class="card-header-icon is-size-5">
                                         <span class="icon" style="margin-right: 10px">
-                                          <i class="fas fa-spinner fa-spin"></i>
+                                          <i class="fas fa-check"></i>
                                         </span>
                                       </span>
                                     </div>
                                     <div class="card-content">
                                       <small>
-                                        références fiscale<br/>
-                                        complément chaîne opérationnelle<br/>
-                                      </small>
-                                    </div>
-                                </div>
-                                <br/>
-                                <div class="card">
-                                    <div class="card-header is-size-3 has-background-primary has-text-white">
-                                      <div class="card-header-title is-centered has-background-primary has-text-white">
-                                        Auteurs décédés
-                                      </div>
-                                      <span class="card-header-icon is-size-5">
-                                        <span class="icon" style="margin-right: 10px">
-                                          <i class="fas fa-spinner fa-spin"></i>
-                                        </span>
-                                      </span>
-                                    </div>
-                                    <div class="card-content">
-                                      <small>
-                                        Education nationale<br/>
-                                        Complément appariements avancés<br/>
-                                        Conseils méthode et données<br/>
+                                        R&D et data prep matchid <br/>
+                                        Recherche simple<br/>
+                                        Recherche experte (généalogistes)<br/>
+                                        Appariements de masse (hopitaux) hors matchID<br/>
                                       </small>
                                     </div>
                                 </div>
@@ -596,7 +591,7 @@
                   <section  data-markdown>
                     <textarea data-template>
                         <div class="fig-container" style="height: 700px; width: 1300px;" >
-                          <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="http://localhost:8081/matchID/projects/siv_pers/datasets/siv_x_deaths/validation" allowfullscreen </iframe>
+                          <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://tuto.matchid.io/matchID/projects/tuto1/datasets/clients_x_deaths/validation" allowfullscreen </iframe>
                           </iframe>
                           </div>
                       </textarea>
@@ -616,7 +611,7 @@
                   <section  data-markdown>
                       <textarea data-template>
                           <div class="fig-container" style="height: 700px; width: 1300px;" >
-                            <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="http://localhost:8081/matchID/projects/clients/recipes/dataprep_clients" allowfullscreen </iframe>
+                            <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://tuto.matchid.io/matchID/projects/deces-dataprep/recipes/deces_dataprep" allowfullscreen </iframe>
                             </iframe>
                             </div>
                         </textarea>
@@ -907,10 +902,99 @@
                     </section>
                 </section>
 
+                <section>
+                  <section data-background="img/background-matchID.svg" data-markdown>
+                    <textarea data-template>
+                        ### deces.matchid.io
+                        <img width="500" src="img/matchID-logo.svg"><br/>
+                    </textarea>
+                </section>
+                <section title="objectif" data-markdown>
+                  <textarea data-template>
+                    ## L'objectif
 
-            </div>
+                    Publier un moteur de recherche des décès
 
-        </div>
+                    <img width="100%" style="border:0;box-shadow: none;" data-src="img/moteur_deces.png" alt="deces.matchid.io">
+                  </textarea>
+                </section>
+                <section title="opportunité" data-markdown>
+                  <textarea data-template>
+                    ## L'opportunité
+
+                    <div class="columns is-variable">
+                      <div class="column">
+                        début 2017...<br/>
+                        <img width="100px" style="border : 0;box-shadow: none;" data-src="img/logo_mi.png" alt="logo ministère de l'Intérieur">
+                        <br/>
+                        <small>au "MI", le projet matchID réalise en POC un moteur de recherche des décès avec le fichier INSEE, alors fermé</small>
+                      </div>
+                      <div class="column">
+                        ... fin 2019<br/>
+                        <img width="100px" style="border : 0;box-shadow: none;" data-src="img/logo_insee.svg" alt="logo Insee">
+                        <br/>
+                        <small>l'INSEE publie l'ensemble des 25 millions d'enregistrements de décès depuis 1970 <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/)">data.gouv</a></small>
+                      </div>
+                    </div>
+
+                  </textarea>
+                </section>
+                <section title="dataprep" data-markdown>
+                  <textarea data-template>
+                    ### Dataprep avec matchID
+                    <small class="higher-48">
+                        <ul>  Les traitements sont pensés faciliter la recherche par indexation:
+                          <li>les données sont normalisées en ascii (il y a quelques erreurs d'encodage dans les fichiers INSEE</li>
+                          <li>le libellé de commune de décès (ou pays) est récupéré via le référentiel INSEE</li>
+                          <li>idem pour le pays de naissance et de décès</li>
+                          <li>l'historique de commune est utilisée pour les variantes de libellés de communes</li>
+                        </ul>
+                        <br/>
+                    <a class="higher-24" target="_blank" href="https://tuto.matchid.io/matchID/projects/deces-dataprep/recipes/deces_dataprep">
+                    <img width="100%" style="border:0;box-shadow: none;" data-src="img/matchID-dataprep.png" alt="matchid datapre"></a>
+                    <br/>
+                    Cliquez sur l'image ci-dessus pour vous rendre sur la recette
+                    </small>
+                  </textarea>
+              </section>
+              <section title="indexation" data-markdown>
+                  <textarea data-template>
+                    ### Indexation Elasticsearch
+                    <small class="left higher-24">
+                    <a target="_blank" href="https://tuto.matchid.io/matchID/projects/deces-dataprep/datasets/deces_index">
+                    <img width="100%" style="border:0;box-shadow: none;" data-src="img/matchID-index.png" alt="matchid index"></a>
+                    <small class="higher-24"><small>Cliquez sur l'image pour visualiser les données</small></small>
+                      <ul> L'indexation Elasticsearch est une opération peu intuitive:
+                        <li>matchID facilite l'indexation avec l'automatisation de la création du mapping</li>
+                        <li>plusieurs colonnes avec des indexations différenciées sont créées</li>
+                        <li>le edge ngram est utilisé pour tokenizer à l'indexation mais pas à la recherche (pour l'autocomplete)</li>
+                        <li>l'indexation floue "auto" est utilisée (distance de Levensthein à 2 pour les noms longs, 1 pour les noms courts, 0 pour les très courts</li>
+                        <li>la date de naissance et de décès sont également accessibles en recherche floue</li>
+                      </ul>
+                    </small>
+                  </textarea>
+              </section>
+              <section  data-markdown>
+                <!-- Recherche avancée -->
+                <textarea data-template>
+                    <div class="fig-container" style="height: 700px; width: 1300px;" >
+                      <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://deces.matchid.io/search?advanced=true" allowfullscreen </iframe>
+                      </iframe>
+                    </div>
+                </textarea>
+              </section>
+              <section  data-markdown>
+                <!-- Réconciliation -->
+                <textarea data-template>
+                    <div class="fig-container" style="height: 700px; width: 1300px;" >
+                      <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://deces.matchid.io/link" allowfullscreen </iframe>
+                      </iframe>
+                    </div>
+                </textarea>
+              </section>
+            </section>
+          </div>
+      </div>
 
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.js"></script>
