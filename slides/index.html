@@ -9,11 +9,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="author" content="Fabien ANTOINE">
 
-    <title>matchID - réconciliation d'identité</title>
+    <title>matchID - traitement de données d'identité</title>
 
+		<link rel="stylesheet" href="custom/css/dsfr.min.css" id="bumla">
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+		<link rel="stylesheet" href="custom/css/dsfr-reveal.css" id="theme">
 		<link rel="stylesheet" href="custom/css/bulma.min.css" id="bumla">
 		<link rel="stylesheet" href="custom/css/custom.css" id="custom">
 
@@ -21,233 +22,260 @@
 		<link rel="stylesheet" href="plugin/highlight/zenburn.css" id="highlight-theme">
 	</head>
 	<body>
-		<div class="reveal">
+    <div class="rf-header" style="z-index: -2000;"></div>
+      <div class="rf-container rf-container__header">
+        <div class="rf-header__body" >
+          <div class="rf-header__brand" style="flex: none">
+            <span class="rf-logo" title="République Française">
+              <span class="rf-logo__title">
+                République<br>Française
+              </span>
+            </span>
+          </div>
+          <span class="rf-padding-top-1N">
+            <img width="64" src="custom/img/matchID-logo-square.svg">
+          </span>
+        </div>
+      </div>
+    </div>
+		<div class="reveal" style="position: absolute;top: 0;z-index:0">
       <div class="slides">
         <!-- premiere page -->
-        <section data-background="custom/img/background-matchID.svg" data-markdown>
-            <textarea data-template>
-            ### qualité et réconciliation d'identités
-            <img width="360" style="background-color:white;border : 0;" data-src="custom/img/matchID-logo.svg" alt="datascience">
-
-            <small>septembre 2020</small>
-            </textarea>
+        <section data-markdown>
+          <textarea data-template class="rf-text--lead">
+            <h1> traitements d'identités </h1>
+            <span class="rf-text--lead">qualité, indexation, appariement</span><br>
+            <span class="rf-text">matchID, octobre 2020</span><br>
+          </textarea>
         </section>
 
         <!-- données d'identité -->
         <section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
               <textarea data-template>
                 # Les données d'identité
               </textarea>
           </section>
-            <section data-background="custom/img/background-matchID.svg" data-markdown>
-                <textarea data-template>
-                    ### patrimoine de données au ministère de l'Intérieur
-                    <img width="800" src="custom/img/patrimoine_donnees_mi_familles.png"><br/>
-                </textarea>
+            <section data-markdown>
+              <textarea data-template>
+                ### patrimoine de données au ministère de l'Intérieur
+                <img width="800" src="custom/img/patrimoine_donnees_mi_familles.png"><br>
+              </textarea>
             </section>
-            <section data-background="custom/img/background-matchID.svg" data-markdown>
+            <section data-markdown>
+              <textarea data-template>
+                ## descripteurs
+                <div class="rf-container rf-text rf-text--left">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-4 rf-col-xl-3">
+                      <article class="rf-padding-1N rf-padding-left-2N-xl rf-scheme-soft-blue-dark">
+                        <strong>identité pivot</strong><br>
+                        - nom<br>
+                        - prénom<br>
+                        - lieu<br>
+                        - date de naissance
+                      </article>
+                    </div>
+                    <div class="rf-col-xs-4 rf-col-xl-3">
+                      <article class="rf-padding-1N rf-padding-left-2N-xl rf-scheme-soft-orange-dark">
+                        <strong>filiation</strong><br>
+                        - père<br>
+                        - mère<br>
+                        - enfants<br>
+                        - fratrie...<br>
+                      </article>
+                    </div>
+                    <div class="rf-col-xs-4 rf-col-xl-3">
+                      <article class="rf-padding-1N rf-padding-left-2N-xl rf-scheme-soft-brown">
+                        <strong>biométrie</strong><br>
+                        - taille, yeux...<br>
+                        - photo<br>
+                        - empreinte<br>
+                        - iris, adn
+                      </article>
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <article class="rf-padding-1N rf-padding-left-2N-xl rf-scheme-soft-pink-dark">
+                        <strong>n° identifiants</strong><br>
+                        - NIR<br>
+                        - carte ID<br>
+                        - fiscal<br>
+                        - permis...
+                      </article>
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-4">
+                      <article class="rf-padding-1N rf-padding-left-2N-xl rf-scheme-soft-purple">
+                        <strong>coordonnées</strong><br>
+                        - mail<br>
+                        - adresse<br>
+                        - téléphone<br>
+                        - IP, IBAN...<br>
+                      </article>
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-4">
+                      <article class="rf-padding-1N rf-padding-left-2N-xl rf-scheme-soft-blue-soft">
+                        <strong>identité numérique</strong><br>
+                        - france connect<br>
+                        - facebook, google, ...
+                      </article>
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-4">
+                      <article class="rf-padding-1N rf-padding-left-2N-xl rf-scheme-soft-green-warm">
+                        <strong>donnée métier</strong><br>
+                        - style d'écriture (auteur)<br>
+                        - mode opératoire (contrevenant) ...<br>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+                <div class="rf-hide-mobile-background"></div>
+              </textarea>
+            </section>
+            <section data-markdown>
                 <textarea data-template>
-                  ### descripteurs
-
-                  <div class="tile is-ancestor">
-                    <div class="tile is-vertical is-12">
-                        <div class="tile is-parent">
-                          <div class="tile is-vertical is-8">
-                            <div class="tile">
-                              <div class="tile is-parent is-vertical">
-                                <article class="tile is-child notification is-primary">
-                                  nom<br/>
-                                  prénom<br/>
-                                  lieu<br/>
-                                  date de naissance
-                                </article>
-                              </div>
-                              <div class="tile is-parent">
-                                <article class="tile is-child notification is-info">
-                                  NIR<br/>
-                                  n° de titres (permis, passeport...)<br/>
-                                </article>
-                              </div>
-                            </div>
-                            <div class="tile is-parent">
-                              <article class="tile is-child notification is-danger">
-                                biométrie: <br/>empreinte, photo, <br/>iris, adn ...
-                              </article>
-                            </div>
-                          </div>
-                          <div class="tile is-vertical is-4">
-                            <div class="tile is-parent">
-                              <article class="tile is-child notification is-success">
-                                coordonnées : adresse, mail, téléphone, IBAN ...
-                              </article>
-                            </div>
-                            <div class="tile is-parent">
-                              <article class="tile is-child notification is-warning">
-                                identité numérique: facebook, google, ...
-                              </article>
-                            </div>
-                          </div>
+                    ## volumes
+                    <div class="rf-container rf-text rf-text--left">
+                      <div class="rf-grid-row">
+                        <div class="rf-col-xs-12 rf-col-xl-4">
+                          <table class="rf-table rf-table--striped">
+                            <tr><td>état civil/RNIPP:</td><td>67 M</td> </tr>
+                            <tr><td> répertoire électoral unique </td><td> 48M  </td></tr>
+                            <tr><td> personnes décédées  </td><td> 25 M </td></tr>
+                            <tr><td> carte d'identité </td><td> 80 M </td></tr>
+                            <tr><td> passeport </td><td> ~ 15 M </td></tr>
+                            <tr><td> France Connect </td><td> ~ 16 M </td></tr>
+                            <tr><td> identités fiscales </td><td> ~ 70 M </td></tr>
+                            <tr><td> apprentis </td><td> ~ 10M </td></tr>
+                          </table>
                         </div>
-                        <div class="tile is-parent">
-                          <div class="tile is-child">
-                            <article class="tile is-child notification is-grey">
-                              caractérisant métier (style d'auteur, ...)
-                            </article>
-                          </div>
+                        <div class="rf-col-xs-12 rf-col-xl-4">
+                          <table class="rf-table rf-table--striped">
+                            <tr><td> permis de conduire </td><td> ~ 50 M </td></tr>
+                            <tr><td> titulaire de véhicule </td><td> ~ 40 M </td></tr>
+                            <tr><td> possesseurs d'arme </td><td> ~ 1 M </td></tr>
+                            <tr><td> visa </td><td> ~ 2M / an </td></tr>
+                            <tr><td> titre de séjour </td><td> 4,8M </td></tr>
+                            <tr><td> personnes recherchées </td><td> ~ 20 k </td></tr>
+                          </table>
+                        </div>
+                        <div class="rf-col-xs-12 rf-col-xl-4">
+                          <table class="rf-table rf-table--striped">
+                            <tr><td> casier judiciaire </td><td> 550k/an </td></tr>
+                            <tr><td> fijaisv </td><td> 78k </td></tr>
+                            <tr><td> condamnés </td><td> 245k/an </td></tr>
+                            <tr><td> détenus (écrou) </td><td> 80k </td></tr>
+                            <tr><td> mineurs condamnés </td><td> 15k/an </td></tr>
+                          </table>
                         </div>
                       </div>
                     </div>
-
-
-
-                </textarea>
-            </section>
-            <section data-background="custom/img/background-matchID.svg" data-markdown>
-                <textarea data-template>
-                    ### volumes
-
-                    <div class="columns is-size-5">
-                        <div class="column">
-                          <ul>
-                            <li> état civil/RNIPP: 67 M </li>
-                            <li> répertoire électoral unique: 48M </li>
-                            <li> personnes décédées : 25 M </li>
-                            <li> carte d'identité : 80 M </li>
-                            <li> passeport : ~ 15 M </li>
-                            <li> France Connect : ~ 16 M </li>
-                            <li> identités fiscales: ~ 70 M </li>
-                            <li> apprentis : ~ 10M </li>
-                          </ul>
-                        </div>
-                        <div class="column">
-                          <ul>
-                            <li> permis de conduire: ~ 50 M </li>
-                            <li> titulaire de véhicule : ~ 40 M </li>
-                            <li> possesseurs d'arme : ~ 1 M </li>
-                            <li> Visa : ~ 2M / an </li>
-                            <li> Titre de séjour étranger : 4,8M </li>
-                            <li> fichier des personnes recherchées : ~ 20 k </li>
-                          </ul>
-                        </div>
-                        <div class="column">
-                          <ul>
-                            <li> casier judiciaire: 550k/an </li>
-                            <li> fijaisv : 78k </li>
-                            <li> personnes sous main de justice : 245k </li>
-                            <li> fichier des détenus (écrou) : 80k </li>
-                            <li> mineurs condamnés : 15k/an </li>
-                          </ul>
-                        </div>
-                      </div>
-
-
-
+                    <div class="rf-hide-mobile-background"></div>
                   </textarea>
               </section>
-              <section data-background="custom/img/background-matchID.svg" data-markdown>
+              <section data-markdown>
                   <textarea data-template>
-
-                    ### qualité
-
-                    - doublons
-                    - ambiguité <small>origines - e.g Payet, Lefevre, N Guyen, Diallo ...</small>
-                    - champs partiels <small>droit : pas de code NIR, pas de lieu de naissance, ...</small>
-                    - process métier <small>e.g date naissance titulaire véhicule = concessionnaire</small>
-                    - criticité de l'identité <small>titres biométriques vs alias Snapchat)</small>
-
+                    ## qualité
+                    <ul class="rf-text--lead">
+                      <li>doublons</li>
+                      <li>ambiguité<br>
+                      <small>origines - e.g Payet, Lefevre, N Guyen, Diallo ...</small>
+                      </li>
+                      <li>champs particuliers<br>
+                      <small>droit : pas de code NIR, pas de lieu de naissance, ...</small>
+                      </li>
+                      <li>process métier<br>
+                      <small>e.g date naissance titulaire véhicule = concessionnaire</small></li>
+                      <li>criticité de l'identité<br>
+                      <small>titres biométriques vs alias Snapchat)</small></li>
+                    </ul>
                 </textarea>
             </section>
         </section>
 
         <!-- cas d'usage identité -->
         <section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
               <textarea data-template>
                 # cas d'usages identité
               </textarea>
           </section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
               <textarea data-template>
-                ### problèmes à résoudre
-
+                ## problèmes à résoudre
                   - <del>identification, authentification</del>
                   - optimisation APIs <small>chaînes métiers: verbalisation</small>
                   - fiabilisation statistique <small>jeunes accidentés, apprentis</small>
                   - qualité d'un fichier <small>par croisement: décédés au permis, et doublons: armes</small>
-                  - criblage <small> recherche antécédants / personne recherchée </small>
+                  - recherche/criblage <small> recherche antécédants / personne recherchée </small>
                   - fraude <small>immatriculation, fiscale, blanchiment</small>
-
               </textarea>
             </section>
-            <section data-background="custom/img/background-matchID.svg" data-markdown>
+            <section data-markdown>
                 <textarea data-template>
-                  #### taux de réconciliation
-                  #### entre deux fichiers d'états civils complets
-                  <div class="columns">
-                    <div class="column is-one-third"><span class="button is-success is-rounded"> 30%-60% </span></div>
-                    <div class="column"><span class="button">appariements exacts <small>(au tiret près, accents normalisés)</small></span></div>
-                  </div>
-                  <div class="columns">
-                    <div class="column is-one-third"><span class="button is-info is-rounded"> 50%-80% </span></div>
-                    <div class="column"><span class="button">tolérance faible <small>(premier prénom, normalisation commune)</small></span></div>
-                  </div>
-                  <div class="columns">
-                    <div class="column is-one-third"><span class="button is-warning is-rounded"> 90%-98% </span></div>
-                    <div class="column"><span class="button">appariement avancé <small>(flou, machine learning)</small></span></div>
-                  </div>
-
-                  <div class="columns">
-                    <div class="column">
-                      <small><i class="fas fa-arrow-circle-right"></i> attention aux métriques (rappel, précision)</small>
+                  <br>
+                  <h2>taux d'appariement</h2>
+                  <div class="rf-container rf-text--lead" >
+                    <div class="rf-grid-row rf-grid-row--gutters">
+                      <div class="rf-col-12">entre deux fichiers d'états civils complets</div>
+                      <div class="rf-col-xs-5 rf-col-xl-3"><span class="rf-btn"> 30%-60% </span></div>
+                      <div class="rf-col-xs-7 rf-col-xl-9 rf-text--left"><span>appariements exacts <small>(au tiret près, accents normalisés)</small></span></div>
+                      <div class="rf-col-xs-5 rf-col-xl-3"><span class="rf-btn rf-btn--secondary"> 50%-80% </span></div>
+                      <div class="rf-col-xs-7 rf-col-xl-9 rf-text--left"><span >tolérance faible <small>(premier prénom, normalisation commune)</small></span></div>
+                      <div class="rf-col-xs-5 rf-col-xl-3"><span class="rf-btn rf" style="background-color: var(--rm500)"> 90%-98% </span></div>
+                      <div class="rf-col-xs-7 rf-col-xl-9 rf-text--left"><span >appariement avancé <small>(flou, machine learning)</small></span></div>
+                      <div class="rf-col-12"><i class="fas fa-arrow-circle-right"></i> attention aux métriques (rappel, précision)</div>
                     </div>
                   </div>
                 </textarea>
             </section>
-            <section data-background="custom/img/background-matchID.svg" data-markdown>
-                <textarea data-template>
-                    #### méthode
+            <section data-markdown>
+                <textarea data-template class="rf-text--lead">
+                    ## méthode
 
-                    - fiabilité identifiants techniques
+                    - <span class="rf-text--lead">fiabilité identifiants techniques</span>
                     - dédoublonnage
                     - évaluer la qualité des champs
                     - mettre en qualité les sources et process
                     - commencer avec des appariements simples (SQL tolérance faible)
                     - au plus proche de la donnée
                     - évaluer (métrique & annotation)
-                    - ... et les biais
+                    - ... y/c les biais
+
+                    </small>
 
                 </textarea>
             </section>
-            <section data-background="custom/img/background-matchID.svg" data-markdown>
+            <section data-markdown>
               <textarea data-template>
-                  #### métriques métier
-
-                  coût d'un manqué<br/>
-                    <small>vs</small><br/>
-                  coût d'un faux positif
-
-                  <i class="fas fa-arrows-alt-v"></i>
-
-                  manquer un terroriste aux frontières<br/>
-                  <small>vs</small><br/>
-                  temps d'attente aux frontière
-
+                  ## métriques métier
+                  <br>
+                  <div class="rf-text--lead">
+                    coût d'un manqué<br>
+                      <small>vs</small><br>
+                    coût d'un faux positif<br><br>
+                    <i class="fas fa-arrows-alt-v"></i><br><br>
+                    manquer un terroriste aux frontières<br>
+                    <small>vs</small><br>
+                    temps d'attente aux frontière
+                  </div>
               </textarea>
           </section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-                #### indicateurs techniques
-                <div class="columns">
-                  <div class="column is-size-3">
-                    <ul>
-                      <li> métriques F1-score, rappel </li>
-                      <li> taux de doublons </li>
-                      <li> taux de données dégradées <small>(champ partiellement manquant)</small></li>
-                    </ul>
-                  </div>
-                  <div class="column">
-                      <img width="600" src="custom/img/roc.png"><br/>
+                <br>
+                <h2>métriques techniques</h2>
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <ul>
+                        <li> métriques F1-score, rappel </li>
+                        <li> taux de doublons </li>
+                        <li> taux de données dégradées <small>(champ partiellement manquant)</small></li>
+                      </ul>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <img width="600" src="custom/img/roc.png"><br>
+                    </div>
                   </div>
                 </div>
             </textarea>
@@ -256,329 +284,290 @@
 
         <!-- traiter les cas d'usage identité avec matchID -->
         <section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
               <textarea data-template>
-                  ### traiter les cas d'usage identité avec
-                  <img width="500" src="custom/img/matchID-logo.svg"><br/>
+                  # traiter les cas d'usage identité avec
+                  <img width="150" src="custom/img/matchID-logo-square.svg"><br>
               </textarea>
           </section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-                #### apports matchID
-
-                <div class="columns is-variable">
-                    <div class="column">
-                      <div class="card">
-                        <div class="card-header is-size-3">
-                          <div class="card-header-title is-centered has-background-primary has-text-white">
-                            accélération des études
-                          </div>
-                        </div>
-                        <div class="card-content is-size-5">
-                          <br>
-                            <ul>
-                              <li>outil d'évaluation
-                                <ul>
-                                  <li>visualisation de résultats d'appariement</li>
-                                  <li>annotation</li>
-                                  <li>courbes de résultats</li>
-                                </ul>
-                            <li> outil de développement </li>
-                              <ul>
-                                <li>Python/Pandas/scikit</li>
-                                <li>SQL</li>
-                                <li>Elastiscearch</li>
-                              </ul>
-                            <li> données de références </li>
-                            <li> capitalisation en "recettes" </li>
-                            <li> rend accessible les gros volumes </li>
-                          </ul>
-                          <br><br>
+              <h2>a qui s'adresse matchID</h2>
+              <div class="rf-container">
+                <div class="rf-grid-row rf-grid-row--gutters">
+                  <div class="rf-col-xs-12 rf-col-xl-4">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                      <h4 class="rf-title_title">
+                      les métiers
+                      </h4>
+                      <p class="rf-title__desc">
+                      devant mettre en qualité des fichiers de plusieurs millions d'identités
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-12 rf-col-xl-4">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                      <h4 class="rf-title_title">
+                      les datascientists
+                      </h4>
+                      <p class="rf-title__desc">
+                      ayant besoin de rigueur dans l'évaluation d'alogorithmes d'appariement
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-12 rf-col-xl-4">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title">
+                        les services numériques
+                        </h4>
+                        <p class="rf-title__desc">
+                        ayant besoin d'industrialiser des algorithmes en utilisant des API
+                        </p>
                         </div>
                       </div>
                     </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header is-size-3">
-                              <div class="card-header-title is-centered has-background-primary has-text-white">
-                              production
-                              </div>
-                            </div>
-                            <div class="card-content is-size-5">
-                              <br><br>
-                              <ul>
-                                <li> API-full
-                                <ul>
-                                  <li>présente l'algorithme (bulk/unitaire)</li>
-                                  <li>chargement de données</li>
-                                  <li>orchestration des traitements</li>
-                                  <li>monitoring</li>
-                                </ul>
-                                </li>
-                                <li> compatibilité (Python, any-SQL, ...) </li>
-                                <li> installabilité (CAAS-ready) </li>
-                                <li> scalabilité </li>
-                              </ul>
-                              <br><br><br><br>
-                            </div>
-                        </div>
                   </div>
                 </div>
-              </textarea>
-          </section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
-            <textarea data-template>
-                #### s'organiser
-                <div class="columns is-variable">
-                    <div class="column">
-                      <div class="card">
-                        <div class="card-header is-size-3">
-                          <div class="card-header-title is-centered has-background-primary has-text-white">
-                          étude
-                          </div>
-                        </div>
-                        <div class="card-content is-size-5">
-                          <br/>
-                          <ul>
-                            <li>préciser le cas d'usage</li>
-                            <li>obtenir des données réelles (au moins 10k x 10k)</li>
-                            <li>infrastructure</li>
-                            <li>assembler les algorithme</li>
-                            <li>annoter au moins 1000 cas</li>
-                            <li>comprendre les données</li>
-                            <li>évaluer, itérer, partager</li>
-                            <li>cadrer les métriques</li>
-                            <li>restituer, décider</li>
-                        </ul>
-                        <br/><br/>
-                        charge: 5 à 20jh
-                        <br/><br/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header is-size-3">
-                              <div class="card-header-title is-centered has-background-primary has-text-white">
-                              production
-                              </div>
-                            </div>
-                            <div class="card-content is-size-5">
-                              <br/><br/>
-                              <ul>
-                                <li> piloter le chantier </li>
-                                <li> mettre en place les moyens</li>
-                                <li> cadre RGPD </li>
-                                <li> formaliser les métriques retenues </li>
-                                <li> mettre en qualité ce qui peut l'être en amont </li>
-                                <li> formaliser les interfaces </li>
-                                <li> optimiser les traitements </li>
-                              </ul>
-                              <br/><br/><br/>
-                              charge: 50 à 200jh
-                              <br/><br/>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-              </textarea>
-          </section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
-            <textarea data-template>
-                #### cas d'usage traités
-                <div class="columns is-variable">
-                    <div class="column">
-                      <div class="card">
-                        <div class="card-header is-size-3 has-background-info has-text-white">
-                          <div class="card-header-title is-centered has-background-info has-text-white">
-                          décédés x SNPC
-                          </div>
-                          <span class="card-header-icon is-size-5">
-                            <span class="icon" style="margin-right: 10px">
-                              <i class="fas fa-check"></i>&nbsp;
-                            </span>
-                          </span>
-                        </div>
-                        <div class="card-content">
-                          <small>
-                              radiation des décédés <br/>
-                              au permis de conduire<br/>
-                              qualité, fraude<br/>
-                          </small>
-                        </div>
-                      </div>
-                      <br/>
-                      <div class="card">
-                          <div class="card-header is-size-3 has-background-success has-text-white">
-                            <div class="card-header-title is-centered has-background-success has-text-white">
-                            décédés x SIV
-                            </div>
-                            <span class="card-header-icon is-size-5">
-                            <span class="icon" style="margin-right: 10px">
-                            <i class="fas fa-check"></i>&nbsp;
-                            </span>
-                            </span>
-                          </div>
-                          <div class="card-content">
-                            <small>
-                              immatriculations<br/>
-                              études fraude<br/>
-                              suppressions ponctuelle et mensuelles<br/>
-                            </small>
-                          </div>
-                      </div>
-                      <br/>
-                      <div class="card">
-                          <div class="card-header is-size-3 has-background-success has-text-white">
-                            <div class="card-header-title is-centered has-background-success has-text-white">
-                            AGRIPPA
-                            </div>
-                            <span class="card-header-icon is-size-5">
-                            <span class="icon" style="margin-right: 10px">
-                            <i class="fas fa-check"></i>&nbsp;
-                            </span>
-                            </span>
-                          </div>
-                          <div class="card-content">
-                            <small>
-                              armes<br/>
-                              qualité, décédés, doublons<br/>
-                              1-shot ok, récurrent en cours<br/>
-                            </small>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header is-size-3 has-background-primary has-text-white">
-                              <div class="card-header-title is-centered has-background-primary has-text-white">
-                              jeunes accidentés
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                              <span class="icon" style="margin-right: 10px">
-                              <i class="fas fa-check"></i>&nbsp;
-                              </span>
-                              </span>
-                            </div>
-                            <div class="card-content">
-                              <small>
-                              pb qualité de donnée<br/>
-                              fiabilisation avec le SNPC<br/>
-                              30% correction<br/>
-                              fiabilisation statistique<br>
-                              </small>
-                            </div>
-                        </div>
-                    <br/>
-                    <div class="card">
-                        <div class="card-header is-size-3 has-background-primary has-text-white">
-                          <div class="card-header-title is-centered has-background-primary has-text-white">
-                          SIRH
-                          </div>
-                          <span class="card-header-icon is-size-5">
-                            <span class="icon" style="margin-right: 10px">
-                              <i class="fas fa-spinner fa-check"></i>
-                            </span>
-                          </span>
-                        </div>
-                        <div class="card-content">
-                          <small>
-                            analyse qualité des champs<br/>
-                            doublons<br/>
-                          </small>
-                        </div>
-                    </div>
-                    <br/>
-                    <div class="card">
-                        <div class="card-header is-size-3 has-background-success has-text-white">
-                          <div class="card-header-title is-centered has-background-success has-text-white">
-                          Coopération fiscale
-                          </div>
-                          <span class="card-header-icon is-size-5">
-                            <span class="icon" style="margin-right: 10px">
-                              <i class="fas fa-spinner fa-check"></i>
-                            </span>
-                          </span>
-                        </div>
-                        <div class="card-content">
-                          <small>
-                            DGFIP<br/>
-                            2 ans de fiabilisation<br/>
-                            90% d'appariement<br/>
-                            indus hors background-matchID
-                          </small>
-                        </div>
-                    </div>
-                    <br/>
-                    </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header is-size-3 has-background-primary has-text-white">
-                              <div class="card-header-title is-centered has-background-primary has-text-white">
-                              Apprentis
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>
-                                </span>
-                              </span>
-                            </div>
-                            <div class="card-content">
-                              <small>
-                              Education nationale, DEPP<br/>
-                              fiabilisation statistique<br/>
-                              étude, annotation<br/>
-                              indus hors background-matchID
-                              </small>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="card">
-                            <div class="card-header is-size-3 has-background-success has-text-white">
-                              <div class="card-header-title is-centered has-background-success has-text-white">
-                              deces.matchid.io
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>
-                                </span>
-                              </span>
-                            </div>
-                            <div class="card-content">
-                              <small>
-                              R&D et data prep matchid <br/>
-                              Recherche simple<br/>
-                              Recherche experte (généalogistes)<br/>
-                              Appariements de masse (hopitaux) hors matchID<br/>
-                              </small>
-                            </div>
-                        </div>
-                      </div>
-                </div>
+              </div>
             </textarea>
           </section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-              ### annoter avec matchID
+                ## apports matchID
+                <div class="rf-container" style="margin-top: -16px;">
+                  <div class="rf-grid-row">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <strong class="rf-text--lead">accélération des études</strong><br>
+                        <ul class="rf-text">
+                          <li>outil d'évaluation</li>
+                            <ul class="rf-text--sm">
+                              <li>visualisation de résultats d'appariement</li>
+                              <li>annotation</li>
+                              <li>courbes de résultats</li>
+                            </ul>
+                        <li> outil de développement </li>
+                        <ul class="rf-text--sm">
+                          <li> capitalisation en "recettes" </li>
+                          <li> données de références intégrées </li>
+                          <li> parallélisation et gros volumes </li>
+                        </ul>
+                        <li> technologies </li>
+                          <ul class="rf-text--sm">
+                            <li>Python/Pandas/scikit</li>
+                            <li>SQL</li>
+                            <li>Elastiscearch</li>
+                          </ul>
+                      </ul>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <strong class="rf-text--lead">production</strong><br>
+                        <ul class="rf-text">
+                          <li> API-full</li>
+                          <ul class="rf-text--sm">
+                            <li>exposition de l'algorithme (bulk/unitaire)</li>
+                            <li>chargement de données</li>
+                            <li>orchestration des traitements</li>
+                            <li>monitoring</li>
+                          </ul>
+                          <li> compatibilité (Python, any-SQL, ...) </li>
+                          <li> installabilité (CaaS-ready) </li>
+                          <li> scalabilité </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="rf-hide-mobile-background"></div>
+              </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                <br>
+                <h2> s'organiser</h2>
+                <div class="rf-container rf-margin-top-2N" style="margin-top: -16px;">
+                  <div class="rf-grid-row">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <strong class="rf-text--lead">étude</strong>
+                      <span class="rf-text--sm">(5-20jh)</span><br>
+                        <ul class="rf-text--sm">
+                          <li>préciser le cas d'usage</li>
+                          <li>obtenir des données réelles (au moins 10k x 10k)</li>
+                          <li>disposer de IaaS ou d'infrastructures</li>
+                          <li>comprendre les données</li>
+                          <li>assembler les algorithme</li>
+                          <li>annoter au moins 1000 cas</li>
+                          <li>évaluer, itérer, partager</li>
+                          <li>cadrer les métriques</li>
+                          <li>restituer, décider</li>
+                      </ul>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <strong class="rf-text--lead">production</strong>
+                      <span class="rf-text--sm">(50-200jh)</span><br>
+                      <ul class="rf-text--sm">
+                        <li> piloter le chantier </li>
+                        <li> mettre en place les moyens</li>
+                        <li> cadre RGPD </li>
+                        <li> formaliser les métriques retenues </li>
+                        <li> mettre en qualité ce qui peut l'être en amont </li>
+                        <li> formaliser les interfaces </li>
+                        <li> optimiser les traitements </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="rf-hide-mobile-background"></div>
+              </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## cas d'usage traités
+
+              <div class="rf-container">
+                <div class="rf-grid-row rf-grid-row--gutters">
+                  <div class="rf-col-xs-4 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                        décédés x SNPC
+                        </h4>
+                        <p class="rf-title__desc rf-text--xs">
+                          radiation des décédés <br>
+                          au permis de conduire<br>
+                          qualité, fraude<br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-4 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                          décédés x SIV
+                        </h4>
+                        <p class="rf-tile__desc rf-text--xs">
+                          immatriculations<br>
+                          études fraude<br>
+                          suppressions ponctuelle et mensuelles<br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-4 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                          AGRIPPA
+                        </h4>
+                        <p class="rf-tile__desc rf-text--xs">
+                          armes<br>
+                          qualité, décédés, doublons<br>
+                          1-shot ok, récurrent en cours<br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-4 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                          jeunes accidentés
+                        </h4>
+                        <p class="rf-tile__desc rf-text--xs">
+                          pb qualité de donnée<br>
+                          croisement SNPC<br>
+                          fiabilisation des statistique<br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-4 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                          SIRH
+                        </h4>
+                        <p class="rf-tile__desc rf-text--xs">
+                          analyse qualité des saisies<br>
+                          doublons, décès<br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-4 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                          Coopération fiscale
+                        </h4>
+                        <p class="rf-tile__desc rf-text--xs">
+                          DGFIP<br>
+                          2 ans de fiabilisation<br>
+                          90% d'appariement<br>
+                          <span class="rf-hide--mobile">industrialisation hors matchID</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-6 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                          Apprentis
+                        </h4>
+                        <p class="rf-tile__desc rf-text--xs">
+                          Education nationale, DEPP<br>
+                          fiabilisation statistique<br>
+                          étude, annotation<br>
+                          <span class="rf-hide--mobile">industrialisation hors matchID</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-6 rf-col-xl-3">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-title_title rf-text--sm">
+                          deces.matchid.io
+                        </h4>
+                        <p class="rf-tile__desc rf-text--xs">
+                          R&D et data prep matchid <br>
+                          Recherche simple<br>
+                          Recherche experte (généalogistes)<br>
+                          Appariements de masse (hopitaux) hors matchID<br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rf-hide-mobile-background"></div>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## annoter avec matchID
             </textarea>
           </section>
           <section data-markdown>
               <textarea data-template>
-                    <img style="max-width: 130%; margin-left:-150px; margin-top: -15px;" src="custom/img/matchid-frontend-validation.png">
-                  </textarea>
+                <img style="max-width: 100%; margin-left:0px; margin-top: 0px;" src="custom/img/matchid-frontend-validation.png">
+              </textarea>
           </section>
           <section  data-markdown>
             <textarea data-template>
-                <div class="fig-container" style="height: 700px; width: 1300px;" >
-                  <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://tuto.matchid.io/matchID/projects/tuto1/datasets/clients_x_deaths/validation" allowfullscreen </iframe>
-                  </iframe>
-                  </div>
-              </textarea>
+                <iframe  class="rf-iframe--full" src="https://tuto.matchid.io/matchID/projects/tuto1/datasets/clients_x_deaths/validation" allowfullscreen </iframe>
+                </iframe>
+            </textarea>
           </section>
 
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-              ### développer avec matchID
+              ## développer avec matchID
             </textarea>
           </section>
           <section data-markdown>
@@ -589,388 +578,420 @@
 
           <section  data-markdown>
               <textarea data-template>
-                  <div class="fig-container" style="height: 700px; width: 1300px;" >
-                    <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://tuto.matchid.io/matchID/projects/deces-dataprep/recipes/deces_dataprep" allowfullscreen </iframe>
-                    </iframe>
-                    </div>
-                </textarea>
+                <iframe class="rf-iframe--full"  src="https://tuto.matchid.io/matchID/projects/deces-dataprep/recipes/deces_dataprep" allowfullscreen </iframe>
+                </iframe>
+              </textarea>
             </section>
 
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-                #### banque d'algorithmes
-                <div class="columns is-variable">
-                    <div class="column">
-                      <div class="card">
-                        <div class="card-header has-background-info has-text-white">
-                          <div class="card-header-title is-centered has-text-white ">
+                ## banque d'algorithmes
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
                             normalisation NFD
-                          </div>
-                          <span class="card-header-icon is-size-5">
-                              <span class="icon" style="margin-right: 10px">
-                              <i class="fas fa-check"></i>&nbsp;
-                            </span>
-                          </span>
-                        </div>
-                        <div class="card-content">
-                          <small>
-                              désaccentution<br/>
-                              Gräbener => Grabener<br/>
-                              variante : translittération<br/>
-                              es, pg, pandas, ..<br/>
-                          </small>
+                          </h4>
+                          <p class="rf-title__desc rf-text--xs">
+                            désaccentution<br>
+                            Gräbener => Grabener<br>
+                            variante : translittération<br>
+                            es, pg, pandas, ..<br>
+                          </p>
                         </div>
                       </div>
-                      <br/>
-                      <div class="card">
-                          <div class="card-header has-background-primary has-text-white">
-                              <div class="card-header-title is-centered has-background-primary has-text-white">
-                              indexation phonétique
-                            </div>
-                            <span class="card-header-icon is-size-5">
-                                <span class="icon" style="margin-right: 10px">
-                                <i class="fas fa-clock"></i>&nbsp;
-                              </span>
-                            </span>
-                          </div>
-                          <div class="card-content">
-                            <small>
-                                variantes translittérées<br/>
-                                sherazat => shéhérazade <br/>
-                                petit volume (bruit)<br/>
-                                es, pg, …<br/>
-                            </small>
-                          </div>
-                        </div>
                     </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header has-background-info has-text-white">
-                                <div class="card-header-title is-centered has-background-info has-text-white">
-                                  indexation Levenshtein
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                  <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>&nbsp;
-                                </span>
-                              </span>
-                            </div>
-                            <div class="card-content">
-                              <small>
-                                  fautes de frappe limitées<br/>
-                                  tristram <=> tristan<br/>
-                                  variante : translittération<br/>
-                                  es, solr, pandas inmemory<br/>
-                              </small>
-                            </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            indexation phonétique
+                          </h4>
+                          <p class="rf-title__desc rf-text--xs">
+                            variantes translittérées<br>
+                            sherazat => shéhérazade <br>
+                            petit volume (bruit)<br>
+                            es, pg, …<br>
+                          </p>
                         </div>
-                        <br/>
-                        <div class="card">
-                            <div class="card-header has-background-info has-text-white">
-                                <div class="card-header-title is-centered has-background-info has-text-white">
-                                  scoring Levenshtein
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                  <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>&nbsp;
-                                </span>
-                              </span>
-                            </div>
-                            <div class="card-content">
-                              <small>
-                                  fautes de frappe avancées<br/>
-                                  sherazat => shéhérazade <br/>
-                                  petit volume (coûteux)<br/>
-                                  pandas, es, pg<br/>
-                              </small>
-                            </div>
-                        </div>
+                      </div>
                     </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header has-background-primary has-text-white">
-                                <div class="card-header-title is-centered has-background-primary has-text-white">
-                                indexation q-gram
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                  <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-clock"></i>&nbsp;
-                                </span>
-                              </span>
-                              </div>
-                            <div class="card-content">
-                              <small>
-                                  ordre indifférent, adresses<br/>
-                                  3 bd garibaldi<br/>
-                                  petit volume (bruit)<br/>
-                                  pandas, es, pg<br/>
-                              </small>
-                            </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            indexation Levenshtein
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            fautes de frappe limitées<br>
+                            tristram <=> tristan<br>
+                            variante : translittération<br>
+                            es, solr, pandas inmemory<br>
+                          </p>
                         </div>
-                        <br/>
-                        <div class="card">
-                            <div class="card-header has-background-info has-text-white">
-                                <div class="card-header-title is-centered has-background-info has-text-white">
-                                scoring géographique
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                  <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>&nbsp;
-                                </span>
-                              </span>
-                              </div>
-                            <div class="card-content">
-                              <small>
-                                distance km<br/>
-                                historique commune<br/>
-                                Levenshtein<br/>
-                              </small>
-                            </div>
-                        </div>
+                      </div>
                     </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header has-background-info has-text-white">
-                              <div class="card-header-title is-centered has-background-info has-text-white">
-                                machine learning
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                  <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>&nbsp;
-                                </span>
-                              </span>
-                              </div>
-                            <div class="card-content">
-                              <small>
-                                  Scikit learn<br/>
-                                  si très haute précision visée<br/>
-                                  et moyens humains d'annotation<br/>
-                              </small>
-                            </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            scoring Levenshtein
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            fautes de frappe avancées<br>
+                            sherazat => shéhérazade <br>
+                            petit volume (coûteux)<br>
+                            pandas, es, pg<br>
+                          </p>
                         </div>
+                      </div>
                     </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            indexation q-gram
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            ordre indifférent, adresses<br>
+                            3 bd garibaldi<br>
+                            petit volume (bruit)<br>
+                            pandas, es, pg<br>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            scoring géographique
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            distance km<br>
+                            historique commune<br>
+                            Levenshtein<br>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            scoring phonétique
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            discrimination phonétique<br>
+                            marine ≠ karine <br>
+                            pd: soundex, ...
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-3">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            machine learning
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            Scikit learn<br>
+                            si très haute précision visée<br>
+                            et moyens humains d'annotation<br>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="rf-hide-mobile-background"></div>
+
             </textarea>
           </section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-                #### banque de données de référence
-                <div class="columns is-variable">
-                    <div class="column">
-                      <div class="card">
-                        <div class="card-header is-size-3 has-background-primary has-text-white">
-                          <div class="card-header-title is-centered has-background-primary has-text-white">
+                ## données de référence
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-6 rf-col-xl-4">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
                             communes INSEE
-                          </div>
-                          <span class="card-header-icon is-size-5">
-                              <span class="icon" style="margin-right: 10px">
-                              <i class="fas fa-check"></i>&nbsp;
-                            </span>
-                          </span>
+                          </h4>
+                          <p class="rf-title__desc rf-text--xs">
+                            historique fusions<br>
+                            98% rectification<br>
+                            population, gps
+                          </p>
                         </div>
-                        <div class="card-content">
-                          <small>
-                              historique fusions<br/>
-                              98% rectification<br/>
-                              population, gps
-                          </small>
-                        </div>
-                      </div>
-                      <br/>
-                      <div class="card">
-                          <div class="card-header is-size-3 has-background-primary has-text-white">
-                            <div class="card-header-title is-centered has-background-primary has-text-white">
-                              pays INSEE
-                            </div>
-                            <span class="card-header-icon is-size-5">
-                                <span class="icon" style="margin-right: 10px">
-                                <i class="fas fa-check"></i>&nbsp;
-                              </span>
-                            </span>
-                          </div>
-                          <div class="card-content">
-                            <small>
-                                normalisation<br/>
-                                historique<br/>
-                                gps<br/>
-                            </small>
-                          </div>
                       </div>
                     </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-header is-size-3 has-background-primary has-text-white">
-                              <div class="card-header-title is-centered has-background-primary has-text-white">
-                                statistiques noms
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                  <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>&nbsp;
-                                </span>
-                              </span>
-                            </div>
-                            <div class="card-content">
-                              <small>
-                                <br/>
-                                données du permis de conduire
-                                <br/>
-                              </small>
-                            </div>
+                    <div class="rf-col-xs-6 rf-col-xl-4">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            pays INSEE
+                          </h4>
+                          <p class="rf-title__desc rf-text--xs">
+                            normalisation<br>
+                            historique<br>
+                            gps<br>
+                          </p>
                         </div>
-                        <br/>
-                        <div class="card">
-                            <div class="card-header is-size-3 has-background-primary has-text-white">
-                              <div class="card-header-title is-centered has-background-primary has-text-white">
-                                prénoms composés
-                              </div>
-                              <span class="card-header-icon is-size-5">
-                                  <span class="icon" style="margin-right: 10px">
-                                  <i class="fas fa-check"></i>&nbsp;
-                                </span>
-                              </span>
-                            </div>
-                            <div class="card-content">
-                              <small>
-                                <br/>
-                                données du permis de conduire
-                                <br/>
-                              </small>
-                            </div>
-                        </div>
+                      </div>
                     </div>
-                    <div class="column">
-                      <div class="card">
-                          <div class="card-header is-size-3 has-background-danger has-text-white">
-                            <div class="card-header-title is-centered has-background-danger has-text-white">
-                              nom x prenom
-                            </div>
-                            <span class="card-header-icon is-size-5">
-                              <span class="icon" style="margin-right: 10px">
-                                <i class="fas fa-spinner fa-road"></i>
-                              </span>
-                            </span>
-                          </div>
-                          <div class="card-content">
-                            <small>
-                              fréquences noms+prénoms<br/>
-                              ambiguité<br/>
-                              à venir<br/>
-                            </small>
-                          </div>
+                    <div class="rf-col-xs-6 rf-col-xl-4">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                              statistiques noms
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            données du permis de conduire
+                          </p>
+                        </div>
                       </div>
-                        <br/>
-
+                    </div>
+                    <div class="rf-col-xs-6 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            prénoms composés
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            données du permis de conduire
+                          </p>
+                        </div>
                       </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-title_title rf-text--sm">
+                            nom x prenom
+                          </h4>
+                          <p class="rf-tile__desc rf-text--xs">
+                            fréquences noms+prénoms<br>
+                            ambiguité<br>
+                            à venir<br>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="rf-hide-mobile-background"></div>
+
             </textarea>
           </section>
 
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-              documentation et tutoriel sur https://matchid.io/
+              <div class="rf-text--lead">
+                documentation et tutoriel sur <a href="https://matchid.io/">matchid.io</a>
+              </div>
             </textarea>
           </section>
 
           <section  data-markdown>
               <textarea data-template>
-                  <div class="fig-container" style="height: 700px; width: 1300px;" >
-                    <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://matchid-project.github.io/" allowfullscreen </iframe>
-                    </iframe>
-                    </div>
+                  <iframe  class="rf-iframe--full" src="https://matchid-project.github.io/" allowfullscreen </iframe>
+                  </iframe>
                 </textarea>
             </section>
         </section>
 
         <!-- recherche libre et appariement enduser avec deces.matchid.id -->
         <section>
-          <section data-background="custom/img/background-matchID.svg" data-markdown>
+          <section data-markdown>
             <textarea data-template>
-                ### deces.matchid.io
-                <img width="500" src="custom/img/matchID-logo.svg"><br/>
+                ## deces.matchid.io
+                <div class="rf-text">moteur de recherche des personnes décédées</div>
+                <div style="overflow: hidden;">
+                <iframe scrolling="no" style="margin-top: -200px;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/search" allowfullscreen </iframe>
+                </iframe>
+                </div>
             </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            <div class="rf-container">
+              <div class="rf-grid-row rf-grid-row--gutters">
+                <div class="rf-col-md-12 rf-col-xl-6">
+                  <h2>pour qui</h2>
+                  <div class="rf-container-fluid">
+                    <div class="rf-grid-row rf-grid-row--gutters">
+                      <div class="rf-col-6">
+                        <div class="rf-tile">
+                          <div class="rf-tile__body">
+                          <h4 class="rf-title_title">
+                          les particuliers
+                          </h4>
+                          <p class="rf-title__desc">
+                          les familles<br>
+                          les généalogistes<br>
+                          </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rf-col-6">
+                        <div class="rf-tile">
+                          <div class="rf-tile__body">
+                          <h4 class="rf-title_title">
+                          les professionnels
+                          </h4>
+                          <p class="rf-title__desc">
+                          associations
+                          médecins, hôpitaux
+                          préfectures, police
+                          </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rf-col-md-12 rf-col-xl-6">
+                  <h2> pour quoi ? </h2>
+                  <div class="rf-container-fluid">
+                    <div class="rf-grid-row">
+                      <div class="rf-col-6">
+                        <div class="rf-tile">
+                          <div class="rf-tile__body">
+                          <h4 class="rf-title_title">
+                          recherche libre
+                          </h4>
+                          <p class="rf-title__desc">
+                          simple
+                          avancée
+                          géographique
+                          </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rf-col-6">
+                        <div class="rf-tile">
+                          <div class="rf-tile__body">
+                          <h4 class="rf-title_title">
+                          appariement
+                          </h4>
+                          <p class="rf-title__desc">
+                          droit à l'oubli / RGPD
+                          fiabilisation fichiers
+                          études scientifiques
+                          </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </textarea>
         </section>
         <section title="objectif" data-markdown>
           <textarea data-template>
-            ## L'objectif
-
-            Publier un moteur de recherche des décès
-
-            <img width="100%" style="border:0;box-shadow: none;" data-src="custom/img/moteur_deces.png" alt="deces.matchid.io">
+            ## Recherche avancée
+            </div>
+            <div style="overflow:hidden">
+              <iframe scrolling="no" class="rf-iframe rf-iframe--no-header"  src="https://deces.matchid.io/search?advanced=true&ln=pompidou&fn=georges&view=card-expand" allowfullscreen </iframe>
+              </iframe>
+            </div>
+            <div class="rf-hide-mobile-background"></div>
+          </textarea>
+        </section>
+        <section title="objectif" data-markdown>
+          <textarea data-template>
+            ## Recherche géographique
+            <div style="overflow:hidden">
+              <iframe scrolling="no" style="margin-top:-330px;height:1000px" class="rf-iframe--small"  src="https://deces.matchid.io/search?q=pompidou&fuzzy=false&view=geo" allowfullscreen </iframe>
+              </iframe>
+            </div>
+            <div class="rf-hide-mobile-background"></div>
+          </textarea>
+        </section>
+        <section title="objectif" data-markdown>
+          <textarea data-template>
+            ## Appariement
+            <img src="custom/img/deces-appariement.png"><br>
           </textarea>
         </section>
         <section title="opportunité" data-markdown>
           <textarea data-template>
-            ## L'opportunité
-
-            <div class="columns is-variable">
-              <div class="column">
-                début 2017...<br/>
-                <img width="100px" style="border : 0;box-shadow: none;" data-src="custom/img/logo_mi.png" alt="logo ministère de l'Intérieur">
-                <br/>
-                <small>au "MI", le projet matchID réalise en POC un moteur de recherche des décès avec le fichier INSEE, alors fermé</small>
-              </div>
-              <div class="column">
-                ... fin 2019<br/>
-                <img width="100px" style="border : 0;box-shadow: none;" data-src="custom/img/logo_insee.svg" alt="logo Insee">
-                <br/>
-                <small>l'INSEE publie l'ensemble des 25 millions d'enregistrements de décès depuis 1970 <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/)">data.gouv</a></small>
+            ## Pourquoi deces.matchid.io ?
+            <br>
+            <div class="rf-container">
+              <div class="rf-grid-row rf-grid-row--gutters">
+                <div class="rf-col-xs-12 rf-col-xl-6">
+                  <div class="rf-tile">
+                    <div class="rf-tile__body">
+                        <span class="rf-logo rf-logo--lg rf-text--left" title="République Française">
+                          <span class="rf-logo__title">
+                          Ministère<br>de l'Intérieur
+                          </span>
+                        </span>
+                      <h4 class="rf-tile__title">début 2017...</h4>
+                      <p class="rf-title__desc">
+                        au "MI", le projet matchID réalise en POC un moteur de recherche des décès avec le fichier INSEE, alors en accès restreint
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="rf-col-xs-12 rf-col-xl-6">
+                  <div class="rf-tile">
+                    <div class="rf-tile__body">
+                      <img height="100px" width="100px" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/logo_insee.svg" alt="logo Insee">
+                      <h4 class="rf-tile__title">... fin 2019</h4>
+                      <p class="rf-tile__desc">
+                        sur demande de la CADA, l'INSEE publie l'ensemble des 25 millions d'enregistrements de décès depuis 1970 <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/)">data.gouv</a>                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="rf-hide-mobile-background"></div>
 
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## comment est utilisé matchID
           </textarea>
         </section>
         <section title="dataprep" data-markdown>
           <textarea data-template>
             ### Dataprep avec matchID
-            <small>
-                <ul>  Les traitements sont pensés faciliter la recherche par indexation:
-                  <li>les données sont normalisées en ascii (il y a quelques erreurs d'encodage dans les fichiers INSEE</li>
-                  <li>le libellé de commune de décès (ou pays) est récupéré via le référentiel INSEE</li>
-                  <li>idem pour le pays de naissance et de décès</li>
-                  <li>l'historique de commune est utilisée pour les variantes de libellés de communes</li>
-                </ul>
-                <br/>
+            <ul class="rf-text--sm">  Les traitements sont pensés faciliter la recherche par indexation:
+              <li>les données sont normalisées en ascii (il y a quelques erreurs d'encodage dans les fichiers INSEE</li>
+              <li>le libellé de commune de décès (ou pays) est récupéré via le référentiel INSEE</li>
+              <li>idem pour le pays de naissance et de décès</li>
+              <li>l'historique de commune est utilisée pour les variantes de libellés de communes</li>
+            </ul>
             <a class="higher-24" target="_blank" href="https://tuto.matchid.io/matchID/projects/deces-dataprep/recipes/deces_dataprep">
             <img width="100%" style="border:0;box-shadow: none;" data-src="custom/img/matchID-dataprep.png" alt="matchid datapre"></a>
-            <br/>
-            Cliquez sur l'image ci-dessus pour vous rendre sur la recette
-            </small>
+            <br>
           </textarea>
       </section>
       <section title="indexation" data-markdown>
           <textarea data-template>
             ### Indexation Elasticsearch
-            <small class="left higher-24">
+            <ul class="rf-text--sm"> L'indexation Elasticsearch est une opération peu intuitive:
+              <li>matchID facilite l'indexation avec l'automatisation de la création du mapping</li>
+              <li>plusieurs colonnes avec des indexations différenciées sont créées</li>
+              <li>l'indexation floue "auto" est utilisée
+                  (distance de Levensthein à 2 pour les noms longs, <br>1 pour les noms courts, 0 pour les très courts</li>
+              <li>la date de naissance et de décès sont également accessibles en recherche floue</li>
+            </ul>
             <a target="_blank" href="https://tuto.matchid.io/matchID/projects/deces-dataprep/datasets/deces_index">
             <img width="100%" style="border:0;box-shadow: none;" data-src="custom/img/matchID-index.png" alt="matchid index"></a>
-            <small class="higher-24"><small>Cliquez sur l'image pour visualiser les données</small></small>
-              <ul> L'indexation Elasticsearch est une opération peu intuitive:
-                <li>matchID facilite l'indexation avec l'automatisation de la création du mapping</li>
-                <li>plusieurs colonnes avec des indexations différenciées sont créées</li>
-                <li>le edge ngram est utilisé pour tokenizer à l'indexation mais pas à la recherche (pour l'autocomplete)</li>
-                <li>l'indexation floue "auto" est utilisée (distance de Levensthein à 2 pour les noms longs, 1 pour les noms courts, 0 pour les très courts</li>
-                <li>la date de naissance et de décès sont également accessibles en recherche floue</li>
-              </ul>
-            </small>
+
           </textarea>
-      </section>
-      <section  data-markdown>
-        <!-- Recherche avancée -->
-        <textarea data-template>
-            <div class="fig-container" style="height: 700px; width: 1300px;" >
-              <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://deces.matchid.io/search?advanced=true" allowfullscreen </iframe>
-              </iframe>
-            </div>
-        </textarea>
-      </section>
-      <section  data-markdown>
-        <!-- Réconciliation -->
-        <textarea data-template>
-            <div class="fig-container" style="height: 700px; width: 1300px;" >
-              <iframe  style="height: 700px; width: 1300px; margin-left: -330px"  src="https://deces.matchid.io/link" allowfullscreen </iframe>
-              </iframe>
-            </div>
-        </textarea>
       </section>
         </section>
       </div>
@@ -988,7 +1009,11 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+        width: "100%",
+        height: "100%",
+        margin: 0,
+        minScale: 1,
+        maxScale: 1,
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch ]
 			});

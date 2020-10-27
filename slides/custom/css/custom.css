@@ -73,3 +73,16 @@ code {
 .reveal small {
   vertical-align: baseline;
 }
+
+.reveal article {
+  height: 100%;
+  width: 100%;
+}
+
+.rf-text--left {
+  text-align: left;}
+
+.rf-text--right {
+  text-align: right;}
+
+
