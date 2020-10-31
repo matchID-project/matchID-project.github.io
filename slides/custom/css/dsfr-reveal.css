@@ -57,12 +57,12 @@
  *********************************************/
 :root {
   --background-color: #fff;
-  --main-font: Source Sans Pro, Helvetica, sans-serif;
+  --main-font: "Marianne",arial,sans-serif;
   --main-font-size: 42px;
   --main-color: #222;
   --block-margin: 20px;
   --heading-margin: 0 0 20px 0;
-  --heading-font: Source Sans Pro, Helvetica, sans-serif;
+  --heading-font: "Marianne",arial,sans-serif;
   --heading-color: #222;
   --heading-line-height: 1.2;
   --heading-letter-spacing: normal;
@@ -83,6 +83,10 @@
 .reveal-viewport {
   background: #fff;
   background-color: #fff; }
+
+body html div {
+  font-family: "Marianne",arial,sans-serif;
+}
 
 .reveal {
   font-family: "Marianne",arial,sans-serif;
