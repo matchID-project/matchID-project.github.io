@@ -1,0 +1,88 @@
+
+.zoom-75 .slide-background-content iframe {
+  min-width:200%!important;
+  min-height:200%!important;
+  zoom: 0.5;
+  -moz-transform: scale(0.5);
+  -moz-transform-origin: 0 0;
+}
+.container {
+  display: flex;
+}
+.center {
+  align-items: center;
+}
+.top {
+  align-items: top;
+}
+.higher,
+.higher-48 {
+  margin-top:-48px!important;
+}
+.higher-24 {
+  margin-top:-24px!important;
+}
+.col{
+  flex: 1;
+  padding: 16px;
+}
+.justify {
+  text-align: justify;
+}
+.left {
+  text-align: left;
+}
+ul {
+  list-style: none!important; /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: red; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+pre {
+  border : 0!important;
+  margin: 0px!important;
+  padding: 0px!important;
+  box-shadow: none!important;
+  width:100%!important;
+}
+pre code {
+  padding: 0px!important;
+}
+code {
+  font-size: 0.95em!important;
+}
+
+/* reveal upgrade pres fix */
+
+.notification, .columns, .column, .button, .card, .card-header, .card-header-title, .card-content,
+.card-header-icon {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.reveal small {
+  vertical-align: baseline;
+}
+
+.reveal article {
+  height: 100%;
+  width: 100%;
+}
+
+.rf-text--left {
+  text-align: left;}
+
+.rf-text--right {
+  text-align: right;}
+
+

@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="matchID - réconciliation d'identité">
+    <link rel="icon" href="custom/img/matchID-logo-square.svg">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="Fabien ANTOINE">
+
+    <title>matchID - traitement de données d'identité</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="custom/css/all.min.css" id="dsfr">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="custom/css/dsfr-reveal.css" id="theme">
+		<link rel="stylesheet" href="custom/css/custom.css" id="custom">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/zenburn.css" id="highlight-theme">
+	</head>
+	<body>
+    <div class="rf-header" style="z-index: -2000;"></div>
+      <div class="rf-container rf-container__header">
+        <div class="rf-header__body" >
+          <div class="rf-header__brand" style="flex: none">
+            <span class="rf-logo" title="République Française">
+              <span class="rf-logo__title">
+                République<br>Française
+              </span>
+            </span>
+          </div>
+
+          <span class="rf-padding-top-1N">
+            <img width="64" src="custom/img/matchID-logo-square.svg">
+          </span>
+        </div>
+      </div>
+    </div>
+		<div class="reveal" style="position: absolute;top: 0;z-index:0">
+      <div class="slides">
+        <!-- dsfr x deces.matchid.io -->
+        <section>
+          <section data-markdown>
+              <textarea data-template>
+                  # design system de l'Etat
+                  <img width="150" src="custom/img/matchID-logo-square.svg">
+                  <br>
+                  <span class="rf-text--xl">
+                    application au site <a href="https://deces.matchid.io">deces.matchid.io</a>
+                  </span>
+              </textarea>
+          </section>
+        </section>
+        <!-- deces.matchid.io, c'est quoi -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+                # Le service
+                <img width="150" src="custom/img/matchID-logo-square.svg">
+                <br>
+                <span class="rf-text--xl">
+                  moteur de recherche des personnes décédées
+                </span>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                ## deces.matchid.io
+                <div class="rf-text">moteur de recherche des personnes décédées</div>
+                <br>
+                <div style="overflow: hidden;">
+                <iframe scrolling="no" style="margin-top: -200px;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/search" allowfullscreen/>
+                </div>
+            </textarea>
+          </section>
+          <section title="opportunité" data-markdown>
+            <textarea data-template>
+              ## D'où vient l'idée ?
+              <br>
+              <div class="rf-container">
+                <div class="rf-grid-row rf-grid-row--gutters">
+                  <div class="rf-col-xs-12 rf-col-xl-6">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                          <span class="rf-logo rf-logo--lg rf-text--left" title="République Française">
+                            <span class="rf-logo__title">
+                            Ministère<br>de l'Intérieur
+                            </span>
+                          </span>
+                        <h4 class="rf-tile__title">début 2017...</h4>
+                        <p class="rf-title__desc">
+                          au "MI", le projet matchID réalise en POC un moteur de recherche des décès avec le fichier INSEE, alors en accès restreint
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-12 rf-col-xl-6">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <img height="100px" width="100px" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/logo_insee.svg" alt="logo Insee">
+                        <h4 class="rf-tile__title">... fin 2019</h4>
+                        <p class="rf-tile__desc">
+                          sur demande de la CADA, l'INSEE publie l'ensemble des 25 millions d'enregistrements de décès depuis 1970 <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/)">data.gouv</a>                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rf-hide-mobile-background"></div>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              <div class="rf-container">
+                <div class="rf-grid-row rf-grid-row--gutters">
+                  <div class="rf-col-md-12 rf-col-xl-6">
+                    <h2>pour qui</h2>
+                    <div class="rf-container-fluid">
+                      <div class="rf-grid-row rf-grid-row--gutters">
+                        <div class="rf-col-6">
+                          <div class="rf-tile">
+                            <div class="rf-tile__body">
+                            <h4 class="rf-tile_title">
+                            les particuliers
+                            </h4>
+                            <p class="rf-title__desc">
+                            les familles<br>
+                            les généalogistes<br>
+                            </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rf-col-6">
+                          <div class="rf-tile">
+                            <div class="rf-tile__body">
+                            <h4 class="rf-tile_title">
+                            les professionnels
+                            </h4>
+                            <p class="rf-tile__desc">
+                            associations
+                            médecins, hôpitaux
+                            préfectures, police
+                            </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-md-12 rf-col-xl-6">
+                    <h2> pour quoi ? </h2>
+                    <div class="rf-container-fluid">
+                      <div class="rf-grid-row">
+                        <div class="rf-col-6">
+                          <div class="rf-tile">
+                            <div class="rf-tile__body">
+                            <h4 class="rf-tile_title">
+                            recherche libre
+                            </h4>
+                            <p class="rf-tile__desc">
+                            simple
+                            avancée
+                            géographique
+                            </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rf-col-6">
+                          <div class="rf-tile">
+                            <div class="rf-tile__body">
+                            <h4 class="rf-tile_title">
+                            appariement
+                            </h4>
+                            <p class="rf-tile__desc">
+                            droit à l'oubli / RGPD
+                            fiabilisation fichiers
+                            études scientifiques
+                            </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                ## Fréquentation du service
+                <br>
+                <div style="overflow: hidden;">
+                <iframe scrolling="no" style="margin-top: -195px;height:700px;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/stats" allowfullscreen/>
+                </div>
+            </textarea>
+          </section>
+        </section>
+        <!-- expérience design system -->
+        <section>
+          <section title="avant/après" data-markdown>
+            <textarea data-template>
+                # Avant / Après
+
+                <img width="100" src="custom/img/Svelte_Logo.svg">
+                <br>
+                <span class="rf-text--xl">
+                  de Bulma
+                  <br>
+                  au Design system de l'État (0.2.0)
+                  <br>
+                  avec Svelte.js
+                </span>
+            </textarea>
+          </section>
+          <section title="accueil" data-markdown>
+            <textarea data-template>
+                ## Accueil
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img width="100%" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/bulma/accueil.png" alt="accueil">
+                          <h4 class="rf-tile__title">Bulma...</h4>
+                          <p class="rf-title__desc rf-text--left">
+                            Bulma pousse aux couleurs "flash", avec un Hero très présent (flat design ~2015)
+                            <br>
+                            Le menu est très "aplicatif".
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img width="100%" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/dsfr/accueil.png" alt="accueil">
+                          <h4 class="rf-tile__title">... Dsfr</h4>
+                          <p class="rf-tile__desc">
+                            Menu sobre et espacé (2x plus grand) savec une place claire pour la marque d'Etat
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="recherche simple" data-markdown>
+            <textarea data-template>
+                ## Recherche simple
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="400px"  style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/bulma/premiere-recherche.png" alt="accueil">
+                          <h4 class="rf-tile__title">Bulma...</h4>
+                          <p class="rf-title__desc rf-text--left">
+                            Information placée sous le Hero, oblige à scroller en plein écran pour les résultats.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="400px" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/dsfr/premiere-recherche.png" alt="accueil">
+                          <h4 class="rf-tile__title">... Dsfr</h4>
+                          <p class="rf-tile__desc">
+                            Choix de bascule du search sur le côté (mode large), l'occupation du header prenant
+                            trop d'espace.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="recherche avancée" data-markdown>
+            <textarea data-template>
+                ## Recherche avancée
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="400px"  style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/bulma/recherche-avancee.png" alt="accueil">
+                          <h4 class="rf-tile__title">Bulma...</h4>
+                          <p class="rf-title__desc rf-text--left">
+                            Inputs "customisés" pour tenir dans le hero
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="400px" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/dsfr/recherche-avancee.png" alt="accueil">
+                          <h4 class="rf-tile__title">... Dsfr</h4>
+                          <p class="rf-tile__desc">
+                            Les espacements obligatoires ont poussé à la bascule sur la gauche, plus standard
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="carte identité" data-markdown>
+            <textarea data-template>
+                ## Fiche dépliée
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="170px"  style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/bulma/card.png" alt="accueil">
+                          <h4 class="rf-tile__title">Bulma...</h4>
+                          <p class="rf-title__desc rf-text--left">
+                            La notion de carte (card) comporte un header et un footer, l'incorporation d'une
+                            image et d'un bouton en standard, tout comme sous bootstrap. Le dépliement
+                            d'une carte est naturelle (body et footer de cart absents en mode repliés).
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="170px" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/dsfr/card.png" alt="accueil">
+                          <h4 class="rf-tile__title">... Dsfr</h4>
+                          <p class="rf-tile__desc rf-text--left">
+                            La carte (rf-card) ne correspond pas à une notion de fiche avec un body complexe
+                            <br>
+                            L'image est difficile à intégrer dans le header.
+                            <br>
+                            Tweak fait avec la mise en avant (rf-callout) pour le dépliement.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="table (recherche)" data-markdown>
+            <textarea data-template>
+                ## Table
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="170px"  style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/bulma/table.png" alt="accueil">
+                          <h4 class="rf-tile__title">Bulma...</h4>
+                          <p class="rf-title__desc">
+                            Bulma intègre les tables avec "strip"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <img height="170px" style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/dsfr/table.png" alt="accueil">
+                          <h4 class="rf-tile__title">... Dsfr</h4>
+                          <p class="rf-tile__desc">
+                            Pas de cadre, reprise du css Bulma
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="menus & icones" data-markdown>
+            <textarea data-template>
+                ## Menus & icônes
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <div style="height: 400px!important">
+                            <img width="100%"  style="transform: translate(0,60%);margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/bulma/menu.png" alt="accueil">
+                          </div>
+                          <h4 class="rf-tile__title">Bulma...</h4>
+                          <p class="rf-title__desc">
+                            Bulma gère les icônes dans les menus
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <div style="height:400px">
+                            <img height="400px"  style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/dsfr/menu.png" alt="accueil">
+                          </div>
+                          <h4 class="rf-tile__title">... Dsfr</h4>
+                          <p class="rf-tile__desc rf-text--left">
+                            - Intégration JS custom (Svelte): état du burger & aria
+                            <br>
+                            - Icones Remixicon via Iconify => code "rf-fi--icon" pour svg
+                            <br>
+                            - Ajout ombrage du menu (blanc sur blanc)
+                            <br>
+                            - Utilisation mixte de rf-nav et rf-shortcuts (pour réhausser les menus)
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="appariement (tuiles)" data-markdown>
+            <textarea data-template>
+                ## Appariement (tuiles)
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <div style="height: 400px!important">
+                            <img width="100%"  style="transform: translate(0,10%);margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/bulma/appariement.png" alt="accueil">
+                          </div>
+                          <h4 class="rf-tile__title">Bulma...</h4>
+                          <p class="rf-title__desc">
+                            Css custom pour les étapes & les associations de colonnes.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <div style="height:400px">
+                            <img height="400px"  style="margin: 14px;border : 0;box-shadow: none;" data-src="custom/img/dsfr/appariement.png" alt="accueil">
+                          </div>
+                          <h4 class="rf-tile__title">... Dsfr</h4>
+                          <p class="rf-tile__desc rf-text--left">
+                            - Tuiles (rf-tile) très pratiques multi usage
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="accordéon (à propos)" data-markdown>
+            <textarea data-template>
+              ## Accordéon (à propos)
+              <div style="overflow:hidden">
+                <iframe scrolling="no" style="margin-top:-230px;width: 100%;height:800px"  src="https://deces.matchid.io/about" allowfullscreen/>
+              </div>
+              <div class="rf-hide-mobile-background"></div>
+            </textarea>
+          </section>
+          <section title="recherche géographique" data-markdown>
+            <textarea data-template>
+              ## Recherche géographique
+              <div style="overflow:hidden">
+                <iframe scrolling="no" style="margin-top:-330px;height:1000px" class="rf-iframe--small"  src="https://deces.matchid.io/search?q=pompidou&fuzzy=false&view=geo" allowfullscreen </iframe>
+                </iframe>
+              </div>
+              <div class="rf-hide-mobile-background"></div>
+            </textarea>
+          </section>
+          <section title="appariement (résultat)" data-markdown>
+            <textarea data-template>
+              ## Appariement (résultats)
+              <img src="custom/img/deces-appariement.png"><br>
+            </textarea>
+          </section>
+          <section title="intégration" data-markdown>
+            <textarea data-template>
+                ## Les adaptations
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title">Composants CSS</h4>
+                          <p class="rf-title__desc">
+                            <ul class="rf-text--sm">
+                              <li> Menu (position burger)</li>
+                              <li> Icones : niveau texte </li>
+                              <li> Icones : svg </li>
+                              <li> Icones : dans composants: cartes, menus ... </li>
+                              <li> Spinner </li>
+                              <li> Cartes dépliables </li>
+                              <li> Progress bar </li>
+                              <li> Tables </li>
+                              <li> Charts : orientations de design ?? </li>
+                            </ul>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title">Intégration JS</h4>
+                          <p class="rf-title__desc">
+                            <br>
+                            <ul class="rf-text--sm">
+                              <li> Acces clavier (reactivité svelte) </li>
+                              <li> Icônes hors fonte / Iconify </li>
+                              <li> Menu/Burger </li>
+                              <li> Pagination </li>
+                              <li> Accordéon avec composants JS </li>
+                              <li> Icône "progrès" </li>
+                              <li> Fonte Marianne dans Chart.js </li>
+                            </ul>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+                # Et après ?
+                <br>
+                <ul>
+                  <li>upgrade 0.3.0</li>
+                  <li>optimisation / purgecss</li>
+                  <li>creation librairies ? Svelte.js, Vue.js</li>
+                </ul>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                # Questions ?
+                <img width="150" src="custom/img/matchID-logo-square.svg">
+            </textarea>
+          </section>
+
+        </section>
+      </div>
+		</div>
+
+    <script defer src="custom/js/fa.js"></script>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+        width: "100%",
+        height: "100%",
+        margin: 0,
+        minScale: 1,
+        maxScale: 1,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch ]
+			});
+		</script>
+	</body>
+</html>
