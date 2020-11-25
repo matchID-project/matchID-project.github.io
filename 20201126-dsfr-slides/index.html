@@ -46,10 +46,15 @@
           <section data-markdown>
               <textarea data-template>
                   # design system de l'Etat
+
                   <img width="150" src="custom/img/matchID-logo-square.svg">
                   <br>
                   <span class="rf-text--lg">
-                    application au site <a href="https://deces.matchid.io">deces.matchid.io</a>
+                    application (v0.2.0) au site <a href="https://deces.matchid.io">deces.matchid.io</a>
+                    <br>
+                    26 novembre 2020
+                    <br>
+                    Fabien ANTOINE, ministère de la Justice
                   </span>
               </textarea>
           </section>
@@ -62,6 +67,7 @@
                 <img width="150" src="custom/img/matchID-logo-square.svg">
                 <br>
                 <span class="rf-text--lg">
+                  <a href="https://deces.matchid.io">deces.matchid.io</a> <br>
                   moteur de recherche des décès
                 </span>
             </textarea>
@@ -197,11 +203,224 @@
             </textarea>
           </section>
         </section>
-        <!-- expérience design system -->
+        <!-- intégration -->
+        <section>
+          <section title="intégration" data-markdown>
+            <textarea data-template>
+                # Travaux d'intégration
+                <br>
+                <img width="75" src="custom/img/Svelte_Logo.svg">
+                <br>
+                <span class="rf-text--lg">
+                  Design system de l'État
+                  <br>
+                  au sein d'une SPA en Svelte.js
+                </span>
+            </textarea>
+          </section>
+          <section title="intégration" data-markdown>
+            <textarea data-template>
+                ## Contexte
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-4">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                        <h4 class="rf-tile_title">
+                        sites de la Justice
+                        </h4>
+                        <p class="rf-title__desc">
+                        opportunité d'utiliser le dsfr l'usage pour la
+                        refonte d'ensemble (justice.gouv.fr), site des tribunaux, ...
+                        </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-4">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                        <h4 class="rf-tile_title">
+                        Diffusion au SI Justice ?
+                        </h4>
+                        <p class="rf-tile__desc rf-text--left rf-margin-left-3N">
+                        - maturité ?<br>
+                        - évaluation d'impact ?<br>
+                        - démarche ? <br>
+                        </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-4">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                        <h4 class="rf-tile_title">
+                        premier pas
+                        </h4>
+                        <p class="rf-tile__desc rf-text--left rf-margin-left-2N">
+                        deces.matchid.io: <br>
+                        - SPA en Svelte.js (API node.js)<br>
+                        - CSS : Bulma<br>
+                        - Icones: FontAwesome <br>
+                        </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="adapations" data-markdown>
+            <textarea data-template>
+                ## Les adaptations (~40h)
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title">Composants CSS</h4>
+                          <p class="rf-title__desc">
+                            <ul class="rf-text--sm">
+                              <li> Menu (position burger)</li>
+                              <li> Icones : svg, cartes, menus </li>
+                              <li> Spinner </li>
+                              <li> Cartes dépliables </li>
+                              <li> Progress bar </li>
+                              <li> Tables </li>
+                              <li> Charts : orientations de design ?? </li>
+                            </ul>
+                            <br>
+                            <ul class="rf-text--sm">
+                              <li><strong>109 classes css rf- complétées</strong></li>
+                              <li><strong>390 classes css custom supprimés</strong></li>
+                            </ul>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title">Intégration JS</h4>
+                          <p class="rf-title__desc">
+                            <ul class="rf-text--sm">
+                              <li> Acces clavier (reactivité svelte) </li>
+                              <li> Icônes hors fonte / Iconify </li>
+                              <li> Menu/Burger </li>
+                              <li> Pagination </li>
+                              <li> Accordéon avec composants JS </li>
+                              <li> Icône "progrès" </li>
+                              <li> Fonte Marianne dans Chart.js </li>
+                            </ul>
+                            <ul class="rf-text--sm">
+                              <li><strong>1390 (76%) lignes html modifiées </strong></li>
+                              <li><strong>330 (9%) lignes js de l'UI modifiées </strong></li>
+                            </ul>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="adapations" data-markdown>
+            <textarea data-template>
+                ## Synthèse
+
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title">Bénéfices</h4>
+                          <p class="rf-title__desc">
+                            <ul class="rf-text--sm">
+                              <li> rapide à comprendre (~ bootstrap, material, bulma) </li>
+                              <li> déjà fonctionnel (colonnes) </li>
+                              <li> réduit les débats de goûts </li>
+                              <li> sobre (honneur au contenu) </li>
+                              <li> confiance (image de sérieux) </li>
+                              <li> doc déjà très fournie </li>
+                              <li> perspectives de mutualisation++ </li>
+                            </ul>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile">
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title">Limites</h4>
+                          <p class="rf-title__desc">
+                            (version 0.2.0)
+                            <ul class="rf-text--sm">
+                              <li> poids de la librairie & fontes (+50% poids) </li>
+                              <li> composants pour apps (carte dépliable, tables, icones / svg) </li>
+                              <li> besoin lib / framework : Svelte, Vue, Angular, React </li>
+                              <li> doc in vivo </li>
+                              <li> ouverture Github attendue ! </li>
+                              <li> <strong>implique une reconception</strong> </li>
+                            </ul>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </textarea>
+          </section>
+          <section title="adapations" data-markdown>
+            <textarea data-template>
+              ## Etat des travaux
+              <div class="rf-container">
+                <div class="rf-grid-row rf-grid-row--gutters">
+                  <div class="rf-col-xs-12 rf-col-xl-6">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-tile__title">Réalisé</h4>
+                        <p class="rf-title__desc">
+                          <ul class="rf-text--sm">
+                            <li> dév du 10 au 17 octobre</li>
+                            <li> optims (pageSpeedIndex / poids css/fontes) </li>
+                            <li> publication 17 octobre</li>
+                            <li> 0.1.0 puis 0.2.0 </li>
+                            <li> ajouts composants: about, stats </li>
+                            <li> <strong>bonus: adapatation Reveal.js</strong> </li>
+                          </ul>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-12 rf-col-xl-6">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <h4 class="rf-tile__title">Suites</h4>
+                        <p class="rf-title__desc">
+                          <ul class="rf-text--sm">
+                            <li> migration 0.3.1 </li>
+                            <li> scaffolding css rollup </li>
+                            <li> pruning (optim poids) </li>
+                            <li> test css in js </li>
+                            <li> adaptation site matchid.io (jekyll/bulma) </li>
+                            <li> contrib package Svelte.js ?</li>
+                            <li> adataption outil matchID (Vue.js) ? </lid>
+                          </ul>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </textarea>
+          </section>
+        </section>
+        <!-- avant / après -->
         <section>
           <section title="avant/après" data-markdown>
             <textarea data-template>
-                # Avant / Après
+                # Annexe
+                ## avant / Après
                 <span class="rf-text--lg">
                   de Bulma <br> au Design system de l'État (0.2.0)</span>
             </textarea>
@@ -507,129 +726,14 @@
             </textarea>
           </section>
         </section>
-        <!-- conclusion -->
-
+        <!-- questions -->
         <section>
-          <section title="intégration" data-markdown>
-            <textarea data-template>
-                # Travaux d'intégration
-                <br>
-                <img width="75" src="custom/img/Svelte_Logo.svg">
-                <br>
-                <span class="rf-text--lg">
-                  Design system de l'État
-                  <br>
-                  au sein d'une SPA en Svelte.js
-                </span>
-            </textarea>
-          </section>
-          <section title="adapations" data-markdown>
-            <textarea data-template>
-                ## Les adaptations (~40h)
-
-                <div class="rf-container">
-                  <div class="rf-grid-row rf-grid-row--gutters">
-                    <div class="rf-col-xs-12 rf-col-xl-6">
-                      <div class="rf-tile">
-                        <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">Composants CSS</h4>
-                          <p class="rf-title__desc">
-                            <ul class="rf-text--sm">
-                              <li> Menu (position burger)</li>
-                              <li> Icones : svg, cartes, menus </li>
-                              <li> Spinner </li>
-                              <li> Cartes dépliables </li>
-                              <li> Progress bar </li>
-                              <li> Tables </li>
-                              <li> Charts : orientations de design ?? </li>
-                            </ul>
-                            <br>
-                            <ul class="rf-text--sm">
-                              <li><strong>109 classes css rf- complétées</strong></li>
-                              <li><strong>390 classes css custom supprimés</strong></li>
-                            </ul>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rf-col-xs-12 rf-col-xl-6">
-                      <div class="rf-tile">
-                        <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">Intégration JS</h4>
-                          <p class="rf-title__desc">
-                            <ul class="rf-text--sm">
-                              <li> Acces clavier (reactivité svelte) </li>
-                              <li> Icônes hors fonte / Iconify </li>
-                              <li> Menu/Burger </li>
-                              <li> Pagination </li>
-                              <li> Accordéon avec composants JS </li>
-                              <li> Icône "progrès" </li>
-                              <li> Fonte Marianne dans Chart.js </li>
-                            </ul>
-                            <ul class="rf-text--sm">
-                              <li><strong>1390 (76%) lignes html modifiées </strong></li>
-                              <li><strong>330 (9%) lignes js modifiées </strong></li>
-                            </ul>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </textarea>
-          </section>
-          <section title="adapations" data-markdown>
-            <textarea data-template>
-                ## Synthèse
-
-                <div class="rf-container">
-                  <div class="rf-grid-row rf-grid-row--gutters">
-                    <div class="rf-col-xs-12 rf-col-xl-6">
-                      <div class="rf-tile">
-                        <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">Bénéfices</h4>
-                          <p class="rf-title__desc">
-                            <ul class="rf-text--sm">
-                              <li> rapide à comprendre (~ bootstrap, material, bulma) </li>
-                              <li> déjà fonctionnel (colonnes) </li>
-                              <li> réduit les débats de goûts </li>
-                              <li> sobre (honneur au contenu) </li>
-                              <li> confiance (image de sérieux) </li>
-                              <li> doc déjà très fournie </li>
-                              <li> perspectives de mutualisation++ </li>
-                            </ul>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rf-col-xs-12 rf-col-xl-6">
-                      <div class="rf-tile">
-                        <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">Limites</h4>
-                          <p class="rf-title__desc">
-                            (version 0.2.0)
-                            <ul class="rf-text--sm">
-                              <li> composants pour apps (carte dépliable, tables, icones / svg) </li>
-                              <li> besoin lib / framework : Svelte, Vue, Angular, React </li>
-                              <li> doc in vivo </li>
-                              <li> ouverture Github attendue ! </li>
-                              <li> <strong>implique une reconception</strong> </li>
-                            </ul>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </textarea>
-          </section>
           <section data-markdown>
             <textarea data-template>
                 # Questions ?
                 <img width="150" src="custom/img/matchID-logo-square.svg">
             </textarea>
           </section>
-
         </section>
       </div>
 		</div>
