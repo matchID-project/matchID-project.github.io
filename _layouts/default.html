@@ -22,16 +22,30 @@
     <body>
         {% include navbar.html %}
 
-        <div class="rf-container">
+
+        <div class="rf-container-fluid">
           <div class="rf-grid-row">
-            <div class="rf-col-12 rf-background--bf">
+            <div class="rf-col-12 rf-background--bf rf-hide--desktop rf-pr-2w rf-pt-2w rf-pl-2w">
+              <h2 class="rf-card__lead rf-color--white">
+                {{ page.title }}
+              </h2>
+              <p class="rf-card__desc rf-color--white">
+                {{ page.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rf-container rf-mb-3w">
+          <div class="rf-grid-row">
+            <div class="rf-col-12 rf-background--bf rf-hide--mobile" style="min-height:17rem;">
               <div class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow">
                 {% if page.image %}
                 <div class="rf-card__img rf-card__img--fit {% if page.image_flip %} rf-img__flip {% endif %}">
                   <img
                     src="/assets/images/{{page.image}}"
                     style="transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
-                           {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %};"
+                            {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %};"
                     />
                 </div>
                 {% endif %}
@@ -43,19 +57,18 @@
                     {{ page.description }}
                   </h4>
                 </div>
-
               </div>
             </div>
             <div class="rf-col-xl-1 rf-col-md-0"></div>
             <div class="rf-col-xl-10 rf-col-md-12">
-                <div class="rf-container">
-                <div class="rf-grid-row rf-grid-row--gutters" style="{% if page.customLayout %}{% else %}display:unset;{% endif %}">
+              <div class="rf-container-fluid">
+                <div class="rf-grid-row rf-grid-row--gutters-h " style="{% if page.customLayout %}{% else %}display:unset;{% endif %}">
                   {{ content }}
                   {% if page.video %}
                   <iframe style="transform:translateX(50%)" width="420" height="315" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
                   {% endif %}
-                  </div>
                 </div>
+              </div>
             </div>
             <div class="rf-col-xl-1 rf-col-md-0"></div>
           </div>
