@@ -2,7 +2,7 @@
 # this is an empty front matter
 ---
 <!DOCTYPE html>
-<html lang="en" class="has-navbar-fixed-top">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,54 +12,58 @@
         <meta name="theme-color" content="#ffffff">
         <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 
-        <link rel="stylesheet" href="/assets/css/app.css" />
-        <script data-ad-client="ca-pub-6277851622494904" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    </head>
+        <!-- <link rel="stylesheet" href="/assets/css/app.css" /> -->
+        <link rel="stylesheet" href="/assets/css/all.min.css" />
+        <link rel="stylesheet" href="/assets/css/global.css" />
+        <link rel="preload" href="/assets/fonts/Marianne-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" href="/assets/fonts/Marianne-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+      </head>
 
     <body>
         {% include navbar.html %}
 
-        <section class="hero is-primary is-medium is-bold">
-          <div class="hero-body">
-            <div class="container has-text-centered">
-              <h1 class="title">
-                {{ page.title }}
-              </h1>
-              <h2 class="subtitle">
-                {{ page.description }}
-              </h2>
-              {% if page.video %}
-                <iframe class="responsive-iframe" width="420" height="315" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
-              {% endif %}
-            </div>
-          </div>
-        </section>
+        <div class="rf-container">
+          <div class="rf-grid-row">
+            <div class="rf-col-12 rf-background--bf">
+              <div class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow">
+                {% if page.image %}
+                <div class="rf-card__img rf-card__img--fit {% if page.image_flip %} rf-img__flip {% endif %}">
+                  <img
+                    src="/assets/images/{{page.image}}"
+                    style="transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
+                           {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %};"
+                    />
+                </div>
+                {% endif %}
+                <div class="rf-card__body rf-mt-3w rf-mb-3w rf-ml-3w">
+                  <h1 class="rf-card__lead rf-color--white">
+                    {{ page.title }}
+                  </h1>
+                  <h4 class="rf-card__desc rf-color--white">
+                    {{ page.description }}
+                  </h4>
+                </div>
 
-        <div class="container">
-          <div class="content margin-content">
-            <div class="columns is-centered">
-              <div class="column {{ page.width }}">
-                {{ content }}
               </div>
             </div>
+            <div class="rf-col-xl-1 rf-col-md-0"></div>
+            <div class="rf-col-xl-10 rf-col-md-12">
+                <div class="rf-container">
+                <div class="rf-grid-row rf-grid-row--gutters" style="{% if page.customLayout %}{% else %}display:unset;{% endif %}">
+                  {{ content }}
+                  {% if page.video %}
+                  <iframe style="transform:translateX(50%)" width="420" height="315" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
+                  {% endif %}
+                  </div>
+                </div>
+            </div>
+            <div class="rf-col-xl-1 rf-col-md-0"></div>
           </div>
         </div>
 
 
         {% include footer.html %}
-
-        <script src="/assets/javascript/main.js"></script>
-        <script src="/assets/javascript/jquery-3.1.1.min.js"></script>
-
-        <script>
-            $('.nav-toggle').bind('click', function(){
-                var menus = $(this).siblings(".nav-menu");
-                if(menus.hasClass('is-active')){
-                    menus.removeClass('is-active');
-                } else {
-                    menus.addClass('is-active');
-                }
-            });
-        </script>
+        <script src='/assets/js/all.min.js'></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     </body>
 </html>
