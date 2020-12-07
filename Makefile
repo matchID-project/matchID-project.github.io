@@ -1,4 +1,4 @@
 build:
-	docker-compose -f docker-compose-build.yml up --build
+	docker run --rm -v /home/antoinefa/src/matchID/matchID-project.github.io:/srv/jekyll -p 4000:4000 -it jekyll/jekyll:builder jekyll buil
 serve:
-	docker-compose -f docker-compose-serve.yml up
+	docker run --rm -v /home/antoinefa/src/matchID/matchID-project.github.io:/srv/jekyll -p 4000:4000 -it jekyll/jekyll:builder jekyll serve
