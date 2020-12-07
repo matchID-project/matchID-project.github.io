@@ -7,7 +7,6 @@ image: persona_13-16.svg
 customLayout: true
 ---
 
-
 <div class="rf-col-xl-6 rf-col-md-12">
     <h3>matchID</h3>
     <p>
@@ -25,24 +24,19 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-md-12 rf-mt-12w">
-  <iframe class="rf-mt-4w" frameborder="0" width="100%" height="70%"
-      src="https://www.dailymotion.com/embed/video/x7okqx1"
-      allowfullscreen
-      allow="autoplay; fullscreen">
-  </iframe>
-</div>
-
-<div class="rf-col-xl-6 rf-col-md-12 rf-mt-6w">
-  <div style="overflow:hidden">
-  <iframe class="rf-mt-4w" frameborder="0" width="100%" height="520px"
-      scrolling="no" style="margin-top: -200px;"
-      src="https://deces.matchid.io/search?q=Pompidou%20Georges"
-      allowfullscreen
-      allow="autoplay; fullscreen">
-  </iframe>
+<div class="rf-col-xl-6 rf-col-md-12">
+  <div class="rf-vcenter rf-responsive-vid" style="min-width:328px;min-height:184px;" width="100%">
+    <iframe class="rf-responsive-vid__player" style="min-width:328px;min-height:184px;" frameborder=0
+        src="https://www.dailymotion.com/embed/video/x7okqx1"
+        allowfullscreen
+        allow="autoplay; fullscreen">
+    </iframe>
   </div>
 </div>
+
+<div class="rf-col-xl-12 rf-col-md-12">
+<div class="rf-container--fluid">
+<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
 
 <div class="rf-col-xl-6 rf-col-md-12">
     <h3><a href="https://deces.matchid.io" title="moteur de recherche des décès">deces.matchid.io</a></h3>
@@ -58,4 +52,18 @@ customLayout: true
     <p>
     Le produit est utilisé par plus de 2000 généalogistes chaque jour, et des professionnels de la santé pour fiabiliser leurs fichiers clients.
     </p>
+</div>
+
+<div class="rf-col-xl-6 rf-col-md-12">
+  <div class="rf-vcenter" style="overflow:hidden">
+    <iframe frameborder="0" width="100%" height="520px"
+        scrolling="no" style="margin-top: -200px;"
+        src="https://deces.matchid.io/search?q=Pompidou%20Georges"
+    >
+    </iframe>
+  </div>
+</div>
+
+</div>
+</div>
 </div>
