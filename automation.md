@@ -3,14 +3,15 @@ layout: default
 permalink: automation
 description: "understanding and troubleshooting"
 title:  Automation
+image: persona_22.svg
 width: is-10
 ---
 
-# architecture
+## architecture
 
-## what does `make start` do? 
+### what does `make up` do?
 
-`make start` may take some time, because it handles multiple actions : 
+`make up` may take some time, because it handles multiple actions :
 
 - building
   - downloading docker images of all bundled components (`node`,`nginx`,`python`,`elasticsearch`,`kibana`)
@@ -26,38 +27,38 @@ Here is the architecture overview :
 
 <div class="columns is-centered">
 <figure class="image alpha-png-background">
-<img class="column is-half is-narrow" src="assets/images/matchid_architecture.png" alt="matchID architecture">  
+<img class="column is-half is-narrow" src="assets/images/matchid_architecture.png" alt="matchID architecture">
 </figure>
 </div>
 
-## troubleshooting
+### troubleshooting
 
 All commands here have to be executed from the machine where `docker` runs `matchID` (local or remote).
 
-### stopping everything
+#### stopping everything
 
 To stop all components
 
 ```
 make stop
 ```
-### backend
+#### backend
 
 - stop the backend : `make backend-stop`
 - start the backend : `make backend`
 - restart the backend : `make backend-stop backend`
 - get the logs : `docker logs -f matchid-backend`
 
-### frontend
+#### frontend
 
 - build only the frontend : `make docker-build`
 - stop the frontend : `make frontend-stop`
 - start the frontend : `make frontend`
-- restart the frontend : `make frontend-stop frontend` 
+- restart the frontend : `make frontend-stop frontend`
 - get the logs : `docker logs -f matchid-backend`
 
 
-### elasticsearch
+#### elasticsearch
 
 Elasticsearch is useful for powerfull fuzzy matching with levenshtein distance (but could be replaced with a phonetic or ngram indexation with postgres) and is required for now by the validation module.
 
@@ -70,7 +71,7 @@ Elasticsearch is useful for powerfull fuzzy matching with levenshtein distance (
 See [avanced elasticsearch troubleshooting](#advanced-elasticsearch-troubleshooting) for configuring your cluster and more about elasticsearch and docker.
 
 
-## postgres
+### postgres
 
 Postgres is not mandatory, so it is not `up` when you start. Postgres can be useful for a more reliable storage than elasticsearch, or to replace elasticsearch for quicker `ngram` matching.
 
@@ -78,7 +79,7 @@ Postgres is not mandatory, so it is not `up` when you start. Postgres can be use
 - stop postgres : `make postgres-stop`
 - restart postgres : `make postgres-stop postgres`
 
-### kibana
+#### kibana
 
 Kibana has to be started on start (for a dependency of the nginx configuration). It can be useful to analyse your elasticsearch data, but is absolutely not mandatory (it will next not be a requirement).
 
@@ -86,20 +87,20 @@ Kibana has to be started on start (for a dependency of the nginx configuration).
 - start kibana : `make kibana`
 - restart kibana : `make kibana-stop kibana`
 
-## docker troubleshooting
+### docker troubleshooting
 
-Some useful commands : 
+Some useful commands :
 
 - `docker stats` shows all containers running, like a `top`
 
-## developpement mode
+### developpement mode
 
 You can switch to developpement mode without stopping the whole sevices : `make frontend-stop frontend-dev`
 
 Please consult [contributing to developement](/dev).
 
-## Advanced elasticsearch troubleshooting
-### docker and elasticsearch
+### Advanced elasticsearch troubleshooting
+#### docker and elasticsearch
 
 When your run make start or make elasticsearch, the configuration of elasticsearch is created in docker-components/docker-compose-elasticsearch-huge.yml with one master and ES_NODES-1 nodes.
 
@@ -110,23 +111,23 @@ To change the configuration :
 
 We've encountered stability problems with elasticsearch, docker and memory limitation (`mem_limit`). Elasticsearch recommends twice the memory of the `jvm` for the virtual machine memory. But setting hard memory limit with `mem_limit` seems to be a wrong with the docker virtualisation. So we supressed this limiation, which may lead to performance problem when strong sollicitation. This problem will be followed in the matchID project, as elasticsearch is an essential component.
 
-### bulk indexing & matching : optmization
+#### bulk indexing & matching : optmization
 
 *to be completed*
 
-### heath check from your server
+#### heath check from your server
 
 - to check the status of the elasticsearch cluster : `docker exec -it matchid-elasticsearch curl -XGET localhost:9200/_cluster/health?pretty`,  the `status` should be `green` and `number_of_nodes` to the `ES_NODES` value (default : 3)
 - to check the status of your indices : `docker exec -it matchid-elasticsearch curl -XGET localhost:9200/_cat/indices`, each indice should be green.
 
-### health check from your computer
+#### health check from your computer
 
 Note that the API point of elasticsearch is accessible from any client (unless you protect this API with the nginx configuration) : `http://${matchID-host}/matchID/elastiscearch` is the same as `localhost:9200/` within `docker`. For example, if you run `matchID` on your host :
 
 - cluster health : `curl -XGET http://localhost/matchID/elasticsearch/_cluster/health?pretty`
 - indices : `curl -XGET http://localhost/matchID/elasticsearch/_cat/indices`
 
-### my cluster is red
+#### my cluster is red
 
 If you have large indices and multiples nodes, the coherence of your cluster may take some time when you just started the cluster. You can then check the health indices.
 
@@ -140,7 +141,7 @@ Many problems can occure :
 - the volume space is over 85% full
 - every indices are red because too much operations were driven in an inconsistant state of the cluster. This is the drama situation where you'll have to clear all your indices with a `curl -XDELETE http://localhost/matchID/elasticsearch/*` and **lose all indexed data**
 
-### my cluster is yellow
+#### my cluster is yellow
 
 It may be that one or many indices are red or at least one yellow. It may take some time but usually, elasticsearch self repairs.
 
