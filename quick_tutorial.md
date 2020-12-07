@@ -83,7 +83,7 @@ customLayout: true
 </div>
 <div class="rf-col-xl-1 rf-col-md-12"></div>
 
-<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf">
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf rf-hero">
   <h2 class="rf-color--white">
     Étape 1: préparer et indexer le fichier de référence (deaths)
   </h2>
@@ -94,12 +94,14 @@ customLayout: true
   avoir cet écran:
 </div>
 <div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
-  <img width="100%" src="assets/images/frontend-start.png" alt="matchID projects view">
+  <img class="rf-reponsive-img" width="100%" src="assets/images/frontend-start.png" alt="matchID projects view">
 </div>
 
-<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
-  <img src="assets/images/frontend-new-project.png" alt="matchID new project">
-</div>
+
+<div class="rf-col-xl-12 rf-col-md-12">
+<div class="rf-container--fluid">
+<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+
 <div class="rf-col-xl-6 rf-col-md-12">
   <h3><a href="http://localhost:8081/" target="_blank" title="site local matchID">Créez votre premier projet</a></h3>
   <p>
@@ -111,6 +113,13 @@ customLayout: true
   </p>
 </div>
 
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
+  <img class="rf-reponsive-img" src="assets/images/frontend-new-project.png" alt="matchID new project">
+</div>
+
+</div>
+</div>
+</div>
 
 <div class="rf-col-xl-6 rf-col-md-12">
   <h3><a href="http://localhost:8081/matchID/projects/deaths" target="_blank" title="site local matchID">Importer le premier jeu de données</a></h3>
@@ -123,12 +132,14 @@ customLayout: true
   </p>
 </div>
 <div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
-  <img src="assets/images/frontend-import-dataset2.png" alt="matchID import dataset test">
+  <img class="rf-reponsive-img" src="assets/images/frontend-import-dataset2.png" alt="matchID import dataset test">
 </div>
 
-<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
-  <img class="rf-vcenter" width="95%" src="assets/images/frontend-dataset-deaths-simple-import.png" alt="matchID dataset first view">
-</div>
+
+<div class="rf-col-xl-12 rf-col-md-12">
+<div class="rf-container--fluid">
+<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+
 <div class="rf-col-xl-6 rf-col-md-12">
   <h3><a href="http://localhost:8081/matchID/projects/deaths/datasets/deaths_test_csv" target="_blank" title="données de décès">Visualisez les données</a></h3>
   <p>
@@ -140,6 +151,14 @@ customLayout: true
   <p class="rf-text--xs">
   Note: les données sont des données anonymisées et représentatives statistiquement de données réelles
   </p>
+</div>
+
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
+  <img class="rf-responsive-img rf-vcenter" width="95%" src="assets/images/frontend-dataset-deaths-simple-import.png" alt="matchID dataset first view">
+</div>
+
+</div>
+</div>
 </div>
 
 <div class="rf-col-xl-6 rf-col-md-12">
@@ -154,23 +173,29 @@ customLayout: true
   </p>
 </div>
 <div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
-  <img class="rf-vcenter" src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
+  <img class="rf-responsive-img rf-vcenter" src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
 </div>
+
 <div class="rf-col-xl-12 rf-col-md-12">
+  <br>
   <div class="rf-highlight" markdown="1">
   ```
     recipes:
       dataprep_deaths_test:
-        input: deaths_test_csv       # doit être saisi impérativement
-        output: deaths               # le dataset devra être déclaré après la recette
-        steps:                       # début des étapes de la recette
-          - eval:                    # action d'évaluation - chaque argument est l'expression pour une colonne
-            - matchid_id: sha1(row)  # on crée la colonne matchid_id avec le hash de a ligne, comme identifiant
+        input: deaths_test_csv
+        output: deaths
+                  # le dataset devra être
+                  # déclaré après la recette
+        steps:    # début des étapes de la recette
+          - eval: # recette d'évaluation python
+            - matchid_id: sha1(row)
+                  # on crée la colonne matchid_id
+                  # avec le hash de a ligne
   ```
   </div>
   <div markdown="1">
   La recette peut être sauvée (menu `Sauver` ou `Ctrl+S`), ce qui devrait rendre le résultat suivant:
-  <img src="assets/images/frontend-recipe-deaths-test-1.png" alt="matchID projects view">
+  <img class="rf-reponsive-img" src="assets/images/frontend-recipe-deaths-test-1.png" alt="matchID projects view">
 
   Vous pouvez trouver la liste exhaustive des [recettes ici](recipes), et des recettes en contexte dans le [tutoriel avancé](advanced_tutorial).
   </div>
@@ -178,7 +203,7 @@ customLayout: true
 <div class="rf-col-xl-12 rf-col-md-12">
   <h3><a href="http://localhost:8081/matchID/projects/deaths/" target="_blank" title="données de décès">Indexation</a></h3>
   <div markdown=1>
-  Crééz l'index Elasticsearch pour déclaré en sortie de la recette précédente :
+  Créez l'index Elasticsearch pour déclaré en sortie de la recette précédente :
   </div>
   <div class="rf-highlight" markdown=1>
   ```
@@ -192,17 +217,17 @@ customLayout: true
   N'oubliez pas de sauver (`Sauver` ou `Ctrl+S`).
   Puis revenez sur la recette [dataprep_death_test](http://localhost:8081/matchID/projects/deaths/recipes/dataprep_deaths_test). Lancez la recette en appuyant sur :
 
-  <img style="margin-left: auto; margin-right: auto;" src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
+  <img class="rf-reponsive-img" style="margin-left: auto; margin-right: auto;" src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
 
   Vous pouvez suivre l'avancement en bas à droite dans l'onglet `Real logs  ou via le menu `Jobs`:
 
-  <img src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
+  <img class="rf-reponsive-img" src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
 
   L'indexation dure un peu plus d'une minute pour 71 404 enregistrements.
   </div>
 </div>
 
-<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf">
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf rf-hero">
   <h2 class="rf-color--white">
     Étape 2: préparation et match des clients
   </h2>
@@ -214,8 +239,8 @@ customLayout: true
 Le jeu de donnée est [clients est dispoinible ici](https://github.com/matchID-project/examples/raw/master/data/clients_test.csv). Importez le fichier par glisser-déposer (cf ci-contre).
   </div>
 </div>
-<div class="rf-col-xl-6 rf-col-md-12 rf-mt-4w" style="position:relative">
-<img src="assets/images/frontend-dataset-clients-test.png" alt="matchID projects view">
+<div class="rf-col-xl-6 rf-col-md-12" style="position:relative">
+<img class="rf-reponsive-img" src="assets/images/frontend-dataset-clients-test.png" alt="matchID projects view">
 </div>
 <div class="rf-col-xl-12 rf-col-md-12">
   <div markdown=1>
@@ -266,7 +291,7 @@ recipes:
   <div markdown="1">
 Sauvez et observez les [premiers résultats](http://localhost:8081/matchID/projects/deaths/recipes/clients_deaths_matching_test):
 
-<img src="assets/images/frontend-dataset-matching-test.png" alt="matchID first match">
+<img class="rf-reponsive-img" src="assets/images/frontend-dataset-matching-test.png" alt="matchID first match">
 
 Le match est perfectible: trop de restriction avec le premier prénom, et la tolérance sur la date est trop forte. **La R&D sur la phase de *matching* est essentielle**. En `SQL`, c'est l'optimisation des requêtes de *blocking*.
   </div>
@@ -316,12 +341,12 @@ recipes:
 
 <div markdown="1">
 
-<img src="assets/images/frontend-dataset-matching-test-2.png" alt="matchID better match">
+<img class="rf-reponsive-img" src="assets/images/frontend-dataset-matching-test-2.png" alt="matchID better match">
 
 </div>
 </div>
 
-<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf">
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf rf-hero">
   <h2 class="rf-color--white">
     Étape 3: Scorer les appariements et les évaluer
   </h2>
@@ -356,12 +381,18 @@ Les critères mis en place permettent d'organiser par pertinence les appariement
 
 Si l'on souhaite filtrer on peut ajouter :
 
+</div>
+<div class="rf-highlight" markdown="1">
+
 ```
       - keep:
           where: confiance > 20
 ```
-
+</div>
+<div markdown="1">
 Si on souhaite conserver les lignes qui n'ont pas d'appariement pertinent (cf `keep_unmatched: True` plus haut)
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - eval:
           # blank low score lines
@@ -371,7 +402,7 @@ Si on souhaite conserver les lignes qui n'ont pas d'appariement pertinent (cf `k
           - hit_DCD_PRENOMS: hit_DCD_PRENOMS if (confiance > 30) else ""
           - hit_matchid_id: hit_matchid_id if (confiance > 30) else ""
 ```
-
+</div>
 Lancez la recette une fois le choix effectué en appuyant sur `Lancer`. Les résultats devraient être là en une ou deux minutes.
 </div>
 </div>
@@ -382,7 +413,7 @@ Lancez la recette une fois le choix effectué en appuyant sur `Lancer`. Les rés
 Rendez-vous sur le dataset [client_x_deaths](http://localhost:8081/matchID/projects/deaths/datasets/clients_x_deaths).
 Pour mieux voir les résultats, copiez le filtre `Nom|DCD_NOM|Prenom|DCD_PRENOM|Date|DCD_DATE` dans la case `Filtrer les colonnes`:
 
-<img src="assets/images/frontend-clients_x_deaths.png" alt="matchID résultat du matching">
+<img class="rf-reponsive-img" src="assets/images/frontend-clients_x_deaths.png" alt="matchID résultat du matching">
 
 Les résultats sont déjà visibles, mais leur validation est complexe dans ce mode "tableur". Pour faciliter l'évaluation
 matchID propose une **application de validation**. Il suffit de configurer les colonnes à afficher dans le dataset:
@@ -479,7 +510,7 @@ Notes:<br>
 
 Sauvez la configuration `Ctrl+S` et rechargez la page (`Ctrl+R`). Un bouton `Validation` apparaît:
 
-<img src="assets/images/frontend-validation-test.png" alt="matchID validation">
+<img class="rf-reponsive-img" src="assets/images/frontend-validation-test.png" alt="matchID validation">
 </div>
 </div>
 
@@ -488,11 +519,11 @@ Sauvez la configuration `Ctrl+S` et rechargez la page (`Ctrl+R`). Un bouton `Val
 <div markdown="1">
 La distribution des scores est accessible via l'onglet statistiques <span class="iconify" data-icon="fa-regular:chart-bar" data-inline="false"></span> :
 
-<img src="assets/images/frontend-validation-stats-simple.png" alt="matchID distribution des scores">.
+<img class="rf-reponsive-img" src="assets/images/frontend-validation-stats-simple.png" alt="matchID distribution des scores">.
 
 Filtrer au-dessus de 40 montre déjà de très bons résultats :
 
-<img src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">.
+<img class="rf-reponsive-img" src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">.
 
 </div>
 </div>
