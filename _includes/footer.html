@@ -1,105 +1,42 @@
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
+<footer class="rf-footer">
+  <div class="rf-container">
+    <div class="rf-text--center">
       <p>
         <strong>
           the authors :
         </strong>
       </p>
     </div>
-    <div class="columns">
+    <div class="rf-grid-row rf-grid-row--gutters">
 
-      <div class="column is-6">
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="/assets/images/fabien.jpeg" alt="{{ site.authors.fabien.name }} image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">{{ site.authors.fabien.name }}</p>
-                <p class="subtitle is-6">
-                  <a href="{{site.authors.fabien.github | prepend: site.github_url}}" >
-                    <span class="icon">
-                      <i class="fab fa-github" aria-hidden="true"></i>
-                    </span> {{site.authors.fabien.github}}
-                  </a>
-                  {% if site.authors.fabien.twitter %}
-                  |
-                    <a href="{{site.authors.fabien.github | prepend: 'https://twitter.com/'}}" >
-                      <span class="icon">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                      </span> {{site.authors.fabien.twitter}}
-                    </a>
-                  {% endif %}
-                  |
-                  <span class="icon">
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                  </span> {{site.authors.fabien.email}}
-                </p>
-              </div>
+      {% for author in site.authors %}
+      <div class="rf-col-4">
+        <div class="rf-card rf-card--no-arrow">
+          {% if author.image %}
+            <div style="width:50%;transform:translateX(50%);">
+              <img src="/assets/images/{{ author.image }}" alt="{{ author.name }} image">
             </div>
-
-            <div class="content">
-              <p>
-                Fabien is working as lead data scientist for the French Interior Ministry.
-                <br/> Prior to this, he was working on advanced research programs at the French Defence Ministry.
-              </p>
-              <!-- <p>
-                He graduated from <em>Ecole Polytechnique</em> and <em>ENSTA</em> in Paris.
-              </p> -->
-            </div>
+          {% endif %}
+          <div class="rf-card__body">
+            <h4 class="rf-card__lead">{{ author.name }}</h4>
+            <p class="rf-card__desc rf-text--xs">
+              {{ author.desc }}
+            </p>
+            <p>
+              <a href="{{author.github | prepend: site.github_url}}" class="rf-link">
+                <span class="iconify" data-icon="ri:github-line"></span>
+              </a>
+              <a href="{{author.twitter | prepend: 'https://twitter.com/'}}" class="rf-link" >
+                <span class="iconify" data-icon="ri:twitter-line"></span>
+              </a>
+              <a href="mailto:{{author.mail}}" class="rf-link">
+                <span class="iconify" data-icon="ri:mail-line"></span>
+              </a>
+            </p>
           </div>
         </div>
       </div>
-
-      <div class="column is-6">
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="/assets/images/martin.jpeg" alt="{{ site.authors.martin.name }} image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">{{ site.authors.martin.name }}</p>
-                <p class="subtitle is-6">
-                  <a href="{{site.authors.martin.github | prepend: site.github_url}}" >
-                    <span class="icon">
-                      <i class="fab fa-github" aria-hidden="true"></i>
-                    </span> {{site.authors.martin.github}}
-                  </a>
-                  {% if site.authors.martin.twitter %}
-                  |
-                    <a href="{{site.authors.martin.github | prepend: 'https://twitter.com/'}}" >
-                      <span class="icon">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                      </span> {{site.authors.martin.twitter}}
-                    </a>
-                  {% endif %}
-                  |
-                  <span class="icon">
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                  </span> {{site.authors.martin.email}}
-                </p>
-              </div>
-            </div>
-
-            <div class="content">
-              <p>
-                Martin is cofounder at <a href="https://commoprices.com">CommoPrices.com</a>, the world biggest portal of commodity prices.
-                He developed matchID with Fabien during a 10 months integration at the French Interior Ministry in 2017.
-              </p>
-              <!-- <p>
-                He graduated from <em>Centrale Supelec</em> in Paris.
-              </p> -->
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
     <div class="content has-text-centered">
