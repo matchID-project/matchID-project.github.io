@@ -19,8 +19,8 @@
 }
 
 @media (max-width:768px) {
-  .rf-highlight, pre, .highlight-rouge, .highlight {
-    overflow-x: scroll;
+  .rf-highlight, pre, .highlight-rouge, .highlight, .rf-table--scroll {
+    overflow-x: scroll!important;
     max-width: calc(100vw - 2rem);}
   img {
     margin-left: -0.25rem!important;

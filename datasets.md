@@ -7,7 +7,8 @@ image: Database.svg
 width: is-10
 ---
 
-## **Connectors**
+<div markdown="1">
+## Connectors
 Connectors are a declaration to a filesystem or database.
 
 Supported connectors are:
@@ -28,7 +29,8 @@ Default connectors are included in the initial configuration (and can me modifie
 - `postgres`: connector to the PostGreSQL provided with docker (you have to run `make postgres` from commandline to start the docker database)
 
 To create other connectors, we haven't provided an online editor for now, your have to add it manually in the `conf/connectors/connectors.yml`:
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 connectors:
   upload:
@@ -54,12 +56,14 @@ connectors:
     uri: postgres://user:password@postgres:5432 # <==== URI for SQL Alchemy
     chunk: 2000
 ```
+</div>
+<div markdown="1">
 
-
-## **Datasets**
+## Datasets
 
 Datasets are a file, a set of files, a table or an index within a connector.
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 datasets:
   my_dataset:
@@ -67,7 +71,8 @@ datasets:
     table: my_dataset
     chunk:                    # <===== override connector's default chunk
 ```
-
+</div>
+<div markdown="1">
 
 
 ### filesystem datasets
@@ -88,20 +93,32 @@ If you're familiar with using many sources you know CSV is not standard and that
 
 >For robust and stable processing, we desactivated every guessing of types, so every cell is string or unicode in input: casting data types will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
 
+</div>
+<div style="width:calc(100vw - 2rem);overflow-x:scroll">
+<div class="rf-table rf-table--scroll" markdown="1">
+
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
-| sep        | ;          | *any regex*     | specify columns separator           |
+| sep        | ;          | *any regex*   | specify columns separator           |
 | header     | infer      |false          | use included head                   |
 | encoding   | utf8       | latin1 ...    | specify the encoding if not ascii   |
 | names      |            |[col, names]   | replace header (column) names       |
 | compression| infer      | None, gzip ...| specify if compressed               |
-| skiprows   | 0          | *any number*    | skip n rows before processing       |
+| skiprows   | 0          | *any number*  | skip n rows before processing       |
+
+</div>
+</div>
+<div markdown="1">
 
 #### Fwf
 
 This is the old brother of the CSV, the fixed-width tabular is a variant, but in some cases this will be more stable to parse your tabular files as fixed width. Often Oracle or PostGreSQL exports are to be parsed like that.
 
-> Like in csv, for robust and stable processing, we desactivated every guessing of types, so that every cell is string or unicode in input: casting data types will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
+Like in csv, for robust and stable processing, we desactivated every guessing of types, so that every cell is string or unicode in input: casting data types will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
+
+</div>
+<div style="width:calc(100vw - 2rem);overflow-x:scroll">
+<div class="rf-table rf-table--scroll" markdown="1">
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
@@ -109,8 +126,11 @@ This is the old brother of the CSV, the fixed-width tabular is a variant, but in
 | names      |            |[col, names]   | replace header (column) names       |
 | width      | [1000]     |[2, 5, 1, ...] | columns width for the fixed format  |
 | compression| infer      | None, gzip ...| specify if compressed               |
-| skiprows   | 0          | *any number*    | skip n rows before processing       |
+| skiprows   | 0          | *any number*  | skip n rows before processing     |
 
+</div>
+</div>
+<div markdown="1">
 #### msgpack
 
 Well you may not be familiar with that format. This is a simple and quite robust format for backing up data when the data is typed. We could have chosen HDFS (strong, but boring for integration, and ageing), json/bson (quite slow), or pickle (too much instability between versions), or parquet (seducing, but the pandas library doesn't deal well with chunks).
@@ -123,7 +143,12 @@ Check the [roadmap](/roadmap#files) about future support for json, xml or any ot
 
 There is no specific option when using a (PostGre)SQL dataset at the moment.
 
-### elasticsearch datasets
+### elasticsearch
+
+</div>
+
+<div style="width:calc(100vw - 2rem);overflow-x:scroll!important">
+<div class="rf-table rf-table--scroll" markdown="1">
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
@@ -137,12 +162,17 @@ There is no specific option when using a (PostGre)SQL dataset at the moment.
 | safe       | True       | False         | doesn't use `_id` field to index, which can lead to doubles when retrying |
 | chunk_search|*connector value* | *any number*  | number of row for search queries when using fuzzy join |
 
+</div>
+</div>
+
+<div markdown="1">
 #### index settings, mapping
 
 The big challenge with elasticsearch datasets and scaling is the tuning possibilities. The `body` value is the equivalent of the `body` value when creating the index with curl, except it is written in `yaml` instead of `json`, which makes it easier to read.
 
 Here is an example of configuration :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 datasets:
   my_dataset:
@@ -171,16 +201,18 @@ datasets:
             matchid_location_country:
               type: keyword
 ```
-
+</div>
+<div markdown="1">
 For large clusters, you have to choose between low and large `number_of_replicas` for more robust indices.
 The body setting can be used for specific indexing and parsing, like `ngrams` and phonetics.
 
 #### Validations options
 
-Elasticsearch can be used to validate matches (as seen in [tutorial](/tutorial#step-3-validate-matches-and-train-rescoring-with-machine-learning).
+Elasticsearch can be used to validate matches (as seen in [tutorial])(/tutorial#step-3-validate-matches-and-train-rescoring-with-machine-learning).
 
 The validation option is activated by adding the `validation: true` option :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 datasets:
   clients_x_deaths:
@@ -188,11 +220,13 @@ datasets:
     table: clients_x_deaths
     validation: true
 ```
-
+</div>
+<div markdown="1">
 Validation mode is configured with the `conf/matchID_validation.conf` file for default behaviour. They can be overriden for each validation dataset like this :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
-    ....
+    [...]
     validation:
       actions:
         display: true
