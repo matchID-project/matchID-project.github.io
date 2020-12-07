@@ -9,6 +9,8 @@ imageTX: 0px
 imageTY: 0px
 ---
 
+<div markdown="1">
+
 ## **Use case 1** : finding common identities between two big datasets (realistic case)
 
 This is the first *realistic* use case, where we deal with more realistic data (encoding problems, more than 1M people datasets, ...), were we'll follow a more robust method for accurate matching.
@@ -53,6 +55,8 @@ Three further steps will enable machine learning capabilities:
 
 In the final round, matching a dataset of people, `clients`, against another already index-one, `death`  will look like this recipe :
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 recipes:
   clients_deaths_matching:
@@ -65,8 +69,17 @@ recipes:
       - diff:
       - rescoring_clients_x_deaths:
 ```
-
-This leads to a new API endpoint: `http://localhost/matchID/api/v0/recipes/clients_deaths_matching/apply`. This is where you'll be able to post your new monthly csv raw data. Then you'll get the json of ml-rescored candidates for removal.
+</div>
+<div markdown="1">
+This leads to a new API endpoint:
+</div>
+<div class="rf-hightlight" markdown="1">
+```
+http://localhost:8081/matchID/api/v0/recipes/clients_deaths_matching/apply`.
+```
+</div>
+<div markdown="1">
+This is where you'll be able to post your new monthly csv raw data. Then you'll get the json of ml-rescored candidates for removal.
 
 Truth is this simple overview relies on more than 50 treatments or steps. To be able to use it, you'll have to adapt it to your own use case.
 
@@ -125,6 +138,8 @@ We have many observations:
 
 Take a look in a terminal of your gzipped fwf data :
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 $ zcat death.txt.gz | head -5
 CZAJA*ROLAND BERNARD/                                                           11933052479048BRELOUX-LA-CRECHE                                           199209257904812143
@@ -133,9 +148,12 @@ ARMAND*EUGENE ROBERT GEORGES/                                                   
 ALLAIRE*ANATOLE CAMILLE/                                                        11920071193049NEUILLY-PLAISANCE                                           201103189304911821
 JEAUNEAU*RAYMONDE JULIETTE ARLETTE/                                             21945100482043COMBEROUGER                                                 201105208204312208
 ```
-
+</div>
+<div markdown="1">
 Well, it's quite boring to decrypt it so... Here is the solution, just copy-paste it on the left pane where you have the dataset yaml code (each important line is commented) :
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 datasets:
   deaths_txt_gz:
@@ -164,12 +182,13 @@ datasets:
       - DCD_CODE_INSEE_DECES
       - DCD_NUM_DECES
 ```
-
+</div>
+<div markdown="1">
 Then you can save that with `Ctrl+S` or the `Save` button.
 
 **Warning : mind any change you make to your code. Any change is definitive, and you may loose your code if you change the two first lines of the yaml code.**
 
- *if you're lost you can go to the `tutorial` folder to `rm -f tutorial/projects/deaths/datasets/deaths_txt_gz.yml` and try it again. You can even `rm -rf tutorial/projects/deaths` and give a new birth to your project*
+ *if you're lost you can go to the `tutorial` follder and delete or change files manually. You can even `rm -rf tutorial/projects/deaths` and give a new birth to your project*
 
 Here you are:
 <img src="assets/images/frontend-dataset-deaths-ok.png" alt="matchID dataset correct view">
@@ -181,6 +200,8 @@ Create a new recipe :
 
 A default recipe is created with no valid dataset, just replace it with the uploaded dataset, `deaths_txt_gz` - as this can be done now, we already figure out we have a `deaths` dataset we'll configure after finishing the recipe.
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 recipes:
   dataprep_deaths:
@@ -199,7 +220,8 @@ recipes:
       - eval:
           - new_col: sha1(row)
 ```
-
+</div>
+<div markdown="1">
 Save it (`Save` button or `Ctrl+S`), it should display the first imported dataset, but with an additionnal column, `new_col` which is basically a hash of the row:
 
 <img src="assets/images/frontend-recipe-deaths-1.png" alt="matchID projects view">
@@ -221,6 +243,8 @@ When joining large French names datasets, we showed that only about 33% of match
 
 #### columns names
 So we add the following steps (removing the `new_col` one) :
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - eval:
         #tag dataset and records with uniq id
@@ -248,7 +272,8 @@ So we add the following steps (removing the `new_col` one) :
       - keep: # remove old columns
           select: matchid_.*
 ```
-
+</div>
+<div markdown="1">
 <img src="assets/images/frontend-recipe-death-columns.png" alt="matchID projects view">
 
 #### preparing the names
@@ -258,6 +283,8 @@ Just filter the names setting `matchid_name` in the column filter. This filter u
 
 Now you see the names won't match with this format which is quite special.
 We propose those normalizations. Just paste and save it step by step.
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       #name
       - replace: # parses the last name with a regex
@@ -273,7 +300,8 @@ We propose those normalizations. Just paste and save it step by step.
       - french_name_normalize: # applies standard normalization, removings accents, special chars, bringing to lower case
       - french_name_frequency: # uses names frequencies to join compound names
 ```
-
+</div>
+<div markdown="1">
 <img src="assets/images/frontend-recipe-names.png" alt="matchID projects view">
 
 Note that both `french_name_normalize` and `french_name_frequency` recipes are available in the `conf` project.
@@ -286,6 +314,8 @@ In this case we just put the `pause` step before the name normalization section.
 #### location normalization
 We now apply the column filtering on `matchid_location` to work on city names normalization. The goal is to make each location reliable, so we use external INSEE dataset (COG) to achieve this. This means that this treatment is focused on the French population.
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       #location
       - country_code_cog: # expand countries against INSEE code
@@ -293,7 +323,8 @@ We now apply the column filtering on `matchid_location` to work on city names no
       - algeria_city:     # experimental, which is the second-order country of birth for France residents (~ 5 to 8%)
                           # works only on 60% of the cases as the referential is less reliable than the INSEE one
 ```
-
+</div>
+<div markdown="1">
 All the recipes are coded in the `conf` project so you can open them to have more details.
 
 The French history codes are very important, as among the history city names changed a lot, and especially birth location of old people. So the name may have changed depending of the reference file. This treatment bring about 15% to 30% bonus in matching, and has to be performed on both datasets to be matched.
@@ -302,10 +333,15 @@ The French history codes are very important, as among the history city names cha
 
 #### birth date parsing
 This is the easier part, it just consists in parsing dates, so with columns filtering to `matchid_date`, and just adding :
+</div>
+<div class="rf-highlight" markdown="1">
 ```
     # dates
       - ymd_date: # parses dates in year month day format (19580123)
 ```
+</div>
+<div markdown="1">
+
 `ymd_date` is, again, available in the `conf` project.
 
 So this is the final preview :
@@ -315,13 +351,16 @@ So this is the final preview :
 
 Don't forget to save your recipe. We'll then create the `deaths` dataset as formerly pointed as the output dataset of the recipe. Just create it from the menu and paste this content :
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 datasets:
   deaths:
     connector: elasticsearch # this is the predeclared connector to the dockerized elasticsearch
     table: deaths            # name of the index
 ```
-
+</div>
+<div markdown="1">
 Note that you can configure many options for an elasticsearch dataset :
 - `body`: **raw elasticsearch configuration** contains all options such as mappings, the number of replicas and shards, tokenizers as in the elasticsearch documentation. You just have to convert your json mappings into yaml.
 - `chunks`, `thread_count`, `timeout̀`, `max_tries`, `safe` for elasticsearch optimization.
@@ -342,10 +381,13 @@ Or choose to see the "jobs" in the menu:
 This should take about 30 minutes on a reasonable big computer (35 min using 10 threads = 10vCPU).
 
 The job log last line should summarize the time and bugs for the recipe :
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 2018-02-20 05:31:45.788016 - 0:35:00.826869 - end : run - Recipe dataprep_deaths finished with errors on 46 chunks (i.e. max 92000 errors out of 1355745) - 1355745 lines written
 ```
-
+</div>
+<div markdown="1">
 If you take a look a the detailed logs, you'll the that the bugs are only mix encoding problems, due to a badly formatted file. There aren't 92000 errors, but only 46 encoding errors included in 46 chunks of 2000 rows. For now, the automation doesn't scrutate as deep as you'd like, you'll have to take a look by yourselves in the logs.
 
 
@@ -417,6 +459,8 @@ Many specificities of your dataset would lead you to customize the search query 
 All those conditions make a large recall without bringing too much candidates.
 
 Now we create a combo recipe, `clients_deaths_matching` in the `clients` project, calling the last two ones, plus a special one, `diff` :
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 recipes:
   clients_deaths_matching:
@@ -430,13 +474,16 @@ recipes:
       - deaths_matching:
       - diff:
 ```
-
+</div>
+<div markdown="1">
 then you should have your first sampling results (screenshot obtain using a regex filter: `diff(?!_id)|confiance|number`):
 
 <img src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
 
 Before running these recipes, don't forger to create the `client_x_deaths` dataset in elasticsearch :
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 datasets:
   clients_x_deaths:
@@ -444,7 +491,8 @@ datasets:
     table: clients_x_deaths
     validation: true        # <=== this is mandatory to go to step 3
 ```
-
+</div>
+<div markdown="1">
 Run the recipe. It should take about 2 hours to run it for 1M x 1M with a 16vCPUx32Go and 3 elasticsearch nodes.
 
 
@@ -527,6 +575,8 @@ In this case, the machine will be trained to recognize a false hit against a tru
 
 So here is the recipe, `train_rescoring_model`:
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 recipes:
   train_rescoring_model:
@@ -561,7 +611,8 @@ recipes:
           target: validation_decision      #       the target is your annotation
                                            #       the indecision is not taken into account there
 ```
-
+</div>
+<div markdown="1">
 When you save the recipe, you can see the performance of your machine learning model in the log :
 
 <img src="assets/images/frontend-train-auc.png" alt="matchID projects view">
@@ -573,6 +624,8 @@ If stable enough, then run the recipe, this will save the model which will be re
 ### **Step 4**: rescore with the **machine learning** model
 We can now apply the previously built model to apply a better scoring on the matches :
 
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 recipes:
   rescoring:
@@ -598,7 +651,8 @@ recipes:
                   cell = matchid_hit_score
           - scoring_version: str("{}-randomforest-{}").format(re.sub("-.*","",scoring_version),str(datetime.datetime.now()))
 ```
-
+</div>
+<div markdown="1">
 As machine learning can drift, we keep in the recipe 30% of the initial scoring to avoid complete change on full positive or full negative matches.
 
 You can immediately run this recipe which will just update the `confiance` column and versioning. This is a quick step, and should be over in about 15 minutes.
