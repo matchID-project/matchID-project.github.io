@@ -11,23 +11,23 @@ width: is-10
 <div class="tile is-parent is-vertical is-4">
 <div class="tile">
 <div class="tile is-child notification is-light"  markdown="1">
-  
-# **Consolidation**
 
-## Method
+## **Consolidation**
+
+#### Method
 - recipes.py refactoring (split datasets, ...)
 - git tag for versionning
 - build library
 - unitary testing
 
-## Monitoring api
+#### Monitoring api
 - restart
 - jobs supervision
 
-## Code
+#### Code
 - migrate to python 3
 
-## Automation / integration
+#### Automation / integration
 - CI testing
 - nginx path of dataviz (Kibana/Superset)
 - nginx modularity (remove Kibana)
@@ -40,16 +40,16 @@ width: is-10
 <div class="tile is-parent is-vertical is-4">
 <div class="tile">
 <div class="tile is-child notification is-success"  markdown="1">
-  
-# **Evolutions**
-## Documentation
+
+## **Evolutions**
+#### Documentation
 - tutorial for doubles detection
 - tutorial for data API-fication
 
-## Examples
+#### Examples
 - sample for doubles detection
 
-## Frontend
+#### Frontend
 - cliques validation for doubles detection
 - cost matrix charts
 - data loading helpers (e.g csv type pseudo-guessing)
@@ -58,7 +58,7 @@ width: is-10
 - editing data (and converting edits into recipes)
 
 
-## Backend
+#### Backend
 - join with SQL
 - triggering recipes
 
@@ -69,28 +69,28 @@ width: is-10
 <div class="tile is-parent is-vertical is-4">
 <div class="tile">
 <div class="tile is-child notification is-info"  markdown="1">
-  
-# **Interoperability**
 
-## Files
+## **Interoperability**
+
+#### Files
 - json
 - xml
 
-## Databases
+#### Databases
 - Vertica
 - MySQL
 - MongoDB
 
-## Hadoop support
+#### Hadoop support
 - Spark
 - HDFS
 
-## Languages
+#### Languages
 - SQL
 - R
 - pySpark
 
-## Other softs 
+#### Other softs
 - Dataiku/DSS
 - Luigi
 
