@@ -40,25 +40,30 @@ project:
   general:
     name: matchID
     repo: matchID-project
-  backend:
-    name: Backend
+  matchid_backend:
+    name: automatisation des traitements
     repo: matchID-project/backend
     download: "https://github.com/matchID-project/backend/archive/master.zip"
-  frontend:
-    name: Frontend
+  matchid_frontend:
+    name: développement des traitements
     repo: matchID-project/frontend
     download: "https://github.com/matchID-project/frontend/archive/master.zip"
   examples:
-    name: Examples
+    name: exemples de traitements
     repo: matchID-project/examples
     download: "https://github.com/matchID-project/examples/archive/master.zip"
+  deces_backend:
+    name: API décès
+    repo: matchID-project/deces-backend
+  deces_ui:
+    name: moteur de recherche des décès
+    repo: matchID-project/deces-ui
 github_url: "https://github.com/"
 
 # Build settings
 github: [metadata]
 theme: minima
 markdown: kramdown
-plugins:
 
 # sass:
 #   style: compressed
