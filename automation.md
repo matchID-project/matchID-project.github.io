@@ -27,7 +27,7 @@ Here is the architecture overview :
 
 <div class="columns is-centered">
 <figure class="image alpha-png-background">
-<img class="column is-half is-narrow" src="assets/images/matchid_architecture.png" alt="matchID architecture">
+<img class="column is-half is-narrow" src="assets/images/matchID_architecture.png" alt="matchID architecture">
 </figure>
 </div>
 
