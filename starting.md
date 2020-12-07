@@ -3,8 +3,8 @@ layout: default
 permalink: starting
 description: installer et lancer l'outil de développement de traitements en 2 minutes
 image: persona_5-1.svg
-imageTX: -40px
-imageTY: 90px
+imageTX: 40px
+imageTY: 105px
 title: Débuter avec matchID
 customLayout: true
 ---
@@ -21,38 +21,38 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-md-12 rf-mt-8w" style="z-index:-100;">
-    <table class="rf-table">
+<div class="rf-col-xl-6 rf-col-md-12" style="z-index:-100;">
+    <table class="rf-table rf-vcenter">
         <thead>
             <tr>
-                <td>Environnement</td>
+                <td>Usage</td>
                 <td>Configuration</td>
                 <td>Capacité</td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Cas simple</td>
+                <td>Simple</td>
                 <td>2vCPU, 2Go, SSD 10Go</td>
-                <td>croiser 10k x 1M identés</td>
+                <td>10k x 1M identés</td>
             </tr>
             <tr>
-                <td>Cas nominal</td>
+                <td>Nominal</td>
                 <td>8vCPU 16Go, SSD 50Go</td>
-                <td>croiser 500k x 30M identés</td>
+                <td>500k x 30M identés</td>
             </tr>
             <tr>
-                <td>Cas complexe</td>
+                <td>Complexe</td>
                 <td>256Go à 1To, SSD 50Go</td>
-                <td>croiser 100M x 100M identés</td>
+                <td>100M x 100M identés</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<div class="rf-col-xl-6 rf-col-md-12 rf-mt-8w">
-    <img alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif/">
-</div>
+<div class="rf-col-xl-12 rf-col-md-12">
+<div class="rf-container">
+<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
 
 <div class="rf-col-xl-6 rf-col-md-6">
     <h3>Démarrer en une minute</h3>
@@ -79,6 +79,14 @@ customLayout: true
     </p>
 </div>
 
+<div class="rf-col-xl-6 rf-col-md-12">
+    <img class="rf-responsive-img rf-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif/">
+</div>
+
+</div>
+</div>
+</div>
+
 <div class="rf-col-xl-12 rf-col-md-12">
     <p>
     Rendez-vous sur votre navigateur sur:
@@ -87,6 +95,6 @@ customLayout: true
             <a href="http://localhost:8081/matchID/" title="serveur local matchID">http://localhost:8081/matchID/</a>
             </code>
         </p>
-        <img src="assets/images/frontend-start.png" alt="matchID projects view">
+        <img class="rf-responsive-img" src="assets/images/frontend-start.png" alt="matchID projects view">
     </p>
 </div>
