@@ -1,202 +1,184 @@
-<nav class="navbar is-fixed-top is-transparent">
-  <div class="container">
-    <div class="navbar-brand">
-      <a href="{{ "/" | prepend: site.baseurl }}" class="logo">
-          <img src="/assets/images/matchID-logo.svg" alt="matchID Logo">
-      </a>
-      <div class="navbar-burger burger" data-target="navMenubd-main">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <div id="navMenubd-main" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="about">
-            <span class="icon">
-              <i class="far fa-lightbulb"></i>
-            </span> about matchID
+<header class="rf-header">
+  <div class="rf-container rf-container__header">
+    <div class="rf-header__body">
+      <div class="rf-header__brand">
+        <a
+          href="/"
+          class="rf-logo"
+          title="République Française"
+        >
+          <span class="rf-logo__title">
+              République<br>
+              Française
+          </span>
         </a>
-        <div class="navbar-item has-dropdown is-hoverable is-boxed">
-            <a class="navbar-link">
-              <span class="icon">
-                <i class="fas fa-magic"></i>
-              </span> Use cases
-            </a>
-            <div class="navbar-dropdown">
-              <p class="navbar-item">
-                  <span class="icon">
-                    <i class="fas fa-user-check"></i>
-                  </span>
-                  <span class="has-text-weight-bold"> Identity Quality </span>
-              </p>
-              <a href="/slides/" class="navbar-item">
-                <span class="icon">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-                <span> General concepts (French) </span>
-              </a>
-
-              <hr class="dropdown-divider"/>
-              <p class="navbar-item">
-                  <span class="icon">
-                    <i class="fas fa-book-dead"></i>
-                  </span>
-                  <span class="has-text-weight-bold"> INSEE Death databse </span>
-              </p>
-              <a href="https://deces.matchid.io" class="navbar-item">
-                <span class="icon">
-                  <i class="fas fa-angle-right" aria-hidden="true"></i>
-                </span>
-                Free search service
-              </a>
-              <a href="https://rhanka.github.io/tech-playground-2020/" class="navbar-item">
-                <span class="icon">
-                  <i class="fas fa-angle-right" aria-hidden="true"></i>
-                </span>
-                How it was built
-              </a>
-            </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable is-boxed">
-          <a class="navbar-link">
-            <span class="icon">
-              <i class="fas fa-chart-line"></i>
-            </span> data scientist / dev resources
-          </a>
-          <div class="navbar-dropdown">
-            <p class="navbar-item">
-              <span class="icon">
-                <i class="fas fa-play"></i>
-              </span>
-              <span class="has-text-weight-bold"> get started </span>
-            </p>
-            <a class="navbar-item {% if page.url == '/starting' %}has-text-primary{% endif %}" href="https://tuto.matchid.io">
-              <span class="icon">
-                <i class="fas fa-angle-right"></i>
-              </span>
-              <span> online test </span>
-            </a>
-            <a class="navbar-item {% if page.url == '/starting' %}has-text-primary{% endif %}" href="starting">
-              <span class="icon">
-                <i class="fas fa-angle-right"></i>
-              </span>
-              <span> install matchID </span>
-            </a>
-            <hr class="dropdown-divider"/>
-            <p class="navbar-item" >
-               <span class="icon">
-                 <i class="fas fa-graduation-cap"></i>
-               </span>
-              <span class="has-text-weight-bold"> tutorials </span>
-            </p>
-            <a class="navbar-item {% if page.url == '/quick_tutorial' %}has-text-primary{% endif %}" href="quick_tutorial">
-               <span class="icon">
-                 <i class="fas fa-angle-right"></i>
-               </span>
-               <span> 10' identity matching </span>
-            </a>
-            <a class="navbar-item {% if page.url == '/advanced_tutorial' %}has-text-primary{% endif %}" href="advanced_tutorial">
-               <span class="icon">
-                 <i class="fas fa-angle-right"></i>
-               </span>
-               <span> advanced matching &amp; machine learning </span>
-            </a>
-
-            <hr class="dropdown-divider"/>
-
-            <a href="datasets" class="navbar-item {% if page.url == '/datasets' %}has-text-primary{% endif %}">
-              <span class="icon">
-                <i class="fas fa-table" aria-hidden="true"></i>
-              </span> supported datasets
-            </a>
-            <a href="https://github.com/matchID-project/examples/tree/master/data" class="navbar-item">
-              <span class="icon">
-                <i class="fas fa-table" aria-hidden="true"></i>
-              </span> datasets examples
-            </a>
-            <a href="recipes" class="navbar-item {% if page.url == '/recipes' %}has-text-primary{% endif %}">
-              <span class="icon">
-                <i class="fas fa-flask" aria-hidden="true"></i>
-              </span> recipes: pre-built functions
-            </a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable is-boxed">
-          <a class="navbar-link">
-            <span class="icon">
-              <i class="fas fa-archive"></i>
-            </span> devOps resources
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item {% if page.url == '/automation' %}has-text-primary{% endif %}" href="automation">
-              <span class="icon">
-                <i class="fab fa-docker"></i>
-              </span>
-              <span> understand the architecture </span>
-            </a>
-            <a href="api" class="navbar-item {% if page.url == '/api' %}has-text-primary{% endif %}">
-              <span class="icon">
-                <i class="fab fa-usb" aria-hidden="true"></i>
-              </span> REST API endpoints
-            </a>
-            <a href="roadmap" class="navbar-item {% if page.url == '/roadmap' %}has-text-primary{% endif %}">
-              <span class="icon">
-                <i class="fas fa-road" aria-hidden="true"></i>
-              </span> roadmap
-            </a>
-            <a href="dev" class="navbar-item {% if page.url == '/dev' %}has-text-primary{% endif %}">
-              <span class="icon">
-                <i class="fab fa-github" aria-hidden="true"></i>
-              </span> contribute
-            </a>
-          </div>
-        </div>
       </div>
-
-
-
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <a class="button is-info"
-            href="https://gitter.im/matchID-dev/Lobby">
-            <span class="icon">
-              <i class="fab fa-gitter"></i>
-            </span>
-            <span>Gitter</span>
-          </a>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable is-boxed">
-          <a class="navbar-link" target="_blank" href="{{ site.project.general.repo | prepend: site.github_url }}">
-            <span class="icon">
-              <i class="fab fa-github"></i>
-            </span> GitHub
-          </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item" target="_blank" href="{{ site.project.backend.repo | prepend: site.github_url }}">
-              <span class="icon">
-                <i class="fab fa-github"></i>
+      <img
+        src="/assets/images/favicon.svg"
+        alt="matchID Logo"
+        height="64px"
+        width="64px"
+      />
+      <div class="rf-header__navbar">
+          <div class="rf-service">
+              <span class="rf-service__title" title="matchID - moteur de recherche des personnes décédées">
+                  matchID
               </span>
-              <span>{{ site.project.backend.name }}</span>
-            </a>
-            <a class="navbar-item" target="_blank" href="{{ site.project.frontend.repo | prepend: site.github_url }}">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>{{ site.project.frontend.name }}</span>
-            </a>
-            <a class="navbar-item" target="_blank" href="{{ site.project.examples.repo | prepend: site.github_url }}">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>{{ site.project.examples.name }}</span>
-            </a>
+              <p class="rf-service__tagline">
+                  Traitements et appariements d'identités jusqu'à <strong>100 millions</strong> d'enregistrements
+              </p>
           </div>
-        </div>
       </div>
     </div>
   </div>
-</nav>
+  <div class="rf-container rf-container__header">
+    <!-- Menu déroulant sur le premier élément -->
+    <nav class="rf-nav" role="navigation" aria-label="Menu principal">
+      <ul class="rf-nav__list">
+        <li class="rf-nav__item">
+          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-2">Produits</button>
+          <div class="rf-menu" id="rf-nav-item-2">
+            <ul class="rf-menu__list">
+              <li class="rf-menu__item">
+                <strong> matchID </strong>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="slides/#/3/8" target="_self">
+                  Développer des algorithmes d'appariement
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="slides/#/3/5" target="_self">
+                  Evaluer les algorithmes
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="/automation" target="_self">
+                  Automatiser les traitements
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <strong> deces.matchid.io </strong>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="https://deces.matchid.io/search" target="_self">
+                  Moteur de recherche des décès
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="https://deces.matchid.io/link" target="_self">
+                  Identifier les décès dans un fichier
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="https://deces.matchid.io/deces/api/v1/docs" target="_self">
+                  Automatisation via l'API décès
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="rf-nav__item">
+          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-1">Cas d'usage</button>
+          <div class="rf-menu" id="rf-nav-item-1">
+            <ul class="rf-menu__list">
+              <li class="rf-menu__item">
+                <a class="rf-link" href="#" target="_self">
+                  Fraude à l'identité
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="#" target="_self">
+                  Fiabilisation statistique
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="#" target="_self">
+                  Mise en qualité d'identités
+                </a>
+              </li>
+              <li class="rf-menu__item">
+                <a class="rf-link" href="#" target="_self">
+                  Moteur de recherche d'identités
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="rf-nav__item">
+          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-3">Comprendre</button>
+          <div class="rf-menu" id="rf-nav-item-3">
+              <ul class="rf-menu__list">
+                  <li class="rf-menu__item">
+                    <a class="rf-link" href="/slides/#/1" target="_self">
+                      Données d'identités
+                    </a>
+                  </li>
+                  <li class="rf-menu__item">
+                    <a class="rf-link" href="/slides/#/3/11" target="_self">
+                      Les algorithmes
+                    </a>
+                  </li>
+                  <li class="rf-menu__item">
+                    <a class="rf-link" href="https://matchid.io/slides/#/2/1" target="_self">
+                      Cadrer un traitement métier
+                    </a>
+                  </li>
+              </ul>
+          </div>
+        </li>
+        <li class="rf-nav__item">
+          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-4">Pour développer</button>
+          <div class="rf-menu" id="rf-nav-item-4">
+              <ul class="rf-menu__list">
+                <li class="rf-menu__item">
+                  <strong> matchID </strong>
+                </li>
+                <li class="rf-menu__item">
+                  <a class="rf-link" href="/starting" target="_self">
+                    Débuter
+                  </a>
+                </li>
+                <li class="rf-menu__item">
+                  <a class="rf-link" href="/quick_tutorial" target="_self">
+                    Appariement simple
+                  </a>
+                </li>
+                <li class="rf-menu__item">
+                  <a class="rf-link" href="/advanced_tutorial" target="_self">
+                    Appariement complexe, avec machine learning
+                  </a>
+                </li>
+                <li class="rf-menu__item">
+                  <a class="rf-link" href="/recipes" target="_self">
+                    Documentation des recettes
+                  </a>
+                </li>
+                <li class="rf-menu__item">
+                  <a class="rf-link" href="/datasets" target="_self">
+                    Documentation des datasets
+                  </a>
+                </li>
+                <li class="rf-menu__item">
+                  <strong> deces.matchid.io </strong>
+                </li>
+                <li class="rf-menu__item">
+                  <a class="rf-link" href="#" target="_self">
+                    Intégrer l'API décès
+                  </a>
+                </li>
+                <li class="rf-menu__item">
+                  <a class="rf-link" href="#" target="_self">
+                    Déployer on-premise
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </li>
+        <li class="rf-nav__item">
+          <a class="rf-link" href="/about" target="_self">À propos</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
