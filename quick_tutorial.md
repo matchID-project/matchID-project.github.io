@@ -1,180 +1,244 @@
 ---
 layout: default
 permalink: quick_tutorial
-description: "starting matchID, first recipes, and quick matching (~10min)"
-title: Tutorial - Simple
-width: is-10
+description: Ce tutoriel traite un cas simple d'appariement et doit durer 10 à 15 minutes.
+             Il a pour but d'initier <strong>développeurs et datatscientists</strong> à matchID et aux concepts
+             de l'appariement d'identités
+
+title: Tutoriel - simple
+image: persona_4.svg
+imageTX: 0px
+imageTY: 0px
+customLayout: true
 ---
 
-# **Intro**
+<div class="rf-col-xl-6 rf-col-md-12">
+  <h3>Introduction</h3>
+  <p>
+  Ce tutoriel traite un cas simple d'apariement de deux jeux de données d'identité, l'un appelé <strong>deaths</strong> et l'autre <strong>clients</strong>. Le type de cas d'usage traité est la suppression des décès d'un fichier client, pour de la mise en qualité. Des cas similaires peuvent être envisager avec un SIRH et un annuaire, par exemple.
+  </p>
+  <p>
+  Il s'adresse à des <strong>développeurs ou datascientists</strong> souhaitant s'initier à l'appariement d'identité, à un premier niveau de développement. Pour tout cas d'appariement, nous recommandons de passer par un premier appariement "simple" pour bien évaluer la problématique, et d'itérer en fonction du cas d'usage précis (nombre à apparier, qualité des données, enjeux métiers en précision et rappel, ...).
+  </p>
+  <p class="rf-highlight">
+  <i>
+   Premature optimization is the root of all evil (or at least most of it) in programming.
+  </i>
+  <br>
+  <span class="rf-text--xs">Donald Knuth, 1974</span>
+  </p>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12" style="position:relative">
+  <div class="rf-callout rf-fi-information-line rf-vcenter">
+    <h4 class="rf-callout__title">Détecter les décès dans un fichier</h4>
+    <p class="rf-callout__text">
+        Si vous n'êtes pas datascientist ou développeur, mais souhaitez détecter les décès au sein de votre fichier client, c'est possible sans coder, ici :
+    </p>
+    <p>
+      <a class="rf-link rf-link--icon-right" href="https://deces.matchid.io/link" title="appariement sur deces.matchid.io" target="_self">
+        Accéder à deces.matchid.io
+      </a>
+    </p>
+  </div>
+</div>
+<div class="rf-col-xl-1 rf-col-md-12"></div>
+<div class="rf-col-xl-10 rf-col-md-12">
+  <h3>Algorithme de <i> Data matching </i></h3>
+  <p>
+    Sauf méthode d'appariement en <code> n x n </code>, qui atteignent leur limites dès quelques centaines de milliers d'identité dans l'une des bases, la meilleure option reste l'usage d'une base de donnée. La base la plus compatible avec la plupart des cas d'usages reste Elasticsearch. PostGres pouvant être bien meilleure pour certains cas particuliers, consultez la <a href="/algorithms" title="algorithmes de matching">section algorithmes</a> après ce premier tutoriel. L'ouvrage <i>Data matching</i> de Peter Christen reste également un ouvrage de référence pour les curieux.
+  </p>
+  <p>Les étapes à observer systématiquement sont :</p>
+  <p class="rf-highlight">
+    <strong>1.</strong> Préparer et indexer la donnée de référence (deaths) <br>
+    <strong>2.</strong> Préparer et matcher le fichier à apparier (clients) <br>
+    <strong>3.</strong> Scorer la pertinence de chaque appariement et évaluer (clients x deaths) <br>
+  </p>
+  <p>
+  La préparation de données est essentielle. L'observation fine des données d'identités est impérative.
+  Dans cette phase initiale, il convient d'envisager au maximum l'enrichissement des données, et si possible de
+  réconcilier les personnes par un identifiant technique (de type NIR, ...), parfois il arrive qu'on oublie cette base... Vous pourrez consulter la <a href="/numid" title="identité numérique">section des données d'identités</a> après ce premier exercice.
+  </p>
+  <p>
+  Dans le <a href="/advanced_tutorial" title="tutoriel avancé">tutoriel avancé</a> nous implémenterons des techniques plus avancées pour la qualité des données, et évaluerons la qualité des appariement avec une interface d'annotation.
+  Cette dernière étape est impérative dans un contexte de gros volumes, où chaque appariement ne pourra pas être confirmé manuellement. Cerise sur le gâteau, nous utiliserons un peu de <i>machine learning</i> même si l'utilité n'est avérée que dans les cas de très gros volume (la quantité d'annotation nécessaire étant importante).
+  </p>
+  <div class="rf-callout rf-fi-information-line">
+    <h4 class="rf-callout__title">Préparer des recettes itérativement</h4>
+    <p class="rf-callout__text">
+        matchID est conçu autour d'une philosophie de recettes à préparer par petite itération. Pour la suite,
+        nous utiliserons une méthode systématique :
+    </p>
+    <p class="rf-callout__text rf-p-2w">
+          - définir des jeux de donnée d'entrée et cible<br>
+          - faire une recette minimale<br>
+          - tester en direct sur échantillon<br>
+          - lancer la recette sur l'ensemble des données<br>
+    </p>
+    <p class="rf-callout__text">
+        De jeu de donnée à jeu de donnée, en passant par des recettes,
+        nous implémenterons l'algorithme de <i>data matching</i>.
+    </p>
+  </div>
 
-This tutorial deals with an easy use case of matching identities of two datasets, called `deaths` (a list of dead people) and `clients` (a list of our clients, inlcuding some dead people) which are both reasonably big.
-An [advanced tutorial](/advanced_tutorial) is available for dealing with a more complex case (over 1 million records),
-where *maching learning* is necessary to find a big number of match.
+</div>
+<div class="rf-col-xl-1 rf-col-md-12"></div>
 
-#### General Method
-- Data preparation
-- Step 1: index deaths dataset
-- Step 2: match clients againts deaths
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf">
+  <h2 class="rf-color--white">
+    Étape 1: préparer et indexer le fichier de référence (deaths)
+  </h2>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12">
+  <h3><a href="http://localhost:8081" target="_blank" title="site local matchID">Lancez matchID</a></h3>
+  Après avoir suivi l'<a href="/starting" title="installer matchID">installation de matchID</a>, vous devriez
+  avoir cet écran:
+</div>
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
+  <img width="100%" src="assets/images/frontend-start.png" alt="matchID projects view">
+</div>
 
-#### Data preparation: the philosophy of iterative cooking
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
+  <img src="assets/images/frontend-new-project.png" alt="matchID new project">
+</div>
+<div class="rf-col-xl-6 rf-col-md-12">
+  <h3><a href="http://localhost:8081/" target="_blank" title="site local matchID">Créez votre premier projet</a></h3>
+  <p>
+  matchID rassemble ses recettes et déclaration de recettes au sein de projets, ou dossier. Créons un premier projet que nous appelèleron <code>death</code>. Vous devriez obtenir la vue ci-contre.
+  </p>
+  <p class="rf-text--xs">
+  Note: matchID n'assure pas de gestion de version. A ce stade, le mieux est de référencer chaque projet
+  comme repository <code>git</code> et de commiter après validation de chaque traitement.
+  </p>
+</div>
 
-We have first to do data preparation. So we'll learn here how to _cook your data with recipes_, with a 4 or 5-step iteration method :
 
-1. upload raw data and configuration files
-2. edit yaml configuration files
-3. test recipes
-4. run recipes
-5. (upload & apply recipe on the fly, if the goal is to develop a search api)
+<div class="rf-col-xl-6 rf-col-md-12">
+  <h3><a href="http://localhost:8081/matchID/projects/deaths" target="_blank" title="site local matchID">Importer le premier jeu de données</a></h3>
+  <p>
+  Cliquez sur <code>import dataset</code> et glissez-collez le fichier <code>deaths</code> que vous aurez téléchargé sur <a href="https://github.com/matchID-project/examples/raw/master/data/deaths_test.csv" title="fichie de décès anonymisé (test)" target="_blank">Github</a>.
+  </p>
+  <p class="rf-text--xs">
+  Note: matchID n'assure pas de gestion de version. A ce stade, le mieux est de référencer chaque projet
+  comme repository <code>git</code> et de commiter après validation de chaque traitement.
+  </p>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
+  <img src="assets/images/frontend-import-dataset2.png" alt="matchID import dataset test">
+</div>
 
-Iterating through these steps will allow you to create recipes and datasets for two purposes:
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
+  <img class="rf-vcenter" width="95%" src="assets/images/frontend-dataset-deaths-simple-import.png" alt="matchID dataset first view">
+</div>
+<div class="rf-col-xl-6 rf-col-md-12">
+  <h3><a href="http://localhost:8081/matchID/projects/deaths/datasets/deaths_test_csv" target="_blank" title="données de décès">Visualisez les données</a></h3>
+  <p>
+  Vous pouvez alors voir le jeu de données apparaître sur l'interface, comme ci-contre.
+  </p>
+  <p>
+  Observez la décomposition de l'écran: à droite pour la donnée, à gauche pour les recettes. Ces dernières peuvent être étendues en 2/3 d'écran ou plein écran en fonction des recettes à coder. Le sonnées quant à elles sont filtrables par contenu, et par nom de colonnes (avec des regexp).
+  </p>
+  <p class="rf-text--xs">
+  Note: les données sont des données anonymisées et représentatives statistiquement de données réelles
+  </p>
+</div>
 
-- prepare your datasets (upload, map names/dates/locations)
-- search matches and score them
+<div class="rf-col-xl-6 rf-col-md-12">
+  <h3><a href="http://localhost:8081/matchID/projects/deaths/datasets/deaths_test_csv" target="_blank" title="données de décès">Première recette</a></h3>
+  <p>
+  À partir du menu <strong>Recettes</strong> choisissez <strong>Nouvelle recette</strong>.
+  </p>
+  <p>
+  vous pouvez alors créer un nouveau traitement. Dans ce cas, les données sont de qualité, nous
+  ne faisons qu'ajouter un identifiant. Il faut en revanche déclarer la source de données pour
+  pouvoir voir le traitement. Vous pouvez copier la recette ci-dessous :
+  </p>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-3w" style="position:relative">
+  <img class="rf-vcenter" src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
+</div>
+<div class="rf-col-xl-12 rf-col-md-12">
+  <div class="rf-highlight" markdown="1">
+  ```
+    recipes:
+      dataprep_deaths_test:
+        input: deaths_test_csv       # doit être saisi impérativement
+        output: deaths               # le dataset devra être déclaré après la recette
+        steps:                       # début des étapes de la recette
+          - eval:                    # action d'évaluation - chaque argument est l'expression pour une colonne
+            - matchid_id: sha1(row)  # on crée la colonne matchid_id avec le hash de a ligne, comme identifiant
+  ```
+  </div>
+  <div markdown="1">
+  La recette peut être sauvée (menu `Sauver` ou `Ctrl+S`), ce qui devrait rendre le résultat suivant:
+  <img src="assets/images/frontend-recipe-deaths-test-1.png" alt="matchID projects view">
 
-#### Difference between Simple and [advanced tutorial](/advanced_tutorial)
+  Vous pouvez trouver la liste exhaustive des [recettes ici](recipes), et des recettes en contexte dans le [tutoriel avancé](advanced_tutorial).
+  </div>
+</div>
+<div class="rf-col-xl-12 rf-col-md-12">
+  <h3><a href="http://localhost:8081/matchID/projects/deaths/" target="_blank" title="données de décès">Indexation</a></h3>
+  <div markdown=1>
+  Crééz l'index Elasticsearch pour déclaré en sortie de la recette précédente :
+  </div>
+  <div class="rf-highlight" markdown=1>
+  ```
+  datasets:
+    deaths:
+      connector: elasticsearch
+      table: deaths # nom de l'index
+  ```
+  </div>
+  <div markdown="1">
+  N'oubliez pas de sauver (`Sauver` ou `Ctrl+S`).
+  Puis revenez sur la recette [dataprep_death_test](http://localhost:8081/matchID/projects/deaths/recipes/dataprep_deaths_test). Lancez la recette en appuyant sur :
 
-In the advanced tutorial, we will go through more steps, among those:  
-- validate the matches (through the [matchID-validation]() UI, see below)
-- train machine learning models (using yaml edition and recipe testing again)
-- apply for rescoring (idem)
-- presenting an API for searching and rescoring new clients
+  <img style="margin-left: auto; margin-right: auto;" src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
 
-But for now, we don't need to.
+  Vous pouvez suivre l'avancement en bas à droite dans l'onglet `Real logs  ou via le menu `Jobs`:
 
-# **Go to the [matchID tutorial site](https://tuto.matchID.tech)**
+  <img src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
 
-We provide you a tutorial matchID tutorial serveur, where you can login with your GitHub account : 
+  L'indexation dure un peu plus d'une minute pour 71 404 enregistrements.
+  </div>
+</div>
 
-[https://tuto.matchID.tech](https://tuto.matchID.tech)
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf">
+  <h2 class="rf-color--white">
+    Étape 2: préparation et match des clients
+  </h2>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12">
+  <div markdown=1>
+### Importer les données clients
 
-WARNING : This tutorial site should not be used for big usecases as it is a small server (vCPUs are 3x slower than an up-to-date laptop, but there arer 8vCPU).
-
-You should see this screen just after the login :
-
-<img src="assets/images/frontend-start.png" alt="matchID projects view">
-
-# **Data preparation**
-
-### **Data preparation** : Create your first project
-
-We'll first have to create a project. This will basically be a folder, containing datasets and recipes (data transformation).
-Here we'll simply name it `deaths`.
-
-<img src="assets/images/frontend-new-project.png" alt="matchID new project">
-
-Which leads to:
-<img src="assets/images/frontend-project-view-empty.png" alt="matchID projects view">
-
-Note :  
-- The segmentation of the projects are very easy to do server-side, as it only contains two sub-folders, datasets and recipes. We didn't implement methods for splitting or reorganising project at this step of the development, as the ratio of benefit/cost of folder management is very low.
-- There is no project versioning : you have to do your own versioning - at this step we do it by gitting them server side, so be careful in any change you make - git may be supported in a theorical future.
-
-### **Data preparation** : Import your first Dataset
-
-Click on `import dataset` and just drag-n-drop (thx to [Dropzone](http://www.dropzonejs.com/)) the [`death_test.csv`](https://github.com/matchID-project/examples/raw/master/data/deaths_test.csv) downloaded from the [examples matchID repo](https://github.com/matchID-project/examples).
-
-<img src="assets/images/frontend-import-dataset2.png" alt="matchID import dataset test">
-
-Now you have your first dataset:
-<img src="assets/images/frontend-dataset-deaths-simple-import.png" alt="matchID dataset first view">
-
-Please care about the screen composition :  
-	- on the left pane: yaml coding part (thx to [codemirror](https://codemirror.net/)) with the dataset declaration.  
-	- on the right pane: the dataset view, as declared in the yaml on the left.
-
-About the data: it is a clean synthetic data of French civil statuses. This file is a simple csv with no formatting or encoding problem. In the [advanced tutorial](/advanced_tutorial) you'll learn to deal with fixed with formats and encoding problems.
-
-### **Data preparation** : Create your first recipe
-
-Create a new recipe :
-<img src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
-
-A default recipe is created with no valid dataset, just replace it with the uploaded dataset, `deaths_test_csv` - as this can be done now, we already figure out we have a `deaths` dataset we'll configure after finishing the recipe.
-
-```
-recipes:
-  dataprep_deaths_test:
-    input: deaths_test_csv    # <==== necessary to change to continue
-                              # there are advanced usage of dataset, such as filtered dataset, cf advanced docs
-    output: deaths            # to be configured after the recipe
-    steps:                    # this is the beginning of the recipe
-      - eval:
-          - matchid_id: sha1(row)  # just change the default 'new_col' to matchid_id which will be used further
-```
-Save it (`Save` button or `Ctrl+S`), it should display the first imported dataset, but with an additionnal column, `new_col` which is basically a hash of the row:
-
-<img src="assets/images/frontend-recipe-deaths-test-1.png" alt="matchID projects view">
-
-So now you have an interactive way to deal with your data.
-Every new step of the recipe will add a new transformation on your data.
-You can have the exhaustive list of [recipes here](recipes.md), and see advanced recipes in [advanced tutorial](/advanced_tutorial).
-
-# **Step 1** - index deaths dataset
-
-### Configure the output dataset on elasticsearch
-
-We have to create the `deaths` dataset as formerly pointed as the output dataset of the recipe.
-Just create it from the menu and paste this content :
-
-```
-datasets:
-  deaths:
-    connector: elasticsearch # this is the predeclared connector to the dockerized elasticsearch
-    table: deaths            # name of the index
-```
-And don't forget to save it (`Save` button or `Ctrl+S`).
-Note that you can configure many options for an elasticsearch dataset, still illustrated in the [advanced tutorial](/advanced_tutorial).
-
-### Run the recipe !
-So once everything is configured, you can go to the recipe `dataprep_death_test` and run it with the green button :
-
-<img src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
-
-This run is needed to index the deaths with elasticearch, which will enable a match of up to 98% (recall) in real usecases.
-
-You can follow the job either directly in the bottom in the "Real logs":
-<img src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
-
-This should take about 45 seconds on your laptop to index the 71k rows.
-
-The job log last line should summarize the time and bugs for the recipe :
-```
- 2018-04-02 21:17:39.715749 - 0:00:42.308387 - end : run - Recipe dataprep_deaths_test successfully fininshed with no error, 71404 lines processed, 71404 lines written
-```
-
-# **Step 2** - match clients against deaths
-
-### Upload the second dataset
-You should be able to follow the former steps on the new file, `clients`.
-
-Then import the dataset [`clients_test.csv`](https://github.com/matchID-project/examples/raw/master/data/clients_test.csv).
-
+Le jeu de donnée est [clients est dispoinible ici](https://github.com/matchID-project/examples/raw/master/data/clients_test.csv). Importez le fichier par glisser-déposer (cf ci-contre).
+  </div>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-4w" style="position:relative">
 <img src="assets/images/frontend-dataset-clients-test.png" alt="matchID projects view">
+</div>
+<div class="rf-col-xl-12 rf-col-md-12">
+  <div markdown=1>
+### Configurer le résultat de l'appariement dans elasticsearch
 
-This data is quite easy: the only data preparation we need to do is to change the separator in the recipe  
-from `sep: "\\s+|,|;"` to `sep: ";"`
-
-
-### Configure the output dataset on elasticsearch
-
-Create the dataset `clients_x_deaths` from the menu
-
+Créez l'index `clients_x_deaths` from the menu
+  </div>
+  <div class="rf-highlight" markdown=1>
 ```
 datasets:
   clients_x_deaths:
     connector: elasticsearch
     table: clients_x_deaths
 ```
+  </div>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12">
+  <div markdown=1>
+### Appariement (ou <i> matching </i> !)
 
-
-### Matching !
-Here comes the first important part : the fuzzy match with elasticsearch.
-We choose here to use elasticsearch as is it quite versatile (can perform ngram, phonetic and string-distance tolerant) for fuzzy matching.
-
-So, now you have to match every client against the already-indexed-in-step-1 deaths.
-
-First create a recipe named `clients_deaths_matching_test`:
+Il faut requêter chaque ligne de `clients` auprès de l'index `deaths`. Crééz la recette `clients_deaths_matching_test`:
+</div>
+<div class="rf-highlight rf-text--xs" markdown=1>
 ```
 recipes:
   clients_deaths_matching_test:
@@ -184,6 +248,10 @@ recipes:
       - join:
           type: elasticsearch
           dataset: deaths
+          keep_unmatched: False
+              # passer à "True" pour
+              # conserver les identités
+              # sans match
           query:
             size: 1
             query:
@@ -194,18 +262,22 @@ recipes:
                   - match:
                       DCD_DATE_NAISSANCE: Date
 ```
-
-So you'll see this first matching results:
+  </div>
+  <div markdown="1">
+Sauvez et observez les [premiers résultats](http://localhost:8081/matchID/projects/deaths/recipes/clients_deaths_matching_test):
 
 <img src="assets/images/frontend-dataset-matching-test.png" alt="matchID first match">
 
-Some observations :
-- only clients with a death match appear : you have to add an option `keep_unmatched: true` to add in `join` to make clients with no match appear
-- matching is quite quite unefficient for many reasons:
-  - date is tokenized as the caracter '/' is used, so partial matching with dates are ok. We could have prepared dates for less tolerance
-  - only the first name is used
+Le match est perfectible: trop de restriction avec le premier prénom, et la tolérance sur la date est trop forte. **La R&D sur la phase de *matching* est essentielle**. En `SQL`, c'est l'optimisation des requêtes de *blocking*.
+  </div>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12" style="position:relative">
 
-Here is a more complete search :
+<p>
+<strong>matchID aide à l'optimisation de ces requêtes et donc du rappel en en facilitant la visualisation</strong>.
+Pour cet tutoriel, nous proposons cette requete plus complète et précise:
+</p>
+<div class="rf-highlight rf-text--xs" markdown=1>
 ```
 recipes:
   clients_deaths_matching_test:
@@ -215,7 +287,7 @@ recipes:
       - join:
           type: elasticsearch
           dataset: deaths
-          keep_unmatched: True                      # keeps rows with no match
+          keep_unmatched: False
           query:
             size: 1
             query:
@@ -224,26 +296,45 @@ recipes:
                   - match:
                       DCD_NOM:
                         query: Nom
-                        fuzziness: auto             # tolerate fuzzy (up to 2 errors in name)      
+                        fuzziness: auto
+                          # jusqu'à 2 erreurs
+                          # d'édition
                   - match:
                       DCD_DATE_NAISSANCE: Date
                   - match:
-                      DCD_PRENOMS:                  # one token at least should match, with up to 2 errors
+                      DCD_PRENOMS:
                         query: Prenom
                         fuzziness: auto
                 should:
-                  - match:                          # if place of birth match it is better but not mandatory
+                  - match:
                       DCD_COMMUNE_NAISSANCE: Lieu
+                        # la commune est un match
+                        # améliore le ranking si
+                        # correspond
 ```
+</div>
+
+<div markdown="1">
 
 <img src="assets/images/frontend-dataset-matching-test-2.png" alt="matchID better match">
 
-Now we see there is some noise we should be able to filter easily
+</div>
+</div>
 
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf">
+  <h2 class="rf-color--white">
+    Étape 3: Scorer les appariements et les évaluer
+  </h2>
+</div>
+<div class="rf-col-xl-12 rf-col-md-12">
+  <div markdown="1">
 ### Scoring
 
-As we are in a recipe, we can add additionnal steps, we'll use to score distance of names, place and dates of birth.
-Just add theses lines to the current recipe, which will remove wrong matches
+  Nous pouvons ajouter dans la même recette la nouvelle étape de scoring après la jointure, avant même d'avoir lancé la requête sur toutes les données.
+
+  Le scoring proposé est simple (distance d'édition sur nom, lieu et date de naissance), nous ajoutons un filtre pour les scores bas, ce qui améliore la précision.
+  </div>
+  <div class="rf-highlight" markdown="1">
 
 ```
       - eval:
@@ -255,11 +346,22 @@ Just add theses lines to the current recipe, which will remove wrong matches
           - confiance: round(100 * score_lieu * score_nom * score_prenom * score_date)
 ```
 
-This will add a `confiance` column you'll be able to filter.
+</div>
+<div markdown="1">
+Cela rajoute des colonnes de score et une de `confiance` qui fusionne les scores. Quelques généralités sur la comparaison de caractères: trois type d'algorithmes sont utilisés pour des finalités différentes : la distance de <strong>Levenshtein</strong> est préférable en cas d'assez forte fiabilité, <strong>Jarrow Winlker</strong>. La distance phonétique (Soundex Fr) est utile en complément d'un Levensthein, rarement utile seule.
 
-Depending on whether you want to have a new clients file with deaths match or a new clients_x_deaths only with the intersection, you should configure your recipe to blank the lines or to remove bad matches :
+### Filtrer (débruiter)
 
-To blank bad matches :
+Les critères mis en place permettent d'organiser par pertinence les appariements identifiés. Néanmoins, la phase de <i>matching</i> étant optimisée pour le rappel, elle ramène inévitablement des paires peu pertinentes, et comme il s'agit d'un croisement de deux jeux de données, le taux de confusion explose forcément avec les scores faibles, et des noms très communs. Rendez-vous à la [section algorithmique][algorithms] pour plus de compréhension de la problématique.
+
+Si l'on souhaite filtrer on peut ajouter :
+
+```
+      - keep:
+          where: confiance > 20
+```
+
+Si on souhaite conserver les lignes qui n'ont pas d'appariement pertinent (cf `keep_unmatched: True` plus haut)
 ```
       - eval:
           # blank low score lines
@@ -270,18 +372,26 @@ To blank bad matches :
           - hit_matchid_id: hit_matchid_id if (confiance > 30) else ""
 ```
 
-Or to filter bad matches :
-```
-      - keep:
-          where: confiance > 20
-```
+Lancez la recette une fois le choix effectué en appuyant sur `Lancer`. Les résultats devraient être là en une ou deux minutes.
+</div>
+</div>
+<div class="rf-col-xl-12 rf-col-md-12">
+<div markdown="1">
+### Evaluer les résultats
 
-It should take about 3 minutes on a laptop to proceed the 16k rows. Go to `clients_x_deaths` to see the results !
+Rendez-vous sur le dataset [client_x_deaths](http://localhost:8081/matchID/projects/deaths/datasets/clients_x_deaths).
+Pour mieux voir les résultats, copiez le filtre `Nom|DCD_NOM|Prenom|DCD_PRENOM|Date|DCD_DATE` dans la case `Filtrer les colonnes`:
 
-### View results in the validation app
+<img src="assets/images/frontend-clients_x_deaths.png" alt="matchID résultat du matching">
 
-We now have the results. To make it more visual, we can display the results in the **validation app**. Simply declare the dataset in a special way to format the results:  
+Les résultats sont déjà visibles, mais leur validation est complexe dans ce mode "tableur". Pour faciliter l'évaluation
+matchID propose une **application de validation**. Il suffit de configurer les colonnes à afficher dans le dataset:
 
+</div>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12">
+<div style="overflow-y: scroll;height: 300px;">
+<div class="rf-highlight" markdown=1>
 ```
 datasets:
   clients_x_deaths:
@@ -332,7 +442,8 @@ datasets:
           callBack: formatNumber
           appliedClass:
             head: head-centered
-            body: has-text-centered min-column-width-100
+            body: has-text-centered
+                  min-column-width-100
       view:
         display: true
         column_name: view
@@ -353,21 +464,59 @@ datasets:
         statisticsInterval: 5
         preComputed:
           decision: 55
-          indecision:
-            - 40
-            - 65
+          indecision: [40, 65]
 ```
+</div>
+</div>
+<p class="rf-text--xs">
+Notes:<br>
+- cette configuration n'est pas nécessaire lorsque le nom des colonnes est conforme, comme dans le [tutoriel avancé](/advanced_tutorial)<br>
+- pensez bien à copier coller tout le texte, en scrollant !
+</p>
+</div>
+<div class="rf-col-xl-6 rf-col-md-12">
+<div markdown="1">
 
-Don't forget to click on **save the configuration** and to **refresh the page**   
-Then you should have a blue `Validation` button you can click to have this final display:
+Sauvez la configuration `Ctrl+S` et rechargez la page (`Ctrl+R`). Un bouton `Validation` apparaît:
 
 <img src="assets/images/frontend-validation-test.png" alt="matchID validation">
+</div>
+</div>
 
-This first quick-n-dirty try gives quite good results withs scores above 40 :
+<div class="rf-col-xl-12 rf-col-md-12">
+
+<div markdown="1">
+La distribution des scores est accessible via l'onglet statistiques <span class="iconify" data-icon="fa-regular:chart-bar" data-inline="false"></span> :
+
+<img src="assets/images/frontend-validation-stats-simple.png" alt="matchID distribution des scores">.
+
+Filtrer au-dessus de 40 montre déjà de très bons résultats :
 
 <img src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">.
 
-_Note: This configuration can be avoided if you had previously mapped your column names as in the [advanced tutorial](/advanced_tutorial)_
-
-
-For advanced results, you should get a strong environnement (8vCPU at least, we recommend 16vCPU and the higher the better), and go to the [advanced tutorial](/advanced_tutorial) with more than 1M datasets.
+</div>
+</div>
+<div class="rf-col-xl-2 rf-col-md-12"></div>
+<div class="rf-col-xl-8 rf-col-md-12">
+  <div class="rf-callout rf-fi-information-line">
+    <h4 class="rf-callout__title">Pour continuer</h4>
+    <p class="rf-callout__text">
+      Pour une analyse optimale des résultats, il est recommandé d'annoter un certain nombre de paires pour passer d'une logique de scores de vraisemblance à des scores probabiliste. Néanmoins ce nombre dépendra de la précision souhaitée, ce qui peut être très chronophage. Ainsi, pour garantir que le quantile de scores > 90% est d'au moins 99,9% il faudra <strong>annoter au moins 1000 paires</strong>.
+    </p><br>
+    <p class="rf-callout__text">
+      Pour continuer dans l'apprentissage, vous pouvez passer au <a href="/advanced_tutorial" title="tutoriel avancé" target="_self">tutoriel avancé</a> (avec le machine learning) ou simplement consulter les <a href="/algorithms" title="algorithmes" target="_self">algorithmes</a> pour comprendre comment adapter au mieux les recettes à vos cas d'usage. La documentation des <a href="/recipes" title="recettes" target="_self">recettes]</a> vous aidera également à mieux comprendre les possiblités.
+    </p>
+    <p>
+      <a class="rf-link rf-link--icon-right" href="/advanced_tutorial" title="tutoriel avancé" target="_self">
+        Tutoriel avancé
+      </a>
+      <a class="rf-link rf-link--icon-right" href="/algorithms" title="algorithmes" target="_self">
+        Algorithmes
+      </a>
+      <a class="rf-link rf-link--icon-right" href="/recipes" title="documentation des recettes" target="_self">
+        Documentation
+      </a>
+    </p>
+  </div>
+</div>
+<div class="rf-col-xl-2 rf-col-md-12"></div>
