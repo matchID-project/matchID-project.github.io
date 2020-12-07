@@ -7,7 +7,9 @@ width: is-10
 image: persona_cooking.svg
 ---
 
-> **A recipe consist of steps of treatments made on rows and colums.**
+<div markdown="1">
+
+**A recipe consist of steps of treatments made on rows and colums.**
 The dataset is scanned by chunks, which are loaded into a Pandas dataframe.
 So a recipe is basically a treatment on a chunk from a dataframe, resulting into a transformed dataframe.
 
@@ -19,34 +21,36 @@ A recipe can call :
 - the internal "eval" function gives access to create/modify columns based on a row function (e.g col1+col2) into recipes
 
 
-##Quick access to recipes and functions
+## Quick access to recipes and functions
 ----
 
 
 Summary:
 
- - [map](#map)
- - [keep](#keep)
- - [rename](#rename)
- - [delete](#delete)
- - [eval](#eval)
- - [exec](#exec)
- - [replace](#replace)
- - [normalize](#normalize)
- - [pause](#pause)
- - [to_integer](#to_integer)
- - [to_float](#to_float)
- - [list_to_tuple](#list_to_tuple)
- - [tuple_to_list](#tuple_to_list)
- - [ngram](#ngram)
- - [parsedate](#parsedate)
- - [join](#join)
- - [unfold](#unfold)
- - [unnest](#unnest)
- - [nest](#nest)
- - [groupby](#groupby)
- - [build_model](#build_model-no-chunks)
- - [apply_model](#apply_model)
+ - [`map`](#map)
+ - [`keep`](#keep)
+ - [`rename`](#rename)
+ - [`delete`](#delete)
+ - [`eval`](#eval)
+ - [`exec`](#exec)
+ - [`replace`](#replace)
+ - [`normalize`](#normalize)
+ - [`pause`](#pause)
+ - [`to_integer`](#to_integer)
+ - [`to_float`](#to_float)
+ - [`list_to_tuple`](#list_to_tuple)
+ - [`tuple_to_list`](#tuple_to_list)
+ - [`ngram`](#ngram)
+ - [`parsedate`](#parsedate)
+ - [`join`](#join)
+ - [`unfold`](#unfold)
+ - [`unnest`](#unnest)
+ - [`nest`](#nest)
+ - [`groupby`](#groupby)
+ - [`build_model`](#build_model-no-chunks)
+ - [`apply_model`](#apply_model)
+ - [](#zz)
+
 
  - [`geopoint("POINT(lon, lat")`](#geopointpointlon-lat)
  - [`distance((lat a,lon a), (lat b, lon b))`](#distancelat-alon-a-lat-b-lon-b)
@@ -58,17 +62,19 @@ Summary:
  - [`sha1(object)`](#sha1object)
  - [`levenshtein(str a, str b)`](#levenshteinstr-a-str-b)
  - [`levenshtein_norm(str a, str b)`](#levenshtein_normstr-a-str-b)
+ - [](#zz)
 
  - [SQL recipes](#sqlrecipes)
 
 
-##Internals recipes
+## Internals recipes
 ----
 
 #### map
 
 This recipe creates new columns to the dataframe, simply based on others.
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - map:
           matchid_date_birth_src: datasetAlpha_DATE_NAISSANCE
@@ -78,52 +84,65 @@ This recipe creates new columns to the dataframe, simply based on others.
             - datasetAlpha_COMMUNE_NAISSANCE              # ther result will be an array
             - datasetAlpha_CODE_INSEE_NAISSANCE           # [ datasetAlpha_COMMUNE_NAISSANCE, datasetAlpha_CODE_INSEE_NAISSANCE ]
 ```
-
+</div>
+<div markdown="1">
 #### keep
 
 This recipe keeps only columns matching a regex, with an optional `where` condition :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - keep:
           select: matchid_.*   # selection with a regexp
           where : matchid_score>0.2             #eval-like python base expression
 ```
 or in an explicit list :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - keep:
           select:              # selection by list
             - matchid_name_first
             - matchid_name_last
 ```
-
+</div>
+<div markdown="1">
 #### delete
 
 This recipe deletes columns matching a regex :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - delete:
           select: datasetAlpha.*    # selection with a regexp
 ```
+</div>
+<div markdown="1">
 or in an explicit list :
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - delete:
           select:              # selection by list
             - datasetAlpha_NOM_PRENOMS
             - datasetAlpha_DATE_NAISSANCE
 ```
-
+</div>
+<div markdown="1">
 #### rename
 
 Renames columns of a dataframe :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - rename:
           source_column1: target_column1
           source_column2: target_column2
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
-
+</div>
+<div markdown="1">
 #### eval
 
 This is the swiss-knife recipe which evaluates a treatment row by row.
@@ -133,14 +152,16 @@ The values of the dataframe are accessible within the `row` array.
 A particular `column` value is available in `row['column']` as in `column`.
 
 Here's an example:
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - eval:
         - matchid_name_first: matchid_name_first_src if (type(matchid_name_first_src)==list) else [matchid_name_first_src]
         - matchid_name_last: matchid_name_last_src if (type(matchid_name_last_src)==list) else [matchid_name_last_src]
 ```
-
-[Here](#eval-functions) are some of the implemented functions.
+</div>
+<div markdown="1">
+```[Here](#eval-functions) are some of the implemented functions.
 
 *WARNING*: the eval function uses `pd.Dataframe.apply` row-by-row which is easy but sub-optimal for large datasets. You should consider to optimize your `eval` draft with an `exec` as soon as possible. Using vectorized function can lead to 100x accelerations.
 
@@ -154,14 +175,18 @@ The values of the dataframe are accessible within the `row` array.
 A particular `column` value is available in `row['column']` as in `column`.
 
 Here's an example:
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - exec:
         - df['matchid_name_match'] = df['matchid_name_last']+ np.where(df['matchid_name_first']!=""," " + df['matchid_name_first'], "")
         - df['matchid_name_last'] = df['matchid_name_last'].split(" ")
 ```
-
+</div>
+<div markdown="1">
 You can even have a multiline code:
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - exec: >
           df['matchid_location_depcode'] = np.where(
@@ -169,11 +194,13 @@ You can even have a multiline code:
             "99",
             df['matchid_location_depcode'])
 ```
-
+</div>
+<div markdown="1">
 #### replace
 
 This methods applies regex on a selection of fields (matching itself a regex), in python style:
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - replace:
           select: matchid_location_city.*         # regex for selection
@@ -184,53 +211,57 @@ This methods applies regex on a selection of fields (matching itself a regex), i
             - (^|\s)st(\s|$): '\1saint\2'
             - ^aix pce$: aix provence
 ```
-
-#### normalize
+</div>
+<div markdown="1">#### normalize
 
 This method transforms a text to lowercase, removes accent and special characters on selected-by-regex fields :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - normalize:
           select: matchid_location_city.*
 ```
-
-#### pause
+</div>
+<div markdown="1">#### pause
 
 This recipe is an helper for debugging a recipe. It ends prematurely the recipe, not excecuting following steps.
 
 Complement helpers are a selection of fields (like keep) and of top rows (head) to limit the size of the treatment.
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - pause:
           select: matchid_location_city.*
           head: 50
 ```
-
-#### shuffle
+</div>
+<div markdown="1">#### shuffle
 
 Fully shuffles the data (each column independtly) using `np.random.permutation`. Used for anonymization.
 
 #### to_integer
 
 This recipe converts a selection-by-regex of columns from string to integers, fills not available value with NaN or a specified value.
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - to_integer:
           select: ^.*(population|surface).*
           fillna: 0
 ```
-
-#### to_float
+</div>
+<div markdown="1">#### to_float
 
 This recipe converts a selection-by-regex of columns from string to floats, fills not available value with NaN or specified value.
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - to_float:
           select: ^.*(frequency|).*
           fillna: 0
 ```
-
-#### list\_to\_tuple
+</div>
+<div markdown="1">#### list\_to\_tuple
 
 Converts a list to tuple, which can be used for indexing in a dataframe (e.g. groupby, etc.) for example.
 
@@ -241,33 +272,36 @@ Converts a tuple to a list.
 #### ngram
 
 Computes n-grams of selected columns
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - ngram:
           select: .*name.*
           n: [2, 3, 4] # computes 2-grams, 3-grams and 4-grams
 ```
-
-#### parsedate
+</div>
+<div markdown="1">#### parsedate
 
 This recipe converts a selection-by-regex of columns from string to a date/time type :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - parsedate :
           select: matchid_date_.*
           format: "%Y%m%d"               # standard python datetime format for parsing
 ```
-
-#### join
+</div>
+<div markdown="1">#### join
 
 This recipes acts like a SQL join, executed by chunks (so slower), tolerating fuzziness (so better).
 
 This fuzzy join is either in-memory (to match to small referential datasets; ie <500k) or based on elasticsearch (for > 500k to > 100M).
 
-** fuzzy, in-memory **
+**fuzzy, in-memory**
 
 In the following example we try to match both city label (fuzzily), departement code (strictly) and country iso code (strictly) to recover citycode history of a city :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - join:
           type : in_memory
@@ -281,14 +315,17 @@ In the following example we try to match both city label (fuzzily), departement 
             matchid_location_citycode_history: insee_code_history
             matchid_location_city: name
             matchid_location_city_geopoint_2d: geopoint_2d
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
-
-** simple join, in-memory **
+</div>
+<div markdown="1">
+**simple join, in-memory**
 
 This example is more frequent and easier but useful when you have multiple referential datasets (slower than a SQL join but
 can help to limit the number of in-between datasets) :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - join:
           dataset: french_citycodes
@@ -298,15 +335,17 @@ can help to limit the number of in-between datasets) :
           select:
             matchid_location_citycode_history: insee_code_history
 ```
-
-** large fuzzy match with elasticsearch **
+</div>
+<div markdown="1">
+**large fuzzy match with elasticsearch**
 
 This last example deals with the problem of big fuzzy match (up to millions against millions).
 
 Of course you'll need a big cluster if you want to deal with many millions of matches in less than a week!
 
 The fuzzy match just relies on pure elasticsearch queries transformed from json to yaml :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - join:
           type: elasticsearch
@@ -335,10 +374,9 @@ The fuzzy match just relies on pure elasticsearch queries transformed from json 
                                     query: matchid_date_birth_str
                                     fuzziness: 1
                       minimum_should_match: 1
-
-
 ```
-
+</div>
+<div markdown="1">
 The elasticsearch join can accept some configurations :
 
 - `unfold: False` (default `True`): each row return a bucket of potential matches.`unfold` splits this buckets into rows, like in a SQL-join operation. If `unfold` is `False`, buckets are returned raw to enable custom operations.
@@ -349,37 +387,44 @@ The elasticsearch join can accept some configurations :
 #### unfold
 
 This recipe splits a selection-by-regex columns of arrays in to multiple rows, copying the content of the other columns :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - unfold:
           select: ^hits
 ```
-
-#### unnest
+</div>
+<div markdown="1">#### unnest
 
 This recipe splits a selection-by-regex columns of jsons to multiple columns, one by key value of the JSON and delete previous columns :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - unnest:
           select: ^hits
           prefix: hit_ #prefix with 'hit_' the keys for name the columns, default prefix is empty
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
-
+</div>
+<div markdown="1">
 #### nest
 
 Gathers the selected columns and values into a json in the target column :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - nest:
           select: .*location.*
           target: location
 ```
-
+</div>
+<div markdown="1">
 #### groupby (no chunks)
 
 This computes a groupby and redispatchzq value across the group :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
      - groupby:
           select: matchid_id
@@ -389,22 +434,26 @@ This computes a groupby and redispatchzq value across the group :
           rank:
             - score
 ```
-
+</div>
+<div markdown="1">
 This method should be used without chunks unless you're sure each member of groups fit in same chunk.
 
 #### build_model (no chunks)
 
 This methods applies only on a full dataset an should have the flag `chunked: False` in the input dataset, e.g :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
   train_rescoring_model:
     input:
       dataset: rnipp_agrippa
       chunked: False    # <== this is the option to unckunk your dataset
 ```
-
+</div>
+<div markdown="1">
 To build a model, here's the way:
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
       - build_model:
           model:
@@ -421,24 +470,29 @@ To build a model, here's the way:
           categorical: .*(matchid_location_countrycode)$
           target: validation_decision      # name of the column to predict
 ```
-
+</div>
+<div markdown="1">
 
 #### apply_model
 
 To apply a model, you need to [build one first](#build_model) or use a pre-trained one.
 
 Models can only be applied to same data as in training aka same columns in the same order.
+</div>
 
+<div class="rf-highlight" markdown="1">
 ```
       - apply_model:
           name: rnipp_agrippa_ml                                              # name of the model to be applied
           numerical: .*(hit_score.*|population|surface|matchid_hit_distance)$ # selection-by-regex of numerical columns
           categorical: .*(matchid_location_countrycode)$                      # selection-by-regex of categorical columns
           target: matchid_hit_score_ml                                        # name of the column to save prediction
-
 ```
+</div>
 
-##Eval functions
+<div markdown="1">
+
+## Eval functions
 ----
 
 #### `geopoint("POINT(lon, lat")`
@@ -479,7 +533,7 @@ Compute minimum jaro-winkler distance between strings of list a and strings of l
 Computes n-grams of string a (with n in a int list here [2,3]) or n-grams of strings in list a.
 
 
-##SQL Recipes
+## SQL Recipes
 
 SQL often performs better dans Python as soon as you don't need long code implementations.
 We recommand to use it when performin join operations or simple tranformations.
@@ -491,7 +545,8 @@ Note that before to perform a SQL join operation you should have declared to dat
 Let's say that `clients` and `deaths` are our two datasets using the same connector (with the same name for the table). Suppose we also previously declared `clients_x_deaths` as a dataset using the same connector.
 
 Here's a simple example of SQL recipe :
-
+</div>
+<div class="rf-highlight" markdown="1">
 ```
 recipes:
   sql_matching:
@@ -521,9 +576,10 @@ recipes:
 
     output: clients_x_deaths
     steps:
-
 ```
 
+</div>
+<div markdown="1">
 Note that:
   - please mind the indentation, respecting the [YAML standard](https://yaml.org/spec/1.2/spec.html)
   - `test_chunk_size` (default 30) will apply as a 'LIMIT' on the input dataset (clients) and to the output result while you test the recipe. This is usefull to force to have a response in a decent time, but on the other way you may have
@@ -533,5 +589,5 @@ Note that:
   - the output dataset can be in a onther connector, so the SQL will be executed in the database of the input connector, then simply casted in the other connector
   - types are preserved if you cast in another dataset, with classical problem using SQL types, then Pandas, then the output connector (for example Elasticsearch). There is no universal translator for that, it will be your pain.
   - if you want a fast copy you can specify the `mode: expert` in the input datasource, only for Postgres. This is usually a bit faster as it uses the `copy_expert` method. the other hand, all types will be casted into string.
-
+</div>
 

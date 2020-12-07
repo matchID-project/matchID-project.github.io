@@ -19,7 +19,7 @@
 }
 
 @media (max-width:768px) {
-  .rf-highlight {
+  .rf-highlight, pre, .highlight-rouge, .highlight {
     overflow-x: scroll;
     max-width: calc(100vw - 2rem);}
   img {
