@@ -1,56 +1,92 @@
 ---
 layout: default
 permalink: starting
-description: "run it with docker"
-title: Starting matchID
-width: is-10
+description: installer et lancer l'outil de développement de traitements en 2 minutes
+image: persona_5-1.svg
+imageTX: -40px
+imageTY: 90px
+title: Débuter avec matchID
+customLayout: true
 ---
 
-# Starting a development matchID server
+<div class="rf-col-xl-6 rf-col-md-12">
+    <h3>Prérequis</h3>
+    <p>
+    matchID nécessite de disposer <code>make</code> et <code>git</code> au préalable. Sur Ubuntu, <code>docker</code> et les outils prérequis sont automatiquement installés.
+    </p>
+    <p class="rf-text--xs">
+    Notes: <br>
+    Sous d'autres distributions linux, Mac ou Windows, installez <code>docker</code>, <code>docker-composer</code>, et <code>jq</code>.<br>
+    Si vous utilisez un proxy utilisez les variables d'environnement <code>http_proxy</code> et <code>https_proxy</code>. Hors ligne, il suffit de télécharger en plus les <a title="images docker" href="https://hub.docker.com/repository/docker/matchid/">images <code>docker</code></a><br>.
+    </p>
+</div>
 
-[![install video on yu](https://img.youtube.com/vi/Sus23GbLT5I/0.jpg)](https://www.youtube.com/watch?v=Sus23GbLT5I)
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-8w" style="z-index:-100;">
+    <table class="rf-table">
+        <thead>
+            <tr>
+                <td>Environnement</td>
+                <td>Configuration</td>
+                <td>Capacité</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cas simple</td>
+                <td>2vCPU, 2Go, SSD 10Go</td>
+                <td>croiser 10k x 1M identés</td>
+            </tr>
+            <tr>
+                <td>Cas nominal</td>
+                <td>8vCPU 16Go, SSD 50Go</td>
+                <td>croiser 500k x 30M identés</td>
+            </tr>
+            <tr>
+                <td>Cas complexe</td>
+                <td>256Go à 1To, SSD 50Go</td>
+                <td>croiser 100M x 100M identés</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-A laptop with >8Go configuration is recommended to have a first look at `matchID`. Good performance needs higher computational resources (the higher the better : 16-cores + 128Go will be 15x faster than a laptop, we tested up-scaling to 40-cores getting to 40x faster).
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-8w">
+    <img alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif/">
+</div>
 
-`matchID` uses `make` and `Docker` to accelerate the installation of dependencies. You'll first have to install `Docker` and `docker-compose`.
+<div class="rf-col-xl-6 rf-col-md-6">
+    <h3>Démarrer en une minute</h3>
+    <p>
+        Clônez le code source et rentrez dans le répertoire
+        <p class="rf-highlight">
+            <code>
+            git clone https://github.com/matchID-project/backend<br>
+            cd backend
+            </code>
+        </p>
+    </p>
+    <p>
+        Lancez matchID:
+       <p class="rf-highlight">
+            <code>
+            make up
+            </code>
+        </p>
+    </p>
+    <p class="rf-text--xs">
+        En cas de problème ou de configuration avancée, reportez vous à la section
+        <a title="dépannage" href="/automation#troubleshooting">section dépannage</a>.
+    </p>
+</div>
 
-Clone the project and go into it: 
-
-```
-git clone https://github.com/matchID-project/backend
-cd backend
-```
-
-If your host does not have Docker on it yet, your should install it first (only tested with Ubuntu 16.04) :
-
-```
-make install-prerequisites
-```
-
-If you're running on other systems (like MacOS) you should go to the official [Docker install page](https://docs.docker.com/install/), and don't forget to install [`docker-compose`](https://docs.docker.com/compose/install/) too. 
-
-Note: when working in a private network you'll have to pass proxies. If you're behind a reverse proxy, you may have to declare them in your `ENV`:  
-
-```
-export http_proxy=http://10.23.15.33:3128
-export https_proxy=https://10.23.15.33:3128
-```
-
-Don't forget to configure your host technologies (`apt | apk | yum & docker`). 
-
-Now you can start the tutorial mode which downloads, compiles necessary stuff, and launches the backend, frontend as well as elasticsearch :
-
-```
-make start
-```
-
-This may take some time as this handles multiple actions. See the [architecture](automation) to discover more about the components.
-
-Any problems ? Check the [troubleshooting](automation#troubleshooting) section.
-
-Now, you can go to your `matchID` server : 
-
-- [http://localhost:8081/matchID/](http://localhost:8081/matchID/)
-
-<img src="assets/images/frontend-start.png" alt="matchID projects view">
-
+<div class="rf-col-xl-12 rf-col-md-12">
+    <p>
+    Rendez-vous sur votre navigateur sur:
+       <p class="rf-highlight">
+            <code>
+            <a href="http://localhost:8081/matchID/" title="serveur local matchID">http://localhost:8081/matchID/</a>
+            </code>
+        </p>
+        <img src="assets/images/frontend-start.png" alt="matchID projects view">
+    </p>
+</div>
