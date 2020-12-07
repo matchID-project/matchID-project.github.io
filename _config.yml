@@ -2,22 +2,37 @@ name: matchID
 title: matchID project
 email: martingross89@gmail.com
 description: |
-  Ultra-high matching on people's identites with the help of Machine Learning.
+  Traitements d'identités
   <br/><br/>
-  Companies / administrations / developers use it to remove duplicates
+  Entreprises, administrations, développeurs
   <br/>
-  or to match identities of people between different databases.
+  mettez en qualité et appariez vos bases de quelques milliers à cent millions d'identités
 baseurl: ""
-url: "https://matchID-project.github.io"
+url: "https://matchid.io"
 
 authors:
-  fabien:
-    name: Fabien ANTOINE
+  - name: Fabien ANTOINE
+    image: fabien.jpeg
     github: rhanka
-    email: fabien.antoine@interieur.gouv.fr
-  martin:
-    name: Martin GROSS
+    email: fabien.antoine@m4x.org
+    desc: Fabien est ingénieur et travaille au sein de ministères régalien sur la data et l'IA.
+          Concepteur de matchID et de deces.matchid.io, il développe toujours avec plaisir
+          les algorithmes aussi bien que les UI, sur son temps libre.
+    twitter: fabien_antoine
+  - name: Cristian PEREZ BROKATE
+    github: critianpb
+    image: cristian.jpeg
+    email: cristian.perez-brokate@interieur.gouv.fr
+    twitter: cris_perez_b
+    desc: Cristian est phD passionné de développement et technologie, expert en deeplearning. Il travaille
+          aujourd'hui au ministère de l'Intérieur, où il a créé <a href="https://iaflash.fr">IA Flash</a>, et
+          contribue activement à matchID avec la création de l'API décès.
+  - name: Martin GROSS
+    desc: Martin est ingénieur et cofondateur de <a href="https://commoprices.com">CommoPrices.com</a>, la plus grosse plateforme de prix de
+          matières premières he world biggest portal of commodity prices.
+          Il a développé l'interface de validation de matchID pendant son challenge EIG.
     github: tainmar
+    image: martin.jpeg
     email: martingross89@gmail.com
     twitter: tainmar
 
