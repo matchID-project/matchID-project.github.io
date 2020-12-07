@@ -4,10 +4,11 @@ permalink: recipes
 description: How matchID supercharges your powers with recipes
 title: Recipes
 width: is-10
+image: persona_cooking.svg
 ---
 
-> **A recipe consist of steps of treatments made on rows and colums.**  
-The dataset is scanned by chunks, which are loaded into a Pandas dataframe.  
+> **A recipe consist of steps of treatments made on rows and colums.**
+The dataset is scanned by chunks, which are loaded into a Pandas dataframe.
 So a recipe is basically a treatment on a chunk from a dataframe, resulting into a transformed dataframe.
 
 A recipe can call :
@@ -18,7 +19,7 @@ A recipe can call :
 - the internal "eval" function gives access to create/modify columns based on a row function (e.g col1+col2) into recipes
 
 
-# Quick access to recipes and functions
+##Quick access to recipes and functions
 ----
 
 
@@ -46,7 +47,7 @@ Summary:
  - [groupby](#groupby)
  - [build_model](#build_model-no-chunks)
  - [apply_model](#apply_model)
-	 
+
  - [`geopoint("POINT(lon, lat")`](#geopointpointlon-lat)
  - [`distance((lat a,lon a), (lat b, lon b))`](#distancelat-alon-a-lat-b-lon-b)
  - [`replace_dict(object,dic)`](#replace_dictobjectdic)
@@ -61,10 +62,10 @@ Summary:
  - [SQL recipes](#sqlrecipes)
 
 
-# Internals recipes
+##Internals recipes
 ----
 
-### map
+#### map
 
 This recipe creates new columns to the dataframe, simply based on others.
 
@@ -78,7 +79,7 @@ This recipe creates new columns to the dataframe, simply based on others.
             - datasetAlpha_CODE_INSEE_NAISSANCE           # [ datasetAlpha_COMMUNE_NAISSANCE, datasetAlpha_CODE_INSEE_NAISSANCE ]
 ```
 
-### keep
+#### keep
 
 This recipe keeps only columns matching a regex, with an optional `where` condition :
 
@@ -96,7 +97,7 @@ or in an explicit list :
             - matchid_name_last
 ```
 
-### delete
+#### delete
 
 This recipe deletes columns matching a regex :
 
@@ -112,7 +113,7 @@ or in an explicit list :
             - datasetAlpha_DATE_NAISSANCE
 ```
 
-### rename
+#### rename
 
 Renames columns of a dataframe :
 
@@ -123,7 +124,7 @@ Renames columns of a dataframe :
 
 ```
 
-### eval
+#### eval
 
 This is the swiss-knife recipe which evaluates a treatment row by row.
 A new column value will have a cell value computed with a python expression.
@@ -141,9 +142,9 @@ Here's an example:
 
 [Here](#eval-functions) are some of the implemented functions.
 
-*WARNING*: the eval function uses `pd.Dataframe.apply` row-by-row which is easy but sub-optimal for large datasets. You should consider to optimize your `eval` draft with an `exec` as soon as possible. Using vectorized function can lead to 100x accelerations. 
+*WARNING*: the eval function uses `pd.Dataframe.apply` row-by-row which is easy but sub-optimal for large datasets. You should consider to optimize your `eval` draft with an `exec` as soon as possible. Using vectorized function can lead to 100x accelerations.
 
-### exec
+#### exec
 
 Every dataengineer or datascientist wants to optimize the algorithm knowing what it does.
 
@@ -169,7 +170,7 @@ You can even have a multiline code:
             df['matchid_location_depcode'])
 ```
 
-### replace
+#### replace
 
 This methods applies regex on a selection of fields (matching itself a regex), in python style:
 
@@ -184,7 +185,7 @@ This methods applies regex on a selection of fields (matching itself a regex), i
             - ^aix pce$: aix provence
 ```
 
-### normalize
+#### normalize
 
 This method transforms a text to lowercase, removes accent and special characters on selected-by-regex fields :
 
@@ -193,7 +194,7 @@ This method transforms a text to lowercase, removes accent and special character
           select: matchid_location_city.*
 ```
 
-### pause
+#### pause
 
 This recipe is an helper for debugging a recipe. It ends prematurely the recipe, not excecuting following steps.
 
@@ -205,11 +206,11 @@ Complement helpers are a selection of fields (like keep) and of top rows (head) 
           head: 50
 ```
 
-### shuffle
+#### shuffle
 
 Fully shuffles the data (each column independtly) using `np.random.permutation`. Used for anonymization.
 
-### to_integer
+#### to_integer
 
 This recipe converts a selection-by-regex of columns from string to integers, fills not available value with NaN or a specified value.
 
@@ -219,7 +220,7 @@ This recipe converts a selection-by-regex of columns from string to integers, fi
           fillna: 0
 ```
 
-### to_float
+#### to_float
 
 This recipe converts a selection-by-regex of columns from string to floats, fills not available value with NaN or specified value.
 
@@ -229,15 +230,15 @@ This recipe converts a selection-by-regex of columns from string to floats, fill
           fillna: 0
 ```
 
-### list\_to\_tuple
+#### list\_to\_tuple
 
 Converts a list to tuple, which can be used for indexing in a dataframe (e.g. groupby, etc.) for example.
 
-### tuple\_to\_list
+#### tuple\_to\_list
 
 Converts a tuple to a list.
 
-### ngram
+#### ngram
 
 Computes n-grams of selected columns
 
@@ -247,17 +248,17 @@ Computes n-grams of selected columns
           n: [2, 3, 4] # computes 2-grams, 3-grams and 4-grams
 ```
 
-### parsedate
+#### parsedate
 
 This recipe converts a selection-by-regex of columns from string to a date/time type :
 
 ```
       - parsedate :
           select: matchid_date_.*
-          format: "%Y%m%d"               # standard python datetime format for parsing   
+          format: "%Y%m%d"               # standard python datetime format for parsing
 ```
 
-### join
+#### join
 
 This recipes acts like a SQL join, executed by chunks (so slower), tolerating fuzziness (so better).
 
@@ -345,16 +346,16 @@ The elasticsearch join can accept some configurations :
 - `unnest: False`(default: `True`) - by default, the elasticsearch values are splitted into columns. If `False`, the raw elasticsearch hits are returned one by row but in a column 'hit' which contains the json.
 - `prefix: myprefix_` (default: `hit_`) - customize prefix of the keys from the elasticsearch hits.
 
-### unfold
+#### unfold
 
 This recipe splits a selection-by-regex columns of arrays in to multiple rows, copying the content of the other columns :
 
 ```
      - unfold:
-          select: ^hits        
+          select: ^hits
 ```
 
-### unnest
+#### unnest
 
 This recipe splits a selection-by-regex columns of jsons to multiple columns, one by key value of the JSON and delete previous columns :
 
@@ -365,7 +366,7 @@ This recipe splits a selection-by-regex columns of jsons to multiple columns, on
 
 ```
 
-### nest
+#### nest
 
 Gathers the selected columns and values into a json in the target column :
 
@@ -375,7 +376,7 @@ Gathers the selected columns and values into a json in the target column :
           target: location
 ```
 
-### groupby (no chunks)
+#### groupby (no chunks)
 
 This computes a groupby and redispatchzq value across the group :
 
@@ -391,7 +392,7 @@ This computes a groupby and redispatchzq value across the group :
 
 This method should be used without chunks unless you're sure each member of groups fit in same chunk.
 
-### build_model (no chunks)
+#### build_model (no chunks)
 
 This methods applies only on a full dataset an should have the flag `chunked: False` in the input dataset, e.g :
 
@@ -422,7 +423,7 @@ To build a model, here's the way:
 ```
 
 
-### apply_model
+#### apply_model
 
 To apply a model, you need to [build one first](#build_model) or use a pre-trained one.
 
@@ -437,55 +438,55 @@ Models can only be applied to same data as in training aka same columns in the s
 
 ```
 
-# Eval functions
+##Eval functions
 ----
 
-### `geopoint("POINT(lon, lat")`
+#### `geopoint("POINT(lon, lat")`
 Maps a string `POINT(lon, lat)` to a numerical tuple `(lat,lon)`.
 
-### `distance((lat a, lon a), (lat b, lon b))`
+#### `distance((lat a, lon a), (lat b, lon b))`
 Calculates vincenty (from geopy.distance) distance between two wgs84 (lat,lon) tuples.
 
-### `replace_dict(object, dic)`
+#### `replace_dict(object, dic)`
 Replaces all values by key from dictionnary `dic` like `{"key1": "value1", "key2": "value2"}` into `object` which can be a string, an array or a dictionnary (replace into values which strictly match).
 
-### `replace_regex(object, dic)`
+#### `replace_regex(object, dic)`
 Replaces all values by regex from dictionnary `dic` like `{"regex1": "value1", "regex2": "value2"}` into `object` which can be a string, a array or a dictionnary.
 
-### `normalize(object)`
+#### `normalize(object)`
 `object` may be either a string (or unicode) or an array of strings. For each string value, lower-cases the value, removes accents and special characters.
 
-### `tokenize(object)`
+#### `tokenize(object)`
 `object` may be either a string (or unicode) or an array of strings. For each string value, split with `\s+ separator`.
 nltk tokenizers could be integrated here later.
 
-### `flatten(list)`
+#### `flatten(list)`
 flattens the list, ie `[[a,b],[c]]` returns `[a,b,c]`.
 
-### `sha1(object)`
+#### `sha1(object)`
 Computes the sha1 hash key of `str(object)`.
 
-### `levenshtein(str a, str b)`
+#### `levenshtein(str a, str b)`
 Computes levenshtein distance between string a and string b. Current version is just a wrapping.
 
-### `levenshtein_norm(obj a, obj b)`
+#### `levenshtein_norm(obj a, obj b)`
 Computes normalized levenshtein distance between string a and string b, or minimum of levenshtein_norm between list of strings a and list of strings b.
 
-### `jw(obj a, obj b)`
+#### `jw(obj a, obj b)`
 Compute minimum jaro-winkler distance between strings of list a and strings of list b.
 
-### `ngrams(object a, n=[2,3])`
+#### `ngrams(object a, n=[2,3])`
 Computes n-grams of string a (with n in a int list here [2,3]) or n-grams of strings in list a.
 
 
-# SQL Recipes
+##SQL Recipes
 
 SQL often performs better dans Python as soon as you don't need long code implementations.
 We recommand to use it when performin join operations or simple tranformations.
 
 matchID now includes a Postgres database, but could be used with other SQL alchemy compatible database. If it doesn't work please report an [issue on Github](https://github.com/matchID-project/backend/issues).
 
-Note that before to perform a SQL join operation you should have declared to datasets in the same database. Be careful about the tables names which may differ between the dataset and the tables. 
+Note that before to perform a SQL join operation you should have declared to datasets in the same database. Be careful about the tables names which may differ between the dataset and the tables.
 
 Let's say that `clients` and `deaths` are our two datasets using the same connector (with the same name for the table). Suppose we also previously declared `clients_x_deaths` as a dataset using the same connector.
 
@@ -495,11 +496,11 @@ Here's a simple example of SQL recipe :
 recipes:
   sql_matching:
     test_chunk_size: 100
-    input: 
+    input:
       dataset: clients
       chunk: 1000
       select: >
-        select 
+        select
           clients.*,
           -- you must be careful about columns names potential collisions
           deaths.matchid_id as hit_matchid_id,
@@ -512,12 +513,12 @@ recipes:
         from clients, deaths
           where
             (
-              levenshtein(clients.matchid_name_last, deaths.matchid_name_last)<3 
+              levenshtein(clients.matchid_name_last, deaths.matchid_name_last)<3
               and levenshtein(clients.matchid_name_first, deaths.matchid_name_first)<3
               and clients.matchid_location_depcode = deaths.matchid_location_depcode
               and clients.matchid_birth_date = deaths.matchid_birth_date
             )
-          
+
     output: clients_x_deaths
     steps:
 
@@ -531,6 +532,6 @@ Note that:
   - you can still use recipes after the request within the steps, the result of the request will be executed in the Python processor
   - the output dataset can be in a onther connector, so the SQL will be executed in the database of the input connector, then simply casted in the other connector
   - types are preserved if you cast in another dataset, with classical problem using SQL types, then Pandas, then the output connector (for example Elasticsearch). There is no universal translator for that, it will be your pain.
-  - if you want a fast copy you can specify the `mode: expert` in the input datasource, only for Postgres. This is usually a bit faster as it uses the `copy_expert` method. the other hand, all types will be casted into string. 
+  - if you want a fast copy you can specify the `mode: expert` in the input datasource, only for Postgres. This is usually a bit faster as it uses the `copy_expert` method. the other hand, all types will be casted into string.
 
 

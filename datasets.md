@@ -3,10 +3,11 @@ layout: default
 permalink: datasets
 description: from csv to elasticsearch
 title: Datasets
+image: Database.svg
 width: is-10
 ---
 
-# **Connectors**
+## **Connectors**
 Connectors are a declaration to a filesystem or database.
 
 Supported connectors are:
@@ -15,7 +16,7 @@ Supported connectors are:
 - Elasticsearch
 - PostGreSQL
 
-SQLAlchemy is used for PostGreSQL and should could be any SQL connexion, but only PostGreSQL has at been tested yet. 
+SQLAlchemy is used for PostGreSQL and should could be any SQL connexion, but only PostGreSQL has at been tested yet.
 See the [connectors roadmap](/roadmap#connectors) for support of other databases in the future.
 
 Default connectors are included in the initial configuration (and can me modified or removed):
@@ -33,7 +34,7 @@ connectors:
   upload:
     type: filesystem
     database: upload/
-    chunk: 2000                 # <==== default chunks size (number of rows) for reading and writing the datasets 
+    chunk: 2000                 # <==== default chunks size (number of rows) for reading and writing the datasets
   referential_data:
     type: filesystem
     database: referential_data/
@@ -49,13 +50,13 @@ connectors:
     chunk: 500                 # <===== default number of row for read and write
     chunk_search: 20           # <===== default number of rows for bulk search
   postgres:
-    type: sql    
-    uri: postgres://user:password@postgres:5432 # <==== URI for SQL Alchemy 
+    type: sql
+    uri: postgres://user:password@postgres:5432 # <==== URI for SQL Alchemy
     chunk: 2000
 ```
 
 
-# **Datasets**
+## **Datasets**
 
 Datasets are a file, a set of files, a table or an index within a connector.
 
@@ -69,17 +70,17 @@ datasets:
 
 
 
-## filesystem datasets
+### filesystem datasets
 
-### NO EXCEL NOR OPENDOCUMENT HERE ! 
+#### NO EXCEL NOR OPENDOCUMENT HERE !
 
 Note that we'll probably never make the effort of dealing with excel (xls, xlsx) and opendocument (odt) formats as they are too rich to be processed efficiently and with stability. Even if formatting is cute, it is meaning-less in an automation world, where formatting has to be carried by metadatas, which have to be data by themselves.
 
 If you want to be serious about re-producing data transformation you have to forget about editing manually data without making it auditable, and self-certification is a wrong security pattern in a globally connected world.
 
-So you'll have to meet us half way and export your excel files in csv, and know what is your business process to version your data. 
+So you'll have to meet us half way and export your excel files in csv, and know what is your business process to version your data.
 
-### CSV
+#### CSV
 
 Comma-separated files have been the classical I/O in opendata for many years. Even if it's quite a mess for data types, it is a go-between, between strongly structured format like XML for IT specialists and the mainstream office excel-style.
 
@@ -96,7 +97,7 @@ If you're familiar with using many sources you know CSV is not standard and that
 | compression| infer      | None, gzip ...| specify if compressed               |
 | skiprows   | 0          | *any number*    | skip n rows before processing       |
 
-### Fwf
+#### Fwf
 
 This is the old brother of the CSV, the fixed-width tabular is a variant, but in some cases this will be more stable to parse your tabular files as fixed width. Often Oracle or PostGreSQL exports are to be parsed like that.
 
@@ -110,19 +111,19 @@ This is the old brother of the CSV, the fixed-width tabular is a variant, but in
 | compression| infer      | None, gzip ...| specify if compressed               |
 | skiprows   | 0          | *any number*    | skip n rows before processing       |
 
-### msgpack
+#### msgpack
 
 Well you may not be familiar with that format. This is a simple and quite robust format for backing up data when the data is typed. We could have chosen HDFS (strong, but boring for integration, and ageing), json/bson (quite slow), or pickle (too much instability between versions), or parquet (seducing, but the pandas library doesn't deal well with chunks).
 
-### other formats
+#### other formats
 
 Check the [roadmap](/roadmap#files) about future support for json, xml or any other type.
 
-## (PostGre)SQL
+### (PostGre)SQL
 
 There is no specific option when using a (PostGre)SQL dataset at the moment.
 
-## elasticsearch datasets
+### elasticsearch datasets
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
@@ -136,7 +137,7 @@ There is no specific option when using a (PostGre)SQL dataset at the moment.
 | safe       | True       | False         | doesn't use `_id` field to index, which can lead to doubles when retrying |
 | chunk_search|*connector value* | *any number*  | number of row for search queries when using fuzzy join |
 
-### index settings, mapping
+#### index settings, mapping
 
 The big challenge with elasticsearch datasets and scaling is the tuning possibilities. The `body` value is the equivalent of the `body` value when creating the index with curl, except it is written in `yaml` instead of `json`, which makes it easier to read.
 
@@ -147,7 +148,7 @@ datasets:
   my_dataset:
     connector: elasticsearch
     table: my_dataset
-    body: 
+    body:
       settings:
         index.refresh_interval: 30s     # <==== disable the "instant" indexing, which speed up indexing
         index.number_of_replicas: 0     # <==== disable replicas, which speeds up indexing
@@ -158,7 +159,7 @@ datasets:
           _all:                         # <==== disable "_all" fileds indexing, for speeding up
             enabled: False
           dynamic: False
-          properties:                   # <==== specify here the fields only needed for fuzzy join 
+          properties:                   # <==== specify here the fields only needed for fuzzy join
             matchid_id:
               type: keyword
             matchid_name_match:
@@ -174,7 +175,7 @@ datasets:
 For large clusters, you have to choose between low and large `number_of_replicas` for more robust indices.
 The body setting can be used for specific indexing and parsing, like `ngrams` and phonetics.
 
-### Validations options
+#### Validations options
 
 Elasticsearch can be used to validate matches (as seen in [tutorial](/tutorial#step-3-validate-matches-and-train-rescoring-with-machine-learning).
 
@@ -192,7 +193,7 @@ Validation mode is configured with the `conf/matchID_validation.conf` file for d
 
 ```
     ....
-    validation: 
+    validation:
       actions:
         display: true
         action:
@@ -200,7 +201,7 @@ Validation mode is configured with the `conf/matchID_validation.conf` file for d
           indecision_display: true   # if you don't want to use indecision
         done:
           label: Status
-      elasticsearch:           
+      elasticsearch:
         size: 200                    # number of search
       columns:                       # colum specific action
         - field: matchid_id
@@ -256,8 +257,8 @@ Validation mode is configured with the `conf/matchID_validation.conf` file for d
           appliedClass:
             head: head-centered
             body: has-text-centered
-        - field: matchid_clique_size    # example of an added field       
-          label: Group size             
+        - field: matchid_clique_size    # example of an added field
+          label: Group size
           display: true
           searchable: false
           callBack: formatNumber
