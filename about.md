@@ -1,95 +1,61 @@
 ---
 layout: default
 permalink: about
-description: The story behind matchID
-title: About
-width: is-8
+description: l'histoire de matchID
+title: À propos
+image: persona_13-16.svg
+customLayout: true
 ---
 
-# Entrepreneur d'Intérêt Général (EIG)
-----
 
-At the end of 2016, the French President launched a new program largely inspired by Barack Obama's Presidential Innovation Fellows (PIF).
+<div class="rf-col-xl-6 rf-col-md-12">
+    <h3>matchID</h3>
+    <p>
+    Fin 2016, la présidence de la République engageait un nouveau programme, <strong>
+    <a titile="entrepreneur d'intérêt général" href="https://entrepreneur-interet-general.etalab.gouv.fr/">Entrepreneur d'Intérêt Général</a></strong>, dont la première session eu lieu entre janvier et octobre 2017.
+    </p>
+    <p>
+    Martin fut sélectionné pour le challenge du ministère de l'Intérieur, sous le mentorat de Daniel ANSELLEM, de Fabien ANTOINE.
+    </p>
+    <p>
+    Le challenge: retirer les personnes décédées (<strong> 25 millions</strong>) au permis de conduire (<strong>52 millions d'identité</strong>), pour de respect du droit à l'oubli (RGPD), la fiabilisation des statistiques, et l'évaluation de fraudes éventuelles.
+    </p>
+    <p>
+    Fabien et Martin se sont rencontrés alors, et se sont décidés pour lancer le projet open-source matchID. Bien sûr, le challenge a été remporté !
+    </p>
+</div>
 
-This program was called [Entrepreneur d'Intérêt Général](https://entrepreneur-interet-general.etalab.gouv.fr/) and the first session took place from January 2017 to October 2017.
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-12w">
+  <iframe class="rf-mt-4w" frameborder="0" width="100%" height="70%"
+      src="https://www.dailymotion.com/embed/video/x7okqx1"
+      allowfullscreen
+      allow="autoplay; fullscreen">
+  </iframe>
+</div>
 
-Martin was picked for one of the challenge inside French Ministry of Interior, under the supervision of Daniel ANSELLEM and Fabien ANTOINE.
-That is there that Fabien and Martin met and decided to launch matchID as an open-source project.
+<div class="rf-col-xl-6 rf-col-md-12 rf-mt-6w">
+  <div style="overflow:hidden">
+  <iframe class="rf-mt-4w" frameborder="0" width="100%" height="520px"
+      scrolling="no" style="margin-top: -200px;"
+      src="https://deces.matchid.io/search?q=Pompidou%20Georges"
+      allowfullscreen
+      allow="autoplay; fullscreen">
+  </iframe>
+  </div>
+</div>
 
-# The challenge
-----
-
-**The challenge consisted in suppressing all the deaths from French Driving Licenses database.**
-
-Basic `SQL` without fuzziness allowed 70+ % of matching between deaths' database and drivers' database.
-But to reach higher levels of matching (**recall** and **precision**), we needed better *data cleansing*, *fuzzy matching* and *matching learning*.
-
-# First tries and refactoring
-----
-
-Our first attempts to get high results were successful thanks to *Data Science Studio* from the company *Dataiku*.
-
-But, as we were talking about our solution to match people's identities inside the French administration, many people asked if they could use it on their own datasets. For many administrations, licenced software are strictly controled.
-
->  So we decided to rewrite our project totally and to create adaptative solution for record linkage with a focus on performance evaluation. You get it now, it's **matchID**.
-
-# Use cases
-
-There is a large variety on record linkage use cases. Here is a non-exhaustive list of use cases which justify an adaptative solution :
-
-  * completion or search
-  * statistics reliability
-  * duplicates and data quality
-  * crossing datasources for creating new value
-  * screening or fraud detection
-
-Some questions to ask :
-  * which are the identifiers : first and last names, birth date and location, address, ...
-  * what's the reliability of your data sources (duplicates, )
-  * what part of the population do you cover ? the more you have the more ambiguity your have - cf the <a href="https://en.wikipedia.org/wiki/Birthday_problem"> birthday problem)
-  * do you try to match all people of one of your datasets ?
-  * where are you data sources ?
-
-Depending on all of these question, the solution can be very different. All use cases should be implemented whith matchID, but we only implemented a dozen of use cases and each needed specific piplines. We do our best to pulish every code but every use case has to be anonymized and publishing is a work by itself, we do it regularily.
-
-# Iterate, evaluate - organization
-
-We had some fails in methodolgy. Depending of your time, organisation and compuation power you can have various approaches. 
-
-You should first ask how to iterate quick and evaluate as soon as possible your results. And add consuming algorithms depending of your first results. 
-
-Evaluation should drive every decision, and thus annotation is necessary. Annoating a hundred and progressively more depending of your use case should be a focus of your organisation. If you plan to have a precision of 99.99% you will have to do more than 10k annotation. It's time consuming but depends of what you want.
-
-# Advantages of matchID
-----
-
-  * Annotation tool for evaluation
-  * Free and open source
-  * Easy access to standard and custom algorithms with Python (even machine learning) 
-  * Can handle most sources (csv, SQL, elasticsearch)
-  * Algorithm automation
-  * Implement your algorithm as an api with no effort
-  * Easy deployment and scalability (with docker)
-
-# Data flow
-----
-<figure class="image is-8">
- <img src="assets/images/workflow.png">
-</figure>
-
-# Technical stack
-----
-
-  * Python
-  * Elasticsearch
-  * Docker
-  * VueJs
-
-
-
-# Why open sourcing ?
-----
-
-A project cannot easily live inside an administration without being open-sourced.
-
-So we open-sourced it. No risk of divulging secret defense stuff and so, you will not have all of our [recipes](/recipes) - only the best algorithms.
+<div class="rf-col-xl-6 rf-col-md-12">
+    <h3><a href="https://deces.matchid.io" title="moteur de recherche des décès">deces.matchid.io</a></h3>
+    <p>
+    Fin 2019, l'INSEE a ouvert le <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/" title="fichier des décès"> fichier des décès </a> ayant favorisé la création de matchID. Pour étendre l'usage de ces données.
+    </p>
+    <p>
+    Fabien a lancé <a href="https://deces.matchid.io" title="moteur de recherche des décès">deces.matchid.io</a> au premier janvier 2020, inspiré d'une démonstration que Martin avait initié pendant le challenge.
+    </p>
+    <p>
+    Depuis, Cristian PEREZ BROKATE, phD et EIG de la troisième session, et ayant produit <a href="https://iaflash.fr">IA-Flash</a> a pris une part pleine au projet, en initiant l'<strong><a href="https://deces.matchid.io/deces/api/v1/docs/" title="API des décès">API des décès</a></strong>.
+    </p>
+    <p>
+    Le produit est utilisé par plus de 2000 généalogistes chaque jour, et des professionnels de la santé pour fiabiliser leurs fichiers clients.
+    </p>
+</div>
