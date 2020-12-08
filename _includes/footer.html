@@ -3,7 +3,7 @@
     <div class="rf-text--center">
       <p>
         <strong>
-          the authors :
+          Les développeurs
         </strong>
       </p>
     </div>
@@ -18,11 +18,11 @@
             </div>
           {% endif %}
           <div class="rf-card__body">
-            <h4 class="rf-card__lead">{{ author.name }}</h4>
+            <h4 class="rf-card__lead rf-text--center">{{ author.name }}</h4>
             <p class="rf-card__desc rf-text--xs">
               {{ author.desc }}
             </p>
-            <p>
+            <p class="rf-text--center">
               <a href="{{author.github | prepend: site.github_url}}" class="rf-link">
                 <span class="iconify" data-icon="ri:github-line"></span>
               </a>
