@@ -39,17 +39,18 @@
         <div class="rf-container rf-mb-3w">
           <div class="rf-grid-row">
             <div class="rf-col-12 rf-background--bf rf-hide--mobile" style="min-height:17rem;">
-              <div class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow">
+              <div style="z-index:0;" class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow">
                 {% if page.image %}
                 <div class="rf-card__img rf-card__img--fit {% if page.image_flip %} rf-img__flip {% endif %}">
                   <img
                     src="/assets/images/{{page.image}}"
-                    style="transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
-                            {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %};"
+                    style="z-index: 1;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
+                            {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %}
+                            {% if page.imageScale %}scale({{page.imageScale}}){% endif %};"
                     />
                 </div>
                 {% endif %}
-                <div class="rf-card__body rf-mt-3w rf-mb-3w rf-ml-3w">
+                <div style="z-index: 20;" class="rf-card__body rf-mt-3w rf-mb-3w rf-ml-3w">
                   <h1 class="rf-card__lead rf-color--white">
                     {{ page.title }}
                   </h1>

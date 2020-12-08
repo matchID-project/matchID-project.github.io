@@ -168,7 +168,9 @@ border-radius: 0 .25rem 0 0;
 .rf-background--bf {
   background-color: var(--bf500)!important;
 }
-
+.rf-background--bs {
+  background-color: var(--bs500)!important;
+}
 .rf-background--rm {
   background-color: var(--rm500)!important;
 }
@@ -266,6 +268,15 @@ border-radius: 0 .25rem 0 0;
   right: 16px;
 }
 
+.rf-tile__img.rf-m-0 {
+  margin: 0;}
+
+.rf-tile__img.rf-m-1w {
+  margin: 0.5rem;}
+
+.rf-tile__img.rf-m-2w {
+  margin: 1rem;}
+
 .rf-card__lead .rf-fi--icon svg {
   margin-bottom: -1px;
 }
@@ -295,6 +306,15 @@ border-radius: 0 .25rem 0 0;
   min-width: 48px !important;
   background: var(--beige)
 }
+
+.rf-card__img.rf-card__img-3-4 {
+  padding-bottom: 75%
+}
+
+.rf-card__img.rf-card__img-1-1 {
+  padding-bottom: 100%
+}
+
 
 .rf-card--md .rf-card__img {
   width: 64px !important;
@@ -364,7 +384,7 @@ border-radius: 0 .25rem 0 0;
 .rf-card h4 {
   font-size: 1.375rem;
   line-height: 1.375;
-  font-weight: normal; }
+  font-weight: bold; }
 
 .rf-select--aside {
   width: 32px!important;
