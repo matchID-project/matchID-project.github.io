@@ -83,8 +83,8 @@ customLayout: true
 </div>
 <div class="rf-col-xl-1 rf-col-md-12"></div>
 
-<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf rf-hero">
-  <h2 class="rf-color--white">
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bs rf-hero">
+  <h2 class="rf-color--white rf-ml-2w">
     Étape 1: préparer et indexer le fichier de référence (deaths)
   </h2>
 </div>
@@ -227,8 +227,8 @@ customLayout: true
   </div>
 </div>
 
-<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf rf-hero">
-  <h2 class="rf-color--white">
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bs rf-hero">
+  <h2 class="rf-color--white rf-ml-2w">
     Étape 2: préparation et match des clients
   </h2>
 </div>
@@ -346,8 +346,8 @@ recipes:
 </div>
 </div>
 
-<div class="rf-col-xl-12 rf-col-md-12 rf-background--bf rf-hero">
-  <h2 class="rf-color--white">
+<div class="rf-col-xl-12 rf-col-md-12 rf-background--bs rf-hero">
+  <h2 class="rf-color--white rf-ml-2w">
     Étape 3: Scorer les appariements et les évaluer
   </h2>
 </div>
