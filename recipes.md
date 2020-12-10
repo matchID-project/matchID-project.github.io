@@ -4,7 +4,7 @@ permalink: recipes
 description: How matchID supercharges your powers with recipes
 title: Recipes
 width: is-10
-image: persona_cooking.svg
+image: /assets/images/persona_cooking.svg
 ---
 
 <div markdown="1">

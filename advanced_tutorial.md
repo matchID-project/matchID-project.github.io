@@ -4,7 +4,7 @@ permalink: advanced_tutorial
 description: Cas d'usage - radiation de décès dans un fichier client (1M x 1M d'enregistrement)
 title: Tutoriel avancé (2-3h)
 width: is-10
-image: persona_6.svg
+image: /assets/images/persona_6.svg
 imageTX: 0px
 imageTY: 0px
 ---

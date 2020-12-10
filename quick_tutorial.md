@@ -6,7 +6,7 @@ description: Ce tutoriel traite un cas simple d'appariement et doit durer 10 à 
              de l'appariement d'identités
 
 title: Tutoriel - simple
-image: persona_4.svg
+image: /assets/images/persona_4.svg
 imageTX: 0px
 imageTY: 0px
 customLayout: true

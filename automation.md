@@ -3,7 +3,7 @@ layout: default
 permalink: automation
 description: "understanding and troubleshooting"
 title:  Automation
-image: persona_22.svg
+image: /assets/images/persona_22.svg
 width: is-10
 ---
 

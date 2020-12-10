@@ -3,7 +3,7 @@ layout: default
 permalink: datasets
 description: from csv to elasticsearch
 title: Datasets
-image: Database.svg
+image: /assets/images/Database.svg
 width: is-10
 ---
 

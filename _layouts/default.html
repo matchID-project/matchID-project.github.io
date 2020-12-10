@@ -45,7 +45,7 @@
                 {% if page.image %}
                 <div class="rf-card__img rf-card__img--fit {% if page.image_flip %} rf-img__flip {% endif %}">
                   <img
-                    src="/assets/images/{{page.image}}"
+                    src="{{page.image}}"
                     style="z-index: 1;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
                             {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %}
                             {% if page.imageScale %}scale({{page.imageScale}}){% endif %};"

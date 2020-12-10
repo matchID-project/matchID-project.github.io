@@ -2,7 +2,7 @@
 layout: default
 permalink: starting
 description: installer et lancer l'outil de développement de traitements en 2 minutes
-image: persona_5-1.svg
+image: /assets/images/persona_5-1.svg
 imageTX: 40px
 imageTY: 105px
 title: Débuter avec matchID
