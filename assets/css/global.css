@@ -314,6 +314,14 @@ border-radius: 0 .25rem 0 0;
   margin-right:auto;
 }
 
+
+.rf-card__img-authors {
+  max-height: 220px;
+  margin-top: 2rem;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .rf-card__img.rf-card__img-3-4 {
   padding-bottom: 75%
 }
