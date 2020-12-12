@@ -9,7 +9,7 @@ title: Débuter avec matchID
 customLayout: true
 ---
 
-<div class="rf-col-xl-6 rf-col-md-12">
+<div class="rf-col-lg-6 rf-col-md-12">
     <h3>Prérequis</h3>
     <p>
     matchID nécessite de disposer <code>make</code> et <code>git</code> au préalable. Sur Ubuntu, <code>docker</code> et les outils prérequis sont automatiquement installés.
@@ -21,7 +21,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-md-12" style="z-index:-100;">
+<div class="rf-col-lg-6 rf-col-md-12" style="z-index:-100;">
     <table class="rf-table rf-vcenter">
         <thead>
             <tr>
@@ -50,11 +50,11 @@ customLayout: true
     </table>
 </div>
 
-<div class="rf-col-xl-12 rf-col-md-12">
+<div class="rf-col-lg-12 rf-col-md-12">
 <div class="rf-container">
 <div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
 
-<div class="rf-col-xl-6 rf-col-md-6">
+<div class="rf-col-lg-6 rf-col-md-6">
     <h3>Démarrer en une minute</h3>
     <p>
         Clônez le code source et rentrez dans le répertoire
@@ -79,7 +79,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-md-12">
+<div class="rf-col-lg-6 rf-col-md-12">
     <img class="rf-responsive-img rf-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif/">
 </div>
 
@@ -87,7 +87,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="rf-col-xl-12 rf-col-md-12">
+<div class="rf-col-lg-12 rf-col-md-12">
     <p>
     Rendez-vous sur votre navigateur sur:
        <p class="rf-highlight">
