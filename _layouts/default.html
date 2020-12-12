@@ -43,14 +43,25 @@
             <div class="rf-col-12 rf-background--bf rf-hide--mobile" style="min-height:17rem;">
               <div style="z-index:0;" class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow">
                 {% if page.image %}
-                <div class="rf-card__img rf-card__img--fit {% if page.image_flip %} rf-img__flip {% endif %}">
-                  <img
-                    src="{{page.image}}"
-                    style="z-index: 1;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
-                            {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %}
-                            {% if page.imageScale %}scale({{page.imageScale}}){% endif %};"
-                    />
-                </div>
+                  {% if page.imagePosition %}
+                    <div class="position:relative">
+                      <img
+                        width="50%"
+                        style="position:absolute;right:0;bottom:0;"
+                        src="/assets/images/{{page.image}}"
+                      >
+                    </div>
+                    <div class="rf-card__img"></div>
+                  {% else %}
+                    <div class="rf-card__img rf-card__img--fit {% if page.image_flip %} rf-img__flip {% endif %}">
+                      <img
+                        src="/assets/images/{{page.image}}"
+                        style="z-index: 1;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
+                                {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %}
+                                {% if page.imageScale %}scale({{page.imageScale}}){% endif %};"
+                        />
+                    </div>
+                  {% endif %}
                 {% endif %}
                 <div style="z-index: 20;" class="rf-card__body rf-mt-3w rf-mb-3w rf-ml-3w">
                   <h1 class="rf-card__lead rf-color--white">

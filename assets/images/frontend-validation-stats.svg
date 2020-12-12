@@ -12,8 +12,8 @@
    version="1.1"
    id="svg2"
    width="1342.0355"
-   height="426.5361"
-   viewBox="0 0 1342.0355 426.5361"
+   height="600.53607"
+   viewBox="0 0 1342.0355 600.53607"
    sodipodi:docname="frontend-validation-stats.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
@@ -43,22 +43,22 @@
      inkscape:window-height="1018"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="0.51715944"
-     inkscape:cx="618.18136"
-     inkscape:cy="113.20212"
+     inkscape:zoom="1.4627478"
+     inkscape:cx="484.00111"
+     inkscape:cy="406.92296"
      inkscape:window-x="0"
      inkscape:window-y="34"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2"
+     inkscape:current-layer="g208"
      fit-margin-top="20"
      fit-margin-bottom="20"
      fit-margin-right="20"
      fit-margin-left="20" />
   <g
      id="g208"
-     transform="translate(-92.642184,-98.79271)">
+     transform="matrix(1.032672,0,0,1.032672,-113.72518,83.83451)">
     <g
-       transform="matrix(1.1149669,0,0,1.1149669,-123.83413,-8.5093745)"
+       transform="matrix(1.1149669,0,0,1.1149669,-125.15816,-6.523328)"
        id="g200">
       <path
          inkscape:connector-curvature="0"
