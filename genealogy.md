@@ -93,22 +93,33 @@ customLayout: true
 </div>
 
 
-<div class="rf-col-12">
+<div class="rf-col-lg-6 rf-col-md-12">
     <h4> Visualisation géographique </h4>
     <p>
-        Enfin, un outil de visualisation géographique est à votre disposition, pour vous permettre un mode de recherche alternative. Cette visualisation est idéal pour visualiser la provenance géographique d'un patronyme.
+        Un outil de visualisation géographique est à votre disposition, pour vous permettre un mode de recherche alternative. Cette visualisation est idéal pour visualiser la provenance géographique d'un patronyme.
     </p>
     <br>
     <img class="rf-responsive-img" src="assets/images/deces-ui-geo.png" alt="fiche étendue">
 </div>
 
+<div class="rf-col-lg-6 rf-col-md-12">
+    <h4> Appariement de masse </h4>
+    <p>
+        Vous disposez d'un tableur avec l'ensemble de vos fiches, et souhaitez les fiabilisez ? Utiliser notre outil d'appariement en masse
+    </p>
+    <br>
+    <img class="rf-responsive-img" src="assets/images/deces-ui-link.png" alt="fiche étendue">
+</div>
+
 <div class="rf-col-12 rf-text--center">
     <h3> Commencez vos recherches ! </h3>
 </div>
-<div class="rf-col-6 rf-text--center">
+<div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
     <a href="https://deces.matchid.io/search" class="rf-link rf-link--icon-right" target="_self"> Recherche simple</a>
 </div>
-<div class="rf-col-6 rf-text--center">
+<div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
     <a href="https://deces.matchid.io/search?advanced=true" class="rf-link rf-link--icon-right" target="_self"> Recherche avancée</a>
 </div>
-
+<div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
+    <a href="https://deces.matchid.io/link" class="rf-link rf-link--icon-right" target="_self"> Appariement</a>
+</div>
