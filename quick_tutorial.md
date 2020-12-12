@@ -219,7 +219,7 @@ customLayout: true
 
   <img class="rf-reponsive-img" style="margin-left: auto; margin-right: auto;" src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
 
-  Vous pouvez suivre l'avancement en bas à droite dans l'onglet `Real logs  ou via le menu `Jobs`:
+  Vous pouvez suivre l'avancement en bas à droite dans l'onglet `Real logs`  ou via le menu `Jobs`:
 
   <img class="rf-reponsive-img" src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
 
@@ -411,8 +411,15 @@ Lancez la recette une fois le choix effectué en appuyant sur `Lancer`. Les rés
 ### Evaluer les résultats
 
 Rendez-vous sur le dataset [client_x_deaths](http://localhost:8081/matchID/projects/deaths/datasets/clients_x_deaths).
-Pour mieux voir les résultats, copiez le filtre `Nom|DCD_NOM|Prenom|DCD_PRENOM|Date|DCD_DATE` dans la case `Filtrer les colonnes`:
+Pour mieux voir les résultats, copiez dans la case `Filtrer les colonnes` le filtre suivant :
+</div>
+<div class="rf-highlight" markdown="1">
 
+```
+Nom|DCD_NOM|Prenom|DCD_PRENOM|Date|DCD_DATE
+```
+</div>
+<div markdown="1">
 <img class="rf-reponsive-img" src="assets/images/frontend-clients_x_deaths.png" alt="matchID résultat du matching">
 
 Les résultats sont déjà visibles, mais leur validation est complexe dans ce mode "tableur". Pour faciliter l'évaluation
