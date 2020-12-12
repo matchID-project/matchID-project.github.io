@@ -13,7 +13,9 @@
       <div class="rf-col-lg-4 rf-col-md-12">
         <div class="rf-card rf-card--no-arrow">
           {% if author.image %}
-            <img class="rf-card__img-authors" src="/assets/images/{{ author.image }}" alt="{{ author.name }} image">
+            <div class="rf-card__img-authors">
+              <img src="/assets/images/{{ author.image }}" alt="{{ author.name }} image">
+            </div>
           {% endif %}
           <div class="rf-card__body">
             <h4 class="rf-card__lead rf-text--center">{{ author.name }}</h4>

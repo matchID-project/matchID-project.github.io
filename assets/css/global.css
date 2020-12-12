@@ -316,11 +316,21 @@ border-radius: 0 .25rem 0 0;
 
 
 .rf-card__img-authors {
-  max-height: 220px;
-  margin-top: 2rem;
-  margin-left:auto;
-  margin-right:auto;
-}
+  position: relative;
+  width: 100%;
+  margin-top:2rem; }
+  .rf-card__img-authors::before {
+    display: block;
+    content: '';
+    padding-bottom: 56.25%; }
+  .rf-card__img-authors img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+    top: 0;
+    left: 0; }
 
 .rf-card__img.rf-card__img-3-4 {
   padding-bottom: 75%
