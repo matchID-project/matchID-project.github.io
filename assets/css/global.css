@@ -641,8 +641,13 @@ html {
 
 .rf-hero {
   margin-top: 2rem;
-  margin-left: -0.5rem;
   margin-right: 0rem!important;
   padding: 1rem;
   margin-bottom: 1rem;
 }
+
+/* burger */
+.rf-btn.rf-fi-menu-fill.rf-btn--icon {
+  position: absolute;
+  top: -5.5rem;
+  right: 0px;}
