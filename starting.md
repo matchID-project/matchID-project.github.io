@@ -99,3 +99,15 @@ customLayout: true
         <img class="rf-responsive-img" src="assets/images/frontend-start.png" alt="matchID projects view">
     </p>
 </div>
+
+
+<div class="rf-col-lg-12 rf-col-md-12">
+    <h3 class="rf-text--center"> Pour continuer </h3>
+</div>
+<div class="rf-col-md-6 rf-col-xs-12 rf-text--center">
+    <a href="/quick_tutorial" class="rf-link rf-link--icon-right" target="_self" title="tutoriel simple">Tutoriel simple</a>
+</div>
+<div class="rf-col-md-6 rf-col-xs-12 rf-text--center">
+    <a href="/advanced_tutorial" class="rf-link rf-link--icon-right" target="_self" title="tutoriel avancé">Tutoriel avancé</a>
+</div>
+
