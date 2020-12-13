@@ -51,7 +51,7 @@ customLayout: true
 </div>
 
 <div class="rf-col-lg-12 rf-col-md-12">
-<div class="rf-container">
+<div class="rf-container-fluid">
 <div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
 
 <div class="rf-col-lg-6 rf-col-md-6">

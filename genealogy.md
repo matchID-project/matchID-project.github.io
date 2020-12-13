@@ -103,7 +103,7 @@ customLayout: true
 </div>
 
 <div class="rf-col-lg-6 rf-col-md-12">
-    <h4> Appariement de masse </h4>
+    <h4> Appariement en masse </h4>
     <p>
         Vous disposez d'un tableur avec l'ensemble de vos fiches, et souhaitez les fiabilisez ? Utiliser notre outil d'appariement en masse
     </p>
@@ -115,11 +115,11 @@ customLayout: true
     <h3> Commencez vos recherches ! </h3>
 </div>
 <div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
-    <a href="https://deces.matchid.io/search" class="rf-link rf-link--icon-right" target="_self"> Recherche simple</a>
+    <a href="https://deces.matchid.io/search" class="rf-link rf-link--icon-right" target="_self" title="Recherche simple"> Recherche simple</a>
 </div>
 <div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
-    <a href="https://deces.matchid.io/search?advanced=true" class="rf-link rf-link--icon-right" target="_self"> Recherche avancée</a>
+    <a href="https://deces.matchid.io/search?advanced=true" class="rf-link rf-link--icon-right" target="_self" title="Recherche avancée"> Recherche avancée</a>
 </div>
 <div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
-    <a href="https://deces.matchid.io/link" class="rf-link rf-link--icon-right" target="_self"> Appariement</a>
+    <a href="https://deces.matchid.io/link" class="rf-link rf-link--icon-right" target="_self" title="Appariement"> Appariement</a>
 </div>
