@@ -9,6 +9,7 @@ title: Tutoriel - simple
 image: /assets/images/persona_4.svg
 imageTX: 0px
 imageTY: 0px
+background: /assets/images/datascience.jpg
 customLayout: true
 ---
 

@@ -3,6 +3,7 @@ layout: default
 permalink: starting
 description: installer et lancer l'outil de développement de traitements en 2 minutes
 image: /assets/images/persona_5-1.svg
+background: /assets/images/matchID-install-bg.gif
 imageTX: 40px
 imageTY: 105px
 title: Débuter avec matchID
@@ -80,7 +81,7 @@ customLayout: true
 </div>
 
 <div class="rf-col-lg-6 rf-col-md-12">
-    <img class="rf-responsive-img rf-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif/">
+    <img class="rf-responsive-img rf-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif">
 </div>
 
 </div>

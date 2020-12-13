@@ -40,7 +40,11 @@
         <div class="rf-container">
           <div class="rf-grid-row">
             <div class="rf-col-12 rf-background--bf rf-hide--mobile" style="min-height:17rem;">
-              <div style="z-index:0;" class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow">
+              <div
+                style="z-index:0;
+                  {% if page.background %} background-image:url({{page.background}}); background-position: center; background-size: cover;background-blend-mode:lighten;{% endif %}"
+                class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow"
+              >
                 {% if page.image %}
                   {% if page.imagePosition %}
                     <div class="position:relative">

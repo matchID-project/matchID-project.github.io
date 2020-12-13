@@ -5,6 +5,7 @@ description: Médecins, fiabilisez vos fichiers patients, et vos études cliniqu
 image: /assets/images/doctor-man-2.svg
 image_flip: true
 imageTX: 60px
+background: /assets/images/cells.jpg
 title: Fiabilisation d'études clinques
 customLayout: true
 ---

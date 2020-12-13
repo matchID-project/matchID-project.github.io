@@ -7,6 +7,7 @@ image: /assets/images/genealogy.svg
 image_flip: true
 imageTX: 60px
 imagePosition: absolute
+background: /assets/images/old.jpg
 title: Recherche généalogique
 customLayout: true
 ---

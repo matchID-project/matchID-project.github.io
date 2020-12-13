@@ -7,6 +7,7 @@ width: is-10
 image: /assets/images/persona_6.svg
 imageTX: 0px
 imageTY: 0px
+background: /assets/images/datascience.jpg
 ---
 
 <div markdown="1">
