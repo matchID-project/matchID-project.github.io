@@ -350,6 +350,9 @@ border-radius: 0 .25rem 0 0;
     flex-direction: row-reverse;
   }
 
+  .rf-card--horizontal > .rf-card__img.rf-card__img--fit img {
+  }
+
   .rf-card__img.rf-card__img--fit img {
     object-fit: contain; }
 
