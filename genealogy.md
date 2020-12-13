@@ -1,13 +1,13 @@
 ---
 layout: default
 permalink: genealogy
-description: Complétez vos fiches généalogiques à l'aide des 25 millions
-            d'événements de décès de la source INSEEs
+description: Complétez les informations de vos fiches généalogiques à l'aide des 25 millions
+            d'enregistrements de décès de la source INSEE
 image: /assets/images/genealogy.svg
-imageTX: 30px
-imageTY: 0px
 image_flip: true
-title: Généalogistes
+imageTX: 60px
+imagePosition: absolute
+title: Recherche généalogique
 customLayout: true
 ---
 

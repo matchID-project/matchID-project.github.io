@@ -47,7 +47,10 @@
                     <div class="position:relative">
                       <img
                         width="50%"
-                        style="position:absolute;right:0;bottom:0;"
+                        style="position:absolute;right:0;bottom:0;max-height:100%;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
+                        {% if page.imageTY %}{{page.imageTY}}){%else%}0px){% endif %}
+                        {% if page.imageScale %}scale({{page.imageScale}}){% endif %}
+                        {% if page.image_flip %}scaleX(-1){% endif %};"
                         src="{{page.image}}"
                       >
                     </div>
@@ -57,7 +60,7 @@
                       <img
                         src="{{page.image}}"
                         style="z-index: 1;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
-                                {% if page.imageTY %}{{page.imageTY}}){%else%}0px{% endif %}
+                                {% if page.imageTY %}{{page.imageTY}}){%else%}0px){% endif %}
                                 {% if page.imageScale %}scale({{page.imageScale}}){% endif %};"
                         />
                     </div>
