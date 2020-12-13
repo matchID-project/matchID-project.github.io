@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: healthcare
-description: Médecnes, fiabilisez vos fichiers patients, et vos études cliniques avec l'appariement au fichier des décès
+description: Médecins, fiabilisez vos fichiers patients, et vos études cliniques avec l'appariement au fichier des décès
 image: /assets/images/doctor-man-2.svg
 image_flip: true
 imageTX: 60px
@@ -10,11 +10,35 @@ customLayout: true
 ---
 
 <div class="rf-col-lg-12 rf-col-md-12">
-    <h3 class="rf-text--center"> Détection des personnes décédées au sein d'un fichier </h3>
+<div class="rf-container">
+<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+
+<div class="rf-col-lg-6 rf-col-md-12">
+    <div class="rf-callout">
+    J’ai deux études [autour de la maladie d'Alzheimer] qui utilisent des données de l’INSEE. [...] Il est actuellement très difficile pour les cliniciens actuellement de donner un pronostic aux patients et à leur famille, alors qu’ils sont en demande. <br>
+    [matchID] <strong>me fait gagner un temps considérable</strong>. Pour le versant clinique je dois apparier plus de 100 000 dossiers, pour mes travaux, c’est 15 000 par étude. En fait sans votre outil, je ne récupèrerai juste pas les dates de décès.<br>
+    <div class="rf-text--right"><strong> Mélanie L., CHU de Lille </strong></div>
+    </div>
+</div>
+
+<div class="rf-col-lg-6 rf-col-md-12">
+    <h3> Détection des personnes décédées au sein d'un fichier </h3>
+    <p><br></p>
     <p>
-        Vous menez une étude clinique et souhaitez fiabiliser votre fichier patient ? Avec la fonction d'appariement en masse de <a href="https://deces.matchid.io/link" target="_self" >matchID</a>, vous pouvez identifier les décès au sein de votre fichier en quelques minutes. Quatre étapes seront nécessaires:
+        Vous menez vous aussi une étude clinique et souhaitez fiabiliser votre fichier patient ?
+    </p>
+    <p>
+    Avec la fonction d'appariement en masse de <a href="https://deces.matchid.io/link" target="_self" >matchID</a>, vous pouvez identifier les décès au sein de votre fichier en très peu de temps.
+    </p>
+    <p>
+        Quatre étapes seront nécessaires:
     </p>
 </div>
+
+</div>
+</div>
+</div>
+
 <div class="rf-col-lg-6 rf-col-md-12">
     <h4> Étape 1. Fichier </h4>
     <p>

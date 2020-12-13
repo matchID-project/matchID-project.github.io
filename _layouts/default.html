@@ -24,7 +24,6 @@
     <body>
         {% include navbar.html %}
 
-
         <div class="rf-container-fluid">
           <div class="rf-grid-row">
             <div class="rf-col-12 rf-background--bf rf-hide--desktop rf-pr-2w rf-pt-2w rf-pl-2w">
@@ -38,7 +37,7 @@
           </div>
         </div>
 
-        <div class="rf-container rf-mb-8w">
+        <div class="rf-container">
           <div class="rf-grid-row">
             <div class="rf-col-12 rf-background--bf rf-hide--mobile" style="min-height:17rem;">
               <div style="z-index:0;" class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow">
@@ -78,7 +77,7 @@
             </div>
             <div class="rf-col-xl-1 rf-col-md-0"></div>
             <div class="rf-col-xl-10 rf-col-md-12">
-              <div class="rf-container-fluid">
+              <div class="rf-container-fluid rf-mt-2w rf-mb-4w">
                 <div class="rf-grid-row rf-grid-row--gutters-h " style="{% if page.customLayout %}{% else %}display:unset;{% endif %}">
                   {{ content }}
                   {% if page.video %}
