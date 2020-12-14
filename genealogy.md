@@ -13,7 +13,7 @@ customLayout: true
 ---
 
 <div class="rf-col-12 rf-mt-2w"></div>
-<div class="rf-col-lg-12 rf-col-md-12">
+<div class="rf-col-12">
     <h3 class="rf-text--center"><a href="https://deces.matchid.io/search" title="moteur de recherche des décès">deces.matchid.io</a></h3>
     <p>
     Le moteur de recherche matchID permet une recherche simple, rapide et intuitive des personnes dont le décès a été enregistré, depuis 1970, dans le <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/" target="_blank">fichier de l'INSEE</a> soit plus de <strong>25 millions d'enregistrements</strong>.
@@ -26,7 +26,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
   <h4>Fiches compactes</h4>
   <div style="overflow:hidden">
     <iframe frameborder="0" width="100%" height="520px"
@@ -37,7 +37,7 @@ customLayout: true
   </div>
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <h4> Fiches étendues </h4>
     <p>
         Elle vous permettent de prendre connaissance de toutes les informations disponibles
@@ -47,20 +47,20 @@ customLayout: true
     <img class="rf-responsive-img" src="assets/images/deces-ui-card.png" alt="fiche étendue">
 </div>
 
-<div class="rf-col-lg-12 rf-col-md-12">
+<div class="rf-col-12">
     <h4> Tableur </h4>
     <div style="overlow-x: hidden">
     <img style="width:1000px;" src="assets/images/deces-ui-table.png" alt="tableur">
     </div>
 </div>
 
-<div class="rf-col-lg-12 rf-col-md-12">
+<div class="rf-col-12">
     <h3 class="rf-text--center rf-hero">
         Recherche avancée
     </h3>
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <h4> Critères multiples </h4>
     <p>
         Utilisez les critères avancés pour rechercher plus finement, par exemple par plage de date,
@@ -77,7 +77,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <h4> Triez </h4>
     <p>
         Triez les résultats pour mieux retrouver les données lorsque vous ne disposez pas
@@ -94,7 +94,7 @@ customLayout: true
 </div>
 
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <h4> Visualisation géographique </h4>
     <p>
         Un outil de visualisation géographique est à votre disposition, pour vous permettre un mode de recherche alternative. Cette visualisation est idéal pour visualiser la provenance géographique d'un patronyme.
@@ -103,7 +103,7 @@ customLayout: true
     <img class="rf-responsive-img" src="assets/images/deces-ui-geo.png" alt="fiche étendue">
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <h4> Appariement en masse </h4>
     <p>
         Vous disposez d'un tableur avec l'ensemble de vos fiches, et souhaitez les fiabilisez ? Utiliser notre outil d'appariement en masse
@@ -115,12 +115,12 @@ customLayout: true
 <div class="rf-col-12 rf-text--center">
     <h3> Commencez vos recherches ! </h3>
 </div>
-<div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
+<div class="rf-col-xl-4 rf-col-lg-4 rf-col-md-4 rf-col-sm-4 rf-col-xs-12 rf-text--center">
     <a href="https://deces.matchid.io/search" class="rf-link rf-link--icon-right" target="_self" title="Recherche simple"> Recherche simple</a>
 </div>
-<div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
+<div class="rf-col-xl-4 rf-col-lg-4 rf-col-md-4 rf-col-sm-4 rf-col-xs-12 rf-text--center">
     <a href="https://deces.matchid.io/search?advanced=true" class="rf-link rf-link--icon-right" target="_self" title="Recherche avancée"> Recherche avancée</a>
 </div>
-<div class="rf-col-md-4 rf-col-xs-12 rf-text--center">
+<div class="rf-col-xl-4 rf-col-lg-4 rf-col-md-4 rf-col-sm-4 rf-col-xs-12 rf-text--center">
     <a href="https://deces.matchid.io/link" class="rf-link rf-link--icon-right" target="_self" title="Appariement"> Appariement</a>
 </div>

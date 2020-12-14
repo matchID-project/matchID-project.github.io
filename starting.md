@@ -10,7 +10,7 @@ title: Débuter avec matchID
 customLayout: true
 ---
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <h3>Prérequis</h3>
     <p>
     matchID nécessite de disposer <code>make</code> et <code>git</code> au préalable. Sur Ubuntu, <code>docker</code> et les outils prérequis sont automatiquement installés.
@@ -80,7 +80,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-12">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <img class="rf-responsive-img rf-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif">
 </div>
 
