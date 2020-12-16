@@ -18,7 +18,7 @@ customLayout: true
     <p class="rf-text--xs">
     Notes: <br>
     Sous d'autres distributions linux, Mac ou Windows, installez <code>docker</code>, <code>docker-composer</code>, et <code>jq</code>.<br>
-    Si vous utilisez un proxy utilisez les variables d'environnement <code>http_proxy</code> et <code>https_proxy</code>. Hors ligne, il suffit de télécharger en plus les <a title="images docker" href="https://hub.docker.com/repository/docker/matchid/">images <code>docker</code></a><br>.
+    Si vous utilisez un proxy utilisez les variables d'environnement <code>http_proxy</code> et <code>https_proxy</code>. Hors ligne, il suffit de télécharger en plus les <a title="images docker" href="https://hub.docker.com/u/matchid">images <code>docker</code></a><br>.
     </p>
 </div>
 
