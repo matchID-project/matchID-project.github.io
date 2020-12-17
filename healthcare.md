@@ -159,5 +159,5 @@ customLayout: true
     <a href="https://deces.matchid.io/link" class="rf-link rf-link--icon-right" target="_self"> Appariement</a>
 </div>
 <div class="rf-col-6 rf-text--center">
-    <a href="/link-API" class="rf-link rf-link--icon-right" target="_self"> Utiliser l'API décès</a>
+    <a href="/link-api" class="rf-link rf-link--icon-right" target="_self"> Utiliser l'API décès</a>
 </div>
