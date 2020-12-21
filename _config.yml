@@ -12,6 +12,9 @@ url: "https://matchid.io"
 google_analytics: "G-TEGXVTN15T"
 google_site_verification: "7mKyk4ToRBf-9PLRfeJwO3N0NPLroTzdstUmkdrU0jE"
 locale: fr_FR
+twitter:
+  username: fabien_antoine
+  card: summary
 
 authors:
   - name: Fabien ANTOINE
