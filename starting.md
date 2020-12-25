@@ -42,7 +42,7 @@ customLayout: true
             </tr>
             <tr>
                 <td>Complexe</td>
-                <td>256Go à 1To, SSD 50Go</td>
+                <td>32 à 128vCPU, 256Go à 1To, SSD 50Go</td>
                 <td>100M x 100M identés</td>
             </tr>
         </tbody>
