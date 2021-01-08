@@ -1,0 +1,48 @@
+<svg width="69mm" height="57mm" version="1.1" viewBox="0 0 69 57" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <marker id="Arrow1Mstart" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-18 5 18 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="marker1316" overflow="visible" orient="auto">
+   <path transform="scale(-.6)" d="m8.7 4-11-4 11-4c-1.7 2.4-1.7 5.6-6e-7 8z" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".62"/>
+  </marker>
+ </defs>
+ <g transform="translate(5.4 -41)">
+  <g fill="#000000" letter-spacing="0px" stroke-width=".26" word-spacing="0px">
+   <text x="-3.2645447" y="48.54821" font-family="'InconsolataGo Nerd Font Mono'" font-size="2.1px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="-3.2645447" y="48.54821">"BEN MOHAMED","MOHAMED","01/01/1940"</tspan><tspan x="-3.2645447" y="51.291122">"HOOGEBOOM",,"JOHANNES PETRUS","20/06/1949"</tspan><tspan x="-3.2645447" y="54.034039">"VERNISSE",,"JACQUELINE","17/07/1938"</tspan><tspan x="-3.2645447" y="56.776951">"DOLCIANI",,"ANDRE","16/04/1937"</tspan><tspan x="-3.2645447" y="59.519863">"RENARD",,"SERGE","13/09/1931"</tspan><tspan x="-3.2645447" y="62.262775">"BOCQUET","LECOT","MARGUERITE","12/11/1937"</tspan></text>
+   <text x="51.13982" y="75.929314" font-family="Cantarell" font-size="2.1px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="51.13982" y="75.929314" font-size="2.1px" stroke-width=".26"/></text>
+   <g font-family="Cantarell" font-size="3.5px">
+    <text x="13.585311" y="43.013702" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="13.585311" y="43.013702" stroke-width=".26">Input</tspan></text>
+    <text x="45.236965" y="50.019497" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="45.236965" y="50.019497" stroke-width=".26">chunk 1</tspan></text>
+    <text x="45.170849" y="56.100948" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="45.170849" y="56.100948" stroke-width=".26">chunk 2</tspan></text>
+   </g>
+  </g>
+  <g fill="none" stroke="#000" stroke-width=".29px">
+   <g transform="matrix(.91 0 0 .91 3.6 9.8)">
+    <path d="m43 47h1.4"/>
+    <path d="m44 47v5.3"/>
+    <path d="m43 52h1.2"/>
+   </g>
+   <g transform="matrix(.91 0 0 .91 3.7 4.1)">
+    <path d="m43 47h1.4"/>
+    <path d="m44 47v5.3"/>
+    <path d="m43 52h1.2"/>
+   </g>
+   <g transform="matrix(.91 0 0 .91 3.7 15)">
+    <path d="m43 47h1.4"/>
+    <path d="m44 47v5.3"/>
+    <path d="m43 52h1.2"/>
+   </g>
+  </g>
+  <text x="45.253254" y="61.942127" fill="#000000" font-family="Cantarell" font-size="3.5px" letter-spacing="0px" stroke-width=".26" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="45.253254" y="61.942127" stroke-width=".26">chunk 3</tspan></text>
+  <rect transform="rotate(-90)" x="-89" y="21" width="6.8" height="16" fill="#3cbfd4" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" style="paint-order:stroke fill markers"/>
+  <text x="23.674044" y="87.354462" fill="#000000" font-family="Cantarell" font-size="3.5px" letter-spacing="0px" stroke-width=".26" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="23.674044" y="87.354462" stroke-width=".26">chunk 1</tspan></text>
+  <rect transform="rotate(-90)" x="-81" y="23" width="6.8" height="16" fill="#3cbfd4" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" style="paint-order:stroke fill markers"/>
+  <text x="25.599665" y="78.620399" fill="#000000" font-family="Cantarell" font-size="3.5px" letter-spacing="0px" stroke-width=".26" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="25.599665" y="78.620399" stroke-width=".26">chunk 2</tspan></text>
+  <rect transform="rotate(-90)" x="-89" y="37" width="6.8" height="16" fill="#3cbfd4" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" style="paint-order:stroke fill markers"/>
+  <text x="39.987381" y="87.349472" fill="#000000" font-family="Cantarell" font-size="3.5px" letter-spacing="0px" stroke-width=".26" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="39.987381" y="87.349472" stroke-width=".26">chunk 3</tspan></text>
+  <path d="m18 71v22h45" fill="none" marker-end="url(#marker1316)" marker-start="url(#Arrow1Mstart)" stroke="#000" stroke-width=".26"/>
+  <text x="51.730854" y="97.007324" fill="#000000" font-family="Cantarell" font-size="3.5px" letter-spacing="0px" stroke-width=".26" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="51.730854" y="97.007324" stroke-width=".26">Temps</tspan></text>
+  <text x="-5.4789357" y="74.99424" fill="#000000" font-family="Cantarell" font-size="3.5px" letter-spacing="0px" stroke-width=".26" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="-5.4789357" y="74.99424">Traitement de</tspan><tspan x="-5.4789357" y="79.403954">chunks</tspan></text>
+ </g>
+</svg>
