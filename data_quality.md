@@ -45,6 +45,10 @@ customLayout: true
 </div>
 </div>
 
+
+<div class="rf-col-12">
+<div class="rf-container">
+<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
 <div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <h4> Étape 1. Base de données </h4>
     <p>
@@ -56,8 +60,52 @@ customLayout: true
     <div class="rf-vcenter">
         <span class="rf-mobile--hide"><br><br><br></span>
         <img class="rf-responsive-img" src="assets/images/deces-backend-test.png" alt="fichier">
-        <p>
-            Optimiser les paramètres de la requête. Concurrence des taches et taille du chunk à traiter.
-        </p>
     </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+    <h4> Étape 2. Déployer sur une architecture conséquent </h4>
+    <p>
+      Pour accélérer le traitement, il est conseillé de déployer sur une architecture conséquent.
+    </p>
+    <p>
+      Il est possible d'optimiser la mémoire pris par elasticsearch, il est recommandé de donner la moitie de la RAM du serveur. Sur le code du backend ça correspond à la variable `ES_MEM`
+    </p>
+    <p>
+      L'API peut découper l'input en chunks et les traiter de façon concurrente. Sur le code du backend ça correspond au paramètre `BACKEND_CONCURRENCY_JOB` et `BACKEND_CONCURRENCY_CHUNKS`.
+    </p>
+</div>
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+    <div class="rf-vcenter">
+        <img class="rf-responsive-img" src="assets/images/thread-chunk.svg" alt="traitement des chunk">
+    </div>
+</div>
+
+<div class="rf-col-12">
+<div class="rf-container">
+<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+    <h4> Étape 3. Request the API </h4>
+    <p>
+      Paralleliser les requêtes pour profiter au maximum des ressources de la machine.
+      Nous proposons d'utiliser de librairies comme multiprocessing pour le traitement.
+    </p>
+    <p>
+      Chaque thread va faire la requete et enregistrer le resultat dans une base de données.
+    </p>
+    
+</div>
+<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+    <div style="overflow:hidden;">
+        <iframe frameborder="0" width="100%" height="600px"
+            scrolling="no" style="margin-top: 0px;"
+            src="https://repl.it/@cristianpb/thread-bulk-decespy?lite=true"
+        ></iframe>
+    </div>
+</div>
+</div>
+</div>
 </div>
