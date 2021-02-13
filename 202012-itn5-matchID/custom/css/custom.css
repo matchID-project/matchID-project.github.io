@@ -118,3 +118,8 @@ code {
   padding-bottom: 33%
 }
 
+@media (max-width:768px) {
+  .rf-hide--mobile {
+      display: none!important;
+  }
+}
