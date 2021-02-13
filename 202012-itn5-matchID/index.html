@@ -70,66 +70,62 @@
                   <div class="rf-grid-row rf-grid-row--gutters">
                     <div class="rf-col-xs-12 rf-col-xl-6">
                       <div class="rf-tile rf-tile--horizontal">
-                        <div style="margin:2rem 0 2rem 2rem;">
-                          <span class="rf-logo rf-text--left" title="République Française">
-                            <span class="rf-logo__title">
-                            Ministère<br>de l'Intérieur
-                            </span>
-                          </span>
-                        </div>
-                        <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">2017...</h4>
-                          <p class="rf-title__desc rf-text--left">
-                            le projet matchID réalise en POC un moteur de recherche des décès avec le fichier INSEE, alors en accès restreint
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rf-col-xs-12 rf-col-xl-6">
-                      <div class="rf-tile rf-tile--horizontal">
-                        <div class="rf-tile__img">
+                        <div class="rf-tile__img rf-hide--mobile">
                           <img data-src="custom/img/logo_insee.svg" alt="logo Insee">
                         </div>
                         <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">... fin 2019</h4>
                           <p class="rf-tile__desc rf-text--left">
-                            sur demande de la CADA, l'INSEE publie l'ensemble des 25 millions d'enregistrements de décès depuis 1970 <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/)">data.gouv</a>                      </p>
+                            <i>
+                              Sur demande de la CADA, l'INSEE publie en décembre 2019 publie le fichier des décès <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/)">data.gouv.</a>
+                            </i>
+                          </p>
+                          <h4 class="rf-tile__title rf-padding-top-1N"> 25 millions de décès </h4>
+                          <p class="rf-tile__desc">
+                            <strong>Chaque recherche prend des heures</strong>
+                            <br>
+                            Nécessite une expertise d'indexation, ou des services payants ou incomplet (recherche stricte).
+                            <br><br>
+                            <strong>Traiter un fichier client prend 40 jours</strong>
+                            <br>
+                            pour 10&nbsp;000 identités.
+                            <br>
+                            Algorithmes classiques peu performants: 60% match
+                          </p>
                         </div>
                       </div>
                     </div>
                     <div class="rf-col-xs-12 rf-col-xl-6">
                       <div class="rf-tile rf-tile--horizontal">
-                        <div class="rf-tile__img">
+                        <div class="rf-tile__img rf-hide--mobile">
                           <img height="100px" width="100px"  data-src="custom/img/matchID-logo-square.svg" alt="logo matchID">
                         </div>
                         <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">début 2020...</h4>
-                          <p class="rf-title__desc rf-text--left">
-                            Fabien A. (MA puis MJ) crée le moteur de recherce des décès, <a href="https://deces.matchid.io" target="_blank">deces.matchid.io</a>. Cristian PB (MI) crée l'API, et publie l'application aux préfectures.<br>
-                            <strong>3000 utilisateurs quotidiens</strong>, 25M appels API en 2020<br>
-                            L'API d'appariement est utilisée par quelques hopitaux pour <strong>fiabiliser des études cliniques</strong>.
+                          <p class="rf-tile__desc rf-text--left">
+                            1<sup>er</sup> janvier 2020, <strong>matchID</strong> ouvre un service grand public en capitalisant
+                          sur le défi <strong> EIG1 </strong> du ministère de l'Intérieur.
+                          </p>
+                          <h4 class="rf-tile__title rf-padding-top-1N">API décès</h4>
+                          <p class="rf-tile__desc">
+                            <strong>Premier moteur de recherche avancée des décès</strong>
+                            <br>
+                            😊 Généalogistes et préfectures 😊
+                            <br><br>
+                            <strong>Première API d'appariement de gros fichiers clients</strong>
+                            <br>👏 Cliniciens, SIV (immatriculations) 👏
+                            <br>10k identités = 10 minutes ~ 100% match
+                            <br>gratuit et opensource
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div class="rf-col-xs-12 rf-col-xl-6">
-                      <div class="rf-tile rf-tile--horizontal">
-                        <div style="margin:2rem 0 2rem 2rem;">
-                        <span class="rf-logo rf-text--left" title="République Française">
-                          <span class="rf-logo__title">
-                          République<br>Française
-                          </span>
-                        </span>
-                        </div>
-                        <div class="rf-tile__body">
-                          <h4 class="rf-tile__title">2021 ...</h4>
-                          <p class="rf-tile__desc rf-text--left">
-                            Prise en compte des erreurs de l'opendata INSEE signalées par les usagers.<br>
-                            Généralisation de l'appariement (hôpitaux, autres fichiers d'identités). <br>
-                            Standardisation des fonctions (API recherche, appariement) pour tout type de FI (france connect, agent connect, ...)
-                          </p>
-                        </div>
-                      </div>
+                    <div class="rf-col-xs-12 rf-col-xl-2"></div>
+                      <div class="rf-col-xs-12 rf-col-xl-8">
+                        <h4 class="rf-tile__title rf-padding-top-1N">Problèmes résiduels</h4>
+                        <p class="rf-text--left rf-text--lg">
+                        - <strong>qualité de données</strong> (erreurs, manques, fréquence faible)
+                        <br>
+                        - <strong>bénéfices sous-exploités</strong> (succession, études cliniques, fraude, RGPD...)
+                      </p>
                     </div>
                   </div>
                 </div>
