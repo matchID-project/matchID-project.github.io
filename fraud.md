@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: data_quality
-description: Les faux identités peuvent être radiés des bases de données.
+permalink: fraud
+description: Les identités de personnes décédées doivent être radiées pour éviter les fraudes
 image: /assets/images/police-man.svg
 image_flip: true
 imageTX: 60px
@@ -19,9 +19,9 @@ customLayout: true
     <p>
     Le Système d’Immatriculation des Véhicules (SIV) dispose des informations concernant les titulaires de certificat d'immatriculations. </p>
     <p>
-    Il est nécessaire d'enlever les personnes décédées pour améliorer la qualité des données et éviter des cas de fraude liées à l'immatriculation des véhicules. </p> 
+    Il est nécessaire d'enlever les personnes décédées pour éviter des cas de fraude liées à l'immatriculation des véhicules, et en particulier pour les infractions de la route. </p>
     <p>
-    [matchID] permet de radier les personnes décédées de forme mensuel au fichier d'immatriculation des véhicules.  </p>
+    [matchID] permet de radier les personnes décédées chaque mois au fichier d'immatriculation des véhicules.  </p>
     <div class="rf-text--right"><strong> Agence Nationale des Titres Sécurisés </strong></div>
     </div>
 </div>
@@ -30,11 +30,11 @@ customLayout: true
     <h3> Détection des personnes décédées en masse au sein d'une base de données </h3>
     <p><br></p>
     <p>
-        Avez-vous une grande base de données d'identités et vous souhaitez enlever les personnes décédés ?
+        Avez-vous une grande base de données d'identités et vous souhaitez y retirer les personnes décédés ?
     </p>
     <p>
-    Pour des traitement des données très volumineux vous pouvez installer le produit on-premise sur une infrastructure adapté pour faire le traitement à large échelle.
-    Le traitement peut se paralléliser pour réduire notablement les temps de traitement. 
+    Pour des traitements de données très volumineux vous pouvez installer le produit on-premise sur une infrastructure adaptée pour porter le traitement à large échelle.
+    Le traitement peut se paralléliser pour réduire notablement les temps de traitement.
     </p>
     <p>
         Quatre étapes seront nécessaires:
@@ -67,9 +67,9 @@ customLayout: true
 </div>
 
 <div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <h4> Étape 2. Déployer sur une architecture conséquent </h4>
+    <h4> Étape 2. Déployer sur une architecture massive </h4>
     <p>
-      Pour accélérer le traitement, il est conseillé de déployer sur une architecture conséquent.
+      Pour accélérer le traitement, il est conseillé de déployer sur une architecture massive (>32vCPU, 128Go de RAM).
     </p>
     <p>
       Il est possible d'optimiser la mémoire pris par elasticsearch, il est recommandé de donner la moitie de la RAM du serveur. Sur le code du backend ça correspond à la variable `ES_MEM`
@@ -96,7 +96,7 @@ customLayout: true
     <p>
       Chaque thread va faire la requete et enregistrer le resultat dans une base de données.
     </p>
-    
+
 </div>
 <div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
     <div style="overflow:hidden;">
