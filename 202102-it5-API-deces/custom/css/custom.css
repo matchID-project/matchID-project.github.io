@@ -123,3 +123,16 @@ code {
       display: none!important;
   }
 }
+
+.rf-background--bf {
+  background-color: var(--bf500)!important;
+}
+
+.rf-background--rm {
+  background-color: var(--rm500)!important;
+}
+
+.rf-color--w {
+  color: var(--w)!important;
+}
+
