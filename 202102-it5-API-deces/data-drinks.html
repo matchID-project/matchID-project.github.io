@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="API décès - le fichier des décès, accessible à tous">
+    <link rel="icon" href="custom/img/matchID-logo-square.svg">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="Fabien ANTOINE">
+
+    <title>Data drinks: MatchID / API décès</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="custom/css/all.min.css" id="dsfr">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="custom/css/dsfr-reveal.css" id="theme">
+		<link rel="stylesheet" href="custom/css/custom.css" id="custom">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/zenburn.css" id="highlight-theme">
+	</head>
+	<body>
+    <div class="rf-header" style="z-index: -2000;"></div>
+      <div class="rf-container rf-container__header">
+        <div class="rf-header__body" >
+          <div class="rf-header__brand" style="flex: none">
+            <span class="rf-logo" title="République Française">
+              <span class="rf-logo__title">
+                République<br>Française
+              </span>
+            </span>
+          </div>
+
+          <span class="rf-padding-top-1N">
+            <img width="64" src="custom/img/matchID-logo-square.svg">
+          </span>
+        </div>
+      </div>
+    </div>
+		<div class="reveal" style="position: absolute;top: 0;z-index:0">
+      <div class="slides">
+        <!-- itn5 plan de relance -->
+        <section>
+          <section data-markdown>
+              <textarea data-template>
+                  # API décès
+
+                  ## le fichier des décès, accessible à tous
+
+                  <img width="150" src="custom/img/matchID-logo-square.svg">
+                  <br>
+                  <span class="rf-text--lg">
+                    <a href="https://deces.matchid.io" target="_blank" title="deces.matchid.io">deces.matchid.io</a>
+                    <br>
+                    présentation Data Drinks 27/07/2020
+                    <br>
+                    <a href="mailto:cristian.brokate@interieur.gouv.fr">cristian.brokate@interieur.gouv.fr</a> | <a href="mailto:fabien.antoine@justice.gouv.fr">fabien.antoine@justice.gouv.fr</a>
+                  </span>
+              </textarea>
+          </section>
+        </section>
+          <section title="opportunité" data-markdown>
+            <textarea data-template>
+              ## D'où vient l'idée ?
+              <div class="rf-container">
+                <div class="rf-grid-row rf-grid-row--gutters">
+                  <div class="rf-col-xs-12 rf-col-xl-6">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                          <span class="rf-logo rf-logo--lg rf-text--left" title="République Française">
+                            <span class="rf-logo__title">
+                            Ministère<br>de l'Intérieur
+                            </span>
+                          </span>
+                        <h4 class="rf-tile__title">début 2017...</h4>
+                        <p class="rf-title__desc">
+                          au "MI", le projet matchID réalise en POC un moteur de recherche des décès avec le fichier INSEE, alors en accès restreint
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rf-col-xs-12 rf-col-xl-6">
+                    <div class="rf-tile">
+                      <div class="rf-tile__body">
+                        <img height="100px" width="100px"  data-src="custom/img/logo_insee.svg" alt="logo Insee">
+                        <h4 class="rf-tile__title">... fin 2019</h4>
+                        <p class="rf-tile__desc">
+                          sur demande de la CADA, l'INSEE publie l'ensemble des 25 millions d'enregistrements de décès depuis 1970 <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/)">data.gouv</a>                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rf-hide-mobile-background"></div>
+            </textarea>
+          </section>
+        <!-- contexte -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+                ## Contexte et problème identifié
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile rf-tile--horizontal">
+                        <div class="rf-tile__img rf-hide--mobile">
+                          <img data-src="custom/img/logo_insee.svg" alt="logo Insee">
+                        </div>
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title rf-padding-top-1N">
+                            Fichier des décès
+                          </h4>
+                          <p class="rf-tile__desc rf-text--left">
+                            Sur demande de la CADA, l'INSEE publie en décembre 2019 le fichier des décès
+                            sur <a href="https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/">data.gouv.fr</a>.
+                            Le fichier comporte <strong>25 millions d'enregistrements</strong>, incluant nom prénoms, lieu et date de naisance et de décès.
+                          </p>
+                          <h4 class="rf-tile__title rf-padding-top-1N">
+                            Problèmes
+                          </h4>
+                          <p class="rf-tile__desc rf-text--left">
+                            <strong>Chaque recherche prend des heures</strong>
+                            ou bien nécessite une expertise, des services incomplets parfois payants.
+                            <br><br>
+                            <strong>Traiter un fichier client prend 40 jours</strong>
+                            pour 10&nbsp;000 identités. Les algorithmes usuels plafonnent à 60%.
+                            <br><br>
+                            <strong>Les problèmes de qualité de donnée ne sont pas traités</strong> (décès manquants ou erreurs
+                            de transcriptions de l'État civil)
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-6">
+                      <div class="rf-tile rf-tile--horizontal">
+                        <div class="rf-tile__img rf-hide--mobile">
+                          <img height="100px" width="100px"  data-src="custom/img/matchID-logo-square.svg" alt="logo matchID">
+                        </div>
+                        <div class="rf-tile__body">
+                          <h4 class="rf-tile__title rf-padding-top-1N">API décès</h4>
+                          <p class="rf-tile__desc rf-text--left">
+                            1<sup>er</sup> janvier 2020, <strong>matchID</strong> ouvre <a href="https://deces.matchid.io/" target="_blank">deces.matchid.io</a> au grand public en capitalisant
+                            sur le défi <strong> EIG1 </strong> du ministère de l'Intérieur.
+                            <br><br>
+                          </p>
+                          <p class="rf-tile__desc">
+                            <strong>Premier moteur de recherche avancée des décès</strong>
+                            <br>
+                            😊 Généalogistes et préfectures 😊
+                            <br>
+                            3000 utilisateurs jours
+                            <br><br>
+                            <strong>Première API d'appariement de gros fichiers clients</strong>
+                            <br>👏 Cliniciens, SIV (immatriculations) 👏
+                            <br>10k identités = 10 minutes ~ 100% match
+                            <br>gratuit et opensource
+                            <br><br>
+                            <strong>Corrections utilisateurs</strong><br>
+                            >500 propositions utilisateurs avec preuve en 2020.
+                            En 2021, une base et une UI seront mises en place.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rf-hide-mobile-background"></div>
+            </textarea>
+          </section>
+        </section>
+          <section data-markdown>
+            <textarea data-template>
+                ## Fréquentation du site
+                <div class="rf-text"><a href="https://deces.matchid.io/stats" target="_blank">deces.matchid.io/stats</a></div>
+                <div style="overflow: hidden;">
+                  <iframe scrolling="yes" style="margin-top: -195px;height:700px;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/stats" allowfullscreen/>
+                </div>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                ## Recherche simple
+                <div class="rf-text"><a href="https://deces.matchid.io/stats" target="_blank">deces.matchid.io/search</a></div>
+                <div style="overflow: hidden;">
+                <iframe scrolling="yes" style="margin-top: -100px;width: 100%;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/search?advanced=true&ln=pompidou&fn=georges" allowfullscreen/>
+                </div>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                ## Appariement en masse
+                <div class="rf-text"><a href="https://deces.matchid.io/stats" target="_blank">deces.matchid.io/link</a></div>
+                <br>
+                <div style="overflow: hidden;">
+                <iframe scrolling="yes" style="margin-top: -100px;width: 100%;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/link" allowfullscreen/>
+                </div>
+            </textarea>
+          </section>
+        <!-- Description du projet -->
+        <section>
+          <section title="projet" data-markdown>
+            <textarea data-template>
+                ## Description du projet
+                <div class="rf-container">
+                  <div class="rf-grid-row rf-grid-row--gutters">
+                    <div class="rf-col-xs-12 rf-col-xl-2"></div>
+                    <div class="rf-col-xs-12 rf-col-xl-8">
+                      <div class="">
+                        <h4>deces.api.gouv.fr + matchID</h4>
+                          <p class="rf-text--left">
+                            Devenir le <strong>diffuseur public de référence de la donnée de décès</strong>
+                            <br>
+                            Faire de <strong>matchID le produit de mise en qualité de l'identité numérique</strong> pivot (nom, prénom, lieu, date de naissance).
+                          </p>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-2"></div>
+                    <div class="rf-col-xs-12 rf-col-xl-4">
+                      <div class="rf-callout rf-text--left" style="position:relative">
+                        <img
+                          width="40%"
+                          style="position:absolute;right:-20px;top:40px;transform: scaleX(-1);"
+                          src="custom/img/genealogy-multi.svg"
+                        >
+                        <h4>Mise en qualité <br> des données</h4>
+                          <p>
+                            <strong>Recourir aux corrections paraticipatives</strong> <br>
+                            Usagers, généalogistes <br>
+                            proposent des corrections, l'API décès assure
+                            la transmission à l'INSEE.<br><br>
+                            <strong>Activer l'organisation du dialogue</strong> des fichiers autour du décès (INSEE, CERT Décès, COMEDEC, ...) pour proposer
+                            une <strong>réduction du délai de publication</strong> (e-testamentaires, assurances, ...).
+                          </p>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-4">
+                      <div class="rf-callout rf-text--left">
+                          <img
+                            width="20%"
+                            style="position:absolute;right:5px;top:85px;transform: scaleX(-1);"
+                            src="custom/img/doctor-man-2.svg"
+                          >
+                          <h4>Développer les usages</h4>
+                          <p>
+                            <strong>Étendre les usages de l'API décès</strong>
+                            <br>
+                            Base clients à renforcer : généalogistes, cliniciens et CHU
+                            <br> Usages à approfondir : e-testament, assurances,
+                            fraude, droit à l'oubli <br>
+                            des fichiers d'identité ...).
+                            <br><br>
+                            <strong>Offrir un mécanisme de qualité pour FranceConnect</strong>
+                            <br>
+                            Évaluer les usages d'une API générique de recherche avec un FI/FS (POC)
+                          </p>
+                      </div>
+                    </div>
+                    <div class="rf-col-xs-12 rf-col-xl-4">
+                      <div class="rf-callout rf-text--left">
+                          <img
+                            width="25%"
+                            style="position:absolute;right:-15px;bottom:15px;"
+                            src="custom/img/persona_22.svg"
+                          >
+                          <h4>Développer les capacités</h4>
+                          <p>
+                            <strong>Améliorations fonctionnelles</strong>
+                            Correction collaborative<br>
+                            Appariement géographique, active learning
+                            <br><br>
+                            <strong>Extension de capacités</strong>
+                            <br>x10 avec scalabilité à chaud x100
+                            <br><br>
+                            <strong>Standardiser l'intégration</strong>
+                            <br>
+                           Intégrer api.gouv, un API gateway (e.g Piste) et Datapass, Intégrer un FI
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rf-hide-mobile-background"></div>
+            </textarea>
+          </section>
+        </section>
+          <section data-markdown>
+            <textarea data-template>
+                ## Enrichissement des données
+                <div class="rf-text"><a href="https://deces.matchid.io/stats" target="_blank">deces.matchid.io/id/xr08WrRNt7zt</a></div>
+                <div style="overflow: hidden;">
+                <iframe scrolling="yes" style="margin-top: -100px;width: 100%;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/id/xr08WrRNt7zt" allowfullscreen/>
+                </div>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                ## Proposition de modifications
+                <div class="rf-text"><a href="https://deces.matchid.io/stats" target="_blank">deces.matchid.io/id/l3ppr2um3ja_</a></div>
+                <div style="overflow: hidden;">
+                <iframe scrolling="yes" style="margin-top: -100px;width: 100%;" class="rf-iframe--small rf-iframe--no-header" src="https://deces.matchid.io/id/l3ppr2um3ja_" allowfullscreen/>
+                </div>
+            </textarea>
+          </section>
+
+      </div>
+		</div>
+
+    <script defer src="custom/js/fa.js"></script>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+        width: "100%",
+        height: "100%",
+        margin: 0,
+        minScale: 1,
+        maxScale: 1,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch ]
+			});
+		</script>
+	</body>
+</html>
