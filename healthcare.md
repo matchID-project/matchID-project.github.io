@@ -6,7 +6,7 @@ image: /assets/images/doctor-man-2.svg
 image_flip: true
 imageTX: 60px
 background: /assets/images/cells.jpg
-title: Fiabilisation d'études clinques
+title: Fiabilisation d'études cliniques
 customLayout: true
 ---
 
@@ -95,7 +95,7 @@ customLayout: true
     </p>
     <p>
         Vous pouvez quitter l'onglet et revenir ultérieurement, la clé d'accès
-        est stockée sur le navigateur. Attention nénamoins, le résultat est effacé au bout d'une heure. Sinon,
+        est stockée sur le navigateur. Attention néanmoins, le résultat est effacé au bout d'une heure. Sinon,
         laissez l'onglet ouvert le traitement sera récupéré et stocké dès fin de traitement et archivé sur votre
         navigateur, même ap suppression du fichier de notre serveur.
     </p>
@@ -118,13 +118,13 @@ customLayout: true
         Le traitement fini, vous pouvez soit directement télécharger le fichier, soit le vérifier sur votre navigateur.Dans cette étape, le service est totalement déconnecté, les donnée sont stockées dans votre navigateur.
     </p>
     <p>
-        Les identités des personnes détectées comme décédées sont à valider sont présentées en haut, et celles déjà validées en bas. Les appariement avec un score surpérieur à 85% sont automatiquement validées.
+        Les identités des personnes détectées comme décédées sont à valider sont présentées en haut, et celles déjà validées en bas. Les appariement avec un score supérieur à 85% sont automatiquement validées.
     </p>
     <p>
         Pour un appariement donné, la donnée relative à votre fichier est située au dessus de la donnée de l'identité de décès, champ par champ. Lorsqu'il n'y a qu'une ligne, c'est que les données concordent. Les différences sont indiquées en couleur.
     </p>
-    <p>
-        Pour accélérer la validation manuelle, vous cocher la case "valider les paires similaires" : à chaque validtion, les autres paires non encore validées mais de nature similaire, c'est à dire avec des vecteurs de score similaires, seront également validées. Cela est utile si vous avez plusieurs milliers de lignes à valider.
+    <p
+        Pour accélérer la validation manuelle, vous cocher la case "valider les paires similaires" : à chaque validation, les autres paires non encore validées mais de nature similaire, c'est à dire avec des vecteurs de score similaires, seront également validées. Cela est utile si vous avez plusieurs milliers de lignes à valider.
     </p>
     <p>
         Vous pouvez également afficher les autres colonnes de votre fichier d'origine, si cela vous est utile.
