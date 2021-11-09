@@ -4,8 +4,9 @@ permalink: recipes
 description: How matchID supercharges your powers with recipes
 title: Recipes
 width: is-10
-image: /assets/images/persona_cooking.svg
-background: /assets/images/cooking.jpg
+hero:
+  image: /assets/images/persona_cooking.svg
+  background: /assets/images/cooking.jpg
 ---
 
 <div markdown="1">

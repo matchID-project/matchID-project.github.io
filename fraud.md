@@ -2,9 +2,10 @@
 layout: default
 permalink: fraud
 description: Les identités de personnes décédées doivent être radiées pour éviter les fraudes
-image: /assets/images/police-man-2.svg
-imageTX: 60px
-background: /assets/images/database.jpg
+hero:
+  image: /assets/images/police-man-2.svg
+  imageTX: 60px
+  background: /assets/images/database.jpg
 title: Fraude à l'identité
 customLayout: true
 ---

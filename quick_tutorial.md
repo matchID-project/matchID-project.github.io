@@ -6,10 +6,11 @@ description: Ce tutoriel traite un cas simple d'appariement et doit durer 10 à 
              de l'appariement d'identités
 
 title: Tutoriel - simple
-image: /assets/images/persona_4.svg
-imageTX: 0px
-imageTY: 0px
-background: /assets/images/datascience.jpg
+hero:
+  image: /assets/images/persona_4.svg
+  imageTX: 0px
+  imageTY: 0px
+  background: /assets/images/datascience.jpg
 customLayout: true
 ---
 

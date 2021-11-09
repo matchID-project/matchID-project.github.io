@@ -1,6 +1,6 @@
 name: matchID
 title: matchID project
-email: martingross89@gmail.com
+email: matchid.project@gmail.com
 description: |
   Traitements d'identités
   <br/><br/>
@@ -21,7 +21,7 @@ authors:
     image: fabien.jpeg
     github: rhanka
     email: fabien.antoine@m4x.org
-    desc: Fabien est ingénieur et travaille au sein de ministères régalien sur la data et l'IA.
+    desc: Fabien est ingénieur et travaille au sein de ministères régaliens sur la data et l'IA.
           Concepteur de matchID et de deces.matchid.io, il développe toujours avec plaisir
           les algorithmes aussi bien que les UI, sur son temps libre.
     twitter: fabien_antoine

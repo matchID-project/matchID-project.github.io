@@ -2,10 +2,11 @@
 layout: default
 permalink: healthcare
 description: Médecins, fiabilisez vos fichiers patients, et vos études cliniques avec l'appariement au fichier des décès
-image: /assets/images/doctor-man-2.svg
-image_flip: true
-imageTX: 60px
-background: /assets/images/cells.jpg
+hero:
+  image: /assets/images/doctor-man-2.svg
+  image_flip: true
+  imageTX: 60px
+  background: /assets/images/cells.jpg
 title: Fiabilisation d'études cliniques
 customLayout: true
 ---

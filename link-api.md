@@ -2,10 +2,11 @@
 layout: default
 permalink: link-api
 description: Développeurs, Datascientists, intégrez l'API décès au sein de vos applications
-image: /assets/images/persona_7.svg
-image_flip: true
-imageTX: 60px
-background: /assets/images/coding.jpg
+hero:
+  image: /assets/images/persona_7.svg
+  image_flip: true
+  imageTX: 60px
+  background: /assets/images/coding.jpg
 title: Intégrer l'API décès
 customLayout: true
 ---

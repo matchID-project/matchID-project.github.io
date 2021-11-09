@@ -14,6 +14,9 @@
         <meta name="theme-color" content="#ffffff">
         <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 
+        <meta property="og:image" content="https://matchid.io/assets/images/logo-square.png">
+        <meta property="twitter:image" content="https://matchid.io/assets/images/logo-square.png">
+        <meta property="og:image:alt" content="logo matchID">
         <!-- <link rel="stylesheet" href="/assets/css/app.css" /> -->
         <link rel="stylesheet" href="/assets/css/all.min.css" />
         <link rel="stylesheet" href="/assets/css/global.css" />
@@ -42,29 +45,29 @@
             <div class="rf-col-12 rf-background--bf rf-hide--mobile" style="min-height:17rem;">
               <div
                 style="z-index:0;
-                  {% if page.background %} background-image:url({{page.background}}); background-position: center; background-size: cover;background-blend-mode:lighten;{% endif %}"
+                  {% if page.hero.background %} background-image:url({{page.hero.background}}); background-position: center; background-size: cover;background-blend-mode:lighten;{% endif %}"
                 class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow"
               >
-                {% if page.image %}
-                  {% if page.imagePosition %}
+                {% if page.hero.image %}
+                  {% if page.hero.imagePosition %}
                     <div class="position:relative">
                       <img
                         width="50%"
-                        style="position:absolute;right:0;bottom:0;max-height:100%;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
-                        {% if page.imageTY %}{{page.imageTY}}){%else%}0px){% endif %}
-                        {% if page.imageScale %}scale({{page.imageScale}}){% endif %}
-                        {% if page.image_flip %}scaleX(-1){% endif %};"
-                        src="{{page.image}}"
+                        style="position:absolute;right:0;bottom:0;max-height:100%;transform: translate({% if page.hero.imageTX %}{{page.hero.imageTX}}{% else %} 0px{% endif %},
+                        {% if page.hero.imageTY %}{{page.hero.imageTY}}){%else%}0px){% endif %}
+                        {% if page.hero.imageScale %}scale({{page.hero.imageScale}}){% endif %}
+                        {% if page.hero.image_flip %}scaleX(-1){% endif %};"
+                        src="{{page.hero.image}}"
                       >
                     </div>
                     <div class="rf-card__img"></div>
                   {% else %}
-                    <div class="rf-card__img rf-card__img--fit {% if page.image_flip %} rf-img__flip {% endif %}">
+                    <div class="rf-card__img rf-card__img--fit {% if page.hero.image_flip %} rf-img__flip {% endif %}">
                       <img
-                        src="{{page.image}}"
-                        style="z-index: 1;transform: translate({% if page.imageTX %}{{page.imageTX}}{% else %} 0px{% endif %},
-                                {% if page.imageTY %}{{page.imageTY}}){%else%}0px){% endif %}
-                                {% if page.imageScale %}scale({{page.imageScale}}){% endif %};"
+                        src="{{page.hero.image}}"
+                        style="z-index: 1;transform: translate({% if page.hero.imageTX %}{{page.hero.imageTX}}{% else %} 0px{% endif %},
+                                {% if page.hero.imageTY %}{{page.hero.imageTY}}){%else%}0px){% endif %}
+                                {% if page.hero.imageScale %}scale({{page.hero.imageScale}}){% endif %};"
                         />
                     </div>
                   {% endif %}
