@@ -11,7 +11,7 @@ title: Débuter avec matchID
 customLayout: true
 ---
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h3>Prérequis</h3>
     <p>
         matchID nécessite de disposer <code>make</code> au préalable. Sur Ubuntu et Centos, <code>docker</code> et les autres prérequis sont automatiquement installés, dès lors que vous disposez d'un accès direct internet.
@@ -21,8 +21,8 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-12" style="z-index:-100;">
-    <table class="rf-table rf-vcenter">
+<div class="fr-col-lg-6 fr-col-md-12" style="z-index:-100;">
+    <table class="fr-table fr-vcenter">
         <thead>
             <tr>
                 <td>Usage</td>
@@ -50,15 +50,15 @@ customLayout: true
     </table>
 </div>
 
-<div class="rf-col-lg-12 rf-col-md-12">
-<div class="rf-container-fluid">
-<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+<div class="fr-col-lg-12 fr-col-md-12">
+<div class="fr-container-fluid">
+<div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="rf-col-lg-6 rf-col-md-6">
+<div class="fr-col-lg-6 fr-col-md-6">
     <h3>Démarrer en une minute</h3>
     <p>
         Clônez le code source et rentrez dans le répertoire
-        <p class="rf-highlight">
+        <p class="fr-highlight">
             <code>
             git clone https://github.com/matchID-project/backend<br>
             cd backend
@@ -67,37 +67,37 @@ customLayout: true
     </p>
     <p>
         Lancez matchID:
-       <p class="rf-highlight">
+       <p class="fr-highlight">
             <code>
             make up
             </code>
         </p>
     </p>
-    <p class="rf-text--xs">
+    <p class="fr-text--xs">
         En cas de problème ou de configuration avancée, reportez vous à la section
         <a title="dépannage" href="/automation#troubleshooting">section dépannage</a>.
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <img class="rf-responsive-img rf-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <img class="fr-responsive-img fr-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif">
 </div>
 
 </div>
 </div>
 </div>
 
-<div class="rf-col-lg-12 rf-col-md-12">
+<div class="fr-col-lg-12 fr-col-md-12">
     <p>
         Rendez-vous sur votre navigateur sur:
         <code>
         <a href="http://localhost:8081/matchID/" title="serveur local matchID">http://localhost:8081/matchID/</a>
         </code>
     </p>
-    <img class="rf-responsive-img" src="assets/images/frontend-start.png" alt="matchID projects view">
+    <img class="fr-responsive-img" src="assets/images/frontend-start.png" alt="matchID projects view">
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-6">
+<div class="fr-col-lg-6 fr-col-md-6">
     <h3>Ça n'a pas marché</h3>
     <p>
         Si l'installation n'a pas fonctionné, votre environnement est peut-être plus cloisonné, ou sur une distribution alternative (Darwin, Alpine...).
@@ -108,12 +108,12 @@ customLayout: true
     <p>
         Si vous n'êtes pas dans un environnement cloisonné, vous pouvez réitérer avec la commande:
     </p>
-    <p class="rf-highlight">
+    <p class="fr-highlight">
     <code>make up</code>
     </p>
 </div>
 
-<div class="rf-col-lg-6 rf-col-md-6">
+<div class="fr-col-lg-6 fr-col-md-6">
     <h3>Installation hors ligne</h3>
     <p>
         Après avoir installé <code>make, git, jq, docker-ce</code>, vous pouvez copier dans votre environnement
@@ -122,7 +122,7 @@ customLayout: true
     <p>
         Décompactez l'archive, lancez le script d'installation, puis démarrez matchID :
     </p>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 tar xvzf matchid-latest.tar.gz
 cd backend
@@ -131,24 +131,24 @@ make up
 ```
 </div>
 </div>
-<div class="rf-col-lg-12 rf-col-md-12">
+<div class="fr-col-lg-12 fr-col-md-12">
     <p>
         Vous devriez retrouver matchID sur :
     </p>
-    <p class="rf-text--center">
+    <p class="fr-text--center">
         <code>
         <a href="http://localhost:8081/matchID/" title="serveur local matchID">http://localhost:8081/matchID/</a>
         </code>
     </p>
 </div>
 
-<div class="rf-col-lg-12 rf-col-md-12">
-    <h3 class="rf-text--center"> Pour continuer </h3>
+<div class="fr-col-lg-12 fr-col-md-12">
+    <h3 class="fr-text--center"> Pour continuer </h3>
 </div>
-<div class="rf-col-md-6 rf-col-xs-12 rf-text--center">
-    <a href="/quick_tutorial" class="rf-link rf-link--icon-right" target="_self" title="tutoriel simple">Tutoriel simple</a>
+<div class="fr-col-md-6 fr-col-xs-12 fr-text--center">
+    <a href="/quick_tutorial" class="fr-link fr-link--icon-right" target="_self" title="tutoriel simple">Tutoriel simple</a>
 </div>
-<div class="rf-col-md-6 rf-col-xs-12 rf-text--center">
-    <a href="/advanced_tutorial" class="rf-link rf-link--icon-right" target="_self" title="tutoriel avancé">Tutoriel avancé</a>
+<div class="fr-col-md-6 fr-col-xs-12 fr-text--center">
+    <a href="/advanced_tutorial" class="fr-link fr-link--icon-right" target="_self" title="tutoriel avancé">Tutoriel avancé</a>
 </div>
 
