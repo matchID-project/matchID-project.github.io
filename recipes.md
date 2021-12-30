@@ -76,7 +76,7 @@ Summary:
 
 This recipe creates new columns to the dataframe, simply based on others.
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - map:
           matchid_date_birth_src: datasetAlpha_DATE_NAISSANCE
@@ -92,7 +92,7 @@ This recipe creates new columns to the dataframe, simply based on others.
 
 This recipe keeps only columns matching a regex, with an optional `where` condition :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - keep:
           select: matchid_.*   # selection with a regexp
@@ -100,7 +100,7 @@ This recipe keeps only columns matching a regex, with an optional `where` condit
 ```
 or in an explicit list :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - keep:
           select:              # selection by list
@@ -113,7 +113,7 @@ or in an explicit list :
 
 This recipe deletes columns matching a regex :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - delete:
           select: datasetAlpha.*    # selection with a regexp
@@ -122,7 +122,7 @@ This recipe deletes columns matching a regex :
 <div markdown="1">
 or in an explicit list :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - delete:
           select:              # selection by list
@@ -135,13 +135,13 @@ or in an explicit list :
 
 Renames columns of a dataframe :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - rename:
           source_column1: target_column1
           source_column2: target_column2
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 </div>
 <div markdown="1">
@@ -155,7 +155,7 @@ A particular `column` value is available in `row['column']` as in `column`.
 
 Here's an example:
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - eval:
         - matchid_name_first: matchid_name_first_src if (type(matchid_name_first_src)==list) else [matchid_name_first_src]
@@ -178,7 +178,7 @@ A particular `column` value is available in `row['column']` as in `column`.
 
 Here's an example:
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - exec:
         - df['matchid_name_match'] = df['matchid_name_last']+ np.where(df['matchid_name_first']!=""," " + df['matchid_name_first'], "")
@@ -188,7 +188,7 @@ Here's an example:
 <div markdown="1">
 You can even have a multiline code:
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - exec: >
           df['matchid_location_depcode'] = np.where(
@@ -202,7 +202,7 @@ You can even have a multiline code:
 
 This methods applies regex on a selection of fields (matching itself a regex), in python style:
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - replace:
           select: matchid_location_city.*         # regex for selection
@@ -218,7 +218,7 @@ This methods applies regex on a selection of fields (matching itself a regex), i
 
 This method transforms a text to lowercase, removes accent and special characters on selected-by-regex fields :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - normalize:
           select: matchid_location_city.*
@@ -230,7 +230,7 @@ This recipe is an helper for debugging a recipe. It ends prematurely the recipe,
 
 Complement helpers are a selection of fields (like keep) and of top rows (head) to limit the size of the treatment.
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - pause:
           select: matchid_location_city.*
@@ -245,7 +245,7 @@ Fully shuffles the data (each column independtly) using `np.random.permutation`.
 
 This recipe converts a selection-by-regex of columns from string to integers, fills not available value with NaN or a specified value.
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - to_integer:
           select: ^.*(population|surface).*
@@ -256,7 +256,7 @@ This recipe converts a selection-by-regex of columns from string to integers, fi
 
 This recipe converts a selection-by-regex of columns from string to floats, fills not available value with NaN or specified value.
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - to_float:
           select: ^.*(frequency|).*
@@ -275,7 +275,7 @@ Converts a tuple to a list.
 
 Computes n-grams of selected columns
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - ngram:
           select: .*name.*
@@ -286,7 +286,7 @@ Computes n-grams of selected columns
 
 This recipe converts a selection-by-regex of columns from string to a date/time type :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - parsedate :
           select: matchid_date_.*
@@ -303,7 +303,7 @@ This fuzzy join is either in-memory (to match to small referential datasets; ie 
 
 In the following example we try to match both city label (fuzzily), departement code (strictly) and country iso code (strictly) to recover citycode history of a city :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - join:
           type : in_memory
@@ -318,7 +318,7 @@ In the following example we try to match both city label (fuzzily), departement 
             matchid_location_city: name
             matchid_location_city_geopoint_2d: geopoint_2d
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 </div>
 <div markdown="1">
@@ -327,7 +327,7 @@ In the following example we try to match both city label (fuzzily), departement 
 This example is more frequent and easier but useful when you have multiple referential datasets (slower than a SQL join but
 can help to limit the number of in-between datasets) :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - join:
           dataset: french_citycodes
@@ -347,7 +347,7 @@ Of course you'll need a big cluster if you want to deal with many millions of ma
 
 The fuzzy match just relies on pure elasticsearch queries transformed from json to yaml :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - join:
           type: elasticsearch
@@ -390,7 +390,7 @@ The elasticsearch join can accept some configurations :
 
 This recipe splits a selection-by-regex columns of arrays in to multiple rows, copying the content of the other columns :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - unfold:
           select: ^hits
@@ -400,13 +400,13 @@ This recipe splits a selection-by-regex columns of arrays in to multiple rows, c
 
 This recipe splits a selection-by-regex columns of jsons to multiple columns, one by key value of the JSON and delete previous columns :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - unnest:
           select: ^hits
           prefix: hit_ #prefix with 'hit_' the keys for name the columns, default prefix is empty
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 </div>
 <div markdown="1">
@@ -414,7 +414,7 @@ This recipe splits a selection-by-regex columns of jsons to multiple columns, on
 
 Gathers the selected columns and values into a json in the target column :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - nest:
           select: .*location.*
@@ -426,7 +426,7 @@ Gathers the selected columns and values into a json in the target column :
 
 This computes a groupby and redispatchzq value across the group :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
      - groupby:
           select: matchid_id
@@ -444,7 +444,7 @@ This method should be used without chunks unless you're sure each member of grou
 
 This methods applies only on a full dataset an should have the flag `chunked: False` in the input dataset, e.g :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
   train_rescoring_model:
     input:
@@ -455,7 +455,7 @@ This methods applies only on a full dataset an should have the flag `chunked: Fa
 <div markdown="1">
 To build a model, here's the way:
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - build_model:
           model:
@@ -482,7 +482,7 @@ To apply a model, you need to [build one first](#build_model) or use a pre-train
 Models can only be applied to same data as in training aka same columns in the same order.
 </div>
 
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - apply_model:
           name: rnipp_agrippa_ml                                              # name of the model to be applied
@@ -548,7 +548,7 @@ Let's say that `clients` and `deaths` are our two datasets using the same connec
 
 Here's a simple example of SQL recipe :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 recipes:
   sql_matching:

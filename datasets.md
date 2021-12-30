@@ -32,7 +32,7 @@ Default connectors are included in the initial configuration (and can me modifie
 
 To create other connectors, we haven't provided an online editor for now, your have to add it manually in the `conf/connectors/connectors.yml`:
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 connectors:
   upload:
@@ -65,7 +65,7 @@ connectors:
 
 Datasets are a file, a set of files, a table or an index within a connector.
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 datasets:
   my_dataset:
@@ -96,8 +96,7 @@ If you're familiar with using many sources you know CSV is not standard and that
 >For robust and stable processing, we desactivated every guessing of types, so every cell is string or unicode in input: casting data types will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
 
 </div>
-<div style="width:calc(100vw - 2rem);overflow-x:scroll">
-<div class="rf-table rf-table--scroll" markdown="1">
+<div class="fr-table" markdown="1">
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
@@ -109,7 +108,6 @@ If you're familiar with using many sources you know CSV is not standard and that
 | skiprows   | 0          | *any number*  | skip n rows before processing       |
 
 </div>
-</div>
 <div markdown="1">
 
 #### Fwf
@@ -119,8 +117,7 @@ This is the old brother of the CSV, the fixed-width tabular is a variant, but in
 Like in csv, for robust and stable processing, we desactivated every guessing of types, so that every cell is string or unicode in input: casting data types will be possible next within recipes. For the same reason, we didn't deal here with the `na_values` and keep_default_na is forced to `False`.
 
 </div>
-<div style="width:calc(100vw - 2rem);overflow-x:scroll">
-<div class="rf-table rf-table--scroll" markdown="1">
+<div class="fr-table" markdown="1">
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
@@ -130,7 +127,6 @@ Like in csv, for robust and stable processing, we desactivated every guessing of
 | compression| infer      | None, gzip ...| specify if compressed               |
 | skiprows   | 0          | *any number*  | skip n rows before processing     |
 
-</div>
 </div>
 <div markdown="1">
 #### msgpack
@@ -150,7 +146,7 @@ There is no specific option when using a (PostGre)SQL dataset at the moment.
 </div>
 
 <div style="width:calc(100vw - 2rem);overflow-x:scroll!important">
-<div class="rf-table rf-table--scroll" markdown="1">
+<div class="fr-table fr-table--scroll" markdown="1">
 
 | option     |  default   |  other        |  objective                          |
 |:-----------|:-----------|:--------------|:------------------------------------|
@@ -174,7 +170,7 @@ The big challenge with elasticsearch datasets and scaling is the tuning possibil
 
 Here is an example of configuration :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 datasets:
   my_dataset:
@@ -214,7 +210,7 @@ Elasticsearch can be used to validate matches (as seen in [tutorial])(/tutorial#
 
 The validation option is activated by adding the `validation: true` option :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 datasets:
   clients_x_deaths:
@@ -226,7 +222,7 @@ datasets:
 <div markdown="1">
 Validation mode is configured with the `conf/matchID_validation.conf` file for default behaviour. They can be overriden for each validation dataset like this :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
     [...]
     validation:
