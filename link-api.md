@@ -11,7 +11,7 @@ title: Intégrer l'API décès
 customLayout: true
 ---
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h3>Quelle API pour quel usage</h3>
     <p>
         L'API décès possède deux principales fonctions:
@@ -35,30 +35,30 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <a href="https://deces.matchid.io/deces/api/v1/docs" title="documentation OpenApi" target="_self"><img class="rf-responsive-img" src="assets/images/deces-api-swagger.png" alt="openapi"></a>
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <a href="https://deces.matchid.io/deces/api/v1/docs" title="documentation OpenApi" target="_self"><img class="fr-responsive-img" src="assets/images/deces-api-swagger.png" alt="openapi"></a>
 </div>
 
-<div class="rf-col-12">
-<div class="rf-container-fluid">
-<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+<div class="fr-col-12">
+<div class="fr-container-fluid">
+<div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h3>Intégration d'un formulaire</h3>
     <p>
         Le cas d'usage basique est l'utilisation, de la recherche simple (<code>q=Pompidou...</code>)
         depuis la valeur d'un formulaire (<code>input</code>).
     </p>
-    <img class="rf-responsive-img" src="assets/images/deces-api-search.svg" alt="API search">
+    <img class="fr-responsive-img" src="assets/images/deces-api-search.svg" alt="API search">
     <p>
-        Le code <span class="rf-hide--desktop">suivant</span><span class="rf-hide--modbile">ci-contre</span> est l'implémentation de cas en <strong>Svelte.js</strong>. Cliquez sur "output" pour voir le résultat, ou rendez-vous sur ce <a href="https://svelte.dev/repl/442012e7de2d4a4080b1e2c0da359cfe?version=3.31.0" target="_blank" title="REPL">REPL</a>.
+        Le code <span class="fr-hide--desktop">suivant</span><span class="fr-hide--modbile">ci-contre</span> est l'implémentation de cas en <strong>Svelte.js</strong>. Cliquez sur "output" pour voir le résultat, ou rendez-vous sur ce <a href="https://svelte.dev/repl/442012e7de2d4a4080b1e2c0da359cfe?version=3.31.0" target="_blank" title="REPL">REPL</a>.
     </p>
     <p>
         L'exemple utilise l'API search en mode <code>GET</code>, documentée <a href="https://deces.matchid.io/deces/api/v1/docs/#/Simple/Search" title="API search (GET)" target="_blank">ici</a>.
         Sa transposition en <code>POST</code> est simple et préférable pour la robustesse d'un code de production.
     </p>
 </div>
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <div style="overflow:hidden;">
         <iframe frameborder="0" width="100%" height="600px"
             scrolling="no" style="margin-top: -116px;"
@@ -71,7 +71,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h3>Intégration de l'API d'appariement à un backend</h3>
     <p>
         L'API unitaire est limité à une requête par seconde. Pour les appariement en masse,
@@ -80,7 +80,7 @@ customLayout: true
     <p>
         Cette API de soumettre un CSV contenant jusqu'à <strong>1 millions d'identité</strong> (100Mo), qui sera complété d'éventuelles détections des données de décès en cas de correspondance celle-ci étant qualifiée par un score de confiance.
     </p>
-    <img class="rf-responsive-img" src="assets/images/deces-api-link.svg" alt="API search">
+    <img class="fr-responsive-img" src="assets/images/deces-api-link.svg" alt="API search">
     <p>
         Ces données peuvent être retraitées à l'issue pour être injectées dans votre base de donnée.
     </p>
@@ -88,7 +88,7 @@ customLayout: true
         L'exemple minimaliste suivant est réalisé en Python est dispnible sur ce <a href="https://repl.it/@rhanka/API-deces-linkage#main.py" target="_blank" title="REPL">REPL</a>.
     </p>
 </div>
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <div style="overflow:hidden;">
         <iframe frameborder="0" width="100%" height="600px"
             scrolling="no" style="margin-top: 0px;"
@@ -99,7 +99,7 @@ customLayout: true
 
 {% include algos-link-api.html %}
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h3> Intégration d'une UI de validation </h3>
     <p>
         Nous vous recommandons dans un premier temps de passer par <a href="https://deces.matchid.io/link" title="appariement sur deces.matchid.io" target="_self">le service en ligne</a> pour tester la validité du fichier et du choix des colonnes à apparier avant d'attaquer le code d'appariement. Vous pourrez, en particulier, vérifier avec l'aide de l'UI de validation.
@@ -116,21 +116,21 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <div class="rf-vcenter">
-    <img width="rf-responsive-img" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <div class="fr-vcenter">
+    <img width="100%" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
     <p>
        Les composants développés implémentent une <strong>mise en exergue des différences champs par champ</strong> (nom, prénom, ...) entre la donnée cherchée et la donnée de référence INSEE. Cette facilitation visuelle est la
        source d'accélération de la validation. Nos implémentations reposent sur la <a href="https://www.npmjs.com/package/diff.js" title="librairie diff.js" target="_blank">librairie diff.js</a>.
     </p>
     </div>
 </div>
-<div class="rf-col-12 rf-text--center">
+<div class="fr-col-12 fr-text--center">
     <h3> Pour continuer </h3>
 </div>
-<div class="rf-col-6 rf-text--center">
-    <a href="https://deces.matchid.io/link" class="rf-link rf-link--icon-right" target="_self"> Appariement en ligne</a>
+<div class="fr-col-6 fr-text--center">
+    <a href="https://deces.matchid.io/link" class="fr-link fr-link--icon-right" target="_self"> Appariement en ligne</a>
 </div>
-<div class="rf-col-6 rf-text--center">
-    <a href="/algorithms" class="rf-link rf-link--icon-right" target="_self"> Algorithmes</a>
+<div class="fr-col-6 fr-text--center">
+    <a href="/algorithms" class="fr-link fr-link--icon-right" target="_self"> Algorithmes</a>
 </div>

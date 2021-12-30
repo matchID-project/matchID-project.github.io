@@ -1,11 +1,11 @@
-<div class="rf-col-xl-2 rf-col-lg-1 rf-col-md-12 rf-col-sm-12 rf-col-xs-12"></div>
-<div class="rf-col-xl-8 rf-col-lg-10 rf-col-md-12 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-2 fr-col-lg-1 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
+<div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-12 fr-col-sm-12 fr-col-xs-12">
     <h3> Appariement sur deces.matchid.io, explications </h3>
-    <div class="rf-callout">
+    <div class="fr-callout">
         <p>
             L'appariement requiert de trois étapes:
         </p>
-        <ol class="rf-ml-4w">
+        <ol class="fr-ml-4w">
             <li> l'indexation des données de décès dans l'API</li>
             <li> la recherche de chaque identité du CSV auprès de l'index</li>
             <li> le <i>scoring</i> de confiance de chaque identité retrouvée </li>
@@ -15,8 +15,8 @@
         </p>
     </div>
 </div>
-<div class="rf-col-xl-2 rf-col-lg-1 rf-col-md-12 rf-col-sm-12 rf-col-xs-12"></div>
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-2 fr-col-lg-1 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h4> Recherche des identités </h4>
     <p>
         La requête est composée d'un bloc de critères obligatoires (<i>blocking</i>), les autres éléments de la requête étant optionnels. Les critères obligatoires sont ceux-ci:
@@ -34,7 +34,7 @@
             </li>
         </ul>
     </p>
-    <p class="rf-highlight"><small>
+    <p class="fr-highlight"><small>
         Note 1: si l'un des champs nom ou prénom manquent, tous les champs disponibles deviennent obligatoires, avec une tolérance floue.
         <br>
         Note 2: les données INSEE utilisent le nom de naissance. Le nom d'usage génère du silence (manqués), notamment sur la popuation des femme mariées.
@@ -43,7 +43,7 @@
         </small>
     </p>
 </div>
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h4> Scoring </h4>
     <p>
         Le scoring est composé de trois composantes relatives aux données de l'identité pivot: nom & prénom, sexe, date et lieu de naissance.
