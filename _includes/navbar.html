@@ -1,197 +1,198 @@
-<header class="rf-header">
-  <div class="rf-container rf-container__header">
-    <div class="rf-header__body">
-      <div class="rf-header__brand">
-        <a
-          href="/"
-          class="rf-logo"
-          title="République Française"
-        >
-          <span class="rf-logo__title">
-              République<br>
-              Française
-          </span>
-        </a>
-      </div>
-      <img
-        src="/assets/images/favicon.svg"
-        alt="matchID Logo"
-        height="64px"
-        width="64px"
-      />
-      <div class="rf-header__navbar">
-          <div class="rf-service">
-              <span class="rf-service__title" title="matchID - moteur de recherche des personnes décédées">
-                Traitements d'identités numériques
-              </span>
-              <p class="rf-service__tagline">
+<header role="banner" class="fr-header">
+  <div class="fr-header__body">
+      <div class="fr-container">
+        <div class="fr-header__body-row">
+          <div class="fr-header__brand fr-enlarge-link">
+            <div class="fr-header__brand-top">
+              <div class="fr-header__logo">
+                  <p class="fr-logo">
+                      République
+                      <br>Française
+                  </p>
+              </div>
+              <div class="fr-header__operator">
+                <img
+                  src="/assets/images/favicon.svg"
+                  alt="matchID Logo"
+                  height="64px"
+                  width="64px"
+                />
+              </div>
+            </div>
+            <div class="fr-header__service">
+              <a href="/" title="matchID - moteur de recherche des personnes décédées">
+                <p class="fr-header__service-title">Traitements d'identités numériques</p>
+              </a>
+              <p class="fr-header__service-tagline">
                 Fiabilisation, recherche et appariements jusqu'à <strong>100 millions</strong> d'identités
               </p>
+            </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="rf-container rf-container__header">
+  <div class="fr-container">
     <!-- Menu déroulant sur le premier élément -->
-    <nav class="rf-nav" role="navigation" aria-label="Menu principal">
-      <ul class="rf-nav__list">
-        <li class="rf-nav__item">
-          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-2">Produits</button>
-          <div class="rf-menu" id="rf-nav-item-2">
-            <ul class="rf-menu__list">
-              <li class="rf-menu__item">
-                <strong> matchID </strong>
+    <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
+      <ul class="fr-nav__list">
+        <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-2">Produits</button>
+          <div class="fr-collapse fr-menu" id="fr-nav-item-2">
+            <ul class="fr-menu__list">
+              <li>
+                <strong class="fr-ml-2w"> matchID </strong>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="slides/#/3/8" target="_self">
+              <li>
+                <a class="fr-nav__link" href="slides/#/3/8" target="_self">
                   Développer des algorithmes d'appariement
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="slides/#/3/5" target="_self">
+              <li>
+                <a class="fr-nav__link" href="slides/#/3/5" target="_self">
                   Evaluer les algorithmes
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="/automation" target="_self">
+              <li>
+                <a class="fr-nav__link" href="/automation" target="_self">
                   Automatiser les traitements
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <strong> deces.matchid.io </strong>
+              <li>
+                <strong class="fr-ml-2w"> deces.matchid.io </strong>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="https://deces.matchid.io/search" target="_self">
+              <li>
+                <a class="fr-nav__link" href="https://deces.matchid.io/search" target="_self">
                   Moteur de recherche des décès
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="https://deces.matchid.io/link" target="_self">
+              <li>
+                <a class="fr-nav__link" href="https://deces.matchid.io/link" target="_self">
                   Identifier les décès dans un fichier
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="https://deces.matchid.io/deces/api/v1/docs" target="_self">
+              <li>
+                <a class="fr-nav__link" href="https://deces.matchid.io/deces/api/v1/docs" target="_self">
                   Automatisation via l'API décès
                 </a>
               </li>
             </ul>
           </div>
         </li>
-        <li class="rf-nav__item">
-          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-1">Cas d'usage</button>
-          <div class="rf-menu" id="rf-nav-item-1">
-            <ul class="rf-menu__list">
-              <li class="rf-menu__item">
-                <a class="rf-link" href="/genealogy" target="_self">
+        <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-1">Cas d'usage</button>
+          <div class="fr-collapse fr-menu" id="fr-nav-item-1">
+            <ul class="fr-menu__list">
+              <li>
+                <a class="fr-nav__link" href="/genealogy" target="_self">
                   Recherche généalogique
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="/healthcare" target="_self">
+              <li>
+                <a class="fr-nav__link" href="/healthcare" target="_self">
                   Fiabilisation d'études cliniques
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="/fraud" target="_self">
+              <li>
+                <a class="fr-nav__link" href="/fraud" target="_self">
                   Fraude à l'identité
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="#" target="_self">
+              <li>
+                <a class="fr-nav__link" href="#" target="_self">
                   Fiabilisation statistique
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="#" target="_self">
+              <li>
+                <a class="fr-nav__link" href="#" target="_self">
                   Mise en qualité d'identités
                 </a>
               </li>
-              <li class="rf-menu__item">
-                <a class="rf-link" href="#" target="_self">
+              <li>
+                <a class="fr-nav__link" href="#" target="_self">
                   Moteur de recherche d'identités
                 </a>
               </li>
             </ul>
           </div>
         </li>
-        <li class="rf-nav__item">
-          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-3">Comprendre</button>
-          <div class="rf-menu" id="rf-nav-item-3">
-              <ul class="rf-menu__list">
-                  <li class="rf-menu__item">
-                    <a class="rf-link" href="/slides/#/1" target="_self">
+        <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-3">Comprendre</button>
+          <div class="fr-collapse fr-menu" id="fr-nav-item-3">
+              <ul class="fr-menu__list">
+                  <li>
+                    <a class="fr-nav__link" href="/slides/#/1" target="_self">
                       Données d'identités
                     </a>
                   </li>
-                  <li class="rf-menu__item">
-                    <a class="rf-link" href="/slides/#/3/11" target="_self">
+                  <li>
+                    <a class="fr-nav__link" href="/slides/#/3/11" target="_self">
                       Les algorithmes
                     </a>
                   </li>
-                  <li class="rf-menu__item">
-                    <a class="rf-link" href="https://matchid.io/slides/#/2/1" target="_self">
+                  <li>
+                    <a class="fr-nav__link" href="https://matchid.io/slides/#/2/1" target="_self">
                       Cadrer un traitement métier
                     </a>
                   </li>
               </ul>
           </div>
         </li>
-        <li class="rf-nav__item">
-          <button class="rf-btn" aria-expanded="false" aria-controls="rf-nav-item-4">Pour développer</button>
-          <div class="rf-menu" id="rf-nav-item-4">
-              <ul class="rf-menu__list">
-                <li class="rf-menu__item">
-                  <strong> matchID </strong>
+        <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-4">Pour développer</button>
+          <div class="fr-collapse fr-menu" id="fr-nav-item-4">
+              <ul class="fr-menu__list">
+                <li>
+                  <strong class="fr-ml-2w"> matchID </strong>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="/starting" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="/starting" target="_self">
                     Débuter
                   </a>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="/quick_tutorial" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="/quick_tutorial" target="_self">
                     Appariement simple
                   </a>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="/advanced_tutorial" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="/advanced_tutorial" target="_self">
                     Appariement complexe, avec machine learning
                   </a>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="/recipes" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="/recipes" target="_self">
                     Documentation des recettes
                   </a>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="/datasets" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="/datasets" target="_self">
                     Documentation des datasets
                   </a>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="/automation" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="/automation" target="_self">
                     Devops
                   </a>
                 </li>
-                <li class="rf-menu__item">
-                  <strong> deces.matchid.io </strong>
+                <li>
+                  <strong class="fr-ml-2w"> deces.matchid.io </strong>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="/link-api" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="/link-api" target="_self">
                     Intégrer l'API décès
                   </a>
                 </li>
-                <li class="rf-menu__item">
-                  <a class="rf-link" href="#" target="_self">
+                <li>
+                  <a class="fr-nav__link" href="#" target="_self">
                     Déployer on-premise
                   </a>
                 </li>
               </ul>
           </div>
         </li>
-        <li class="rf-nav__item">
-          <a class="rf-link" href="/about" target="_self">À propos</a>
+        <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/about" target="_self">À propos</a>
         </li>
       </ul>
     </nav>
