@@ -9,16 +9,16 @@ hero:
   imagePosition: absolute
 customLayout: true
 ---
-<div class="rf-container-fluid">
-  <div class="rf-grid-row rf-grid-row--gutters">
-    <div class="rf-col-xl-4 rf-col-lg-4 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-      <div class="rf-card">
-        <img class="rf-card__img-persona" width="100%" src="/assets/images/genealogy.svg" alt="recherche généalogique"/>
-        <div class="rf-card__body">
-          <h4 class="rf-card__lead">
-            <a class="rf-card__link" href="/genealogy" target="_self">Généalogistes</a>
+<div class="fr-container-fluid">
+  <div class="fr-grid-row fr-grid-row--gutters">
+    <div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+      <div class="fr-card">
+        <img class="fr-card__img-persona" width="100%" src="/assets/images/genealogy.svg" alt="recherche généalogique"/>
+        <div class="fr-card__body">
+          <h4 class="fr-card__lead">
+            <a class="fr-card__link" href="/genealogy" target="_self">Généalogistes</a>
           </h4>
-          <p class="rf-card__desc">
+          <p class="fr-card__desc">
             Complétez vos fiches généalogiques à l'aide des 25 millions
             d'événements de décès de la source INSEE.<br><br>
 
@@ -27,27 +27,27 @@ customLayout: true
         </div>
       </div>
     </div>
-    <div class="rf-col-xl-4 rf-col-lg-4 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-      <div class="rf-card">
-        <img class="rf-card__img-persona" width="100%" src="/assets/images/doctor-man-2.svg" alt="fiabilisation fichiers"/>
-        <div class="rf-card__body">
-          <h4 class="rf-card__lead">
-            <a class="rf-card__link" href="/healthcare">Médecins</a>
+    <div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+      <div class="fr-card">
+        <img class="fr-card__img-persona" width="100%" src="/assets/images/doctor-man-2.svg" alt="fiabilisation fichiers"/>
+        <div class="fr-card__body">
+          <h4 class="fr-card__lead">
+            <a class="fr-card__link" href="/healthcare">Médecins</a>
           </h4>
-          <p class="rf-card__desc">
+          <p class="fr-card__desc">
             <br>Fiabilisez vos fichiers patients, et vos études cliniques avec l'appariement au fichier des décès
           </p>
         </div>
       </div>
     </div>
-    <div class="rf-col-xl-4 rf-col-lg-4 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-      <div class="rf-card">
-        <img class="rf-card__img-persona" width="100%" src="/assets/images/datascientist.svg" alt="fiabilisation fichiers"/>
-        <div class="rf-card__body">
-          <h4 class="rf-card__lead">
-            <a class="rf-card__link" href="/starting">Data scientist</a>
+    <div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+      <div class="fr-card">
+        <img class="fr-card__img-persona" width="100%" src="/assets/images/datascientist.svg" alt="fiabilisation fichiers"/>
+        <div class="fr-card__body">
+          <h4 class="fr-card__lead">
+            <a class="fr-card__link" href="/starting">Data scientist</a>
           </h4>
-          <p class="rf-card__desc">
+          <p class="fr-card__desc">
             Etudiez, développez et intégrez tout type de cas d'usage autour de l'identité numérique:
             appariement, dédoublonnage, qualité, ...<br>
             Quel que soit le volume et le type de base de donnée source
@@ -58,14 +58,20 @@ customLayout: true
   </div>
 </div>
 
-<div class="rf-container-fluid">
-  <div class="rf-grid-row rf-grid-row--gutters">
-    <div class="rf-col-12 rf-hero">
-      <h2 class="rf-text--center">
+<div class="fr-container-fluid">
+  <div class="fr-grid-row fr-grid-row--gutters">
+    <div class="fr-col-12 fr-hero fr-mt-8w fr-pt-2w fr-background--g400">
+      <h2 class="fr-text--center">
         Qui sommes nous ?
-      </h2>
+      </h1>
+    </div>
+    <div class="fr-col-12">
+      <div class="fr-container-fluid">
+        <div class="fr-grid-row fr-grid-row--gutters">
+          {% include about.html %}
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-{% include about.html %}
