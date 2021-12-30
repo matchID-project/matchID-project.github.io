@@ -18,7 +18,7 @@
         <meta property="twitter:image" content="https://matchid.io/assets/images/logo-square.png">
         <meta property="og:image:alt" content="logo matchID">
         <!-- <link rel="stylesheet" href="/assets/css/app.css" /> -->
-        <link rel="stylesheet" href="/assets/css/all.min.css" />
+        <link rel="stylesheet" href="/assets/dsfr/dsfr.min.css" />
         <link rel="stylesheet" href="/assets/css/global.css" />
         <link rel="preload" href="/assets/fonts/Marianne-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
         <link rel="preload" href="/assets/fonts/Marianne-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -27,26 +27,13 @@
     <body>
         {% include navbar.html %}
 
-        <div class="rf-container-fluid">
-          <div class="rf-grid-row">
-            <div class="rf-col-12 rf-background--bf rf-hide--desktop rf-pr-2w rf-pt-2w rf-pl-2w">
-              <h2 class="rf-card__lead rf-color--white">
-                {{ page.title }}
-              </h2>
-              <p class="rf-card__desc rf-color--white">
-                {{ page.description }}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rf-container">
-          <div class="rf-grid-row">
-            <div class="rf-col-12 rf-background--bf rf-hide--mobile" style="min-height:17rem;">
+        <div class="fr-container">
+          <div class="fr-grid-row">
+            <div class="fr-col-12 fr-background--bf fr-hide--mobile" style="min-height:17rem;">
               <div
                 style="z-index:0;
                   {% if page.hero.background %} background-image:url({{page.hero.background}}); background-position: center; background-size: cover;background-blend-mode:lighten;{% endif %}"
-                class="rf-card rf-card--horizontal rf-card--horizontal-right rf-background--bf rf-card--no-arrow"
+                class="fr-card fr-card--horizontal fr-card--horizontal-right fr-background--bf fr-card--no-arrow"
               >
                 {% if page.hero.image %}
                   {% if page.hero.imagePosition %}
@@ -60,9 +47,9 @@
                         src="{{page.hero.image}}"
                       >
                     </div>
-                    <div class="rf-card__img"></div>
+                    <div class="fr-card__img"></div>
                   {% else %}
-                    <div class="rf-card__img rf-card__img--fit {% if page.hero.image_flip %} rf-img__flip {% endif %}">
+                    <div class="fr-card__img fr-card__img--fit {% if page.hero.image_flip %} fr-img__flip {% endif %}">
                       <img
                         src="{{page.hero.image}}"
                         style="z-index: 1;transform: translate({% if page.hero.imageTX %}{{page.hero.imageTX}}{% else %} 0px{% endif %},
@@ -72,20 +59,20 @@
                     </div>
                   {% endif %}
                 {% endif %}
-                <div style="z-index: 20;" class="rf-card__body rf-mt-3w rf-mb-3w rf-ml-3w">
-                  <h1 class="rf-card__lead rf-color--white">
+                <div style="z-index: 20;" class="fr-card__body fr-mt-3w fr-mb-3w fr-ml-3w">
+                  <h1 class="fr-card__lead fr-color--white">
                     {{ page.title }}
                   </h1>
-                  <h4 class="rf-card__desc rf-color--white">
+                  <h4 class="fr-card__desc fr-color--white">
                     {{ page.description }}
                   </h4>
                 </div>
               </div>
             </div>
-            <div class="rf-col-xl-1 rf-col-lg-12 rf-col-md-12 rf-col-sm-12 rf-col-xs-12"></div>
-            <div class="rf-col-xl-10 rf-col-lg-12 rf-col-md-12 rf-col-sm-12 rf-col-xs-12">
-              <div class="rf-container-fluid rf-mt-2w rf-mb-4w">
-                <div class="rf-grid-row rf-grid-row--gutters-h " style="{% if page.customLayout %}{% else %}display:unset;{% endif %}">
+            <div class="fr-col-xl-1 fr-col-lg-12 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
+            <div class="fr-col-xl-10 fr-col-lg-12 fr-col-md-12 fr-col-sm-12 fr-col-xs-12">
+              <div class="fr-container-fluid fr-mt-2w fr-mb-4w">
+                <div class="fr-grid-row fr-grid-row--gutters-h " style="{% if page.customLayout %}{% else %}display:unset;{% endif %}">
                   {{ content }}
                   {% if page.video %}
                   <iframe style="transform:translateX(50%)" width="420" height="315" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
@@ -93,13 +80,14 @@
                 </div>
               </div>
             </div>
-            <div class="rf-col-xl-1 rf-col-lg-12 rf-col-md-12 rf-col-sm-12 rf-col-xs-12"></div>
+            <div class="fr-col-xl-1 fr-col-lg-12 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
           </div>
         </div>
 
 
         {% include footer.html %}
-        <script src='/assets/js/all.min.js'></script>
+        <script type="module" src="/assets/dsfr/dsfr.module.min.js"></script>
+        <script type="text/javascript" nomodule src="/assets/dsfr/dsfr.nomodule.min.js"></script>
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     </body>
 </html>
