@@ -11,19 +11,19 @@ title: Fiabilisation d'études cliniques
 customLayout: true
 ---
 
-<div class="rf-col-12">
-<div class="rf-container">
-<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+<div class="fr-col-12">
+<div class="fr-container">
+<div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <div class="rf-callout">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <div class="fr-callout">
     J’ai deux études [autour de la maladie d'Alzheimer] qui utilisent des données de l’INSEE. [...] Il est actuellement très difficile pour les cliniciens actuellement de donner un pronostic aux patients et à leur famille, alors qu’ils sont en demande. <br>
     [matchID] <strong>me fait gagner un temps considérable</strong>. Pour le versant clinique je dois apparier plus de 100 000 dossiers, pour mes travaux, c’est 15 000 par étude. En fait sans votre outil, je ne récupèrerai juste pas les dates de décès.<br>
-    <div class="rf-text--right"><strong> Mélanie L., CHU de Lille </strong></div>
+    <div class="fr-text--right"><strong> Mélanie L., CHU de Lille </strong></div>
     </div>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h3> Détection des personnes décédées au sein d'un fichier </h3>
     <p><br></p>
     <p>
@@ -41,7 +41,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h4> Étape 1. Fichier </h4>
     <p>
         Votre fichier patient doit être au format CSV. Il est recommandé de disposer des 4 champs (nom, prénom, lieu et date de naissance) pour garantir que les identités sont fiables. Sans ces 4 champs, certaines identités sont ambigües, et il est délicat de garantir les identifications.
@@ -50,21 +50,21 @@ customLayout: true
         Pour vous assurer le maximum de sécurité dans le traitement du fichier patient, votre fichier ne sera transmis qu'après la fin de la configuration. Le fichier transmis n'est pas conservé. Le résultat de l'appariement est conservé chiffré (AES256) et supprimé une heure après la fin de l'appariement, et seule la clé qui vous est transmise vous permet de le récupérer et de le déchiffrer.
     </p>
 </div>
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <div class="rf-vcenter">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <div class="fr-vcenter">
         <p>
             La première étape est donc de choisir votre fichier patient par glisser-coller sur
         </p>
-        <span class="rf-mobile--hide"><br><br><br></span>
-        <img class="rf-responsive-img" src="assets/images/deces-ui-link-file.png" alt="fichier">
+        <span class="fr-mobile--hide"><br><br><br></span>
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-file.png" alt="fichier">
     </div>
 </div>
 
-<div class="rf-col-12">
-<div class="rf-container">
-<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+<div class="fr-col-12">
+<div class="fr-container">
+<div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h4> Étape 2. Configurer le traitement </h4>
     <p>
         Choisissez les champs à utiliser pour l'appariement. Il s'agit d'identifier les champs de votre fichier correspondant au nom, prénom, lieu et date de naissance. Le dernier champ est utilisable pour une date de dernière visite du patient (afin de ne chercher que dans les décès ultérieurs).
@@ -77,9 +77,9 @@ customLayout: true
         y avoir plusieurs options en particulier sur le lieu.
     </p>
 </div>
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <div class="rf-vcenter">
-        <img class="rf-responsive-img" src="assets/images/deces-ui-link-configure.png" alt="configuration du traitement">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <div class="fr-vcenter">
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-configure.png" alt="configuration du traitement">
     </div>
 </div>
 
@@ -87,7 +87,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h4> Étape 3. Traitement </h4>
     <p>
         A l'étape 3, le fichier est téléchargé vers notre serveur, puis le traitement est lancé. Un temps estimatif
@@ -102,18 +102,18 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <div class="rf-vcenter">
-        <span class="rf-mobile--hide"><br><br><br></span>
-        <img class="rf-responsive-img" src="assets/images/deces-ui-link-wait.png" alt="traitement lancé">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <div class="fr-vcenter">
+        <span class="fr-mobile--hide"><br><br><br></span>
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-wait.png" alt="traitement lancé">
     </div>
 </div>
 
-<div class="rf-col-12">
-<div class="rf-container">
-<div class="rf-grid-row rf-grid-row--gutters-h" style="flex-direction: row-reverse;">
+<div class="fr-col-12">
+<div class="fr-container">
+<div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
     <h4> Étape 4. Valider </h4>
     <p>
         Le traitement fini, vous pouvez soit directement télécharger le fichier, soit le vérifier sur votre navigateur.Dans cette étape, le service est totalement déconnecté, les donnée sont stockées dans votre navigateur.
@@ -124,7 +124,7 @@ customLayout: true
     <p>
         Pour un appariement donné, la donnée relative à votre fichier est située au dessus de la donnée de l'identité de décès, champ par champ. Lorsqu'il n'y a qu'une ligne, c'est que les données concordent. Les différences sont indiquées en couleur.
     </p>
-    <p
+    <p>
         Pour accélérer la validation manuelle, vous cocher la case "valider les paires similaires" : à chaque validation, les autres paires non encore validées mais de nature similaire, c'est à dire avec des vecteurs de score similaires, seront également validées. Cela est utile si vous avez plusieurs milliers de lignes à valider.
     </p>
     <p>
@@ -132,9 +132,9 @@ customLayout: true
     </p>
 </div>
 
-<div class="rf-col-xl-6 rf-col-lg-6 rf-col-md-6 rf-col-sm-12 rf-col-xs-12">
-    <div class="rf-vcenter">
-        <img class="rf-responsive-img" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+    <div class="fr-vcenter">
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
     </div>
 </div>
 
@@ -142,7 +142,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="rf-col-12">
+<div class="fr-col-12">
     <p>
         Une fois les identités validées, ou à n'importe quel moment, vous pouvez télécharger les résultats en format CSV
     </p>
@@ -154,11 +154,11 @@ customLayout: true
         industrialiser le traitement pour des travaux récurrents, vous pouvez également intégrer notre
         API dans votre système d'information.
     </p>
-    <h3 class="rf-text--center"> Commencez votre appariement </h3>
+    <h3 class="fr-text--center"> Commencez votre appariement </h3>
 </div>
-<div class="rf-col-6 rf-text--center">
-    <a href="https://deces.matchid.io/link" class="rf-link rf-link--icon-right" target="_self"> Appariement</a>
+<div class="fr-col-6 fr-text--center">
+    <a href="https://deces.matchid.io/link" class="fr-link fr-link--icon-right" target="_self"> Appariement</a>
 </div>
-<div class="rf-col-6 rf-text--center">
-    <a href="/link-api" class="rf-link rf-link--icon-right" target="_self"> Utiliser l'API décès</a>
+<div class="fr-col-6 fr-text--center">
+    <a href="/link-api" class="fr-link fr-link--icon-right" target="_self"> Utiliser l'API décès</a>
 </div>
