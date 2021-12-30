@@ -1,59 +1,71 @@
-<footer class="rf-footer">
-  <div class="rf-container">
-    <div class="rf-text--center">
-      <p>
-        <strong>
-          Les développeurs
-        </strong>
-      </p>
-    </div>
-    <div class="rf-grid-row rf-grid-row--gutters">
-
-      {% for author in site.authors %}
-      <div class="rf-col-xl-4 rf-col-lg-4 rf-col-md-4 rf-col-sm-6 rf-col-xs-12">
-        <div class="rf-card rf-card--no-arrow">
-          {% if author.image %}
-            <div class="rf-card__img-authors">
-              <img src="/assets/images/{{ author.image }}" alt="{{ author.name }} image">
-            </div>
-          {% endif %}
-          <div class="rf-card__body">
-            <h4 class="rf-card__lead rf-text--center">{{ author.name }}</h4>
-            <p class="rf-card__desc rf-text--xs">
-              {{ author.desc }}
-            </p>
-            <p class="rf-text--center">
-              <a href="{{author.github | prepend: site.github_url}}" class="rf-link">
-                <span class="iconify" data-icon="ri:github-line"></span>
-              </a>
-              <a href="{{author.twitter | prepend: 'https://twitter.com/'}}" class="rf-link" >
-                <span class="iconify" data-icon="ri:twitter-line"></span>
-              </a>
-              <a href="mailto:{{author.mail}}" class="rf-link">
-                <span class="iconify" data-icon="ri:mail-line"></span>
-              </a>
-            </p>
+<footer class="fr-footer" role="contentinfo" id="footer">
+  <div class="fr-container">
+    <div class="fr-footer__body">
+      <div class="fr-footer__brand fr-enlarge-link">
+        <div class="fr-footer__brand-top">
+          <div class="fr-footer__logo">
+              <p class="fr-logo">
+                  République
+                  <br>Française
+              </p>
           </div>
         </div>
       </div>
-      {% endfor %}
+    </div>
+    <div class="fr-footer__content">
+      <p
+        class="fr-footer__content-desc"
+      >
+      <ul class="fr-footer__content-list">
+        <li class="fr-footer__content-item">
+          <a class="fr-footer__content-link" href="https://github.com/{{ site.project.general.repo }}"
+          >
+            Lien vers le code source de matchID
+          </a>
+        </li>
+        <li class="fr-footer__content-item">
+          <a class="fr-footer__content-link" href="https://interieur.gouv.fr"
+          >
+            Ministère de l'Intérieur
+          </a>
+        </li>
+        <li class="fr-footer__content-item">
+          <a class="fr-footer__content-link" href="https://eig.etalab.gouv.fr"
+          >
+            Entrepreneurs d’intérêt général
+          </a>
+        </li>
+      </ul>
+      <div class="fr-container">
+        <div class="fr-grid-row fr-grid-row--gutters">
+          <div class="fr-col-12 fr-mt-3w">
+            <strong>Les auteurs</strong>
+          </div>
+          {% for author in site.authors %}
+          <div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-6 fr-col-xs-12">
+            <div class="fr-card fr-enlarge-link">
+              <div class="fr-card__body">
+                <h4 class="fr-card__title">{{ author.name }}</h4>
+                <p class="fr-card__desc fr-text--xs">
+                  {{ author.desc }}
+                </p>
+                <p>
+                  <a href="{{author.github | prepend: site.github_url}}" class="fr-link">
+                    <span class="iconify" data-icon="ri:github-line"></span>
+                  </a>
+                </p>
+              </div>
+              {% if author.image %}
+                <div class="fr-card__img-author">
+                  <img src="/assets/images/{{ author.image }}" alt="{{ author.name }} image">
+                </div>
+              {% endif %}
 
-    </div>
-    <div class="content has-text-centered">
-      <p>
-        The source code is licensed under LGPL 3.0
-      </p>
-      <p>
-        <a href="about">about the project</a> |
-        <a href="roadmap">roadmap</a> |
-        <a class="icon" href="https://github.com/{{ site.project.general.repo }}">
-          <i class="fab fa-github"></i>
-        </a> |
-        <a class="icon" href="https://twitter.com/tainmar">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </p>
-    </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
   </div>
 </footer>
 {% if site.google_analytics and jekyll.environment == 'production' %}
