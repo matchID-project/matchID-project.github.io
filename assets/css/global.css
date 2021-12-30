@@ -421,70 +421,7 @@ border-radius: 0 .25rem 0 0;
 }
 
 
-.fr-table:not(:last-child) {
-	margin-bottom: 1em;
-}
 
-.fr-table {
-	width: 100%;
-}
-
-.fr-table td {
-	border: solid var(--border-disabled-grey);
-	border-width: 0 0 1px;
-	padding: .5em .75em;
-	vertical-align: top;
-}
-
-.fr-table tbody tr:last-child td,.fr-table tbody tr:last-child th {
-	border-bottom-width: 0;
-}
-
-.fr-table:not(:last-child) {
-	margin-bottom: 1.5rem;
-}
-
-.fr-table tbody {
-	background-color: transparent;
-}
-
-.fr-table.fr-table--fullwidth {
-	width: 100%;
-}
-
-.fr-table.fr-table--narrow td {
-	padding: .25em .5em;
-	text-align: left;
-}
-
-.fr-table.fr-table--striped tbody tr:not(.is-selected):nth-child(2n) {
-	background-color: var(--beige);
-}
-.fr-table.fr-table--striped tbody tr:not(.is-selected):nth-child(2n+1) {
-	background-color: var(--w);
-}
-
-th .th-active {
-  background-color: var(--background-action-high-blue-franc);
-  color: var(--w);
-}
-
-tr .th-inactive {
-  opacity: 40%;
-}
-
-.fr-table-th--label {
-  height: 2.5rem;
-}
-
-.fr-table-th--sortable:hover {
-  color: var(--background-action-high-blue-franc);
-  cursor: pointer;
-}
-
-.fr-table--fixed {
-  table-layout:fixed
-}
 
 .fr-padding-left-4px {
   padding-left: 4px;
@@ -503,33 +440,7 @@ tr .th-inactive {
   transform: translateY(-50%);}
 }
 
-td.fr-td--vcenter {
-  vertical-align: middle!important;
-}
 
-.fr-table.fr-col-1 {
-  width: 8.33333%
-}
-
-.fr-table.fr-col-2 {
-  width: 16.666667%
-}
-
-.fr-table.fr-col-3 {
-  width: 25%
-}
-
-.fr-table.fr-col-4 {
-  width: 33.33333%
-}
-
-.fr-table.fr-col-6 {
-  width: 50%
-}
-
-.fr-table.fr-col-9 {
-  width: 66.66667%
-}
 
 .fr-badge {
   position: absolute;
@@ -614,28 +525,6 @@ td.fr-td--vcenter {
 .fr-card svg {
   font-size: 24px;
 }
-
-.fr-grid-row--gutters-h {
-  margin: 0 calc(-1rem / 2); }
-  @media (min-width: 48em) {
-    .fr-grid-row--gutters-h {
-      margin: 0 calc(-1.5rem / 2); } }
-  @media (min-width: 62em) {
-    .fr-grid-row--gutters-h {
-      margin: 0 calc(-2rem / 2); } }
-  .fr-grid-row--gutters-h [class|="rf-col"] {
-    padding-left: calc(1rem / 2);
-    padding-right: calc(1rem / 2); }
-    @media (min-width: 48em) {
-      .fr-grid-row--gutters-h [class|="rf-col"] {
-        padding-left: calc(1.5rem / 2);
-        padding-right: calc(1.5rem / 2);
-      } }
-    @media (min-width: 62em) {
-      .fr-grid-row--gutters-h [class|="rf-col"] {
-        padding-left: calc(2rem / 2);
-        padding-right: calc(2rem / 2);
-       } }
 
 html {
   overflow-x: hidden;
