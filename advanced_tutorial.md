@@ -30,7 +30,7 @@ We'll follow four steps for use case 1.
 - [Step 3: validate matches and train rescoring with machine learning](#step-3-validate-matches-and-train-rescoring-with-machine-learning)
 - [Step 4: rescore with the machine learning model](#step-4-rescore-with-the-machine-learning-model)
 
-<img src="assets/images/workflow.png" alt="matching workflow">
+<img width="100%" src="assets/images/workflow.png" alt="matching workflow">
 
 #### the philosophy of iterative cooking
 
@@ -58,7 +58,7 @@ Three further steps will enable machine learning capabilities:
 In the final round, matching a dataset of people, `clients`, against another already index-one, `death`  will look like this recipe :
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 recipes:
   clients_deaths_matching:
@@ -75,7 +75,7 @@ recipes:
 <div markdown="1">
 This leads to a new API endpoint:
 </div>
-<div class="rf-hightlight" markdown="1">
+<div class="fr-hightlight" markdown="1">
 ```
 http://localhost:8081/matchID/api/v0/recipes/clients_deaths_matching/apply`.
 ```
@@ -102,7 +102,7 @@ Now, you can go to your `matchID` server :
 
 WARNING: your should'nt try the tutorial on [the tutorial matchID site](https://tuto.matchID.tech) as it is a very slow computer (3x slower than your laptops vCPUs).
 
-<img src="assets/images/frontend-start.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-start.png" alt="matchID projects view">
 
 ### first project, first dataset, first recipe
 
@@ -110,10 +110,10 @@ WARNING: your should'nt try the tutorial on [the tutorial matchID site](https://
 
 We'll first have to create a project. This will basically be a folder, containing datasets and recipes (data transformation). A good segmentation is to build a project for each goal : use case 1 matches dead people within a client file, so we basically chose to have two projects: deaths, and clients. Just clic on `new project` and name the first one `deaths`:
 
-<img src="assets/images/frontend-new-project.png" alt="matchID new project">
+<img width="100%" src="assets/images/frontend-new-project.png" alt="matchID new project">
 
 Which leads to:
-<img src="assets/images/frontend-project-view-empty.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-project-view-empty.png" alt="matchID projects view">
 
 *Note :
 - The segmentation of the projects are very easy to do server-side, as it only contains two sub-folders, datasets and recipes. We didn't implement methods for splitting or reorganising project at this step of the development, as the ratio of benefit/cost of folder management is very low.
@@ -123,10 +123,10 @@ Which leads to:
 
 Click again on `import dataset` and just drag-n-drop (thx to [Dropzone](http://www.dropzonejs.com/)) the [`death.txt.gz`](https://github.com/matchID-project/examples/raw/master/data/deaths.txt.gz) downloaded from the [examples matchID repo](https://github.com/matchID-project/examples).
 
-<img src="assets/images/frontend-import-dataset.png" alt="matchID import dataset">
+<img width="100%" src="assets/images/frontend-import-dataset.png" alt="matchID import dataset">
 
 Now you have your first dataset:
-<img src="assets/images/frontend-dataset-deaths-ko.png" alt="matchID dataset first view">
+<img width="100%" src="assets/images/frontend-dataset-deaths-ko.png" alt="matchID dataset first view">
 
 We have many observations:
 
@@ -141,7 +141,7 @@ We have many observations:
 Take a look in a terminal of your gzipped fwf data :
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 $ zcat death.txt.gz | head -5
 CZAJA*ROLAND BERNARD/                                                           11933052479048BRELOUX-LA-CRECHE                                           199209257904812143
@@ -155,7 +155,7 @@ JEAUNEAU*RAYMONDE JULIETTE ARLETTE/                                             
 Well, it's quite boring to decrypt it so... Here is the solution, just copy-paste it on the left pane where you have the dataset yaml code (each important line is commented) :
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 datasets:
   deaths_txt_gz:
@@ -193,17 +193,17 @@ Then you can save that with `Ctrl+S` or the `Save` button.
  *if you're lost you can go to the `tutorial` follder and delete or change files manually. You can even `rm -rf tutorial/projects/deaths` and give a new birth to your project*
 
 Here you are:
-<img src="assets/images/frontend-dataset-deaths-ok.png" alt="matchID dataset correct view">
+<img width="100%" src="assets/images/frontend-dataset-deaths-ok.png" alt="matchID dataset correct view">
 
 #### first recipe
 
 Create a new recipe :
-<img src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
 
 A default recipe is created with no valid dataset, just replace it with the uploaded dataset, `deaths_txt_gz` - as this can be done now, we already figure out we have a `deaths` dataset we'll configure after finishing the recipe.
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 recipes:
   dataprep_deaths:
@@ -226,7 +226,7 @@ recipes:
 <div markdown="1">
 Save it (`Save` button or `Ctrl+S`), it should display the first imported dataset, but with an additionnal column, `new_col` which is basically a hash of the row:
 
-<img src="assets/images/frontend-recipe-deaths-1.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-deaths-1.png" alt="matchID projects view">
 
 So now you have an interactive way to deal with your data. Every new step of the recipe will add a new transformation on your data. You can have the exhaustive list of [recipes here](recipes.md).
 
@@ -246,7 +246,7 @@ When joining large French names datasets, we showed that only about 33% of match
 #### columns names
 So we add the following steps (removing the `new_col` one) :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       - eval:
         #tag dataset and records with uniq id
@@ -276,17 +276,17 @@ So we add the following steps (removing the `new_col` one) :
 ```
 </div>
 <div markdown="1">
-<img src="assets/images/frontend-recipe-death-columns.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-death-columns.png" alt="matchID projects view">
 
 #### preparing the names
 
 Just filter the names setting `matchid_name` in the column filter. This filter uses `regex` so you can use complex filtering for easy navigation in your data:
-<img src="assets/images/frontend-recipe-names-filter.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-names-filter.png" alt="matchID projects view">
 
 Now you see the names won't match with this format which is quite special.
 We propose those normalizations. Just paste and save it step by step.
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       #name
       - replace: # parses the last name with a regex
@@ -304,12 +304,12 @@ We propose those normalizations. Just paste and save it step by step.
 ```
 </div>
 <div markdown="1">
-<img src="assets/images/frontend-recipe-names.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-names.png" alt="matchID projects view">
 
 Note that both `french_name_normalize` and `french_name_frequency` recipes are available in the `conf` project.
 
 If you just want to see the process at one step without deleting the following ones, you just have to use the 'pause' recipe :
-<img src="assets/images/frontend-recipe-pause.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-pause.png" alt="matchID projects view">
 
 In this case we just put the `pause` step before the name normalization section. We remove it then to have the whole process.
 
@@ -317,7 +317,7 @@ In this case we just put the `pause` step before the name normalization section.
 We now apply the column filtering on `matchid_location` to work on city names normalization. The goal is to make each location reliable, so we use external INSEE dataset (COG) to achieve this. This means that this treatment is focused on the French population.
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
       #location
       - country_code_cog: # expand countries against INSEE code
@@ -331,12 +331,12 @@ All the recipes are coded in the `conf` project so you can open them to have mor
 
 The French history codes are very important, as among the history city names changed a lot, and especially birth location of old people. So the name may have changed depending of the reference file. This treatment bring about 15% to 30% bonus in matching, and has to be performed on both datasets to be matched.
 
-<img src="assets/images/frontend-recipe-location.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-location.png" alt="matchID projects view">
 
 #### birth date parsing
 This is the easier part, it just consists in parsing dates, so with columns filtering to `matchid_date`, and just adding :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
     # dates
       - ymd_date: # parses dates in year month day format (19580123)
@@ -347,14 +347,14 @@ This is the easier part, it just consists in parsing dates, so with columns filt
 `ymd_date` is, again, available in the `conf` project.
 
 So this is the final preview :
-<img src="assets/images/frontend-recipe-dates.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-dates.png" alt="matchID projects view">
 
 #### configure the output dataset on elasticsearch
 
 Don't forget to save your recipe. We'll then create the `deaths` dataset as formerly pointed as the output dataset of the recipe. Just create it from the menu and paste this content :
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 datasets:
   deaths:
@@ -370,21 +370,21 @@ Note that you can configure many options for an elasticsearch dataset :
 #### run the recipe !
 So once everything is configured, you can run the recipe with the green button :
 
-<img src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
+<img width="100px" src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
 
 This run is needed to index the deaths with elasticearch, which will enable a match of up to 98% (recall).
 
 You can follow the job either directly in the bottom in the "Real logs":
-<img src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
 
 Or choose to see the "jobs" in the menu:
-<img src="assets/images/frontend-jobs.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-jobs.png" alt="matchID projects view">
 
 This should take about 30 minutes on a reasonable big computer (35 min using 10 threads = 10vCPU).
 
 The job log last line should summarize the time and bugs for the recipe :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 2018-02-20 05:31:45.788016 - 0:35:00.826869 - end : run - Recipe dataprep_deaths finished with errors on 46 chunks (i.e. max 92000 errors out of 1355745) - 1355745 lines written
 ```
@@ -426,7 +426,7 @@ Note that the preparation differs only a few from the `deaths.txt.gz` file :
 
 You should quickly have this final view of dataprep :
 
-<img src="assets/images/frontend-recipe-clients.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-clients.png" alt="matchID projects view">
 
 We won't have to run this one.
 
@@ -462,7 +462,7 @@ All those conditions make a large recall without bringing too much candidates.
 
 Now we create a combo recipe, `clients_deaths_matching` in the `clients` project, calling the last two ones, plus a special one, `diff` :
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 recipes:
   clients_deaths_matching:
@@ -480,12 +480,12 @@ recipes:
 <div markdown="1">
 then you should have your first sampling results (screenshot obtain using a regex filter: `diff(?!_id)|confiance|number`):
 
-<img src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
 
 Before running these recipes, don't forger to create the `client_x_deaths` dataset in elasticsearch :
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 datasets:
   clients_x_deaths:
@@ -504,15 +504,15 @@ You don't have to wait the full run to examinate your matching results : go to t
 
 The `validation: true` option activates this button :
 
-<img src="assets/images/frontend-validation-button.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-button.png" alt="matchID projects view">
 
 Click on it to access to the validation mode, which enables the possibility to annotate your results :
 
-<img src="assets/images/frontend-validation.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation.png" alt="matchID projects view">
 
 The cheat codes page (keyboard icon) will help you understand how to annotate :
 
-<img src="assets/images/frontend-validation-cheatcodes.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-cheatcodes.png" alt="matchID projects view">
 
 You now have two new goals
 
@@ -537,7 +537,7 @@ For now, you will have to take care about the amount of data you annotate (don't
 
 You have to follow this representativity a graph button to display some statistics :
 
-<img src="assets/images/frontend-validation-stats.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-stats.png" alt="matchID projects view">
 
 In this example, we annotated a bit too much easy messy data with low scores, and too few middle range scores, which are often the hardest to annotate.
 
@@ -578,7 +578,7 @@ In this case, the machine will be trained to recognize a false hit against a tru
 So here is the recipe, `train_rescoring_model`:
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 recipes:
   train_rescoring_model:
@@ -617,7 +617,7 @@ recipes:
 <div markdown="1">
 When you save the recipe, you can see the performance of your machine learning model in the log :
 
-<img src="assets/images/frontend-train-auc.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-train-auc.png" alt="matchID projects view">
 
 In this *not serious* annotation of only 92 matches, the second model does have a perfect score. Every time you save, the algorithm trains again, and you can see how stable it is. If you have no stability at all, you should annotate more data.
 
@@ -627,7 +627,7 @@ If stable enough, then run the recipe, this will save the model which will be re
 We can now apply the previously built model to apply a better scoring on the matches :
 
 </div>
-<div class="rf-highlight" markdown="1">
+<div class="fr-highlight" markdown="1">
 ```
 recipes:
   rescoring:
@@ -661,12 +661,12 @@ You can immediately run this recipe which will just update the `confiance` colum
 
 Then you can go check again the validation of `clients_x_deaths` to check the impact on the discrimation :
 
-<img src="assets/images/frontend-validation-postscoring.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-postscoring.png" alt="matchID projects view">
 
 You can annotate again concentrating on new middle range scores, training again, and so on...
 
 To have an overview on the global process you can click on <i class="fab fa-connectdevelop"></i> to open the graph project:
 
-<img src="assets/images/frontend-project-graph.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-project-graph.png" alt="matchID projects view">
 
 
