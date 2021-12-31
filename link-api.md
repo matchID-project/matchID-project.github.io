@@ -11,7 +11,7 @@ title: Intégrer l'API décès
 customLayout: true
 ---
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3>Quelle API pour quel usage</h3>
     <p>
         L'API décès possède deux principales fonctions:
@@ -35,7 +35,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <a href="https://deces.matchid.io/deces/api/v1/docs" title="documentation OpenApi" target="_self"><img class="fr-responsive-img" src="assets/images/deces-api-swagger.png" alt="openapi"></a>
 </div>
 
@@ -43,7 +43,7 @@ customLayout: true
 <div class="fr-container-fluid">
 <div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3>Intégration d'un formulaire</h3>
     <p>
         Le cas d'usage basique est l'utilisation, de la recherche simple (<code>q=Pompidou...</code>)
@@ -58,7 +58,7 @@ customLayout: true
         Sa transposition en <code>POST</code> est simple et préférable pour la robustesse d'un code de production.
     </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div style="overflow:hidden;">
         <iframe frameborder="0" width="100%" height="600px"
             scrolling="no" style="margin-top: -116px;"
@@ -71,7 +71,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3>Intégration de l'API d'appariement à un backend</h3>
     <p>
         L'API unitaire est limité à une requête par seconde. Pour les appariement en masse,
@@ -88,7 +88,7 @@ customLayout: true
         L'exemple minimaliste suivant est réalisé en Python est dispnible sur ce <a href="https://repl.it/@rhanka/API-deces-linkage#main.py" target="_blank" title="REPL">REPL</a>.
     </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div style="overflow:hidden;">
         <iframe frameborder="0" width="100%" height="600px"
             scrolling="no" style="margin-top: 0px;"
@@ -99,7 +99,7 @@ customLayout: true
 
 {% include algos-link-api.html %}
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3> Intégration d'une UI de validation </h3>
     <p>
         Nous vous recommandons dans un premier temps de passer par <a href="https://deces.matchid.io/link" title="appariement sur deces.matchid.io" target="_self">le service en ligne</a> pour tester la validité du fichier et du choix des colonnes à apparier avant d'attaquer le code d'appariement. Vous pourrez, en particulier, vérifier avec l'aide de l'UI de validation.
@@ -116,7 +116,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
     <img width="100%" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
     <p>

@@ -11,7 +11,7 @@ title: Débuter avec matchID
 customLayout: true
 ---
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3>Prérequis</h3>
     <p>
         matchID nécessite de disposer <code>make</code> au préalable. Sur Ubuntu et Centos, <code>docker</code> et les autres prérequis sont automatiquement installés, dès lors que vous disposez d'un accès direct internet.
@@ -79,7 +79,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <img class="fr-responsive-img fr-vcenter" alt="installation matchID" width="100%" src="/assets/images/matchID-install.gif">
 </div>
 
@@ -145,10 +145,10 @@ make up
 <div class="fr-col-lg-12 fr-col-md-12">
     <h3 class="fr-text--center"> Pour continuer </h3>
 </div>
-<div class="fr-col-md-6 fr-col-xs-12 fr-text--center">
+<div class="fr-col-md-6 fr-col-12 fr-text--center">
     <a href="/quick_tutorial" class="fr-link fr-link--icon-right" target="_self" title="tutoriel simple">Tutoriel simple</a>
 </div>
-<div class="fr-col-md-6 fr-col-xs-12 fr-text--center">
+<div class="fr-col-md-6 fr-col-12 fr-text--center">
     <a href="/advanced_tutorial" class="fr-link fr-link--icon-right" target="_self" title="tutoriel avancé">Tutoriel avancé</a>
 </div>
 

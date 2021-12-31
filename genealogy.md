@@ -27,7 +27,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <h4>Fiches compactes</h4>
   <div style="overflow:hidden">
     <iframe frameborder="0" width="100%" height="520px"
@@ -38,7 +38,7 @@ customLayout: true
   </div>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Fiches étendues </h4>
     <p>
         Elle vous permettent de prendre connaissance de toutes les informations disponibles
@@ -61,7 +61,7 @@ customLayout: true
     </h3>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Critères multiples </h4>
     <p>
         Utilisez les critères avancés pour rechercher plus finement, par exemple par plage de date,
@@ -78,7 +78,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Triez </h4>
     <p>
         Triez les résultats pour mieux retrouver les données lorsque vous ne disposez pas
@@ -95,7 +95,7 @@ customLayout: true
 </div>
 
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Visualisation géographique </h4>
     <p>
         Un outil de visualisation géographique est à votre disposition, pour vous permettre un mode de recherche alternative. Cette visualisation est idéal pour visualiser la provenance géographique d'un patronyme.
@@ -104,7 +104,7 @@ customLayout: true
     <img class="fr-responsive-img" src="assets/images/deces-ui-geo.png" alt="fiche étendue">
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Appariement en masse </h4>
     <p>
         Vous disposez d'un tableur avec l'ensemble de vos fiches, et souhaitez les fiabilisez ? Utiliser notre outil d'appariement en masse
@@ -116,12 +116,12 @@ customLayout: true
 <div class="fr-col-12 fr-text--center">
     <h3> Commencez vos recherches ! </h3>
 </div>
-<div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-4 fr-col-xs-12 fr-text--center">
+<div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-4 fr-col-12 fr-text--center">
     <a href="https://deces.matchid.io/search" class="fr-link fr-link--icon-right" target="_self" title="Recherche simple"> Recherche simple</a>
 </div>
-<div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-4 fr-col-xs-12 fr-text--center">
+<div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-4 fr-col-12 fr-text--center">
     <a href="https://deces.matchid.io/search?advanced=true" class="fr-link fr-link--icon-right" target="_self" title="Recherche avancée"> Recherche avancée</a>
 </div>
-<div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-4 fr-col-xs-12 fr-text--center">
+<div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-4 fr-col-12 fr-text--center">
     <a href="https://deces.matchid.io/link" class="fr-link fr-link--icon-right" target="_self" title="Appariement"> Appariement</a>
 </div>

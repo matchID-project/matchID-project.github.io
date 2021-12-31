@@ -14,7 +14,7 @@ hero:
 customLayout: true
 ---
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <h3>Introduction</h3>
   <p>
   Ce tutoriel traite un cas simple d'apariement de deux jeux de données d'identité, l'un appelé <strong>deaths</strong> et l'autre <strong>clients</strong>. Le type de cas d'usage traité est la suppression des décès d'un fichier client, pour de la mise en qualité. Des cas similaires peuvent être envisager avec un SIRH et un annuaire, par exemple.
@@ -30,7 +30,7 @@ customLayout: true
   <span class="fr-text--xs">Donald Knuth, 1974</span>
   </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12" style="position:relative">
   <div class="fr-callout fr-fi-information-line fr-vcenter">
     <h4 class="fr-callout__title">Détecter les décès dans un fichier</h4>
     <p class="fr-callout__text">
@@ -43,8 +43,8 @@ customLayout: true
     </p>
   </div>
 </div>
-<div class="fr-col-xl-1 fr-col-lg-1 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
-<div class="fr-col-xl-10 fr-col-lg-10 fr-col-md-12 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-1 fr-col-lg-1 fr-col-md-12 fr-col-sm-12 fr-col-12"></div>
+<div class="fr-col-xl-10 fr-col-lg-10 fr-col-md-12 fr-col-sm-12 fr-col-12">
   <h3>Algorithme de <i> Data matching </i></h3>
   <p>
     Sauf méthode d'appariement en <code> n x n </code>, qui atteignent leur limites dès quelques centaines de milliers d'identité dans l'une des bases, la meilleure option reste l'usage d'une base de donnée. La base la plus compatible avec la plupart des cas d'usages reste Elasticsearch. PostGres pouvant être bien meilleure pour certains cas particuliers, consultez la <a href="/algorithms" title="algorithmes de matching">section algorithmes</a> après ce premier tutoriel. L'ouvrage <i>Data matching</i> de Peter Christen reste également un ouvrage de référence pour les curieux.
@@ -83,19 +83,19 @@ customLayout: true
   </div>
 
 </div>
-<div class="fr-col-xl-1 fr-col-lg-1 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
+<div class="fr-col-xl-1 fr-col-lg-1 fr-col-md-12 fr-col-sm-12 fr-col-12"></div>
 
 <div class="fr-col-12 fr-background--bs fr-hero">
   <h2 class="fr-color--white fr-ml-2w">
     Étape 1: préparer et indexer le fichier de référence (deaths)
   </h2>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <h3><a href="http://localhost:8081" target="_blank" title="site local matchID">Lancez matchID</a></h3>
   Après avoir suivi l'<a href="/starting" title="installer matchID">installation de matchID</a>, vous devriez
   avoir cet écran:
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12 fr-mt-3w" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
   <img width="100%" src="assets/images/frontend-start.png" alt="matchID frontend start">
 </div>
 
@@ -104,7 +104,7 @@ customLayout: true
 <div class="fr-container-fluid">
 <div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <h3><a href="http://localhost:8081/" target="_blank" title="site local matchID">Créez votre premier projet</a></h3>
   <p>
   matchID rassemble ses recettes et déclaration de recettes au sein de projets, ou dossier. Créons un premier projet que nous appelèleron <code>death</code>. Vous devriez obtenir la vue ci-contre.
@@ -115,7 +115,7 @@ customLayout: true
   </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12 fr-mt-3w" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
   <img width="100%" src="assets/images/frontend-new-project.png" alt="matchID new project">
 </div>
 
@@ -123,7 +123,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <h3><a href="http://localhost:8081/matchID/projects/deaths" target="_blank" title="site local matchID">Importer le premier jeu de données</a></h3>
   <p>
   Cliquez sur <code>import dataset</code> et glissez-collez le fichier <code>deaths</code> que vous aurez téléchargé sur <a href="https://github.com/matchID-project/examples/raw/master/data/deaths_test.csv" title="fichie de décès anonymisé (test)" target="_blank">Github</a>.
@@ -133,7 +133,7 @@ customLayout: true
   comme repository <code>git</code> et de commiter après validation de chaque traitement.
   </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12 fr-mt-3w" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
   <img width="100%" src="assets/images/frontend-import-dataset2.png" alt="matchID import dataset test">
 </div>
 
@@ -142,7 +142,7 @@ customLayout: true
 <div class="fr-container-fluid">
 <div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <h3><a href="http://localhost:8081/matchID/projects/deaths/datasets/deaths_test_csv" target="_blank" title="données de décès">Visualisez les données</a></h3>
   <p>
   Vous pouvez alors voir le jeu de données apparaître sur l'interface, comme ci-contre.
@@ -155,7 +155,7 @@ customLayout: true
   </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12 fr-mt-3w" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
     <img width="100%" src="assets/images/frontend-dataset-deaths-simple-import.png" alt="matchID simple dataset import">
 </div>
 
@@ -163,7 +163,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <h3><a href="http://localhost:8081/matchID/projects/deaths/datasets/deaths_test_csv" target="_blank" title="données de décès">Première recette</a></h3>
   <p>
   À partir du menu <strong>Recettes</strong> choisissez <strong>Nouvelle recette</strong>.
@@ -174,7 +174,7 @@ customLayout: true
   pouvoir voir le traitement. Vous pouvez copier la recette ci-dessous :
   </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12 fr-mt-3w" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
 <img width="100%" src="assets/images/frontend-new-recipe.png" alt="matchID new recipe">
 </div>
 
@@ -231,14 +231,14 @@ customLayout: true
     Étape 2: préparation et match des clients
   </h2>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <div markdown=1>
 ### Importer les données clients
 
 Le jeu de donnée est [clients est dispoinible ici](https://github.com/matchID-project/examples/raw/master/data/clients_test.csv). Importez le fichier par glisser-déposer (cf ci-contre).
   </div>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12" style="position:relative">
   <img width="100%" src="assets/images/frontend-dataset-clients-test.png" alt="matchID dataset clients test">
 </div>
 <div class="fr-col-12">
@@ -256,7 +256,7 @@ datasets:
 ```
   </div>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
   <div markdown=1>
 ### Appariement (ou <i> matching </i> !)
 
@@ -293,7 +293,7 @@ Sauvez et observez les [premiers résultats](http://localhost:8081/matchID/proje
 Le match est perfectible: trop de restriction avec le premier prénom, et la tolérance sur la date est trop forte. **La R&D sur la phase de *matching* est essentielle**. En `SQL`, c'est l'optimisation des requêtes de *blocking*.
   </div>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12" style="position:relative">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12" style="position:relative">
 
 <p>
 <strong>matchID aide à l'optimisation de ces requêtes et donc du rappel en en facilitant la visualisation</strong>.
@@ -422,7 +422,7 @@ matchID propose une **application de validation**. Il suffit de configurer les c
 
 </div>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
 <div style="overflow-y: scroll;height: 300px;">
 <div class="fr-highlight" markdown=1>
 ```
@@ -507,7 +507,7 @@ Notes:<br>
 - pensez bien à copier coller tout le texte, en scrollant !
 </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
 <div markdown="1">
 
 Sauvez la configuration `Ctrl+S` et rechargez la page (`Ctrl+R`). Un bouton `Validation` apparaît:
@@ -526,8 +526,8 @@ Filtrer au-dessus de 40 montre déjà de très bons résultats :
   <img width="100%" src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">
 </div>
 </div>
-<div class="fr-col-xl-2 fr-col-lg-2 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
-<div class="fr-col-xl-8 fr-col-lg-8 fr-col-md-12 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-2 fr-col-lg-2 fr-col-md-12 fr-col-sm-12 fr-col-12"></div>
+<div class="fr-col-xl-8 fr-col-lg-8 fr-col-md-12 fr-col-sm-12 fr-col-12">
   <div class="fr-callout fr-fi-information-line">
     <h4 class="fr-callout__title">Pour continuer</h4>
     <p class="fr-callout__text">
@@ -549,5 +549,5 @@ Filtrer au-dessus de 40 montre déjà de très bons résultats :
     </p>
   </div>
 </div>
-<div class="fr-col-xl-2 fr-col-lg-2 fr-col-md-12 fr-col-sm-12 fr-col-xs-12"></div>
+<div class="fr-col-xl-2 fr-col-lg-2 fr-col-md-12 fr-col-sm-12 fr-col-12"></div>
 

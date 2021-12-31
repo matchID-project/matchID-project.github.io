@@ -15,7 +15,7 @@ customLayout: true
 <div class="fr-container">
 <div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-callout">
     J’ai deux études [autour de la maladie d'Alzheimer] qui utilisent des données de l’INSEE. [...] Il est actuellement très difficile pour les cliniciens actuellement de donner un pronostic aux patients et à leur famille, alors qu’ils sont en demande. <br>
     [matchID] <strong>me fait gagner un temps considérable</strong>. Pour le versant clinique je dois apparier plus de 100 000 dossiers, pour mes travaux, c’est 15 000 par étude. En fait sans votre outil, je ne récupèrerai juste pas les dates de décès.<br>
@@ -23,7 +23,7 @@ customLayout: true
     </div>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3> Détection des personnes décédées au sein d'un fichier </h3>
     <p><br></p>
     <p>
@@ -41,7 +41,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Étape 1. Fichier </h4>
     <p>
         Votre fichier patient doit être au format CSV. Il est recommandé de disposer des 4 champs (nom, prénom, lieu et date de naissance) pour garantir que les identités sont fiables. Sans ces 4 champs, certaines identités sont ambigües, et il est délicat de garantir les identifications.
@@ -50,7 +50,7 @@ customLayout: true
         Pour vous assurer le maximum de sécurité dans le traitement du fichier patient, votre fichier ne sera transmis qu'après la fin de la configuration. Le fichier transmis n'est pas conservé. Le résultat de l'appariement est conservé chiffré (AES256) et supprimé une heure après la fin de l'appariement, et seule la clé qui vous est transmise vous permet de le récupérer et de le déchiffrer.
     </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
         <p>
             La première étape est donc de choisir votre fichier patient par glisser-coller sur
@@ -64,7 +64,7 @@ customLayout: true
 <div class="fr-container">
 <div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Étape 2. Configurer le traitement </h4>
     <p>
         Choisissez les champs à utiliser pour l'appariement. Il s'agit d'identifier les champs de votre fichier correspondant au nom, prénom, lieu et date de naissance. Le dernier champ est utilisable pour une date de dernière visite du patient (afin de ne chercher que dans les décès ultérieurs).
@@ -77,7 +77,7 @@ customLayout: true
         y avoir plusieurs options en particulier sur le lieu.
     </p>
 </div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
         <img class="fr-responsive-img" src="assets/images/deces-ui-link-configure.png" alt="configuration du traitement">
     </div>
@@ -87,7 +87,7 @@ customLayout: true
 </div>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Étape 3. Traitement </h4>
     <p>
         A l'étape 3, le fichier est téléchargé vers notre serveur, puis le traitement est lancé. Un temps estimatif
@@ -102,7 +102,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
         <span class="fr-mobile--hide"><br><br><br></span>
         <img class="fr-responsive-img" src="assets/images/deces-ui-link-wait.png" alt="traitement lancé">
@@ -113,7 +113,7 @@ customLayout: true
 <div class="fr-container">
 <div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h4> Étape 4. Valider </h4>
     <p>
         Le traitement fini, vous pouvez soit directement télécharger le fichier, soit le vérifier sur votre navigateur.Dans cette étape, le service est totalement déconnecté, les donnée sont stockées dans votre navigateur.
@@ -132,7 +132,7 @@ customLayout: true
     </p>
 </div>
 
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-xs-12">
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
         <img class="fr-responsive-img" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
     </div>
