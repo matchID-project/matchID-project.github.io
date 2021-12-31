@@ -3161,7 +3161,7 @@ class HeaderLinks extends api.core.Instance {
     this.menuLinks = header.querySelector(HeaderSelector.MENU_LINKS);
 
     const toolsHtml = this.toolsLinks.innerHTML.replace(/  +/g, ' ');
-    const menuHtml = this.menuLinks.innerHTML.replace(/  +/g, ' ');
+    const menuHtml = this.menuLinks && this.menuLinks.innerHTML && this.menuLinks.innerHTML.replace(/  +/g, ' ');
 
     if (toolsHtml === menuHtml) return;
 
@@ -3170,12 +3170,12 @@ class HeaderLinks extends api.core.Instance {
       case api.Modes.REACT:
       case api.Modes.VUE:
         api.inspector.warn(`header__tools-links content is different from header__menu-links content.
-As you're using a dynamic framework, you should handle duplication of this content yourself, please refer to documentation: 
+As you're using a dynamic framework, you should handle duplication of this content yourself, please refer to documentation:
 ${api.header.doc}`);
         break;
 
       default:
-        this.menuLinks.innerHTML = this.toolsLinks.innerHTML;
+        this.menuLinks = this.toolsLinks;
     }
   }
 }
