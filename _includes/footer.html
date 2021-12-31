@@ -1,72 +1,89 @@
-<footer class="fr-footer" role="contentinfo" id="footer">
-  <div class="fr-container">
-    <div class="fr-footer__body">
-      <div class="fr-footer__brand fr-enlarge-link">
-        <div class="fr-footer__brand-top">
-          <div class="fr-footer__logo">
-              <p class="fr-logo">
-                  République
-                  <br>Française
-              </p>
-          </div>
+<div class="fr-container">
+  <div class="fr-grid-row fr-grid-row--gutters">
+    <div class="fr-col-12 fr-mt-3w">
+      <strong>Les auteurs</strong>
+    </div>
+    {% for author in site.authors %}
+    <div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-6 fr-col-xs-12">
+      <div class="fr-card fr-enlarge-link">
+        <div class="fr-card__body">
+          <h4 class="fr-card__title">{{ author.name }}</h4>
+          <p class="fr-card__desc fr-text--xs">
+            {{ author.desc }}
+          </p>
+          <p>
+            <a href="{{author.github | prepend: site.github_url}}" class="fr-link">
+              <span class="iconify" data-icon="ri:github-line"></span>
+            </a>
+          </p>
         </div>
+        {% if author.image %}
+          <div class="fr-card__img-author">
+            <img src="/assets/images/{{ author.image }}" alt="{{ author.name }} image">
+          </div>
+        {% endif %}
+
       </div>
     </div>
-    <div class="fr-footer__content">
-      <p
-        class="fr-footer__content-desc"
-      >
-      <ul class="fr-footer__content-list">
-        <li class="fr-footer__content-item">
-          <a class="fr-footer__content-link" href="https://github.com/{{ site.project.general.repo }}"
-          >
-            Lien vers le code source de matchID
-          </a>
-        </li>
-        <li class="fr-footer__content-item">
-          <a class="fr-footer__content-link" href="https://interieur.gouv.fr"
-          >
-            Ministère de l'Intérieur
-          </a>
-        </li>
-        <li class="fr-footer__content-item">
-          <a class="fr-footer__content-link" href="https://eig.etalab.gouv.fr"
-          >
-            Entrepreneurs d’intérêt général
-          </a>
-        </li>
-      </ul>
-      <div class="fr-container">
-        <div class="fr-grid-row fr-grid-row--gutters">
-          <div class="fr-col-12 fr-mt-3w">
-            <strong>Les auteurs</strong>
-          </div>
-          {% for author in site.authors %}
-          <div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-6 fr-col-xs-12">
-            <div class="fr-card fr-enlarge-link">
-              <div class="fr-card__body">
-                <h4 class="fr-card__title">{{ author.name }}</h4>
-                <p class="fr-card__desc fr-text--xs">
-                  {{ author.desc }}
-                </p>
-                <p>
-                  <a href="{{author.github | prepend: site.github_url}}" class="fr-link">
-                    <span class="iconify" data-icon="ri:github-line"></span>
-                  </a>
-                </p>
-              </div>
-              {% if author.image %}
-                <div class="fr-card__img-author">
-                  <img src="/assets/images/{{ author.image }}" alt="{{ author.name }} image">
-                </div>
-              {% endif %}
-
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+    {% endfor %}
   </div>
+</div>
+<br></br>
+
+<footer class="fr-footer" role="contentinfo" id="footer">
+    <div class="fr-container">
+        <div class="fr-footer__body">
+            <div class="fr-footer__brand fr-enlarge-link">
+                <a href="/" title="Retour à l’accueil">
+                    <p class="fr-logo" title="république française">
+                        république
+                        <br>française
+                    </p>
+                </a>
+            </div>
+            <div class="fr-footer__content">
+                <ul class="fr-footer__content-list">
+                    <li class="fr-footer__content-item">
+                        <a class="fr-footer__content-link" href="https://github.com/{{ site.project.general.repo }}">Lien vers le code source de matchID</a>
+                    </li>
+                    <li class="fr-footer__content-item">
+                        <a class="fr-footer__content-link" href="https://interieur.gouv.fr">Ministère de l'Intérieur</a>
+                    </li>
+                    <li class="fr-footer__content-item">
+                        <a class="fr-footer__content-link" href="https://eig.etalab.gouv.fr">Entrepreneurs d’intérêt général</a>
+                    </li>
+                    <li class="fr-footer__content-item">
+                        <a class="fr-footer__content-link" href="https://deces.matchid.io">Application Personnes Décédées</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="fr-footer__bottom">
+            <!---
+            <ul class="fr-footer__bottom-list">
+                <li class="fr-footer__bottom-item">
+                    <a class="fr-footer__bottom-link" href="#">Plan du site</a>
+                </li>
+                <li class="fr-footer__bottom-item">
+                    <a class="fr-footer__bottom-link" href="#">Accessibilité: non/partiellement/totalement conforme</a>
+                </li>
+                <li class="fr-footer__bottom-item">
+                    <a class="fr-footer__bottom-link" href="#">Mentions légales</a>
+                </li>
+                <li class="fr-footer__bottom-item">
+                    <a class="fr-footer__bottom-link" href="#">Données personnelles</a>
+                </li>
+                <li class="fr-footer__bottom-item">
+                    <a class="fr-footer__bottom-link" href="#">Gestion des cookies</a>
+                </li>
+            </ul>
+            --->
+            <div class="fr-footer__bottom-copy">
+                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 {% if site.google_analytics and jekyll.environment == 'production' %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
