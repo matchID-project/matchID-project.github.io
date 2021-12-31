@@ -537,6 +537,10 @@ html {
   margin-bottom: 1rem;
 }
 
+.fr-hero > h2 {
+  margin-top: 1rem;
+}
+
 /* burger */
 .fr-btn.fr-fi-menu-fill.fr-btn--icon {
   position: absolute;
