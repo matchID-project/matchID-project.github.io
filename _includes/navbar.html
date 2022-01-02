@@ -18,6 +18,10 @@
                   width="64px"
                 />
               </div>
+              <div class="fr-header__navbar">
+                <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="header-navigation" id="button-855" aria-haspopup="menu" title="Menu" id="fr-btn-menu-mobile-1">
+                </button>
+              </div>
             </div>
             <div class="fr-header__service">
               <a href="/" title="matchID - moteur de recherche des personnes décédées">
@@ -38,169 +42,179 @@
             </div>
           </div>
         </div>
+        <div class="fr-header__menu fr-modal" aria-labelledby="button-menu" id="header-navigation">
+          <div class="fr-container">
+            <button
+              class="fr-link--close fr-link"
+              aria-controls="header-navigation"
+            >
+              Fermer
+            </button>
+            <div class="fr-header__menu-links">
+            </div>
+            <!-- Menu déroulant sur le premier élément -->
+            <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
+              <ul class="fr-nav__list">
+                <li class="fr-nav__item">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-2">Produits</button>
+                  <div class="fr-collapse fr-menu" id="fr-nav-item-2">
+                    <ul class="fr-menu__list">
+                      <li>
+                        <strong class="fr-ml-2w"> matchID </strong>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="slides/#/3/8" target="_self">
+                          Développer des algorithmes d'appariement
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="slides/#/3/5" target="_self">
+                          Evaluer les algorithmes
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="/automation" target="_self">
+                          Automatiser les traitements
+                        </a>
+                      </li>
+                      <li>
+                        <strong class="fr-ml-2w"> deces.matchid.io </strong>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="https://deces.matchid.io/search" target="_self">
+                          Moteur de recherche des décès
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="https://deces.matchid.io/link" target="_self">
+                          Identifier les décès dans un fichier
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="https://deces.matchid.io/deces/api/v1/docs" target="_self">
+                          Automatisation via l'API décès
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="fr-nav__item">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-1">Cas d'usage</button>
+                  <div class="fr-collapse fr-menu" id="fr-nav-item-1">
+                    <ul class="fr-menu__list">
+                      <li>
+                        <a class="fr-nav__link" href="/genealogy" target="_self">
+                          Recherche généalogique
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="/healthcare" target="_self">
+                          Fiabilisation d'études cliniques
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="/fraud" target="_self">
+                          Fraude à l'identité
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">
+                          Fiabilisation statistique
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">
+                          Mise en qualité d'identités
+                        </a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">
+                          Moteur de recherche d'identités
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="fr-nav__item">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-3">Comprendre</button>
+                  <div class="fr-collapse fr-menu" id="fr-nav-item-3">
+                      <ul class="fr-menu__list">
+                          <li>
+                            <a class="fr-nav__link" href="/slides/#/1" target="_self">
+                              Données d'identités
+                            </a>
+                          </li>
+                          <li>
+                            <a class="fr-nav__link" href="/slides/#/3/11" target="_self">
+                              Les algorithmes
+                            </a>
+                          </li>
+                          <li>
+                            <a class="fr-nav__link" href="https://matchid.io/slides/#/2/1" target="_self">
+                              Cadrer un traitement métier
+                            </a>
+                          </li>
+                      </ul>
+                  </div>
+                </li>
+                <li class="fr-nav__item">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-4">Pour développer</button>
+                  <div class="fr-collapse fr-menu" id="fr-nav-item-4">
+                      <ul class="fr-menu__list">
+                        <li>
+                          <strong class="fr-ml-2w"> matchID </strong>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="/starting" target="_self">
+                            Débuter
+                          </a>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="/quick_tutorial" target="_self">
+                            Appariement simple
+                          </a>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="/advanced_tutorial" target="_self">
+                            Appariement complexe, avec machine learning
+                          </a>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="/recipes" target="_self">
+                            Documentation des recettes
+                          </a>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="/datasets" target="_self">
+                            Documentation des datasets
+                          </a>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="/automation" target="_self">
+                            Devops
+                          </a>
+                        </li>
+                        <li>
+                          <strong class="fr-ml-2w"> deces.matchid.io </strong>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="/link-api" target="_self">
+                            Intégrer l'API décès
+                          </a>
+                        </li>
+                        <li>
+                          <a class="fr-nav__link" href="#" target="_self">
+                            Déployer on-premise
+                          </a>
+                        </li>
+                      </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="fr-container">
-    <!-- Menu déroulant sur le premier élément -->
-    <nav class="fr-nav" id="header-navigation" role="navigation" aria-label="Menu principal">
-      <ul class="fr-nav__list">
-        <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-2">Produits</button>
-          <div class="fr-collapse fr-menu" id="fr-nav-item-2">
-            <ul class="fr-menu__list">
-              <li>
-                <strong class="fr-ml-2w"> matchID </strong>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="slides/#/3/8" target="_self">
-                  Développer des algorithmes d'appariement
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="slides/#/3/5" target="_self">
-                  Evaluer les algorithmes
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="/automation" target="_self">
-                  Automatiser les traitements
-                </a>
-              </li>
-              <li>
-                <strong class="fr-ml-2w"> deces.matchid.io </strong>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="https://deces.matchid.io/search" target="_self">
-                  Moteur de recherche des décès
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="https://deces.matchid.io/link" target="_self">
-                  Identifier les décès dans un fichier
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="https://deces.matchid.io/deces/api/v1/docs" target="_self">
-                  Automatisation via l'API décès
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-1">Cas d'usage</button>
-          <div class="fr-collapse fr-menu" id="fr-nav-item-1">
-            <ul class="fr-menu__list">
-              <li>
-                <a class="fr-nav__link" href="/genealogy" target="_self">
-                  Recherche généalogique
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="/healthcare" target="_self">
-                  Fiabilisation d'études cliniques
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="/fraud" target="_self">
-                  Fraude à l'identité
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="#" target="_self">
-                  Fiabilisation statistique
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="#" target="_self">
-                  Mise en qualité d'identités
-                </a>
-              </li>
-              <li>
-                <a class="fr-nav__link" href="#" target="_self">
-                  Moteur de recherche d'identités
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-3">Comprendre</button>
-          <div class="fr-collapse fr-menu" id="fr-nav-item-3">
-              <ul class="fr-menu__list">
-                  <li>
-                    <a class="fr-nav__link" href="/slides/#/1" target="_self">
-                      Données d'identités
-                    </a>
-                  </li>
-                  <li>
-                    <a class="fr-nav__link" href="/slides/#/3/11" target="_self">
-                      Les algorithmes
-                    </a>
-                  </li>
-                  <li>
-                    <a class="fr-nav__link" href="https://matchid.io/slides/#/2/1" target="_self">
-                      Cadrer un traitement métier
-                    </a>
-                  </li>
-              </ul>
-          </div>
-        </li>
-        <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="fr-nav-item-4">Pour développer</button>
-          <div class="fr-collapse fr-menu" id="fr-nav-item-4">
-              <ul class="fr-menu__list">
-                <li>
-                  <strong class="fr-ml-2w"> matchID </strong>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="/starting" target="_self">
-                    Débuter
-                  </a>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="/quick_tutorial" target="_self">
-                    Appariement simple
-                  </a>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="/advanced_tutorial" target="_self">
-                    Appariement complexe, avec machine learning
-                  </a>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="/recipes" target="_self">
-                    Documentation des recettes
-                  </a>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="/datasets" target="_self">
-                    Documentation des datasets
-                  </a>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="/automation" target="_self">
-                    Devops
-                  </a>
-                </li>
-                <li>
-                  <strong class="fr-ml-2w"> deces.matchid.io </strong>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="/link-api" target="_self">
-                    Intégrer l'API décès
-                  </a>
-                </li>
-                <li>
-                  <a class="fr-nav__link" href="#" target="_self">
-                    Déployer on-premise
-                  </a>
-                </li>
-              </ul>
-          </div>
-        </li>
-      </ul>
-    </nav>
   </div>
 </header>
