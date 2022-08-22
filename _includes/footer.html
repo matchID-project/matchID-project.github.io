@@ -87,6 +87,7 @@
         </div>
     </div>
 </footer>
+
 {% if site.google_analytics and jekyll.environment == 'production' %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 <script>
@@ -97,3 +98,9 @@
   gtag('config', '{{ site.google_analytics }}');
 </script>
 {% endif %}
+
+{% if site.google_adsense and jekyll.environment == 'production' %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.google_adsense }}"
+     crossorigin="anonymous"></script>
+{% endif %}
+
