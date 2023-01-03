@@ -85,7 +85,7 @@ customLayout: true
         Ces données peuvent être retraitées à l'issue pour être injectées dans votre base de donnée.
     </p>
     <p>
-        L'exemple minimaliste suivant est réalisé en Python est dispnible sur ce <a href="https://repl.it/@rhanka/API-deces-linkage#main.py" target="_blank" title="REPL">REPL</a>.
+        L'exemple minimaliste suivant est réalisé en Python est disponible sur ce <a href="https://repl.it/@rhanka/API-deces-linkage#main.py" target="_blank" title="REPL">REPL</a>.
     </p>
 </div>
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
