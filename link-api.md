@@ -125,9 +125,50 @@ customLayout: true
     </p>
     </div>
 </div>
+
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+    <h3> Authentification </h3>
+    <p>
+        L'API est utilisable sans authentification pour un nombre limité d'appels sur l'API de recherche. Pour utiliser l'API au-dela d'une centaine d'appels, ou pour utiliser l'API d'appariement, l'utilisation d'un jeton est nécessaire, tout en restant gratuite.
+    </p>
+    <p>
+        Voici les étapes si vous voulez automatiser l'obtention de la clé d'API pour un an:
+    </p>
+    <h4> Étape 1 - Creation manuelle du jeton </h4>
+    <p>
+        <ul>
+            <li>S'enregistrer et confirmer son identité manuellement sur deces.matchid.io</li>
+            <li>Récupérer le jeton dans le menu d'utilisateur (en haut à droite) > API Key. La clé devrait commencer par
+                <code>eyJhbGc*</code>
+            </li>
+        </ul>
+        Ce jeton est valable 30 jours sans changement et permet de dériver de nouveaux jetons jusqu'à 12 mois.
+        L'obtention d'un nouveau jeton (avec confirmation de mail) reste obligatoire tous les 12 mois.
+    </p>
+</div>
+
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+    <h4> Étape 2 - Automatisation pour un an </h4>
+    <p>
+        Vous pouvez rafraîchir votre jeton initial sans limite de la façon suivante:
+        <ul>
+            <li>
+                Pour tout appel à l'API: il suffit d'ajouter le Header: <code>Authorization: "Bearer <i>accessToken</i>"</code>, en remplaçant <code><i>accessToken</i></code> par votre jeton. Des limitations demeurent sur la fréquence d'appel (1/s pour la recherche) mais le nombre d'appels devient illimité.
+            </li>
+            <li>
+                Pour rafraîchir le jeton : avec ce même Header faire un GET sur <code>https://deces.matchid.io/deces/api/v1/auth?refresh=true</code> - ne nouveau jeton récupéré permettra de réitérer les opérations jusqu'à 12 mois.
+            </li>
+        </ul>
+    </p>
+    <p>
+        Vous pouvez faire une demande de rafraîchissement tous les jours par exemple, il n'y a pas de limite (il est inutile d'en faire une demande a chaque appel, mais ce peut être à chaque session si vous faites des appels consécutifs de 5 minutes ou même moins).
+    </p>
+</div>
+
 <div class="fr-col-12 fr-text--center">
     <h3> Pour continuer </h3>
 </div>
+
 <div class="fr-col-6 fr-text--center">
     <a href="https://deces.matchid.io/link" class="fr-link fr-link--icon-right" target="_self"> Appariement en ligne</a>
 </div>
