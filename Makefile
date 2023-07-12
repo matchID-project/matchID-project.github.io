@@ -1,4 +1,4 @@
 build:
-	docker run --rm -v /home/antoinefa/src/matchID/matchID-project.github.io:/srv/jekyll -p 4000:4000 -it jekyll/builder jekyll build
+	docker run --rm -v $(PWD):/srv/jekyll -p 4000:4000 -it jekyll/builder:4.2.0 jekyll build
 up:
-	docker run -d --rm -v /home/antoinefa/src/matchID/matchID-project.github.io:/srv/jekyll -p 4000:4000 -it jekyll/builder jekyll serve
+	docker run -d --rm -v $(PWD):/srv/jekyll -p 4000:4000 -it jekyll/builder:4.2.0 jekyll serve
