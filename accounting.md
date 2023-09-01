@@ -9,7 +9,28 @@ width: is-10
 
 ## Comptabilité
 
-### 2020
+
+### 2021 (cloturé)
+|Date   |Objet            |Compte            |Depense        |Revenu                 
+|-------|-------|------------------|---------------|-------------
+|Janv |Scaleway |FA          |€137.56 |
+|Fevr |Scaleway |FA          |€97.27 |
+|Mars |Scaleway |FA          |€89.06 |
+|Avri |Scaleway |FA          |€95.05 |
+|Mai  |Scaleway |FA          |€120.47 |
+|Juin |Scaleway |FA          |€154.96 |
+|Juil |Scaleway |FA          |€105.47 |
+|Aout |Scaleway |FA          |€79.93 |
+|Sept |Scaleway |FA          |€88.37 |
+|Oct |Scaleway |FA           |€82.16 |
+|Nov |Scaleway |FA           |€183.72 |
+|Dec |Scaleway |FA           |€118.69 |
+|2021 |Totaux |FA           |€1247.24 |
+
+En 2021, l'activité aura coûté 1247.24€ (financement exclusif Fabien Antoine)
+
+
+### 2020 (cloturé)
 |Date   |Objet            |Compte            |Depense        |Revenu                 
 |-------|-------|------------------|---------------|-------------
 |Janv |Scaleway |FA          |€88.01 |
