@@ -40,7 +40,7 @@ Merci d'avance pour vos dons !
 En un an, 33 donnateurs on permis d'atteindre une cagnotte matchID a atteint 1035€ fin août 2023.
 Nous avons décidé de clôturer la cagnotte, étant donné les revenus complémentaires générés par Adsense dans la période. Les revenus de la cagnotte correspondent a un financement d'environ 60% du coût régulier du service. Grâce aux deux revenus, les coûts de financement initial de l'association seront couverts, et nous pouvons nous permettre d'arrêter la publicité jusque fin 2023.
 Nous mettrons à jour cette page dès la création effective de l'association.
-Pour plus de détail sur la comptablité cf [accountig.md]
+Pour plus de détail sur la comptablité consultez les [Tableaux de comptabilité](accountig.md).
 
 ### Donnateurs et remerciements
 Nous remerciions les donnateurs qui nous ont permis d'initier la création de l'association et de poursuivre sereinement le soutien du service.
