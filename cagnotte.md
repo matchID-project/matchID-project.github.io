@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: finances
-description: "matchID finances"
+permalink: cagnotte
+description: "Cagnotte matchID"
 title: Cagnotte matchID
 width: is-10
 ---
