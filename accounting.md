@@ -9,6 +9,39 @@ width: is-10
 
 ## Comptabilité
 
+### 2023 (exercice en cours)
+
+|Date   |Objet            |Compte            |Depense        |Revenu                 
+|-------|-------|------------------|---------------|-------------
+|Janv |Adsense |FA           | |€189.52
+|Janv |Scaleway |FA          |€139.82 |
+|Fevr |Adsense |FA           | |€176.58
+|Fevr |Scaleway |FA          |€124.42 |
+|Mars |Adsense |FA           | |€158.28
+|Mars |Scaleway |FA          |€136.36|
+|Avri |Adsense |FA           | |€117.71
+|Avri |Scaleway |FA          |€131.68 |
+|Avri |Legalstart |FA          |€226.80 |
+|Mai |Adsense |FA           | |€116.38
+|Avri |Legalstart |FA          |€118.80 |
+|Avri |Legalstart |FA          |€47.88 |
+|Avri |Legalstart |FA          |€35.88 |
+|Mai  |Scaleway |FA          |€156.25|
+|Juin |Adsense |FA           | |€144.42
+|Juin |Scaleway |FA          |€135.70 |
+|Juil |Adsense |FA           | |€188.47
+|Juil |Scaleway |FA          |€135.96 |
+|Aout |Adsense |FA           | |€172.09
+|2023 |Totaux (en cours)|FA           |€1389.55 |€1263.45
+|Fin 2023|Scaleway (Previsions)|FA           |€680 |
+|Fin 2023|Leetchi (Previsions)|FA           | |€1035
+|Fin 2023|Total (Previsions)|FA           |€2069.55 |€2295.45
+
+En 2023, l'activité devrait être bénéficiaire de 228.9€ une fois les revenus Adsense et Cagnotte Leetchi pris en compte (bénéficiaire Fabien Antoine).
+Afin d'équilibrer les comptes, les publicités sont supprimées jusqu'à la fin d'année 2023. D'autre part, les 228.9€ seront investis (Fabien Antoine) en capacité de calcul pour la R&D du portage de matchID sur Kubernetes.
+En avril 2023, un investissement a été fait pour initier à l'aide de Legalstart.com la création de l'association matchID. Celle ci sera effective dans l'année 2023.
+Les modalités de financement pour 2024 seront déterminés d'ici fin 2023 par décision au sein de l'association et imputés au compte de l'association, une fois créé.
+
 ### 2022 (cloturé)
 
 |Date   |Objet            |Compte            |Depense        |Revenu                 
