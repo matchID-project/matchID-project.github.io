@@ -34,12 +34,13 @@ width: is-10
 |Aout |Adsense |FA           | |€172.09
 |2023 |Totaux (en cours)|FA           |€1389.55 |€1263.45
 |Fin 2023|Scaleway (Previsions)|FA           |€680 |
-|Fin 2023|Leetchi (Previsions)|FA           | |€1035
-|Fin 2023|Total (Previsions)|FA           |€2069.55 |€2295.45
+|Fin 2023|Leetchi (Previsions)|FA           | |€972,90
+|Fin 2023|Total (Previsions)|FA           |€2069.55 |€2233.35
 
 En 2023, l'activité devrait être bénéficiaire de 228.9€ une fois les revenus Adsense et Cagnotte Leetchi pris en compte (bénéficiaire Fabien Antoine).
+A noter que des frais de tenus de compte de 6% retirés de la cagnotte Leetchi (1035-62.10=972.90€).
 Afin d'équilibrer les comptes, les publicités sont supprimées jusqu'à la fin d'année 2023.
-D'autre part, les 228.9€ pourraient être investis (Fabien Antoine) en capacité de calcul pour la R&D du portage de matchID sur Kubernetes ou la prise en charge de frais complémentaires dans la création de l'association.
+D'autre part, les 163.8€ pourraient être investis (Fabien Antoine) en capacité de calcul pour la R&D du portage de matchID sur Kubernetes ou la prise en charge de frais complémentaires dans la création de l'association.
 En avril 2023, un investissement a été fait pour initier à l'aide de Legalstart.com la création de l'association matchID. Celle ci sera effective dans l'année 2023.
 Les modalités de financement pour 2024 seront déterminés d'ici fin 2023 par décision au sein de l'association et imputés au compte de l'association, une fois créé.
 
