@@ -9,6 +9,28 @@ width: is-10
 
 ## Comptabilité
 
+### 2022 (cloturé)
+
+|Date   |Objet            |Compte            |Depense        |Revenu                 
+|-------|-------|------------------|---------------|-------------
+|Janv |Scaleway |FA          |€109.87 |
+|Fevr |Scaleway |FA          |€98.42 |
+|Mars |Scaleway |FA          |€108.07 |
+|Avri |Scaleway |FA          |€104.02 |
+|Mai  |Scaleway |FA          |€109.18 |
+|Juin |Scaleway |FA          |€103.54 |
+|Juil |Scaleway |FA          |€116.58 |
+|Aout |Scaleway |FA          |€70.04 |
+|Sept |Scaleway |FA          |€40.21 |
+|Oct |Adsense |FA           | |€292.08
+|Oct |Scaleway |FA           |€186.74 |
+|Nov |Adsense |FA           | |€230.16
+|Nov |Scaleway |FA           |€147.79 |
+|Dec |Adsense |FA           | |€208.92
+|Dec |Scaleway |FA           |€301.81 |
+|2022 |Totaux |FA           |€1496.27 |€731.16
+
+En 2022, l'activité aura coûté 765.11€ une fois les revenus Adsense retirés (financement exclusif Fabien Antoine).
 
 ### 2021 (cloturé)
 |Date   |Objet            |Compte            |Depense        |Revenu                 
