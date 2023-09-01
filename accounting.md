@@ -38,7 +38,8 @@ width: is-10
 |Fin 2023|Total (Previsions)|FA           |€2069.55 |€2295.45
 
 En 2023, l'activité devrait être bénéficiaire de 228.9€ une fois les revenus Adsense et Cagnotte Leetchi pris en compte (bénéficiaire Fabien Antoine).
-Afin d'équilibrer les comptes, les publicités sont supprimées jusqu'à la fin d'année 2023. D'autre part, les 228.9€ seront investis (Fabien Antoine) en capacité de calcul pour la R&D du portage de matchID sur Kubernetes.
+Afin d'équilibrer les comptes, les publicités sont supprimées jusqu'à la fin d'année 2023.
+D'autre part, les 228.9€ pourraient être investis (Fabien Antoine) en capacité de calcul pour la R&D du portage de matchID sur Kubernetes ou la prise en charge de frais complémentaires dans la création de l'association.
 En avril 2023, un investissement a été fait pour initier à l'aide de Legalstart.com la création de l'association matchID. Celle ci sera effective dans l'année 2023.
 Les modalités de financement pour 2024 seront déterminés d'ici fin 2023 par décision au sein de l'association et imputés au compte de l'association, une fois créé.
 
@@ -100,7 +101,7 @@ En 2021, l'activité aura coûté 1247.24€ (financement exclusif Fabien Antoin
 |Oct |Scaleway |FA           |€227.75|
 |Nov |Scaleway |FA           |€93.46 |
 |Dec |Scaleway |FA           |€121.94 |
-|2022 |Totaux |FA           |€1723.19 |
+|2020 |Totaux |FA           |€1723.19 |
 
 En 2020, année de lancement de matchID.io, l'activité aura coûté 1723.19€ (financement exclusif Fabien Antoine)
 
