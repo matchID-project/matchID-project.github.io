@@ -9,7 +9,16 @@ width: is-10
 
 ## Comptabilité
 
-### 2023 (exercice en cours)
+### 2024 (en cours)
+|Date   |Objet            |Compte            |Depense        |Revenu                 
+|-------|-------|------------------|---------------|-------------
+|Janv |Scaleway |FA          |€140.84 |
+|Fevr |Scaleway |FA          |€114.42 |
+|Mars |Scaleway |FA          |€129.17|
+
+En 2024, la création de l'association devrait permettre d'initier une nouvelle séquence de donnation, afin de combler les besoin en serveur (estimé 1620 annuel, probablement 2000 au passage à Kubernetes pour améliorer les performances pour l'appariement).
+
+### 2023 (clôturé)
 
 |Date   |Objet            |Compte            |Depense        |Revenu                 
 |-------|-------|------------------|---------------|-------------
@@ -32,17 +41,18 @@ width: is-10
 |Juil |Adsense |FA           | |€188.47
 |Juil |Scaleway |FA          |€135.96 |
 |Aout |Adsense |FA           | |€172.09
-|2023 |Totaux (en cours)|FA           |€1389.55 |€1263.45
-|Fin 2023|Scaleway (Previsions)|FA           |€680 |
-|Fin 2023|Leetchi (Previsions)|FA           | |€972,90
-|Fin 2023|Total (Previsions)|FA           |€2069.55 |€2233.35
+|Aout |Scaleway |FA          |€145.15 |
+|Aout|Leetchi (dons)|FA           | |€1035.00
+|Aout|Leetchi (frais)|FA           |€62.10|
+|Sept |Scaleway |FA          |€134.28 |
+|Oct |Scaleway |FA          |€381.07 |
+|Nov |Scaleway |FA          |€233.06 |
+|Dec |Scaleway |FA          |€134.10 |
+|2023|Total |FA           |€2479.31 |€2298.45
 
-En 2023, l'activité devrait être bénéficiaire de 228.9€ une fois les revenus Adsense et Cagnotte Leetchi pris en compte (bénéficiaire Fabien Antoine).
-A noter que des frais de tenus de compte de 6% retirés de la cagnotte Leetchi (1035-62.10=972.90€).
-Afin d'équilibrer les comptes, les publicités sont supprimées jusqu'à la fin d'année 2023.
-D'autre part, les 163.8€ pourraient être investis (Fabien Antoine) en capacité de calcul pour la R&D du portage de matchID sur Kubernetes ou la prise en charge de frais complémentaires dans la création de l'association.
-En avril 2023, un investissement a été fait pour initier à l'aide de Legalstart.com la création de l'association matchID. Celle ci sera effective dans l'année 2023.
-Les modalités de financement pour 2024 seront déterminés d'ici fin 2023 par décision au sein de l'association et imputés au compte de l'association, une fois créé.
+En 2023, l'activité a été déficitaire de 180.86€ une fois les revenus Adsense et Cagnotte Leetchi pris en compte (à la charge de Fabien Antoine).
+Les financements ont permis d'arrêter la publicité jusque décembre.
+
 
 ### 2022 (cloturé)
 
