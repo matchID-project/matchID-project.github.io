@@ -26,7 +26,7 @@ width: is-10
 |Dece |Scaleway |FA          |€137.83 |
 |2024 |Total    |FA          |€1261.23 |
 
-En 2024, l'association a été créée en juillet 2024, et les dépenses toujours à charge de FA sont au totale de 1261.23.
+En 2024, l'association a été créée au 27 novembre - en 2024, les dépenses ont toujours été à charge de FA sont au totale de 1261.23.
 
 ### 2023 (clôturé)
 
