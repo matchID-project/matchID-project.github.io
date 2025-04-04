@@ -12,11 +12,21 @@ width: is-10
 ### 2024 (en cours)
 |Date   |Objet            |Compte            |Depense        |Revenu                 
 |-------|-------|------------------|---------------|-------------
-|Janv |Scaleway |FA          |€140.84 |
-|Fevr |Scaleway |FA          |€114.42 |
-|Mars |Scaleway |FA          |€129.17|
+|Janv |Scaleway |FA          |€140.60 |
+|Fevr |Scaleway |FA          |€114.19 |
+|Mars |Scaleway |FA          |€128.93|
+|Avri |Scaleway |FA          |€135.04 |
+|Mai  |Scaleway |FA          |€125.87 |
+|Juin |Scaleway |FA          |€117.01 |
+|Juil |Scaleway |FA          |€159.10|
+|Aout |Scaleway |FA          |€127.60 |
+|Sept |Scaleway |FA          |€123.38 |
+|Octo |Scaleway |FA          |€121.38 |
+|Nove |Scaleway |FA          |€117.77 |
+|Dece |Scaleway |FA          |€137.83 |
+|2024 |Total    |FA          |€1261.23 |
 
-En 2024, la création de l'association devrait permettre d'initier une nouvelle séquence de donnation, afin de combler les besoin en serveur (estimé 1620 annuel, probablement 2000 au passage à Kubernetes pour améliorer les performances pour l'appariement).
+En 2024, l'association a été créée en juillet 2024, et les dépenses toujours à charge de FA sont au totale de 1261.23.
 
 ### 2023 (clôturé)
 
