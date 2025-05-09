@@ -17,7 +17,7 @@ customLayout: true
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h3>Quelle API pour quel usage</h3>
+    <h3 id="usage">Quelle API pour quel usage</h3>
     <p>
         L'API décès possède deux principales fonctions:
         <ul>
@@ -49,7 +49,7 @@ customLayout: true
 <div class="fr-grid-row fr-grid-row--gutters" style="flex-direction: row-reverse;">
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h3>Intégration d'un formulaire</h3>
+    <h3 id="integration-formulaire">Intégration d'un formulaire</h3>
     <p>
         Le cas d'usage basique est l'utilisation, de la recherche simple (<code>q=Pompidou...</code>)
         depuis la valeur d'un formulaire (<code>input</code>).
@@ -77,7 +77,7 @@ customLayout: true
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h3>Intégration de l'API d'appariement à un backend</h3>
+    <h3 id="integration-backend">Intégration de l'API d'appariement à un backend</h3>
     <p>
         L'API unitaire est limité à une requête par seconde. Pour les appariement en masse,
         une API <code>search/csv</code> permette le traitement de <strong>50 à 100 requêtes par seconde</strong>.
@@ -158,7 +158,7 @@ print(r.text.replace(";","\t"))
 {% include algos-link-api.html %}
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h3> Intégration d'une UI de validation </h3>
+    <h3 id="integration-ui"> Intégration d'une UI de validation </h3>
     <p>
         Nous vous recommandons dans un premier temps de passer par <a href="https://deces.matchid.io/link" title="appariement sur deces.matchid.io" target="_self">le service en ligne</a> pour tester la validité du fichier et du choix des colonnes à apparier avant d'attaquer le code d'appariement. Vous pourrez, en particulier, vérifier avec l'aide de l'UI de validation.
     </p>
@@ -185,14 +185,14 @@ print(r.text.replace(";","\t"))
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h3> Authentification </h3>
+    <h3 id="authentification"> Authentification </h3>
     <p>
         L'API est utilisable sans authentification pour un nombre limité d'appels sur l'API de recherche. Pour utiliser l'API au-dela d'une centaine d'appels, ou pour utiliser l'API d'appariement, l'utilisation d'un jeton est nécessaire, tout en restant gratuite.
     </p>
     <p>
         Voici les étapes si vous voulez automatiser l'obtention de la clé d'API pour un an:
     </p>
-    <h4> Étape 1 - Creation manuelle du jeton </h4>
+    <h4 id="creation-jeton"> Étape 1 - Creation manuelle du jeton </h4>
     <p>
         <ul>
             <li>S'enregistrer et confirmer son identité manuellement sur deces.matchid.io</li>
@@ -206,7 +206,7 @@ print(r.text.replace(";","\t"))
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h4> Étape 2 - Automatisation pour un an </h4>
+    <h4 id="automatisation"> Étape 2 - Automatisation pour un an </h4>
     <p>
         Vous pouvez rafraîchir votre jeton initial sans limite de la façon suivante:
         <ul>
@@ -224,7 +224,7 @@ print(r.text.replace(";","\t"))
 </div>
 
 <div class="fr-col-xl-12 fr-col-lg-12 fr-col-md-12 fr-col-sm-12 fr-col-12">
-    <h4> Exemple de code Python pour le renouvellement automatique </h4>
+    <h4 id="exemple-code"> Exemple de code Python pour le renouvellement automatique </h4>
     <p>
         Voici un exemple de code Python qui permet de gérer automatiquement le renouvellement du token :
     </p>
