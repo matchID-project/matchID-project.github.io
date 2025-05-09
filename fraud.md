@@ -59,7 +59,7 @@ customLayout: true
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
         <span class="fr-mobile--hide"><br><br><br></span>
-        <img class="fr-responsive-img" src="assets/images/deces-backend-test.png" alt="fichier">
+        <img class="fr-responsive-img" src="assets/images/deces-backend-test.webp" alt="fichier">
     </div>
 </div>
 </div>

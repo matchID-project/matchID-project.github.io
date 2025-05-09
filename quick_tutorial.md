@@ -96,7 +96,7 @@ customLayout: true
   avoir cet écran:
 </div>
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
-  <img width="100%" src="assets/images/frontend-start.png" alt="matchID frontend start">
+  <img width="100%" src="assets/images/frontend-start.webp" alt="matchID frontend start">
 </div>
 
 
@@ -116,7 +116,7 @@ customLayout: true
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
-  <img width="100%" src="assets/images/frontend-new-project.png" alt="matchID new project">
+  <img width="100%" src="assets/images/frontend-new-project.webp" alt="matchID new project">
 </div>
 
 </div>
@@ -134,7 +134,7 @@ customLayout: true
   </p>
 </div>
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
-  <img width="100%" src="assets/images/frontend-import-dataset2.png" alt="matchID import dataset test">
+  <img width="100%" src="assets/images/frontend-import-dataset2.webp" alt="matchID import dataset test">
 </div>
 
 
@@ -156,7 +156,7 @@ customLayout: true
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
-    <img width="100%" src="assets/images/frontend-dataset-deaths-simple-import.png" alt="matchID simple dataset import">
+    <img width="100%" src="assets/images/frontend-dataset-deaths-simple-import.webp" alt="matchID simple dataset import">
 </div>
 
 </div>
@@ -175,7 +175,7 @@ customLayout: true
   </p>
 </div>
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12 fr-mt-3w" style="position:relative">
-<img width="100%" src="assets/images/frontend-new-recipe.png" alt="matchID new recipe">
+<img width="100%" src="assets/images/frontend-new-recipe.webp" alt="matchID new recipe">
 </div>
 
 <div class="fr-col-12">
@@ -197,7 +197,7 @@ customLayout: true
   </div>
   <div markdown="1">
   La recette peut être sauvée (menu `Sauver` ou `Ctrl+S`), ce qui devrait rendre le résultat suivant:
-  <img width="100%" src="assets/images/frontend-recipe-deaths-test-1.png" alt="matchID recipe test">
+  <img width="100%" src="assets/images/frontend-recipe-deaths-test-1.webp" alt="matchID recipe test">
   Vous pouvez trouver la liste exhaustive des [recettes ici](recipes), et des recettes en contexte dans le [tutoriel avancé](advanced_tutorial).
   </div>
 </div>
@@ -217,10 +217,10 @@ customLayout: true
   <div markdown="1">
   N'oubliez pas de sauver (`Sauver` ou `Ctrl+S`).
   Puis revenez sur la recette [dataprep_death_test](http://localhost:8081/matchID/projects/deaths/recipes/dataprep_deaths_test). Lancez la recette en appuyant sur :
-    <img width="100px" style="margin-left: 45%;" src="assets/images/frontend-recipe-run.png" alt="matchID recipe run">
+    <img width="100px" style="margin-left: 45%;" src="assets/images/frontend-recipe-run.webp" alt="matchID recipe run">
 
   Vous pouvez suivre l'avancement en bas à droite dans l'onglet `Real logs`  ou via le menu `Jobs`:
-      <img width="75%" style="margin-left: auto;margin-right: auto;" src="assets/images/frontend-recipe-log.png" alt="matchID recipe log">
+      <img width="75%" style="margin-left: auto;margin-right: auto;" src="assets/images/frontend-recipe-log.webp" alt="matchID recipe log">
 
   L'indexation dure un peu plus d'une minute pour 71 404 enregistrements.
   </div>
@@ -239,7 +239,7 @@ Le jeu de donnée est [clients est dispoinible ici](https://github.com/matchID-p
   </div>
 </div>
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12" style="position:relative">
-  <img width="100%" src="assets/images/frontend-dataset-clients-test.png" alt="matchID dataset clients test">
+  <img width="100%" src="assets/images/frontend-dataset-clients-test.webp" alt="matchID dataset clients test">
 </div>
 <div class="fr-col-12">
   <div markdown=1>
@@ -289,7 +289,7 @@ recipes:
   </div>
   <div markdown="1">
 Sauvez et observez les [premiers résultats](http://localhost:8081/matchID/projects/deaths/recipes/clients_deaths_matching_test):
-      <img width="100%" src="assets/images/frontend-dataset-matching-test.png" alt="matchID first match">
+      <img width="100%" src="assets/images/frontend-dataset-matching-test.webp" alt="matchID first match">
 Le match est perfectible: trop de restriction avec le premier prénom, et la tolérance sur la date est trop forte. **La R&D sur la phase de *matching* est essentielle**. En `SQL`, c'est l'optimisation des requêtes de *blocking*.
   </div>
 </div>
@@ -338,7 +338,7 @@ recipes:
 
 <div markdown="1">
 
-  <img width="100%" src="assets/images/frontend-dataset-matching-test-2.png" alt="matchID better match">
+  <img width="100%" src="assets/images/frontend-dataset-matching-test-2.webp" alt="matchID better match">
 </div>
 </div>
 
@@ -416,7 +416,7 @@ Nom|DCD_NOM|Prenom|DCD_PRENOM|Date|DCD_DATE
 ```
 </div>
 <div markdown="1">
-    <img width="100%" src="assets/images/frontend-clients_x_deaths.png" alt="matchID matching result">
+    <img width="100%" src="assets/images/frontend-clients_x_deaths.webp" alt="matchID matching result">
 Les résultats sont déjà visibles, mais leur validation est complexe dans ce mode "tableur". Pour faciliter l'évaluation
 matchID propose une **application de validation**. Il suffit de configurer les colonnes à afficher dans le dataset:
 
@@ -511,7 +511,7 @@ Notes:<br>
 <div markdown="1">
 
 Sauvez la configuration `Ctrl+S` et rechargez la page (`Ctrl+R`). Un bouton `Validation` apparaît:
-      <img width="100%" src="assets/images/frontend-validation-test.png" alt="matchID validation">
+      <img width="100%" src="assets/images/frontend-validation-test.webp" alt="matchID validation">
 </div>
 </div>
 
@@ -520,10 +520,10 @@ Sauvez la configuration `Ctrl+S` et rechargez la page (`Ctrl+R`). Un bouton `Val
 <div markdown="1">
 La distribution des scores est accessible via l'onglet statistiques <span class="iconify" data-icon="fa-regular:chart-bar" data-inline="false"></span> :
 
-<img width="100%" src="assets/images/frontend-validation-stats-simple.png" alt="matchID distribution des scores">.
+<img width="100%" src="assets/images/frontend-validation-stats-simple.webp" alt="matchID distribution des scores">.
 
 Filtrer au-dessus de 40 montre déjà de très bons résultats :
-  <img width="100%" src="assets/images/frontend-validation-filtered.png" alt="matchID validation filtered">
+  <img width="100%" src="assets/images/frontend-validation-filtered.webp" alt="matchID validation filtered">
 </div>
 </div>
 <div class="fr-col-xl-2 fr-col-lg-2 fr-col-md-12 fr-col-sm-12 fr-col-12"></div>

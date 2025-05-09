@@ -94,7 +94,7 @@ customLayout: true
         <a href="http://localhost:8081/matchID/" title="serveur local matchID">http://localhost:8081/matchID/</a>
         </code>
     </p>
-    <img class="fr-responsive-img" src="assets/images/frontend-start.png" alt="matchID projects view">
+    <img class="fr-responsive-img" src="assets/images/frontend-start.webp" alt="matchID projects view">
 </div>
 
 <div class="fr-col-lg-6 fr-col-md-6">

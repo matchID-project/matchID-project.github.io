@@ -45,13 +45,13 @@ customLayout: true
         dans la base INSEE.
     </p>
     <br>
-    <img class="fr-responsive-img" src="assets/images/deces-ui-card.png" alt="fiche étendue">
+    <img class="fr-responsive-img" src="assets/images/deces-ui-card.webp" alt="fiche étendue">
 </div>
 
 <div class="fr-col-12">
     <h4> Tableur </h4>
     <div style="overlow-x: hidden">
-    <img style="width:1000px;" src="assets/images/deces-ui-table.png" alt="tableur">
+    <img style="width:1000px;" src="assets/images/deces-ui-table.webp" alt="tableur">
     </div>
 </div>
 
@@ -68,7 +68,7 @@ customLayout: true
         par département, ville, ...
     </p>
     <br>
-    <img class="fr-responsive-img" src="assets/images/deces-ui-advanced.png" alt="fiche étendue">
+    <img class="fr-responsive-img" src="assets/images/deces-ui-advanced.webp" alt="fiche étendue">
     <h4> Recherche floue ou stricte </h4>
     <p>
         Activez ou désactivez la recherche floue en fonction de votre recherche. Par défaut la recherche
@@ -85,13 +85,13 @@ customLayout: true
         de données complètes.
     </p>
     <span class="fr-mobile--hide"><br><br><br></span>
-    <img class="fr-responsive-img" src="assets/images/deces-ui-sort.png" alt="tri avancé">
+    <img class="fr-responsive-img" src="assets/images/deces-ui-sort.webp" alt="tri avancé">
     <h4> Téléchargez </h4>
     <p>Si l'ensemble des outils de visualisation ne sont pas suffisants, vous pouvez télécharger
     le résultat de la recherche (moins de 500.000 enregistrements) et l'exploiter sous votre tableur
     préféré
     </p>
-    <img class="fr-responsive-img" src="assets/images/deces-ui-download.png" alt="télécharger">
+    <img class="fr-responsive-img" src="assets/images/deces-ui-download.webp" alt="télécharger">
 </div>
 
 
@@ -101,7 +101,7 @@ customLayout: true
         Un outil de visualisation géographique est à votre disposition, pour vous permettre un mode de recherche alternative. Cette visualisation est idéal pour visualiser la provenance géographique d'un patronyme.
     </p>
     <br>
-    <img class="fr-responsive-img" src="assets/images/deces-ui-geo.png" alt="fiche étendue">
+    <img class="fr-responsive-img" src="assets/images/deces-ui-geo.webp" alt="fiche étendue">
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
@@ -110,7 +110,7 @@ customLayout: true
         Vous disposez d'un tableur avec l'ensemble de vos fiches, et souhaitez les fiabilisez ? Utiliser notre outil d'appariement en masse
     </p>
     <br>
-    <img class="fr-responsive-img" src="assets/images/deces-ui-link.png" alt="fiche étendue">
+    <img class="fr-responsive-img" src="assets/images/deces-ui-link.webp" alt="fiche étendue">
 </div>
 
 <div class="fr-col-12 fr-text--center">

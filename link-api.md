@@ -41,7 +41,7 @@ customLayout: true
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <a href="https://deces.matchid.io/deces/api/v1/docs" title="documentation OpenApi" target="_self"><img class="fr-responsive-img" src="assets/images/deces-api-swagger.png" alt="openapi"></a>
+    <a href="https://deces.matchid.io/deces/api/v1/docs" title="documentation OpenApi" target="_self"><img class="fr-responsive-img" src="assets/images/deces-api-swagger.webp" alt="openapi"></a>
 </div>
 
 <div class="fr-col-12">
@@ -176,7 +176,7 @@ print(r.text.replace(";","\t"))
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
-    <img width="100%" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
+    <img width="100%" src="assets/images/deces-ui-link-validate.webp" alt="valider l'appariement">
     <p>
        Les composants développés implémentent une <strong>mise en exergue des différences champs par champ</strong> (nom, prénom, ...) entre la donnée cherchée et la donnée de référence INSEE. Cette facilitation visuelle est la
        source d'accélération de la validation. Nos implémentations reposent sur la <a href="https://www.npmjs.com/package/diff.js" title="librairie diff.js" target="_blank">librairie diff.js</a>.

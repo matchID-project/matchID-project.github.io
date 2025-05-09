@@ -56,7 +56,7 @@ customLayout: true
             La première étape est donc de choisir votre fichier patient par glisser-coller sur
         </p>
         <span class="fr-mobile--hide"><br><br><br></span>
-        <img class="fr-responsive-img" src="assets/images/deces-ui-link-file.png" alt="fichier">
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-file.webp" alt="fichier">
     </div>
 </div>
 
@@ -79,7 +79,7 @@ customLayout: true
 </div>
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
-        <img class="fr-responsive-img" src="assets/images/deces-ui-link-configure.png" alt="configuration du traitement">
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-configure.webp" alt="configuration du traitement">
     </div>
 </div>
 
@@ -105,7 +105,7 @@ customLayout: true
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
         <span class="fr-mobile--hide"><br><br><br></span>
-        <img class="fr-responsive-img" src="assets/images/deces-ui-link-wait.png" alt="traitement lancé">
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-wait.webp" alt="traitement lancé">
     </div>
 </div>
 
@@ -134,7 +134,7 @@ customLayout: true
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <div class="fr-vcenter">
-        <img class="fr-responsive-img" src="assets/images/deces-ui-link-validate.png" alt="valider l'appariement">
+        <img class="fr-responsive-img" src="assets/images/deces-ui-link-validate.webp" alt="valider l'appariement">
     </div>
 </div>
 
@@ -147,7 +147,7 @@ customLayout: true
         Une fois les identités validées, ou à n'importe quel moment, vous pouvez télécharger les résultats en format CSV
     </p>
     <div class="width:100%">
-        <img style="width:400px;margin-left:auto!important;margin-right:auto!important;" src="assets/images/deces-ui-link-download.png" alt="tri avancé">
+        <img style="width:400px;margin-left:auto!important;margin-right:auto!important;" src="assets/images/deces-ui-link-download.webp" alt="tri avancé">
     </div>
     <p>
         Vous pouvez alors utiliser le fichier apparié pour fiabiliser vos travaux. Si vous souhaitez

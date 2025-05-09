@@ -30,7 +30,7 @@ We'll follow four steps for use case 1.
 - [Step 3: validate matches and train rescoring with machine learning](#step-3-validate-matches-and-train-rescoring-with-machine-learning)
 - [Step 4: rescore with the machine learning model](#step-4-rescore-with-the-machine-learning-model)
 
-<img width="100%" src="assets/images/workflow.png" alt="matching workflow">
+<img width="100%" src="assets/images/workflow.webp" alt="matching workflow">
 
 #### the philosophy of iterative cooking
 
@@ -102,7 +102,7 @@ Now, you can go to your `matchID` server :
 
 WARNING: your should'nt try the tutorial on [the tutorial matchID site](https://tuto.matchID.tech) as it is a very slow computer (3x slower than your laptops vCPUs).
 
-<img width="100%" src="assets/images/frontend-start.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-start.webp" alt="matchID projects view">
 
 ### first project, first dataset, first recipe
 
@@ -110,10 +110,10 @@ WARNING: your should'nt try the tutorial on [the tutorial matchID site](https://
 
 We'll first have to create a project. This will basically be a folder, containing datasets and recipes (data transformation). A good segmentation is to build a project for each goal : use case 1 matches dead people within a client file, so we basically chose to have two projects: deaths, and clients. Just clic on `new project` and name the first one `deaths`:
 
-<img width="100%" src="assets/images/frontend-new-project.png" alt="matchID new project">
+<img width="100%" src="assets/images/frontend-new-project.webp" alt="matchID new project">
 
 Which leads to:
-<img width="100%" src="assets/images/frontend-project-view-empty.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-project-view-empty.webp" alt="matchID projects view">
 
 *Note :
 - The segmentation of the projects are very easy to do server-side, as it only contains two sub-folders, datasets and recipes. We didn't implement methods for splitting or reorganising project at this step of the development, as the ratio of benefit/cost of folder management is very low.
@@ -123,10 +123,10 @@ Which leads to:
 
 Click again on `import dataset` and just drag-n-drop (thx to [Dropzone](http://www.dropzonejs.com/)) the [`death.txt.gz`](https://github.com/matchID-project/examples/raw/master/data/deaths.txt.gz) downloaded from the [examples matchID repo](https://github.com/matchID-project/examples).
 
-<img width="100%" src="assets/images/frontend-import-dataset.png" alt="matchID import dataset">
+<img width="100%" src="assets/images/frontend-import-dataset.webp" alt="matchID import dataset">
 
 Now you have your first dataset:
-<img width="100%" src="assets/images/frontend-dataset-deaths-ko.png" alt="matchID dataset first view">
+<img width="100%" src="assets/images/frontend-dataset-deaths-ko.webp" alt="matchID dataset first view">
 
 We have many observations:
 
@@ -193,12 +193,12 @@ Then you can save that with `Ctrl+S` or the `Save` button.
  *if you're lost you can go to the `tutorial` follder and delete or change files manually. You can even `rm -rf tutorial/projects/deaths` and give a new birth to your project*
 
 Here you are:
-<img width="100%" src="assets/images/frontend-dataset-deaths-ok.png" alt="matchID dataset correct view">
+<img width="100%" src="assets/images/frontend-dataset-deaths-ok.webp" alt="matchID dataset correct view">
 
 #### first recipe
 
 Create a new recipe :
-<img width="100%" src="assets/images/frontend-new-recipe.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-new-recipe.webp" alt="matchID projects view">
 
 A default recipe is created with no valid dataset, just replace it with the uploaded dataset, `deaths_txt_gz` - as this can be done now, we already figure out we have a `deaths` dataset we'll configure after finishing the recipe.
 
@@ -226,7 +226,7 @@ recipes:
 <div markdown="1">
 Save it (`Save` button or `Ctrl+S`), it should display the first imported dataset, but with an additionnal column, `new_col` which is basically a hash of the row:
 
-<img width="100%" src="assets/images/frontend-recipe-deaths-1.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-deaths-1.webp" alt="matchID projects view">
 
 So now you have an interactive way to deal with your data. Every new step of the recipe will add a new transformation on your data. You can have the exhaustive list of [recipes here](recipes.md).
 
@@ -276,12 +276,12 @@ So we add the following steps (removing the `new_col` one) :
 ```
 </div>
 <div markdown="1">
-<img width="100%" src="assets/images/frontend-recipe-death-columns.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-death-columns.webp" alt="matchID projects view">
 
 #### preparing the names
 
 Just filter the names setting `matchid_name` in the column filter. This filter uses `regex` so you can use complex filtering for easy navigation in your data:
-<img width="100%" src="assets/images/frontend-recipe-names-filter.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-names-filter.webp" alt="matchID projects view">
 
 Now you see the names won't match with this format which is quite special.
 We propose those normalizations. Just paste and save it step by step.
@@ -304,12 +304,12 @@ We propose those normalizations. Just paste and save it step by step.
 ```
 </div>
 <div markdown="1">
-<img width="100%" src="assets/images/frontend-recipe-names.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-names.webp" alt="matchID projects view">
 
 Note that both `french_name_normalize` and `french_name_frequency` recipes are available in the `conf` project.
 
 If you just want to see the process at one step without deleting the following ones, you just have to use the 'pause' recipe :
-<img width="100%" src="assets/images/frontend-recipe-pause.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-pause.webp" alt="matchID projects view">
 
 In this case we just put the `pause` step before the name normalization section. We remove it then to have the whole process.
 
@@ -331,7 +331,7 @@ All the recipes are coded in the `conf` project so you can open them to have mor
 
 The French history codes are very important, as among the history city names changed a lot, and especially birth location of old people. So the name may have changed depending of the reference file. This treatment bring about 15% to 30% bonus in matching, and has to be performed on both datasets to be matched.
 
-<img width="100%" src="assets/images/frontend-recipe-location.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-location.webp" alt="matchID projects view">
 
 #### birth date parsing
 This is the easier part, it just consists in parsing dates, so with columns filtering to `matchid_date`, and just adding :
@@ -347,7 +347,7 @@ This is the easier part, it just consists in parsing dates, so with columns filt
 `ymd_date` is, again, available in the `conf` project.
 
 So this is the final preview :
-<img width="100%" src="assets/images/frontend-recipe-dates.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-dates.webp" alt="matchID projects view">
 
 #### configure the output dataset on elasticsearch
 
@@ -370,15 +370,15 @@ Note that you can configure many options for an elasticsearch dataset :
 #### run the recipe !
 So once everything is configured, you can run the recipe with the green button :
 
-<img width="100px" src="assets/images/frontend-recipe-run.png" alt="matchID projects view">
+<img width="100px" src="assets/images/frontend-recipe-run.webp" alt="matchID projects view">
 
 This run is needed to index the deaths with elasticearch, which will enable a match of up to 98% (recall).
 
 You can follow the job either directly in the bottom in the "Real logs":
-<img width="100%" src="assets/images/frontend-recipe-log.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-log.webp" alt="matchID projects view">
 
 Or choose to see the "jobs" in the menu:
-<img width="100%" src="assets/images/frontend-jobs.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-jobs.webp" alt="matchID projects view">
 
 This should take about 30 minutes on a reasonable big computer (35 min using 10 threads = 10vCPU).
 
@@ -426,7 +426,7 @@ Note that the preparation differs only a few from the `deaths.txt.gz` file :
 
 You should quickly have this final view of dataprep :
 
-<img width="100%" src="assets/images/frontend-recipe-clients.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-clients.webp" alt="matchID projects view">
 
 We won't have to run this one.
 
@@ -480,7 +480,7 @@ recipes:
 <div markdown="1">
 then you should have your first sampling results (screenshot obtain using a regex filter: `diff(?!_id)|confiance|number`):
 
-<img width="100%" src="assets/images/frontend-recipe-matching.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-recipe-matching.webp" alt="matchID projects view">
 
 Before running these recipes, don't forger to create the `client_x_deaths` dataset in elasticsearch :
 
@@ -504,15 +504,15 @@ You don't have to wait the full run to examinate your matching results : go to t
 
 The `validation: true` option activates this button :
 
-<img width="100%" src="assets/images/frontend-validation-button.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-button.webp" alt="matchID projects view">
 
 Click on it to access to the validation mode, which enables the possibility to annotate your results :
 
-<img width="100%" src="assets/images/frontend-validation.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation.webp" alt="matchID projects view">
 
 The cheat codes page (keyboard icon) will help you understand how to annotate :
 
-<img width="100%" src="assets/images/frontend-validation-cheatcodes.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-cheatcodes.webp" alt="matchID projects view">
 
 You now have two new goals
 
@@ -537,7 +537,7 @@ For now, you will have to take care about the amount of data you annotate (don't
 
 You have to follow this representativity a graph button to display some statistics :
 
-<img width="100%" src="assets/images/frontend-validation-stats.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-stats.webp" alt="matchID projects view">
 
 In this example, we annotated a bit too much easy messy data with low scores, and too few middle range scores, which are often the hardest to annotate.
 
@@ -617,7 +617,7 @@ recipes:
 <div markdown="1">
 When you save the recipe, you can see the performance of your machine learning model in the log :
 
-<img width="100%" src="assets/images/frontend-train-auc.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-train-auc.webp" alt="matchID projects view">
 
 In this *not serious* annotation of only 92 matches, the second model does have a perfect score. Every time you save, the algorithm trains again, and you can see how stable it is. If you have no stability at all, you should annotate more data.
 
@@ -661,12 +661,12 @@ You can immediately run this recipe which will just update the `confiance` colum
 
 Then you can go check again the validation of `clients_x_deaths` to check the impact on the discrimation :
 
-<img width="100%" src="assets/images/frontend-validation-postscoring.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-validation-postscoring.webp" alt="matchID projects view">
 
 You can annotate again concentrating on new middle range scores, training again, and so on...
 
 To have an overview on the global process you can click on <i class="fab fa-connectdevelop"></i> to open the graph project:
 
-<img width="100%" src="assets/images/frontend-project-graph.png" alt="matchID projects view">
+<img width="100%" src="assets/images/frontend-project-graph.webp" alt="matchID projects view">
 
 
