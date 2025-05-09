@@ -11,6 +11,11 @@ title: Intégrer l'API décès
 customLayout: true
 ---
 
+<!-- Prism.js pour le surlignage syntaxique -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3>Quelle API pour quel usage</h3>
     <p>
@@ -85,15 +90,68 @@ customLayout: true
         Ces données peuvent être retraitées à l'issue pour être injectées dans votre base de donnée.
     </p>
     <p>
-        L'exemple minimaliste suivant est réalisé en Python est disponible sur ce <a href="https://repl.it/@rhanka/API-deces-linkage#main.py" target="_blank" title="REPL">REPL</a>.
+        Voici un exemple minimaliste en Python pour utiliser l'API d'appariement:
     </p>
 </div>
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <div style="overflow:hidden;">
-        <iframe frameborder="0" width="100%" height="600px"
-            scrolling="no" style="margin-top: 0px;"
-            src="https://repl.it/@rhanka/API-deces-linkage?lite=true"
-        ></iframe>
+    <div style="margin-top:4rem;display: flex; font-family: monospace; border: 1px solid #ddd; border-radius: 6px; background: #fafbfc; box-shadow: 0 1px 2px #0001; margin-bottom: 1em;">
+      <div style="background: #f3f4f6; color: #888; padding: 8px 4px; text-align: right; user-select: none;">
+        <div style="line-height: 1.5; height: 500px; overflow: hidden;">
+          1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30
+        </div>
+      </div>
+      <div style="overflow-y: auto; height: 500px; width: 100%;">
+        <pre style="margin: 0; padding: 8px; font-size: 0.9em;"><code class="language-python">import requests
+import time
+url = "https://deces.matchid.io/deces/api/v1/search/csv"
+
+# Formulaire multipart avec mapping des colonnes et paramètres CSV
+files = {
+    'file': ('misc_sources_test.csv',
+            open('misc_sources_test.csv', 'rb'),
+            'application/csv', {'Expires': '0'}),
+    'sep': (None, ','),             # séparateur csv
+    'firstName': (None, 'PRENOM'),  # mapping des champs
+    'lastName': (None, 'NOM'),
+    'birthDate': (None, 'DATE_NAISSANCE'),
+    'birthCity': (None, 'COMMUNE_NAISSANCE'),
+    'birthDepartment': (None, 'DEP_NAISSANCE'),
+    'birthCountry': (None, 'PAYS_NAISSANCE'),
+    'sex': (None, 'GENRE'),
+    'candidateNumber': (None, '5'),
+    'pruneScore': (None, '0.3'),
+    'dateFormat': (None, 'DD/MM/YYYY') # format de date
+}
+r = requests.post(url, files=files)
+print(r.text)
+res = r.json()
+# Récupération de l'ID pour suivre l'avancement du traitement
+print(res['id'])
+
+url = "https://deces.matchid.io/deces/api/v1/search/csv/"
+url_job = url + res['id']
+print("url: ", url_job)
+
+r = requests.request("GET", url_job)
+print(r.text)
+res = r.json()
+print(res)
+
+while res['status'] == 'created' or res['status'] == 'waiting' or res['status'] == 'active':
+    r = requests.request("GET", url_job)
+    try:
+        # Vérification de l'état du traitement via JSON
+        res = r.json()
+    except:
+        # Job terminé si réponse non-JSON
+        break
+    time.sleep(2)
+    print(res)
+
+# CSV source complété des données de décès
+print(r.text.replace(";","\t"))
+        </code></pre>
+      </div>
     </div>
 </div>
 
@@ -162,6 +220,88 @@ customLayout: true
     </p>
     <p>
         Vous pouvez faire une demande de rafraîchissement tous les jours par exemple, il n'y a pas de limite (il est inutile d'en faire une demande a chaque appel, mais ce peut être à chaque session si vous faites des appels consécutifs de 5 minutes ou même moins).
+    </p>
+</div>
+
+<div class="fr-col-xl-12 fr-col-lg-12 fr-col-md-12 fr-col-sm-12 fr-col-12">
+    <h4> Exemple de code Python pour le renouvellement automatique </h4>
+    <p>
+        Voici un exemple de code Python qui permet de gérer automatiquement le renouvellement du token :
+    </p>
+    <div style="display: flex; font-family: monospace; border: 1px solid #ddd; border-radius: 6px; background: #fafbfc; box-shadow: 0 1px 2px #0001; margin-bottom: 1em;">
+      <div style="background: #f3f4f6; color: #888; padding: 8px 4px; text-align: right; user-select: none;">
+        <div style="line-height: 1.5; height: 500px; overflow: hidden;">
+          1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30
+        </div>
+      </div>
+      <div style="overflow-y: auto; height: 500px; width: 100%;">
+        <pre style="margin: 0; padding: 8px; font-size: 0.9em;"><code class="language-python">import requests
+import json
+from datetime import datetime, timedelta
+
+class TokenManager:
+    def __init__(self, initial_token):
+        self.token = initial_token
+        self.last_refresh = datetime.now()
+        self.refresh_interval = timedelta(days=1)  # Rafraîchir tous les jours
+        
+    def get_token(self):
+        # Vérifier si le token doit être rafraîchi
+        if datetime.now() - self.last_refresh > self.refresh_interval:
+            self.refresh_token()
+        return self.token
+    
+    def refresh_token(self):
+        headers = {
+            "Authorization": f"Bearer {self.token}"
+        }
+        response = requests.get(
+            "https://deces.matchid.io/deces/api/v1/auth",
+            params={"refresh": "true"},
+            headers=headers
+        )
+        
+        if response.status_code == 200:
+            data = response.json()
+            self.token = data["access_token"]
+            self.last_refresh = datetime.now()
+            print(f"Token rafraîchi avec succès. Nouvelle date d'expiration: {data['expiration_date']}")
+        else:
+            print(f"Erreur lors du rafraîchissement du token: {response.text}")
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    # Token initial obtenu manuellement
+    initial_token = "eyJhbGc..."  # Votre token initial
+    
+    # Créer une instance du gestionnaire de token
+    token_manager = TokenManager(initial_token)
+    
+    # Exemple d'utilisation dans une requête API
+    def faire_requete_api():
+        headers = {
+            "Authorization": f"Bearer {token_manager.get_token()}"
+        }
+        response = requests.get(
+            "https://deces.matchid.io/deces/api/v1/search",
+            params={"q": "Georges Pompidou"},
+            headers=headers
+        )
+        return response.json()
+    
+    # La requête utilisera automatiquement un token valide
+    resultat = faire_requete_api()
+    print(json.dumps(resultat, indent=2))
+        </code></pre>
+      </div>
+    </div>
+    <p>
+        Ce code implémente une classe <code>TokenManager</code> qui :
+        <ul>
+            <li>Gère automatiquement le rafraîchissement du token tous les jours</li>
+            <li>Vérifie si le token doit être rafraîchi avant chaque utilisation</li>
+            <li>Utilise le header d'autorisation approprié pour les requêtes API</li>
+        </ul>
     </p>
 </div>
 
