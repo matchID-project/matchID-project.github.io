@@ -21,6 +21,7 @@ authors:
   - name: Fabien ANTOINE
     image: fabien.jpeg
     github: rhanka
+    linkedin: fabien-antoine-ia
     email: fabien.antoine@m4x.org
     desc: Fabien est ingénieur et travaillait au sein de ministères régaliens sur la data et l'IA.
           Concepteur de matchID et de deces.matchid.io, il développe toujours avec plaisir
@@ -30,6 +31,7 @@ authors:
 
   - name: Cristian PEREZ BROKATE
     github: cristianpb
+    linkedin: cristianperezbrokate
     image: cristian.jpeg
     email: cristian.perez-brokate@interieur.gouv.fr
     twitter: cris_perez_b
@@ -39,8 +41,8 @@ authors:
 
   - name: Simon CAQUÉ
     image: simon.jpg
+    linkedin: simoncaque
     twitter: simoncaque
-    linkedin: https://www.linkedin.com/in/simoncaque
     desc: Docteur en droit et diplômé en affaires publiques de l’IEP de Paris, Simon s’est spécialisé
           dans la transformation des administrations, notamment à travers le numérique. Passionné par
           ces sujets, il travaille à l’innovation dans les ministères, enseigne à l’université et
@@ -70,7 +72,8 @@ project:
     name: moteur de recherche des décès
     repo: matchID-project/deces-ui
 github_url: "https://github.com/"
-
+linkedin_url: "https://www.linkedin.com/in/"
+twitter_url: "https://x.com/"
 # Build settings
 github: [metadata]
 theme: minima
