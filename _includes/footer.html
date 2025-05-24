@@ -4,7 +4,7 @@
       <strong>Les auteurs</strong>
     </div>
     {% for author in site.authors %}
-    <div class="fr-col-xl-3 fr-col-lg-3 fr-col-md-4 fr-col-sm-6 fr-col-12">
+    <div class="fr-col-xl-4 fr-col-lg-4 fr-col-md-4 fr-col-sm-6 fr-col-12">
       <div class="fr-card fr-enlarge-link">
         <div class="fr-card__body">
           <h4 class="fr-card__title">{{ author.name }}</h4>
@@ -15,6 +15,11 @@
             <a href="{{author.github | prepend: site.github_url}}" class="fr-link">
               <span class="iconify" data-icon="ri:github-line"></span>
             </a>
+            {% if author.linkedin %}
+            <a href="{{ author.linkedin }}" class="fr-link">
+              <span class="iconify" data-icon="ri:linkedin-fill"></span>
+            </a>
+            {% endif %}
           </p>
         </div>
         {% if author.image %}

@@ -40,19 +40,12 @@ authors:
   - name: Simon CAQUÉ
     image: simon.jpg
     twitter: simoncaque
+    linkedin: https://www.linkedin.com/in/simoncaque
     desc: Docteur en droit et diplômé en affaires publiques de l’IEP de Paris, Simon s’est spécialisé
           dans la transformation des administrations, notamment à travers le numérique. Passionné par
           ces sujets, il travaille à l’innovation dans les ministères, enseigne à l’université et
           contribue à MatchID sur les aspects juridiques et financiers.
 
-  - name: Martin GROSS
-    desc: Martin est ingénieur et cofondateur de <a href="https://commoprices.com">CommoPrices.com</a>, la plus grosse plateforme de prix de
-          matières premières he world biggest portal of commodity prices.
-          Il a développé l'interface de validation de matchID pendant son challenge EIG.
-    github: tainmar
-    image: martin.jpeg
-    email: martingross89@gmail.com
-    twitter: tainmar
 
 project:
   general:
