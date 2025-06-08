@@ -77,114 +77,6 @@ customLayout: true
 </div>
 
 <div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h3 id="integration-backend">Intégration de l'API d'appariement à un backend</h3>
-    <p>
-        L'API unitaire est limité à une requête par seconde. Pour les appariement en masse,
-        une API <code>search/csv</code> permette le traitement de <strong>50 à 100 requêtes par seconde</strong>.
-    </p>
-    <p>
-        Cette API de soumettre un CSV contenant jusqu'à <strong>1 millions d'identité</strong> (100Mo), qui sera complété d'éventuelles détections des données de décès en cas de correspondance celle-ci étant qualifiée par un score de confiance.
-    </p>
-    <img class="fr-responsive-img" src="assets/images/deces-api-link.svg" alt="API search">
-    <p>
-        Ces données peuvent être retraitées à l'issue pour être injectées dans votre base de donnée.
-    </p>
-    <p>
-        Voici un exemple minimaliste en Python pour utiliser l'API d'appariement:
-    </p>
-</div>
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <div style="margin-top:4rem;display: flex; font-family: monospace; border: 1px solid #ddd; border-radius: 6px; background: #fafbfc; box-shadow: 0 1px 2px #0001; margin-bottom: 1em;">
-      <div style="background: #f3f4f6; color: #888; padding: 8px 4px; text-align: right; user-select: none;">
-        <div style="line-height: 1.5; height: 500px; overflow: hidden;">
-          1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30
-        </div>
-      </div>
-      <div style="overflow-y: auto; height: 500px; width: 100%;">
-        <pre style="margin: 0; padding: 8px; font-size: 0.9em;"><code class="language-python">import requests
-import time
-url = "https://deces.matchid.io/deces/api/v1/search/csv"
-
-# Formulaire multipart avec mapping des colonnes et paramètres CSV
-files = {
-    'file': ('misc_sources_test.csv',
-            open('misc_sources_test.csv', 'rb'),
-            'application/csv', {'Expires': '0'}),
-    'sep': (None, ','),             # séparateur csv
-    'firstName': (None, 'PRENOM'),  # mapping des champs
-    'lastName': (None, 'NOM'),
-    'birthDate': (None, 'DATE_NAISSANCE'),
-    'birthCity': (None, 'COMMUNE_NAISSANCE'),
-    'birthDepartment': (None, 'DEP_NAISSANCE'),
-    'birthCountry': (None, 'PAYS_NAISSANCE'),
-    'sex': (None, 'GENRE'),
-    'candidateNumber': (None, '5'),
-    'pruneScore': (None, '0.3'),
-    'dateFormat': (None, 'DD/MM/YYYY') # format de date
-}
-r = requests.post(url, files=files)
-print(r.text)
-res = r.json()
-# Récupération de l'ID pour suivre l'avancement du traitement
-print(res['id'])
-
-url = "https://deces.matchid.io/deces/api/v1/search/csv/"
-url_job = url + res['id']
-print("url: ", url_job)
-
-r = requests.request("GET", url_job)
-print(r.text)
-res = r.json()
-print(res)
-
-while res['status'] == 'created' or res['status'] == 'waiting' or res['status'] == 'active':
-    r = requests.request("GET", url_job)
-    try:
-        # Vérification de l'état du traitement via JSON
-        res = r.json()
-    except:
-        # Job terminé si réponse non-JSON
-        break
-    time.sleep(2)
-    print(res)
-
-# CSV source complété des données de décès
-print(r.text.replace(";","\t"))
-        </code></pre>
-      </div>
-    </div>
-</div>
-
-{% include algos-link-api.html %}
-
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <h3 id="integration-ui"> Intégration d'une UI de validation </h3>
-    <p>
-        Nous vous recommandons dans un premier temps de passer par <a href="https://deces.matchid.io/link" title="appariement sur deces.matchid.io" target="_self">le service en ligne</a> pour tester la validité du fichier et du choix des colonnes à apparier avant d'attaquer le code d'appariement. Vous pourrez, en particulier, vérifier avec l'aide de l'UI de validation.
-    </p>
-    <p>
-        Dans le cas d'un service métier intégré dans un système d'information, pour des appariement réguliers, nous recommandons d'intégrer une UI de validation telle que celle proposée.En effet, l'UI proposée permet de <strong>diviser en moyenne par 10 le temps de validation d'une paire d'identité</strong> par rapport à un affichage en colonnes classiques sous un tableur.
-    </p>
-    <p>
-        Pour traiter un fichie de 100000 lignes, si 10% de personnes sont décédées, environ 9000 seront avec de très bon scores (peu utiles à valider à la main, sauf cas métier nécessitant une assurance complète), et 1000 seront à regarder plus précisément. Ces 1000 cas peuvent prendre moins de 30 minutes avec une UI adaptée, contre une demie jourée sur un tableur.
-    </p>
-    <p>
-        A ce stade, nous n'avons pas mis à disposition de composant réutilisable pour cette fonction.
-        Néanmoins <strong>nos deux implémentations d'interface de validation peuvent vous inspirer</strong>: en <a href="https://github.com/matchID-project/deces-ui/blob/dev/src/components/views/LinkCheckTable.svelte" target="_blank" title="composant de validation en Svelte.js">Svelte.js</a> ou en <a href="https://github.com/matchID-project/frontend/blob/dev/src/components/Validation/DataTable.vue" target="_blank" title="composant de validation en Vue.js">Vue.js</a>.
-    </p>
-</div>
-
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
-    <div class="fr-vcenter">
-    <img width="100%" src="assets/images/deces-ui-link-validate.webp" alt="valider l'appariement">
-    <p>
-       Les composants développés implémentent une <strong>mise en exergue des différences champs par champ</strong> (nom, prénom, ...) entre la donnée cherchée et la donnée de référence INSEE. Cette facilitation visuelle est la
-       source d'accélération de la validation. Nos implémentations reposent sur la <a href="https://www.npmjs.com/package/diff.js" title="librairie diff.js" target="_blank">librairie diff.js</a>.
-    </p>
-    </div>
-</div>
-
-<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
     <h3 id="authentification"> Authentification </h3>
     <p>
         L'API est utilisable sans authentification pour un nombre limité d'appels sur l'API de recherche. Pour utiliser l'API au-dela d'une centaine d'appels, ou pour utiliser l'API d'appariement, l'utilisation d'un jeton est nécessaire, tout en restant gratuite.
@@ -238,6 +130,9 @@ print(r.text.replace(";","\t"))
         <pre style="margin: 0; padding: 8px; font-size: 0.9em;"><code class="language-python">import requests
 import json
 from datetime import datetime, timedelta
+import os
+
+MANUAL_TOKEN = os.getenv('MANUAL_TOKEN')
 
 class TokenManager:
     def __init__(self, initial_token):
@@ -303,6 +198,207 @@ if __name__ == "__main__":
             <li>Utilise le header d'autorisation approprié pour les requêtes API</li>
         </ul>
     </p>
+</div>
+
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+    <h3 id="integration-backend">Intégration de l'API d'appariement</h3>
+    <p>
+        L'API unitaire est limité à une requête par seconde. Pour les appariement en masse,
+        une API <code>search/csv</code> permette le traitement de <strong>50 à 100 requêtes par seconde</strong>.
+    </p>
+    <p>
+        Cette API de soumettre un CSV contenant jusqu'à <strong>1 millions d'identité</strong> (100Mo), qui sera complété d'éventuelles détections des données de décès en cas de correspondance celle-ci étant qualifiée par un score de confiance.
+    </p>
+    <img class="fr-responsive-img" src="assets/images/deces-api-link.svg" alt="API search">
+    <p>
+        Ces données peuvent être retraitées à l'issue pour être injectées dans votre base de donnée.
+    </p>
+    <p>
+        Voici un exemple minimaliste en Python pour utiliser l'API d'appariement:
+    </p>
+</div>
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+    <div style="margin-top:4rem;display: flex; font-family: monospace; border: 1px solid #ddd; border-radius: 6px; background: #fafbfc; box-shadow: 0 1px 2px #0001; margin-bottom: 1em;">
+      <div style="background: #f3f4f6; color: #888; padding: 8px 4px; text-align: right; user-select: none;">
+        <div style="line-height: 1.5; height: 500px; overflow: hidden;">
+          1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30
+        </div>
+      </div>
+      <div style="overflow-y: auto; height: 500px; width: 100%;">
+        <pre style="margin: 0; padding: 8px; font-size: 0.9em;"><code class="language-python">import requests
+import time
+import os
+from TokenManager import TokenManager
+
+API_URL = "https://deces.matchid.io/deces/api/v1/search/csv"
+token_manager = TokenManager()
+API_TOKEN = token_manager.get_token()
+
+# Formulaire multipart avec mapping des colonnes et paramètres CSV
+files = {
+    'file': ('misc_sources_test.csv',
+            open('misc_sources_test.csv', 'rb'),
+            'application/csv', {'Expires': '0'}),
+    'sep': (None, ','),             # séparateur csv
+    'firstName': (None, 'PRENOM'),  # mapping des champs
+    'lastName': (None, 'NOM'),
+    'birthDate': (None, 'DATE_NAISSANCE'),
+    'birthCity': (None, 'COMMUNE_NAISSANCE'),
+    'birthDepartment': (None, 'DEP_NAISSANCE'),
+    'birthCountry': (None, 'PAYS_NAISSANCE'),
+    'sex': (None, 'GENRE'),
+    'candidateNumber': (None, '5'),
+    'pruneScore': (None, '0.3'),
+    'dateFormat': (None, 'DD/MM/YYYY') # format de date
+}
+
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
+r = requests.post(API_URL, files=files, headers=headers)
+print(r.text)
+res = r.json()
+# Récupération de l'ID pour suivre l'avancement du traitement
+print(res['id'])
+
+url_job = API_URL + res['id']
+print("url: ", url_job)
+
+r = requests.request("GET", url_job, headers=headers)
+print(r.text)
+res = r.json()
+print(res)
+
+while res['status'] == 'created' or res['status'] == 'waiting' or res['status'] == 'active':
+    r = requests.request("GET", url_job, headers=headers)
+    try:
+        # Vérification de l'état du traitement via JSON
+        res = r.json()
+    except:
+        # Job terminé si réponse non-JSON
+        break
+    time.sleep(2)
+    print(res)
+
+# CSV source complété des données de décès
+print(r.text.replace(";","\t"))
+        </code></pre>
+      </div>
+    </div>
+</div>
+
+<!-- ──────────────── Paragraphe webhook ──────────────── -->
+<!-- Notification des fins de traitement par webhook -->
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+  <h4 id="webhook-notification">Notification des fins de traitement par webhook (bêta)</h4>
+
+  <!-- 1. Enregistrement du webhook -->
+  <h5>1&nbsp;– Enregistrement du webhook</h5>
+  <p>L'enregistrement préalable du webhook est nécessaire. Il sera authentifié à l'aide d'un challenge. Nous recommendons l'usage de <a href="https://webhook.site" target="_blank">https://webhook.site</a> pour bien comprendre le mécanisme préalablement.</p>
+  <p> Déclarez d'abord l'URL du webhook : </p>
+  <pre><code class="language-bash">curl https://deces.matchid.io/deces/api/v1/webhook \
+     -H "Authorization: Bearer &lt;token&gt;" \
+     -d '{"url":"https://webhook.site/&lt;uuid&gt;","action":"register"}'</code></pre>
+
+  <p>
+    Le service renvoie un <code>challenge</code>. Modifiez votre endpoint pour renvoyer ce challenge texte ou JSON devant contenir le 
+    <code>challenge</code>), puis validez le webhook ainsi:
+  </p>
+  <pre><code class="language-bash">curl https://deces.matchid.io/deces/api/v1/webhook \
+     -H "Authorization: Bearer &lt;token&gt;" \
+     -d '{"url":"https://webhook.site/&lt;uuid&gt;","action":"challenge"}'</code></pre>
+    <p>
+        Une fois le challenge détecté, le statut passe à <code>validated</code>. 
+        Pour soumettre le job, décommentez dans le code proposé au <a href="#integration-backend">paragraphe précédent</a> le champ <code>webhook</code>
+        dans le <code>multipart/form-data</code>. 
+    </p>
+</div>
+
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+  <!-- 4. Implémentation côté webhook (Python minimal) -->
+  <h5>2&nbsp;– Implémentation côté webhook (Python minimal)</h5>
+    <p> Voici l'implémentation minimale de votre webhook dans une API flask </p>
+
+  <div style="display: flex; font-family: monospace; border: 1px solid #ddd; border-radius: 6px; background: #fafbfc; box-shadow: 0 1px 2px #0001; margin-bottom: 1em;">
+    <div style="background: #f3f4f6; color: #888; padding: 8px 4px; text-align: right; user-select: none;">
+      <div style="line-height: 1.5; height: 500px; overflow: hidden;">
+        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36
+      </div>
+    </div>
+    <div style="overflow-y: auto; height: 500px; width: 100%;">
+      <pre style="margin: 0; padding: 8px; font-size: 0.9em;"><code class="language-python">from flask import Flask, request, Response
+import requests
+from TokenManager import TokenManager
+
+app = Flask(__name__)
+token_manager = TokenManager()  # Différent : utilisation du TokenManager
+
+def download_csv(job_id: str) -> None:
+    url = f"{API_URL}/{job_id}"
+    headers = {"Authorization": f"Bearer {token_manager.get_token()}"}  # Différent : token dynamique
+    r = requests.get(url, headers=headers)
+    if r.ok:
+        with open(f"results_{job_id}.csv", "wb") as f:
+            f.write(r.content)
+        app.logger.info("CSV téléchargé : results_%s.csv", job_id)
+    else:
+        app.logger.error("Erreur téléchargement CSV : %s", r.text)
+
+@app.route("/callback", methods=["POST"])
+def callback():
+    data = request.get_json(force=True, silent=True) or {}
+
+    if "challenge" in data:
+        return data["challenge"], 200
+
+    event  = data.get("event")
+    job_id = data.get("jobId")
+
+    if event == "completed" and job_id:
+        download_csv(job_id)
+    elif event == "failed":
+        app.logger.error("Job échoué : %s", job_id)
+    elif event == "deleted":  # Nouveau : gestion de la suppression RGPD
+        app.logger.info("Fichier supprimé : %s", job_id)
+
+    return Response("OK", status=200)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)</code></pre>
+    </div>
+  </div>
+
+  <p>
+    Notez que notre service ne gère pas de retry en cas d'indisponibilité de votre endpoint. Par ailleurs vous serez également notifié sur le webhook de la suppression du fichier par un <code>"event": "deleted"</code> (par exemple pour traçabilité RGPD).
+  </p>
+</div>
+<!-- ──────────────────────────────────────────────────── -->
+
+{% include algos-link-api.html %}
+
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+    <h3 id="integration-ui"> Intégration d'une UI de validation </h3>
+    <p>
+        Nous vous recommandons dans un premier temps de passer par <a href="https://deces.matchid.io/link" title="appariement sur deces.matchid.io" target="_self">le service en ligne</a> pour tester la validité du fichier et du choix des colonnes à apparier avant d'attaquer le code d'appariement. Vous pourrez, en particulier, vérifier avec l'aide de l'UI de validation.
+    </p>
+    <p>
+        Dans le cas d'un service métier intégré dans un système d'information, pour des appariement réguliers, nous recommandons d'intégrer une UI de validation telle que celle proposée.En effet, l'UI proposée permet de <strong>diviser en moyenne par 10 le temps de validation d'une paire d'identité</strong> par rapport à un affichage en colonnes classiques sous un tableur.
+    </p>
+    <p>
+        Pour traiter un fichie de 100000 lignes, si 10% de personnes sont décédées, environ 9000 seront avec de très bon scores (peu utiles à valider à la main, sauf cas métier nécessitant une assurance complète), et 1000 seront à regarder plus précisément. Ces 1000 cas peuvent prendre moins de 30 minutes avec une UI adaptée, contre une demie jourée sur un tableur.
+    </p>
+    <p>
+        A ce stade, nous n'avons pas mis à disposition de composant réutilisable pour cette fonction.
+        Néanmoins <strong>nos deux implémentations d'interface de validation peuvent vous inspirer</strong>: en <a href="https://github.com/matchID-project/deces-ui/blob/dev/src/components/views/LinkCheckTable.svelte" target="_blank" title="composant de validation en Svelte.js">Svelte.js</a> ou en <a href="https://github.com/matchID-project/frontend/blob/dev/src/components/Validation/DataTable.vue" target="_blank" title="composant de validation en Vue.js">Vue.js</a>.
+    </p>
+</div>
+
+<div class="fr-col-xl-6 fr-col-lg-6 fr-col-md-6 fr-col-sm-12 fr-col-12">
+    <div class="fr-vcenter">
+    <img width="100%" src="assets/images/deces-ui-link-validate.webp" alt="valider l'appariement">
+    <p>
+       Les composants développés implémentent une <strong>mise en exergue des différences champs par champ</strong> (nom, prénom, ...) entre la donnée cherchée et la donnée de référence INSEE. Cette facilitation visuelle est la
+       source d'accélération de la validation. Nos implémentations reposent sur la <a href="https://www.npmjs.com/package/diff.js" title="librairie diff.js" target="_blank">librairie diff.js</a>.
+    </p>
+    </div>
 </div>
 
 <div class="fr-col-12 fr-text--center">
