@@ -292,7 +292,11 @@ print(r.text.replace(";","\t"))
 
   <!-- 1. Enregistrement du webhook -->
   <h5>1&nbsp;– Enregistrement du webhook</h5>
-  <p>L'enregistrement préalable du webhook est nécessaire. Il sera authentifié à l'aide d'un challenge. Nous recommendons l'usage de <a href="https://webhook.site" target="_blank">https://webhook.site</a> pour bien comprendre le mécanisme préalablement.</p>
+  <p>
+    L'enregistrement préalable du webhook est nécessaire. Il sera authentifié à l'aide d'un challenge. 
+    Nous recommendons l'usage de <a href="https://webhook.site" target="_blank">https://webhook.site</a> pour bien comprendre le mécanisme préalablement.
+    <br>Notez que nous ne persistons pas ces enrolements, donc il est nécessaire de vérifier le webhook avant chaque appariement, ou tous les mois.
+  </p>
   <p> Déclarez d'abord l'URL du webhook : </p>
   <pre><code class="language-bash">curl https://deces.matchid.io/deces/api/v1/webhook \
      -H "Authorization: Bearer &lt;token&gt;" \
